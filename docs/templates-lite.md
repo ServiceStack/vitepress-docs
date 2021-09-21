@@ -103,8 +103,9 @@ All the bundling logic for all `.css` and `.js` resources are contained within t
 
 #### [/wwwroot/_layout.html](https://github.com/NetCoreTemplates/vue-lite/blob/master/wwwroot/_layout.html)
 
+::: v-pre
 ```hbs
-{% raw %}<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -185,8 +186,9 @@ Object.assign(window, window["@servicestack/client"]);
 {{htmlError}}
 
 </body>
-</html>{% endraw %}
+</html>
 ```
+:::
 
 Bundling happens on-the-fly at runtime when the `index.html` page is requested which is embedded in its nearest `_layout.html` (above).
 
@@ -196,9 +198,11 @@ The first bundle created is the `.css` bundle that's appropriately located in th
 
 How and where the bundle is written depends on whether the page is loaded in Development (`debug`) or Release mode:
 
+::: v-pre
 ```hbs
-{% raw %}{{ 'content:/src/css/' |> bundleCss({ minify:false, cache:false, out:'/app.bundle.css' }) }}{% endraw %}
+{{ 'content:/src/css/' |> bundleCss({ minify:false, cache:false, out:'/app.bundle.css' }) }}
 ```
+:::
 
 #### Bundling Options
 
@@ -221,20 +225,24 @@ is included in `DirectoryInfo` (alphabetical) order.
 If for example you wanted to include your App's `default.css` before `bootstrap.css` you can specify it first, where it will be included first 
 and ignored in subsequent references, e.g:
 
+::: v-pre
 ```hbs
-{% raw %}{{ [
+{{ [
     '/assets/css/default.css', 
     '/assets/css/'
-   ] |> bundleCss }}{% endraw %}
+   ] |> bundleCss }}
 ```
+:::
 
 #### Hot Reloading of Static Resources
 
 The script below enables [hot-reloading](#hot-reload) during development: 
 
+::: v-pre
 ```hbs
-{% raw %}<i hidden>{{ '/js/hot-fileloader.js' | ifDebugIncludeScript }}</i>{% endraw %}
+<i hidden>{{ '/js/hot-fileloader.js' | ifDebugIncludeScript }}</i>
 ```
+:::
 
 Where it will automatically reload the page if it detects any modifications to any `.html`, `.js` or `.css` files, 
 [Configured with](https://github.com/NetCoreTemplates/vue-lite/blob/fb56cff8d704f7a066242b4f90708f92a58dbaab/Startup.cs#L63):
@@ -251,25 +259,29 @@ if (Config.DebugMode)
 
 The `page` placeholder is where the page will be rendered inside the Layout template:
 
+::: v-pre
 ```hbs
-{% raw %}{{page}}{% endraw %}
+{{page}}
 ```
+:::
 
 #### JavaScript Library Bundling
 
 The layout creates 2 JavaScript bundles, the first containing all 3rd Party libraries used in the App which is written to `/js/lib.bundle{.min}.js`
 using the same bundling options as the `bundleCss` above:
 
+::: v-pre
 ```hbs
-{% raw %}{{ [
+{{ [
     `/lib/js/vue/vue.min.js`,
     `/lib/js/vue-router/vue-router.min.js`,
     `/lib/js/vue-class-component/vue-class-component.min.js`,
     `/lib/js/vue-property-decorator/vue-property-decorator.min.js`,
     `/lib/js/@servicestack/client/servicestack-client.min.js`,
     `/lib/js/@servicestack/vue/servicestack-vue.min.js`,
-] |> map => `<script src="${it}"></script>` |> joinln |> raw }}{% endraw %}
+] |> map => `<script src="${it}"></script>` |> joinln |> raw }}
 ```
+:::
 
 #### Register UMD Module Mappings
 
@@ -315,13 +327,15 @@ The last js bundle created is your App's source code which also needs to be impo
 [/src/shared](https://github.com/NetCoreTemplates/vue-lite/tree/master/src/shared) contains any shared functionality used by the different components whilst the base
 [/src](https://github.com/NetCoreTemplates/vue-lite/tree/master/src) folder contains your App's entry point:
 
+::: v-pre
 ```hbs
-{% raw %}{{ [
+{{ [
     'content:/src/components/',
     'content:/src/shared/',
     'content:/src/',
-] | bundleJs({ minify:!debug, cache:!debug, disk:!debug, out:`/js/bundle${min}.js` }) }}{% endraw %}
+] | bundleJs({ minify:!debug, cache:!debug, disk:!debug, out:`/js/bundle${min}.js` }) }}
 ```
+:::
 
 #### Bundling Path Options
 
@@ -337,16 +351,19 @@ Possible values include:
 Finally the `scripts` argument is written (unencoded) after the library and App Source code bundles where it contains any additional scripts that 
 individual pages wants to include at the bottom of the page:
 
+::: v-pre
 ```hbs
-{% raw %}{{ scripts | raw }}{% endraw %}
+{{ scripts | raw }}
 ```
+:::
+
 ### Pre-compiled minified production bundles
 
 Whilst not required you can copy the **exact same bundling configuration** in your `_layout.html` above into a separate 
 [/wwwroot/_bundle.ss](https://github.com/NetCoreTemplates/vue-lite/blob/master/wwwroot/_bundle.ss) script:
 
+::: v-pre
 ```js
-{% raw %}
 * run in .csproj AfterPublish, manual usage: `x run _bundle.ss -to <path>` *
 
 let dist = '[hash].min'
@@ -362,8 +379,8 @@ let dist = '[hash].min'
     'content:/src/shared/',
     'content:/src/',
 ] |> bundleJs({ minify:true, disk:true, out:`content:${to}/bundle${dist}.js`, iife:true }) }}
-{% endraw %}
 ```
+:::
 
 #### Bundling
 
@@ -612,7 +629,7 @@ which enable functional components to retain local state. Just like **vue-lite**
 functional components defined in [/shared/controls.tsx](https://github.com/NetCoreTemplates/react-lite/blob/master/src/shared/controls.tsx) which
 ends up retaining similar markup as **vue-lite** despite their completely different implementations:
 
-```ts
+```tsx
 export const SignUpImpl: React.SFC<any> = ({ history }) => {
     const {state, dispatch} = useContext(StateContext);
 

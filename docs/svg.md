@@ -73,15 +73,17 @@ e.g. we can load the generated SVG from the [Spirals Sharp App](https://github.c
 
 ##### /svg/svg-icons/spirals.html
 
+::: v-pre
 ```hbs
-{% raw %}<svg height="640" width="240">
+<svg height="640" width="240">
 {{#each range(180) }}
     {{ 120 + 100 * cos((5)  * it * 0.02827) | to => x }}
     {{ 320 + 300 * sin((1)  * it * 0.02827) | to => y }}
     <circle cx="{{x}}" cy="{{y}}" r="{{it*0.1}}" fill="#556080" stroke="black" stroke-width="1"></circle>
 {{/each}}
-</svg>{% endraw %}
+</svg>
 ```
+:::
 
 and the SVG rendered output will be registered as a normal static SVG Image.
 
@@ -90,20 +92,23 @@ and the SVG rendered output will be registered as a normal static SVG Image.
 An alternative way of registering SVG's is to register them in #Script Pages `_init.html` page that gets executed once on Startup
 which will let you register multiple SVG images within 1 file using the `#svg` Script Block using the format `#svg <name> <image-set>`, e.g:
 
+::: v-pre
 ```hbs
-{% raw %}{{#svg vue app}}
+{{#svg vue app}}
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
     <g>
         <path fill="#556080" stroke="null" d="m79.43253,10.80794l0.01231,-0.02461l-18.15085,0l-11.38274,19.68085l0,0.0082l-11.37043,-19.68906l-18.15085,0l0,0.02051l-19.70136,0l49.22265,85.26183l49.22265,-85.25773"/>
     </g>
 </svg>
-{{/svg}}{% endraw %}
+{{/svg}}
 ```
+:::
 
 Which also supports using `#Script` to create and register dynamically rendered SVG images:
 
+::: v-pre
 ```hbs
-{% raw %}{{#svg spirals svg-icons}}
+{{#svg spirals svg-icons}}
 <svg height="640" width="240">
 {{#each range(180) }}
     {{ 120 + 100 * cos((5)  * it * 0.02827) | to => x }}
@@ -111,8 +116,9 @@ Which also supports using `#Script` to create and register dynamically rendered 
     <circle cx="{{x}}" cy="{{y}}" r="{{it*0.1}}" fill="#556080" stroke="black" stroke-width="1"></circle>
 {{/each}}
 </svg>
-{{/svg}}{% endraw %}
+{{/svg}}
 ```
+:::
 
 ### Register Custom SVG Images via API
 
@@ -234,9 +240,11 @@ network requests as well as provide better isolation than including all CSS your
 
 You can use `cssIncludes` to embed the contents of multiple css files in `#Script` pages with:
 
+::: v-pre
 ```hbs
-{% raw %}{{ 'buttons,svg-icons' | cssIncludes }}{% endraw %}
+{{ 'buttons,svg-icons' | cssIncludes }}
 ```
+:::
 
 Or in Razor with:
 
@@ -248,30 +256,36 @@ Or in Razor with:
 
 In [#Script Pages](https://sharpscript.net/docs/sharp-pages) you can embed SVG xml with the `svgImage` and `svgDataUri` scripts:
 
+::: v-pre
 ```hbs
-{% raw %}{{ 'myicon' | svgImage }}
-{{ 'myicon'.svgImage('#e33') }}{% endraw %}
+{{ 'myicon' | svgImage }}
+{{ 'myicon'.svgImage('#e33') }}
 ```
+:::
 
 Inside an HTML IMG element using its data URI:
 
+::: v-pre
 ```html
-{% raw %}<img src="{{ 'myicon'.svgDataUri() }}">
-<img src="{{ 'myicon'.svgDataUri('#e33') }}">{% endraw %}
+<img src="{{ 'myicon'.svgDataUri() }}">
+<img src="{{ 'myicon'.svgDataUri('#e33') }}">
 ```
+:::
 
 Or as a background image in a custom CSS class:
 
+::: v-pre
 ```css
-{% raw %}.myicon {
+.myicon {
   width: 150px;
   height: 150px;
   background-size: 142px;
   background-position: 4px;
   background-repeat: no-repeat;
   {{ 'myicon'.svgBackgroundImageCss() }} 
-}{% endraw %}
+}
 ```
+:::
 
 Where you can use the class name to apply the above CSS to an element:
 

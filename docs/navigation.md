@@ -255,9 +255,11 @@ In [#Script Pages](https://sharpscript.net/docs/sharp-pages) you can use render 
 You can render the **main menu** navigation using the 
 [navbar](https://github.com/NetCoreTemplates/sharp/blob/50b77454950ef0590042e08cf327aae602a2ab0a/MyApp/wwwroot/_layout.html#L30) script method:
 
+::: v-pre
 ```hbs
-{% raw %}{{ navbar }}{% endraw %}
+{{ navbar }}
 ```
+:::
 
 Which by default renders the `View.NavItems` main navigation, using the default `NavOptions` and User Attributes (if authenticated): 
 
@@ -265,23 +267,29 @@ Which by default renders the `View.NavItems` main navigation, using the default 
 
 You can also render a **different Navigation List** with:
 
+::: v-pre
 ```hbs
-{% raw %}{{ navbar(navItems('submenu')) }}{% endraw %}
+{{ navbar(navItems('submenu')) }}
 ```
+:::
 
 Which can be customized using the different `NavOptions` properties above, in camelCase:
 
+::: v-pre
 ```hbs
-{% raw %}{{ navbar(navItems('submenu'), { navClass: 'navbar-nav navbar-light bg-light' }) }}{% endraw %}
+{{ navbar(navItems('submenu'), { navClass: 'navbar-nav navbar-light bg-light' }) }}
 ```
+:::
 
 #### Rewritten using #Script Extension methods
 
 Thanks to `#Script` new ability to be able to call any script methods as extension methods, this can also be rewritten as:
 
+::: v-pre
 ```hbs
-{% raw %}{{ 'submenu'.navItems().navbar({ navClass: 'navbar-nav navbar-light bg-light' }) }}{% endraw %}
+{{ 'submenu'.navItems().navbar({ navClass: 'navbar-nav navbar-light bg-light' }) }}
 ```
+:::
 
 #### Button group
 
@@ -289,9 +297,11 @@ The `navButtonGroup` script can render NavItems in a button group, e.g. the
 [OAuth buttons](https://github.com/NetCoreTemplates/sharp/blob/50b77454950ef0590042e08cf327aae602a2ab0a/MyApp/wwwroot/login.html#L46)
 are rendered with:
 
+::: v-pre
 ```hbs
-{% raw %}{{ 'auth'.navItems().navButtonGroup({ navClass: '', navItemClass: 'btn btn-block btn-lg' }) }}{% endraw %}
+{{ 'auth'.navItems().navButtonGroup({ navClass: '', navItemClass: 'btn btn-block btn-lg' }) }}
 ```
+:::
 
 Which renders a vertical, spaced list of buttons which look like:
 
@@ -343,12 +353,14 @@ All navigation components are populated the same way for all JavaScript FX's whe
 serializing the response of the `GetNavItems` Service to JSON that's embedded in the layout page where it's only loaded once 
 upon the initial page request (immediately, without an Ajax network request): 
 
+::: v-pre
 ```hbs
-{% raw %}{{#script}}
+{{#script}}
 NAV_ITEMS = {{ 'GetNavItems'  |> execService |> json }};
 AUTH      = {{ 'Authenticate' |> execService({ ifErrorReturn: "null" }) |> json }};
-{{/script}}{% endraw %}
+{{/script}}
 ```
+:::
 
 The navigation items data structure is used with new Navigation Components for each JavaScript FX to render the menu navigation
 which is initially captured in a state object containing the NavItems data structure, the Users Session and the list

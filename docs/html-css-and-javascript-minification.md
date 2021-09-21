@@ -43,27 +43,31 @@ you can use the `!` prefix to exclude files from bundles.
 
 Example from `sharp` [_layout.html](https://github.com/NetCoreTemplates/sharp/blob/master/MyApp/wwwroot/_layout.html):
 
+::: v-pre
 ```hbs
-{% raw %}{{ (debug ? '' : '[hash].min') | to => min }}
+{{ (debug ? '' : '[hash].min') | to => min }}
 
 {{ [ '!/assets/css/default.css', '/assets/css/', '/css/buttons.css', '/css/svg-auth.css', 
      '/css/svg-icons.css', '/css/app.css' ]
    |> bundleCss({ disk:!debug, out:`/css/lib.bundle${min}.css` }) }}
 
 {{ [ '/assets/css/default.css']
-   |> bundleCss({ minify:!debug, cache:!debug, disk:!debug, out:`/css/bundle${min}.css` }) }}{% endraw %}
+   |> bundleCss({ minify:!debug, cache:!debug, disk:!debug, out:`/css/bundle${min}.css` }) }}
 ```
+:::
 
 Here the App specific `default.css` is excluded when bundling all other `.css` files in the `/assets/css/` directory as
 it's included on its own in a separate app **bundle.css** below.
 
+::: v-pre
 ```hbs
-{% raw %}{{ [ '!/assets/js/dtos.js', '!/assets/js/default.js', '/assets/js/jquery.min.js', '/assets/js/' ]
+{{ [ '!/assets/js/dtos.js', '!/assets/js/default.js', '/assets/js/jquery.min.js', '/assets/js/' ]
    |> bundleJs({ disk:!debug, out:`/js/lib.bundle${min}.js` }) }} 
 
 {{ [ '/assets/js/dtos.js', '/assets/js/default.js' ]
-   |> bundleJs({ minify:!debug, cache:!debug, disk:!debug, out:`/js/bundle${min}.js` }) }}{% endraw %}
+   |> bundleJs({ minify:!debug, cache:!debug, disk:!debug, out:`/js/bundle${min}.js` }) }}
 ```
+:::
 
 Likewise the App specific `dtos.js` and `default.js` files are excluded from the library bundle and included in its own app **bundle.js**.
 
@@ -130,10 +134,12 @@ Single Page App Templates also makes use of `cssIncludes` to embed multiple `*.c
 avoiding external resource requests as seen in the `vue-lite` template 
 [_layout.html](https://github.com/NetCoreTemplates/vue-lite/blob/master/wwwroot/_layout.html):
 
+::: v-pre
 ```hbs
-{% raw %}{{ 'buttons,svg-auth,app,/assets/css/default.css' | cssIncludes }}
-{{ 'svg-icons' | cssIncludes | svgFill('#41B883') }}{% endraw %}
+{{ 'buttons,svg-auth,app,/assets/css/default.css' | cssIncludes }}
+{{ 'svg-icons' | cssIncludes | svgFill('#41B883') }}
 ```
+:::
 
 By default `cssIncludes` references files in the format `/css/{name}.css` which can be overridden by specifying
 the Virtual Path to the file. It can be useful to use in conjunction with `svgFill` to change the **fill** color 

@@ -2,6 +2,9 @@
 slug: add-servicestack-reference 
 title: Add ServiceStack Reference
 ---
+<script setup>
+import jwtServiceClients from './includes/jwt-service-clients.md';
+</script>
 
 ServiceStack's **Add ServiceStack Reference** feature allows adding generated Native Types for the most popular typed languages and client platforms directly from within most major IDE's starting with [ServiceStackVS](/create-your-first-webservice#step-1-download-and-install-servicestackvs) - providing a simpler, cleaner and more versatile alternative to WCF's legacy **Add Service Reference** feature built into VS.NET.
 
@@ -270,8 +273,7 @@ that are able to take advantage of the integrated and transparent JWT and Refres
 
 ### Refresh Token Cookies supported in all Service Clients
 
-{% capture md %}{% include jwt-service-clients.md %}{% endcapture %}
-{{ md | markdownify }}
+<jwtServiceClients></jwtServiceClients>
 
 
 ### Integrate with Visual Studio

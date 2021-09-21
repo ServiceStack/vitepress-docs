@@ -32,23 +32,16 @@ ServiceStack's built-in Auth Providers fall into 3 main categories:
 If using ServiceStack to manage your Apps entire Authentication and persistence of Users you would use one of the available Auth Repositories
 and authenticate against one of the following Auth Providers:
 
-<div class='markdown-body pb-3'>
-{% capture table %}
 | Provider          | Class Name                  | Route                    | Description |
 |-|-|-|-|
 | **Credentials**   | `CredentialsAuthProvider`   | **/auth/credentials**    | Standard Authentication using Username/Password |
 | **Basic Auth**    | `BasicAuthProvider`         | HTTP Basic Auth          | Username/Password sent via [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication) |
 | **Digest Auth**   | `DigestAuthProvider`        | HTTP Digest Auth         | Username/Password hash via [HTTP Digest Auth](https://en.wikipedia.org/wiki/Digest_access_authentication) |
-{% endcapture %}
-{{ table | markdownify }}
-</div>
 
 ### OAuth Providers
 
 The following OAuth Providers are built into ServiceStack and can be used in both ASP.NET Core and .NET Framework Apps:
 
-<div class='markdown-body pb-3'>
-{% capture table %}
 | Provider          | Class Name                   | Route                    | Create OAuth App Link |
 |-|-|-|-|
 | **Facebook**      | `FacebookAuthProvider`       | **/auth/facebook**       | [developers.facebook.com/apps](https://developers.facebook.com/apps) |
@@ -61,25 +54,19 @@ The following OAuth Providers are built into ServiceStack and can be used in bot
 | **Yandex**        | `YandexAuthProvider`         | **/auth/yandex**         | [oauth.yandex.ru/client/new](https://oauth.yandex.ru/client/new) |
 | **VK**            | `VkAuthProvider`             | **/auth/vkcom**          | [vk.com/editapp?act=create](http://vk.com/editapp?act=create) |
 | **Odnoklassniki** | `OdnoklassnikiAuthProvider`  | **/auth/odnoklassniki**  | [www.odnoklassniki.ru/devaccess](http://www.odnoklassniki.ru/devaccess) |
-{% endcapture %}
-{{ table | markdownify }}
-</div>
+
 
 ### IAuthWithRequest Auth Providers
 
 The following Auth Providers all implement `IAuthWithRequest` and "Authenticate per-request":
 
-<div class='markdown-body pb-3'>
-{% capture table %}
 | Provider          | Class Name                   | Auth Method  | Description |
 |-|-|-|-|
 | **JWT**           | `JwtAuthProvider`            | Bearer Token | Stateless Auth Provider using [JSON Web Tokens](/jwt-authprovider)  |
 | **API Keys**      | `ApiKeyAuthProvider`         | Bearer Token | Allow 3rd Parties access to [authenticate without a password](/api-key-authprovider) |
 | **Basic Auth**    | `BasicAuthProvider`          | Basic Auth   | Authentication using [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication) |
 | **Digest Auth**   | `DigestAuthProvider`         | Digest Auth  | Authentication using [HTTP Digest Auth](https://en.wikipedia.org/wiki/Digest_access_authentication) |
-{% endcapture %}
-{{ table | markdownify }}
-</div>
+
 
 Other special Auth Providers that Authenticate per-request:
 

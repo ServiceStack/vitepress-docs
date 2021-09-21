@@ -106,24 +106,28 @@ You can use lambda expressions in all functional filters:
 
 Using either normal lambda expression syntax:
 
+::: v-pre
 ```hbs
-{% raw %}{{ customers | zip(x => x.Orders)
+{{ customers | zip(x => x.Orders)
    | let(x => { c: x[0], o: x[1] })
    | where(_ => o.Total < 500)
    | map(_ => o)
-   | htmlDump }}{% endraw %}
+   | htmlDump }}
 ```
+:::
 
 Or shorthand syntax for single argument lambda expressions which can instead use `=>` without brackets or named arguments where it will 
 be implicitly assigned to the `it` binding:
 
+::: v-pre
 ```hbs
-{% raw %}{{ customers | zip => it.Orders
+{{ customers | zip => it.Orders
    | let => { c: it[0], o: it[1] }
    | where => o.Total < 500
    | map => o
-   | htmlDump }}{% endraw %}
+   | htmlDump }}
 ```
+:::
 
 As it's results in more wrist-friendly and readable code, [most LINQ Examples](https://sharpscript.net/linq/projection-operators#linq15-selectmany---compound-from-2) use the shorthand lambda expression syntax above.
 
@@ -131,15 +135,17 @@ As it's results in more wrist-friendly and readable code, [most LINQ Examples](h
 
 Other language enhancements include support for [JavaScript's shorthand property names](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Syntax):
 
+::: v-pre
 ```hbs
-{% raw %}{{ {name,age} }}{% endraw %}
+{{ {name,age} }}
 ```
 
 But like C# also lets you use member property names:
 
 ```hbs
-{% raw %}{{ people | let => { it.Name, it.Age } | select: {Name},{Age} }}{% endraw %}
+{{ people | let => { it.Name, it.Age } | select: {Name},{Age} }}
 ```
+:::
 
 #### Template Literals
 

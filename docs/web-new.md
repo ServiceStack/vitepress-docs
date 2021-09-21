@@ -2,6 +2,12 @@
 slug: web-new
 title: Create new Projects with 'x new'
 ---
+<script setup>
+import webnewtable from './includes/web-new-netcore.md';
+import corefxtable from './includes/web-new-corefx.md';
+import netfxtable from './includes/web-new-netfx.md';
+</script>
+
 
 All ServiceStack Projects can be created using the .NET Core [x dotnet tool](https://www.nuget.org/packages/x):
 
@@ -33,11 +39,11 @@ Where it will display all repositories in [.NET Core](https://github.com/NetCore
 [.NET Framework](https://github.com/NetFrameworkTemplates) and 
 [ASP.NET Core Framework](https://github.com/NetFrameworkCoreTemplates) GitHub Orgs:
 
-<<< @/web-new-netcore.md
+<webnewtable />
 
-<<< @/web-new-corefx.md
+<corefxtable />
 
-<<< @/web-new-netfx.md
+<netfxtable />
 
 #### Usage
 
@@ -259,5 +265,4 @@ These are the only sources `x new` looks at to create ServiceStack projects, whi
 
     $ x new
 
-{% capture trouble %}{% include web-trouble.md %}{% endcapture %}
-{{ trouble | markdownify }}
+<webTroubleMd></webTroubleMd>

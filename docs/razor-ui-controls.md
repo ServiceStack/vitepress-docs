@@ -10,8 +10,6 @@ the [World Validation](/world-validation#server-rendered-html-uis) Application.
 
 Currently the component libraries include common Bootstrap UI Form Controls and Navigation Components:
 
-<div class='markdown-body pb-3'>
-{% capture table %}
 | Control                       | Description |
 | - | - |
 | @Html.ValidationSummary                   | Show validation summary error message unless there's an error in specified fields |
@@ -26,9 +24,6 @@ Currently the component libraries include common Bootstrap UI Form Controls and 
 | @Html.Navbar                              | Display the `navbar` main menu |
 | @Html.NavLink                             | Display a `nav-link` nav-item |
 | @Html.NavButtonGroup                      | Display a list of NavItem's `btn-group` |
-{% endcapture %}
-{{ table | markdownify }}
-</div>
 
 ### Bootstrap UI Form Controls
 

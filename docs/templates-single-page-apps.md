@@ -15,7 +15,6 @@ The Single Page App (SPA) project templates can also be created using the [dotne
 
 Click on the template name below to view a Live Demo and contents of each project template:
 
-{% capture netcore %}
 | .NET Core C# Templates ||
 |-|-|
 | [angular-spa](https://github.com/NetCoreTemplates/angular-spa)        | .NET 5.0 Angular CLI Bootstrap App |
@@ -29,15 +28,10 @@ Click on the template name below to view a Live Demo and contents of each projec
 | [vuetify-nuxt](https://github.com/NetCoreTemplates/vuetify-nuxt)       | .NET 5.0 Nuxt.js SPA App with Material Vuetify |
 | [vuetify-spa](https://github.com/NetCoreTemplates/vuetify-spa)        | .NET 5.0 Vue CLI App with Material Vuetify |
 | [angular-lite-spa](https://github.com/NetCoreTemplates/angular-lite-spa)   | .NET 5.0 Angular 4 Material Design Lite Webpack App |
-{% endcapture %}
 
-<div class='markdown-body pb-3'>
-{{ netcore | markdownify }}
-</div>
 
 The .NET 5.0 project templates utilizes MSBuild's newer and human-friendly format which can be developed using your preferred C# IDE of VS.NET, VS Code or Rider.
 
-{% capture netfx %}
 | .NET Framework C# Templates ||
 |-|-|
 | [angular-spa-netfx](https://github.com/NetFrameworkTemplates/angular-spa-netfx)        | .NET Framework Angular Bootstrap cli.angular.io App |
@@ -54,11 +48,7 @@ The .NET 5.0 project templates utilizes MSBuild's newer and human-friendly forma
 |-|-|
 | [react-lite-corefx](https://github.com/NetFrameworkCoreTemplates/react-lite-corefx) | .NET Framework ASP.NET Core lite (npm-free) React SPA using TypeScript |
 | [vue-lite-corefx](https://github.com/NetFrameworkCoreTemplates/vue-lite-corefx)   | .NET Framework ASP.NET Core lite (npm-free) Vue SPA using TypeScript |
-{% endcapture %}
 
-<div class='markdown-body pb-3'>
-{{ netfx | markdownify }}
-</div>
 
 .NET Framework Templates utilize MSBuild's classic project format which can be developed using either VS.NET or Rider.
 
@@ -140,17 +130,21 @@ The templates include a hot-reload feature which works similar to [Sharp Pages h
 
 Hot Reloading works by leveraging [ServiceStack Sharp Pages](https://sharpscript.net/docs/sharp-pages) which works seamlessly with Webpack's generated `index.html` where it evaluates server Template Expressions when returning the SPA home page. This is leveraged to enable Hot Reloading support by [including the expression](https://github.com/NetCoreTemplates/vue-spa/blob/0c13183b6a5ae20564f650e50d29b9d4e36cbd0c/MyApp/index.template.ejs#L8):
 
+::: v-pre
 ```html
-{% raw %}<i hidden>{{ '/js/hot-fileloader.js' | ifDebugIncludeScript }}</i>{% endraw %}
+<i hidden>{{ '/js/hot-fileloader.js' | ifDebugIncludeScript }}</i>
 ```
+:::
 
 Which renders the contents of [/js/hot-fileloader.js](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack/js/hot-fileloader.js) when running the Web App during development.
 
 Although optional, `#Script` is useful whenever you need to render any server logic in the SPA home page, e.g:
 
+::: v-pre
 ```html 
-{% raw %}<div>Copyright &copy; {{ now | dateFormat('yyyy') }}</div>{% endraw %}
+<div>Copyright &copy; {{ now | dateFormat('yyyy') }}</div>
 ```
+:::
 
 Will be evaluated on the server and render the expected:
  

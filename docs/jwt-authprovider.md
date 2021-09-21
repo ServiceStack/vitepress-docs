@@ -2,6 +2,9 @@
 slug: jwt-authprovider
 title: JWT Auth Provider
 ---
+<script setup>
+import jwtServiceClients from './includes/jwt-service-clients.md';
+</script>
 
 The `JwtAuthProvider` is our integrated Auth solution for the popular [JSON Web Tokens](https://jwt.io/) (JWT) industry standard which is easily enabled by registering the `JwtAuthProvider` with the `AuthFeature` plugin:
 
@@ -1045,8 +1048,7 @@ var userId = payload["sub"];
 
 ### Refresh Token Cookies supported in all Service Clients
 
-{% capture md %}{% include jwt-service-clients.md %}{% endcapture %}
-{{ md | markdownify }}
+<jwtServiceClients></jwtServiceClients>
 
 ## JWT Configuration
 

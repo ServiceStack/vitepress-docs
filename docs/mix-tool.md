@@ -634,9 +634,11 @@ results in descending order, e.g. `UserName DESC`.
 
 In `#Script` these API's are available in `camelCase` off `authRepo` using a JS Object literal as seen in `users.html` page usage of this feature:
 
+::: v-pre
 ```hbs
-{% raw %}{{ authRepo.searchUserAuths({ query:qs.q, take: pageSize, skip: pageSize*page }) | to => users }}{% endraw %}
+{{ authRepo.searchUserAuths({ query:qs.q, take: pageSize, skip: pageSize*page }) | to => users }}
 ```
+:::
 
 #### Users UI
 

@@ -45,10 +45,7 @@ Ultimately you'll miss out on niceties like the [Microsoft.AspNetCore.App](https
 meta-package, as a result we recommend starting from one of our [ASP.NET Core Framework project Templates](https://github.com/NetFrameworkCoreTemplates) 
 which by convention all have the `-corefx` suffix: 
 
-<div class='markdown-body'>
-{% capture projects %}{% include web-new-corefx.md %}{% endcapture %}
-{{ projects | markdownify }}
-</div>
+<webNewCorefxMd></webNewCorefxMd>
 
 #### Usage
 

@@ -24,8 +24,6 @@ to handle when users don't have access to a protected route.
 
 Side-by-side comparison displaying the names for the different Component Type in each JS Framework:
 
-<div class='markdown-body pb-3'>
-{% capture table %}
 | Control        | vue | react | angular |
 | - | - | - | - |
 | Forbidden      | Forbidden        | Forbidden      | ForbiddenComponent |
@@ -42,9 +40,8 @@ Side-by-side comparison displaying the names for the different Component Type in
 | NavLink        | nav-link         | NavLink        | nav-link           |
 | NavButtonGroup | nav-button-group | NavButtonGroup | nav-button-group   |
 | NavLinkButton  | nav-link-button  | NavLinkButton  | nav-link-button    |
-{% endcapture %}
-{{ table | markdownify }}
-</div>
+
+
 
 ### Bootstrap UI Form Controls
 
@@ -84,7 +81,7 @@ Initially renders the following UI:
 All form validation is typically performed the same way, by sending a populated ServiceStack Request DTO and capturing any 
 Service Client exceptions in the components `responseStatus` property, e.g:
 
-```ts
+```typescript
 protected async submit() {
     try {
         this.loading = true;
@@ -121,12 +118,14 @@ All navigation components are populated the same way for all JavaScript FX's whe
 serializing the response of the `GetNavItems` Service to JSON that's embedded in the layout page where it's only loaded once 
 upon the initial page request (immediately, without an Ajax network request): 
 
+::: v-pre
 ```hbs
-{% raw %}{{#script}}
+{{#script}}
 NAV_ITEMS = {{ 'GetNavItems'  |> execService |> json }};
 AUTH      = {{ 'Authenticate' |> execService({ ifErrorReturn: "null" }) |> json }};
-{{/script}}{% endraw %}
+{{/script}}
 ```
+:::
 
 The navigation items data structure is used with new Navigation Components for each JavaScript FX to render the menu navigation
 which is initially captured in a state object containing the NavItems data structure, the Users Session and the list

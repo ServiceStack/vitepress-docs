@@ -2,6 +2,10 @@
 slug: dotnet-tool
 title: ServiceStack's .NET Core Utility Belt
 ---
+<script setup>
+
+import webTrouble from './includes/web-trouble.md';
+</script>
 
 Our `x` and `app` dotnet tools are a versatile invaluable companion for all ServiceStack developers where it's 
 jam packed with functionality to power a number of exciting scenarios where it serves as a [Sharp App](https://sharpscript.net/docs/sharp-apps) 
@@ -381,5 +385,4 @@ See the [plugins app.settings](https://sharpscript.net/docs/sharp-apps#registeri
 [ServiceStack Plugins](/plugins).
 
 
-{% capture trouble %}{% include web-trouble.md %}{% endcapture %}
-{{ trouble | markdownify }}
+<webTrouble></webTrouble>

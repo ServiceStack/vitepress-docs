@@ -1,4 +1,8 @@
 module.exports = {
     title: 'ServiceStack',
-    description: 'Docs'
+    description: 'Docs',
+    themeConfig: {},
+    head: [
+
+    ]
 }

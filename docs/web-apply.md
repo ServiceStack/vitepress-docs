@@ -65,14 +65,15 @@ The way we populate this list is by extending the multi-purpose functionality of
 where the human-friendly [apply.md](https://gist.github.com/gistlyn/f3fa8c016bbd253badc61d80afe399d9) document below is also 
 reused as the datasource to populate the above list:
 
-{% include apply.md.html %}
+<applyMdGist></applyMdGist>
 
 This self-documenting list lets you browse all available gists and their contents the same way as the `x` tool does. 
 
 That just like `x new` can be configured to use your own `apply.md` Gist document with:
 
+```
     APP_SOURCE_GISTS=<gist id>
-
+```
 ### Available Gists
 
 As we expect to see this list of available gists expand greatly in future we've also included support for grouping related gists by `<tag>`, 

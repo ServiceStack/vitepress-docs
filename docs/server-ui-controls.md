@@ -16,8 +16,6 @@ their Server Controls which are utilized in [ASP.NET Core Project Templates](/we
 Currently the component libraries include common Bootstrap UI Form Controls and Navigation Components, here's a 
 side-by-side comparison displaying the names for the different Control for each Server Control:
 
-<div class='markdown-body pb-3'>
-{% capture table %}
 | Control           | #Script Pages                 | ServiceStack.Razor                        |
 | - | - | - |
 | ErrorSummary      | validationSummary             | @Html.ValidationSummary                   |
@@ -32,9 +30,7 @@ side-by-side comparison displaying the names for the different Control for each 
 | Navbar            | navbar                        | @Html.Navbar                              |
 | NavLink           | navLink                       | @Html.NavLink                             |
 | NavButtonGroup    | navButtonGroup                | @Html.NavButtonGroup                      |
-{% endcapture %}
-{{ table | markdownify }}
-</div>
+
 
 ### Bootstrap UI Form Controls
 
@@ -43,8 +39,9 @@ The Bootstrap UI form controls include built-in support for validation where the
 
 ### `#Script` Pages
 
+::: v-pre
 ```html
-{% raw %}<form action="/auth/credentials" method="post" class="col-lg-4">
+<form action="/auth/credentials" method="post" class="col-lg-4">
     <div class="form-group">
         {{ ['userName','password'] | validationSummary({class:'alert alert-warning'}) }}
         {{ { continue: qs.continue ?? '/server/', errorView:'/server/login' } | htmlHiddenInputs }}
@@ -66,8 +63,9 @@ The Bootstrap UI form controls include built-in support for validation where the
     <div class="form-group">
         <a class="lnk" href="/server/register">Register New User</a>
     </div>
-</form>{% endraw %}
+</form>
 ```
+:::
 
 ### ServiceStack.Razor
 
@@ -178,8 +176,9 @@ The [Contacts Page](/world-validation#contacts-page) shows a more complete examp
 
 #### #Script Pages
 
+::: v-pre
 ```html
-{% raw %}<form action="/contacts" method="post" class="col-lg-4">
+<form action="/contacts" method="post" class="col-lg-4">
     <div class="form-group">
         {{ 'title,name,color,age,filmGenres,agree' | validationSummary }}
     </div>
@@ -207,8 +206,9 @@ The [Contacts Page](/world-validation#contacts-page) shows a more complete examp
         <button class="btn btn-primary" type="submit">Add Contact</button>
         <a href="/server/contacts/">reset</a>
     </div>
-</form>{% endraw %}
+</form>
 ```
+:::
 
 Whereas **Razor** uses anonymous objects for properties that can be unbounded like a HTML Element Attribute List and a Typed Class 
 like `InputOptions` to specify the controls other high-level features, e.g:
@@ -344,9 +344,11 @@ In [#Script Pages](https://sharpscript.net/docs/sharp-pages) you can use render 
 You can render the **main menu** navigation using the 
 [navbar](https://github.com/NetCoreTemplates/sharp/blob/50b77454950ef0590042e08cf327aae602a2ab0a/MyApp/wwwroot/_layout.html#L30) script method:
 
+::: v-pre
 ```hbs
-{% raw %}{{ navbar }}{% endraw %}
+{{ navbar }}
 ```
+:::
 
 Which by default renders the `View.NavItems` main navigation, using the default `NavOptions` and User Attributes (if authenticated): 
 
@@ -354,15 +356,19 @@ Which by default renders the `View.NavItems` main navigation, using the default 
 
 You can also render a **different Navigation List** with:
 
+::: v-pre
 ```hbs
-{% raw %}{{ navItems('submenu').navbar() }}{% endraw %}
+{{ navItems('submenu').navbar() }}
 ```
+:::
 
 Which can be customized using the different `NavOptions` properties above, in camelCase:
 
+::: v-pre
 ```hbs
-{% raw %}{{ navItems('submenu').navbar({ navClass: 'navbar-nav navbar-light bg-light' }) }}{% endraw %}
+{{ navItems('submenu').navbar({ navClass: 'navbar-nav navbar-light bg-light' }) }}
 ```
+:::
 
 #### Button group
 
@@ -370,9 +376,11 @@ The `navButtonGroup` script can render NavItems in a button group, e.g. the
 [OAuth buttons](https://github.com/NetCoreTemplates/sharp/blob/50b77454950ef0590042e08cf327aae602a2ab0a/MyApp/wwwroot/login.html#L46)
 are rendered with:
 
+::: v-pre
 ```hbs
-{% raw %}{{ 'auth'.navItems().navButtonGroup({ navClass: '', navItemClass: 'btn btn-block btn-lg' }) }}{% endraw %}
+{{ 'auth'.navItems().navButtonGroup({ navClass: '', navItemClass: 'btn btn-block btn-lg' }) }}
 ```
+:::
 
 Which renders a vertical, spaced list of buttons which look like:
 

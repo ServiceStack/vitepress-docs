@@ -25,9 +25,11 @@ if (Config.DebugMode)
 
 Which is enabled during development in `_layout.html` by including `/js/hot-fileloader.js`:
 
+::: v-pre
 ```html
-<i hidden>{% raw %}{{ '/js/hot-fileloader.js' |> ifDebugIncludeScript }}{% endraw %}</i>
+<i hidden>{{ '/js/hot-fileloader.js' |> ifDebugIncludeScript }}</i>
 ```
+:::
 
 Or if you're not using [#Script Pages](https://sharpscript.net/docs/sharp-pages) you can add the script tag:
 
@@ -48,9 +50,11 @@ Plugins.Add(new SharpPagesFeature {
 
 This is enabled in your pages with this snippet which renders the hot reload client script during development:
 
+::: v-pre
 ```html
-<i hidden>{% raw %}{{ '/js/hot-loader.js' |> ifDebugIncludeScript }}{% endraw %}</i>
+<i hidden>{{ '/js/hot-loader.js' |> ifDebugIncludeScript }}</i>
 ```
+:::
 
 Which starts a long poll that calls the smart `HotReloadFilesService` which recursively inspects the current tokenized 
 [Sharp Pages](https://sharpscript.net/docs/sharp-pages) to find if it or any dependent layouts, partials or file includes have changed.

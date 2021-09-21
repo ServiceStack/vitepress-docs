@@ -2,6 +2,12 @@
 title: .NET Core Overview
 slug: netcore
 ---
+<script setup>
+import webnewtable from './includes/web-new-netcore.md';
+import corefxtable from './includes/web-new-corefx.md';
+import netfxtable from './includes/web-new-netfx.md';
+</script>
+
 
 ![](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/release-notes/netcore-banner.png?t)
 
@@ -90,7 +96,7 @@ All .NET 5.0 Templates can be developed using your preferred choice of either VS
  
 This makes the `x` .NET Core tool globally available which can be run without arguments to view all templates available:
 
-<<< @/web-new-netcore.md
+<webnewtable />
 
 ### Usage
 
@@ -653,8 +659,10 @@ Config.HandlerFactoryPath //= api
 
 When necessary the `PathBase` property is available in both server rendered views:
 
-  - `{% raw %}{{PathBase}}{% endraw %}` variable in [#Script Pages](https://sharpscript.net/docs/sharp-pages)
+::: v-pre
+  - `{{PathBase}}` variable in [#Script Pages](https://sharpscript.net/docs/sharp-pages)
   - `PathBase` in Razor Views
+:::
 
 ### HostContext.TryGetCurrentRequest()
 

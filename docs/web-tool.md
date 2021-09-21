@@ -373,5 +373,4 @@ See the [plugins app.settings](https://sharpscript.net/docs/sharp-apps#registeri
 [ServiceStack Plugins](/plugins).
 
 
-{% capture trouble %}{% include web-trouble.md %}{% endcapture %}
-{{ trouble | markdownify }}
+<webTroubleMd></webTroubleMd>
