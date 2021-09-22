@@ -254,7 +254,7 @@ starts a .NET Core App Server that simulates a fully configured .NET Core App.
 In this case it's running in the [redis Sharp App](https://github.com/sharp-apps/redis) directory where it was able to access its static web assets
 as well as its redis-server connection configured in its [app.settings](https://github.com/sharp-apps/redis/blob/master/app.settings).
 
-```common-lisp
+```lisp
 ; quick lisp test!
 (+ 1 2 3)
 

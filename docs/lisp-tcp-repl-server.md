@@ -91,7 +91,7 @@ SetConfig(new HostConfig {
 
 #### Annotated Lisp TCP REPL Transcript
 
-```common-lisp
+```lisp
 ; resolve `ITwitterUpdates` IOC dependency and assign it to `twitter`
 (def twitter (resolve "ITwitterUpdates"))
 

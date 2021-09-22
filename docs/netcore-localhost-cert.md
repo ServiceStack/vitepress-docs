@@ -143,7 +143,7 @@ After generating a new self-signed certificate you'll need to trust it in your O
 
 On Windows you can trust certificates by running the powershell command below in **Administrator** mode:
 
-```ps1
+```pwsh
 Import-Certificate -FilePath dev.crt -CertStoreLocation Cert:\CurrentUser\Root
 ```
 

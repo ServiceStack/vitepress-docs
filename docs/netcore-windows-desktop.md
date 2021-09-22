@@ -1032,7 +1032,7 @@ The `*.zip` contains both the `/dist` of your App and the `app` Chromium runtime
 Here's a copy of `install.ps1` which downloads and extracts the App to the Users LocalApp Data and copies the Shortcut to the Desktop.
 Before publishing you'll need to update `$zipUrl` to point to the URL with your `*.zip`:
 
-```ps1
+```pwsh
 $zipUrl  = "https://org.example/MyApp.zip"
 $appName = "MyApp"
 

@@ -19,7 +19,7 @@ Create a new **Gradle** Java Console App (example uses [IntelliJ IDEA Community]
 
 Update **build.gradle** with required dependencies:
 
-```gradle
+```gradlew
 plugins {
     id 'java'
     id 'com.google.protobuf' version '0.8.8'
