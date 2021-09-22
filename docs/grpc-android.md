@@ -41,7 +41,7 @@ Generate a **java-lite** protoc gRPC client from your modified `services.proto`:
 
 Update **build.gradle** with required gRPC, protobuf and OK HTTP plugins and dependencies:
 
-```gradlew
+```
 plugins {
     id 'com.google.protobuf' version '0.8.8'
     id 'idea'
