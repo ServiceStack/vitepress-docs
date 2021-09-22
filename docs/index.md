@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/logo.png
+heroImage: /logo.png
 heroAlt: Logo image
 heroText: Hero Title
 tagline: Hero subtitle
