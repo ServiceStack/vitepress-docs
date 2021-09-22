@@ -81,7 +81,7 @@ back-end choice for powering rich, native iPhone and iPad Apps on iOS with Swift
 with Java, OSX Desktop Applications as well as targeting the most popular .NET PCL platforms including Xamarin.iOS, Xamarin.Android, 
 Windows Store, WPF, WinForms and Silverlight: 
 
-[![](../images/servicestack-reference/ide-plugins-splash.png)](https://www.youtube.com/watch?v=JKsgrstNnYY)
+[![](./images/servicestack-reference/ide-plugins-splash.png)](https://www.youtube.com/watch?v=JKsgrstNnYY)
 
 #### [JetBrains Rider ServiceStack Plugin](https://www.youtube.com/watch?v=JKsgrstNnYY)
 

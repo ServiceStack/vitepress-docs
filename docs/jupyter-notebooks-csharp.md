@@ -3,7 +3,7 @@ slug: jupyter-notebooks-csharp
 title: C# Jupyter Notebooks
 ---
 
-![](../images/apps/jupyter-csharp.png)
+![](./images/apps/jupyter-csharp.png)
 
 Jupyter Commands lets you generate C# Jupyter Notebooks for calling ServiceStack APIs in a single command.
 

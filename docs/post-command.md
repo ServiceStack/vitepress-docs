@@ -368,7 +368,7 @@ HTTP APIs can be invoked with a specific HTTP Verb or **send** which will use th
 
 Whilst the syntax for invoking APIs from the command line should be fairly intuitive, you may benefit from using the UI in [apps.servicestack.net](https://apps.servicestack.net) to craft the initial API call that can be copied by clicking the copy icon from **Invoke API from command line** command:
 
-[![](../images/apps/post-command-ui.png)](https://apps.servicestack.net/#techstacks.io/csharp/AutoQuery/FindTechnologies(Ids:[1,2,3],VendorName:Google,Take:5,Fields:%22Id,%20Name,%20VendorName,%20Slug,%20Tier,%20FavCount,%20ViewCount%22))
+[![](./images/apps/post-command-ui.png)](https://apps.servicestack.net/#techstacks.io/csharp/AutoQuery/FindTechnologies(Ids:[1,2,3],VendorName:Google,Take:5,Fields:%22Id,%20Name,%20VendorName,%20Slug,%20Tier,%20FavCount,%20ViewCount%22))
 
 This is quick way for using a UI to bootstrap the initial post command that you can continue iterating on and invoking locally.
 
@@ -464,7 +464,7 @@ Content-Type: application/json; charset=utf-8
 
 A productive way to further re-iterate on the HTTP Request is to copy+paste the HTTP Request Header into JetBrains Rider’s HTTP Rest tool where you can run it and customize it using their text editor UI by going to **New Scratch File** and selecting **HTTP Request** or via `Tools > HTTP Client > Create Request in HTTP Client`:
 
-![](../images/apps/post-command-httpscratch-GetLocations.png)
+![](./images/apps/post-command-httpscratch-GetLocations.png)
 
 ### Invoking APIs with Arguments
 
@@ -850,7 +850,7 @@ result:  Hello, World!
 
 When the remote ServiceStack App is configured to use Server Sessions you can impersonate a pre-authenticated Users Session using the `-ss-id` Authentication option which is useful for impersonating an existing Users Session by copying their `ss-id` or `ss-pid` Cookie which you can find in Web Inspector's **Application** page:
 
-![](../images/auth/webinspector-cookies.png)
+![](./images/auth/webinspector-cookies.png)
 
 If Users were authenticated with **Remember Me** checked their Session will be stored against the `ss-pid` Cookie otherwise it will use the `ss-id` Session Cookie.
 

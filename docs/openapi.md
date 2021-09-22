@@ -246,7 +246,7 @@ Plugins.Add(new OpenApiFeature
 
 This will instruct Swagger to use their API Key Authentication when clicking the **Authorize** button which will be sent in API requests to your Authenticated Services. As the **value** field is for the entire Authorization HTTP Header you'd need to add your JWT Token or API Key prefixed with `Bearer `:
 
-![](/images/openapi/bearer-auth.png)
+![](./images/openapi/bearer-auth.png)
 
 Which you can use to use to Authenticate with "Bearer token" Auth Providers like [API Key](/api-key-authprovider) and [JWT Auth Providers](/jwt-authprovider).
 
@@ -273,11 +273,11 @@ Plugins.Add(new AuthFeature(...,
 
 To login, you need to click "Authorize" button.
 
-![](/images/openapi/1-swaggerui-authorize.png)
+![](./images/openapi/1-swaggerui-authorize.png)
 
 And then enter username and password.
 
-![](/images/openapi/2-swaggerui-password.png)
+![](./images/openapi/2-swaggerui-password.png)
 
 Also you can click "Try it out" button on services, which requires authentication and browser will prompt a window with user/password field for entering basic auth credentials.
 
@@ -355,33 +355,33 @@ Autorest generated clients do not support `application/octet-stream` MIME type, 
 
 Login to [Azure Portal](https://portal.azure.com) and search for `API management service`.
 
-![](/images/azure-api-management/1-search.png)
+![](./images/azure-api-management/1-search.png)
 
 Choose `API management service`. In opened window click `Add` button.
 
-![](/images/azure-api-management/2-add.png)
+![](./images/azure-api-management/2-add.png)
 
 Fill the creation form. Put your own values in `Name`, `Resource Group`, `Organization name` and `Administrator email`. When creation form will be ready, click `Create` button.
 
-![](/images/azure-api-management/3-create.png)
+![](./images/azure-api-management/3-create.png)
 
 Wait while Management API will be activated. It can take more than forty minutes. When it ready click on created API management resource.
 
-![](/images/azure-api-management/4-activating.png)
+![](./images/azure-api-management/4-activating.png)
 
 In opened window click `APIs - PREVIEW` menu item on the left pane.
 
-![](/images/azure-api-management/5-publisher-portal.png)
+![](./images/azure-api-management/5-publisher-portal.png)
 
 Choose `OpenAPI specification` in `Add API` section.
 
-![](/images/azure-api-management/6-add-api.png)
+![](./images/azure-api-management/6-add-api.png)
 
 Fill the url with location of you services, ended with `/openapi` or just click `Upload` button and upload OpenAPI json definition, which is available at `/openapi` path of your services.
 
-![](/images/azure-api-management/7-create-api.png)
+![](./images/azure-api-management/7-create-api.png)
 
 After successfull import you should see list of available operations for your services
 
-![](/images/azure-api-management/8-created.png)
+![](./images/azure-api-management/8-created.png)
 

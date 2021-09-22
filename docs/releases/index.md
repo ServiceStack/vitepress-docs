@@ -2129,7 +2129,7 @@ you customize what options Rabbit MQ Queue's and topics are created with.
 To better highlight the presence of Startup Errors we're now adding a red warning banner in `/metadata` 
 pages when in [DebugMode](/debugging#debugmode), e.g:
 
-![](/images/release-notes/startup-errors.png)
+![](./images/release-notes/startup-errors.png)
 
 The number of Startup Errors is also added to the `X-Startup-Errors: n` Global HTTP Header so you'll be 
 able to notice it when debugging HTTP Traffic.

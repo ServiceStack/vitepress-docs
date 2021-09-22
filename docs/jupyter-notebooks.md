@@ -3,7 +3,7 @@ slug: jupyter-notebooks
 title: Jupyter Notebooks
 ---
 
-[![](../images/apps/jupyter-splash.png)](https://jupyter.org)
+[![](./images/apps/jupyter-splash.png)](https://jupyter.org)
 
 Initially forged from the [Interactive Python](https://ipython.org) project, [Jupyter](https://jupyter.org) is an exciting initiative to support an open standards, language agnostic interactive computing platform where it provides the ideal integrated exploratory programming environment for data science and scientific computing as represented by its 3 core languages for these domains in [Julia](https://julialang.org), [Python](https://python.org) and [R](https://www.r-project.org) (Ju-Py-R).
 
@@ -23,9 +23,9 @@ Generating Python Notebooks with [Python ServiceStack Reference](/python-add-ser
 
 Alternatively .NET Teams can use [.NET Interactive ](https://github.com/dotnet/interactive) Kernels and [Notebooks VSCode extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode) to generate and execute C# and F# Notebooks:
 
-[![](../images/apps/notebook-py.png)](/jupyter-notebooks-python)
-[![](../images/apps/notebook-cs.png)](/jupyter-notebooks-csharp)
-[![](../images/apps/notebook-fs.png)](/jupyter-notebooks-fsharp)
+[![](./images/apps/notebook-py.png)](/jupyter-notebooks-python)
+[![](./images/apps/notebook-cs.png)](/jupyter-notebooks-csharp)
+[![](./images/apps/notebook-fs.png)](/jupyter-notebooks-fsharp)
 
 ## Notebook Apps
 
@@ -37,7 +37,7 @@ Delivered and maintained as part of the Jupyter project are 2 self-hosted front-
 
 JupyterLab is Jupyter's next-gen web-based development environment designed around maintaining an entire Workspace of Notebooks in a multi-tabbed splittable UI whereby many of them can be running at the same time:
 
-![](../images/apps/jupyter-labpreview.png)
+![](./images/apps/jupyter-labpreview.png)
 
 An easy way to install JupyterLab is to use the pip package manager installed with Python:
 
@@ -51,7 +51,7 @@ Once installed you can launch JupyterLab's UI from a directory containing your N
 
 The original Jupyter Notebook Web Application offering a simplified single document UI:
 
-![](../images/apps/jupyter-notebook-preview.png)
+![](./images/apps/jupyter-notebook-preview.png)
 
 Install with Python's pip package manager:
 
@@ -67,7 +67,7 @@ JetBrains likely offers the most functional and capable IDEs for authoring and v
 
 In addition to all the source code assistance and analysis you can expect from JetBrains smart IDEs to assist in writing Python, it also supports debugging as well as multiple edit and preview modes. 
 
-![](../images/apps/jupyter-pycharm.png)
+![](./images/apps/jupyter-pycharm.png)
 
 PyCharm is ideal for Python programmers and maintaining Notebooks as part of a Python project where it takes care of creating a Python virtual environment for the project, installing required local dependencies and executing Notebooks within the projects venv context.
 
@@ -75,13 +75,13 @@ PyCharm is ideal for Python programmers and maintaining Notebooks as part of a P
 
 Jupyter's popularity with Data Scientists has prompted JetBrains to develop a [stand-alone DataSpell IDE](https://www.jetbrains.com/dataspell/) optimized for working with Data with a more refined lightweight UX for working with Notebooks:
 
-![](../images/apps/jupyter-dataspell.png)
+![](./images/apps/jupyter-dataspell.png)
 
 ### VS Code
 
 Visual Studio Code is another IDE popular with Python Developers that has their own [built-in UX for Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks):
 
-![](../images/apps/jupyter-vscode.png)
+![](./images/apps/jupyter-vscode.png)
 
 It provides a nicer UX over the traditional Notebook UX with niceties like intelli-sense and variable explorer and is better at opening stand-alone Notebooks outside the context of a Python project where its able to make use of pip's global OS packages.
 
@@ -103,27 +103,27 @@ E.g. our [ServiceStack/jupyter-notebooks](https://github.com/ServiceStack/jupyte
 
 Where behind-the-scenes Binder will build and host a Docker image of your repo and launch a dedicated `notebook` Web App instance to view an execute your repo's Notebooks:
 
-[![](../images/apps/jupyterlab-mybinder-repo.png)](https://mybinder.org/v2/gh/ServiceStack/jupyter-notebooks/HEAD)
+[![](./images/apps/jupyterlab-mybinder-repo.png)](https://mybinder.org/v2/gh/ServiceStack/jupyter-notebooks/HEAD)
 
 The [ServiceStack/jupyter-notebooks](https://github.com/ServiceStack/jupyter-notebooks) repo contains a couple of API examples generated using our [Instant Client Apps](https://apps.servicestack.net) site to craft a [QueryVaccinationRates API](https://apps.servicestack.net/#covid-vac-watch.netcore.io/python/QueryVaccinationRates(Location:Arizona)) call that can be downloaded in a **Python Notebook**:
 
-[![](../images/apps/apps-covid-vac-QueryVaccinationRates.png)](https://apps.servicestack.net/#covid-vac-watch.netcore.io/python/QueryVaccinationRates(Location:Arizona))
+[![](./images/apps/apps-covid-vac-QueryVaccinationRates.png)](https://apps.servicestack.net/#covid-vac-watch.netcore.io/python/QueryVaccinationRates(Location:Arizona))
 
 ### Covid Vaccinations
 
 In addition to previewing the raw data response in human-friendly markdown and HTML tables, you can also leverage Python's powerful [pandas](https://pandas.pydata.org) and [matplotlib](https://matplotlib.org) libraries to plot a quick visualization of the typed `QueryVaccinationRates` AutoQuery response:
 
-[![](../images/apps/jupyterlab-mybinder-covid-vac.png)](https://github.com/ServiceStack/jupyter-notebooks/blob/main/covid-vac-watch.netcore.io.ipynb)
+[![](./images/apps/jupyterlab-mybinder-covid-vac.png)](https://github.com/ServiceStack/jupyter-notebooks/blob/main/covid-vac-watch.netcore.io.ipynb)
 
 ### TechStacks
 
 The [techstacks.io-FindTechnologies.ipynb](https://github.com/ServiceStack/jupyter-notebooks/blob/main/techstacks.io-FindTechnologies.ipynb) is an example of a Notebook generated by [apps.servicestack.net](https://apps.servicestack.net) which displays results in a HTML table and a human-friendly markdown table for API Responses containing a `Results` resultset, e.g:
 
-[![](../images/apps/apps-techstacks-FindTechnologies.png)](https://apps.servicestack.net/#techstacks.io/python/AutoQuery/FindTechnologies(Ids:[1,2,4,6],VendorName:Google,Take:10,Fields:%22Id,%20Name,%20VendorName,%20Slug,%20Tier,%20FavCount,%20ViewCount%22))
+[![](./images/apps/apps-techstacks-FindTechnologies.png)](https://apps.servicestack.net/#techstacks.io/python/AutoQuery/FindTechnologies(Ids:[1,2,4,6],VendorName:Google,Take:10,Fields:%22Id,%20Name,%20VendorName,%20Slug,%20Tier,%20FavCount,%20ViewCount%22))
 
 When executed in either a Binder or self-hosted **notebook** web app it will render API responses that looks like:
 
-[![](../images/apps/jupyterlab-mybinder-techstacks.png)](https://github.com/ServiceStack/jupyter-notebooks/blob/main/techstacks.io-FindTechnologies.ipynb)
+[![](./images/apps/jupyterlab-mybinder-techstacks.png)](https://github.com/ServiceStack/jupyter-notebooks/blob/main/techstacks.io-FindTechnologies.ipynb)
 
 ### GitHub Auto Preview
 
@@ -133,7 +133,7 @@ The beauty of Notebook's retaining their executed outputs within the same docume
 
 Which we can demonstrate using [apps.servicestack.net](https://apps.servicestack.net) which lets you download Notebooks for any publicly accessible ServiceStack API in **C#**, **Python** and **F#**:
 
-[![](../images/apps/apps-languages.png)](https://apps.servicestack.net)
+[![](./images/apps/apps-languages.png)](https://apps.servicestack.net)
 
 Then use the languages tab to download the same API in a C# and F# Jupyter Notebook instead:
 
@@ -141,13 +141,13 @@ Then use the languages tab to download the same API in a C# and F# Jupyter Noteb
 
 [/csharp/techstacks.io-FindTechnologies.ipynb](https://github.com/ServiceStack/jupyter-notebooks/blob/main/csharp/techstacks.io-FindTechnologies.ipynb)
 
-[![](../images/apps/jupyter-github-csharp.png)](https://github.com/ServiceStack/jupyter-notebooks/blob/main/csharp/techstacks.io-FindTechnologies.ipynb)
+[![](./images/apps/jupyter-github-csharp.png)](https://github.com/ServiceStack/jupyter-notebooks/blob/main/csharp/techstacks.io-FindTechnologies.ipynb)
 
 ### F# TechStacks FindTechnologies Notebook
 
 [/fsharp/techstacks.io-FindTechnologies.ipynb](https://github.com/ServiceStack/jupyter-notebooks/blob/main/fsharp/techstacks.io-FindTechnologies.ipynb)
 
-[![](../images/apps/jupyter-github-fsharp.png)](https://github.com/ServiceStack/jupyter-notebooks/blob/main/fsharp/techstacks.io-FindTechnologies.ipynb)
+[![](./images/apps/jupyter-github-fsharp.png)](https://github.com/ServiceStack/jupyter-notebooks/blob/main/fsharp/techstacks.io-FindTechnologies.ipynb)
 
 ### Google Colab
 
@@ -157,17 +157,17 @@ Built into GDrive, you can open any `.ipynb` Jupyter Notebooks with Google's Col
 
 Whilst you can upload your Python Jupyter Notebooks manually, the quickest way to open your ServiceStack API in Colab is to Save it directly in GDrive with the **Save** button:
 
-![](../images/apps/apps-python-notebook-gdrive.png)
+![](./images/apps/apps-python-notebook-gdrive.png)
 
 Then click on the saved `.ipynb` Notebook to open it in Colab where like other Notebook services will let you see the last pre-executed rendered output. Running a cell with the **Play** icon or `CTRL+Enter` will execute the Notebook in a private virtual machine to update the captured outputs with live results:
 
-![](../images/apps/jupyter-colab-FindTechnologies.png)
+![](./images/apps/jupyter-colab-FindTechnologies.png)
 
 ## JetBrains Datalore
 
 [Datalore](https://datalore.jetbrains.com) is JetBrains premium cloud hosted service for hosting and running Jupyter Notebooks within a shared team environment. It's online Notebook App features PyCharm's code insights and autocompletion, real-time collaborative editing and also includes built-in Terminal support for running remote commands and `.py` scripts:
 
-[![](../images/apps/jupyter-datalore.png)](https://datalore.jetbrains.com)
+[![](./images/apps/jupyter-datalore.png)](https://datalore.jetbrains.com)
 
 ## Amazon SageMaker
 
@@ -175,4 +175,4 @@ Then click on the saved `.ipynb` Notebook to open it in Colab where like other N
 
 Included as part of their offering is [Amazon SageMaker Notebook Instances](https://docs.aws.amazon.com/sagemaker/latest/dg/nbi.html) which is a machine learning (ML) compute instance running the Jupyter Notebook App. SageMaker manages creating the instance and related resources. Use Jupyter notebooks in your notebook instance to prepare and process data, write code to train models, deploy models to SageMaker hosting, and test or validate your models.
 
-![](../images/apps/jupyter-sagemaker.png)
+![](./images/apps/jupyter-sagemaker.png)

@@ -27,7 +27,7 @@ This will make the `dotnet-new` script available which you can use to view all t
 
 Which displays a list of available templates:
 
-![](/images/ssvs/dotnet-new-list.png)
+![](./images/ssvs/dotnet-new-list.png)
 
 You can then create a project from one of the templates, e.g:
 
@@ -35,7 +35,7 @@ You can then create a project from one of the templates, e.g:
 
 Which will generate a new project with the folder names and source files replaced with your project name, e.g:
 
-![](/images/ssvs/dotnet-new-spa-files.png)
+![](./images/ssvs/dotnet-new-spa-files.png)
 
 ### Visual Studio
 
@@ -50,4 +50,4 @@ If you're using JetBrains Rider you can install npm packages by opening `package
 If installing templates [fails on Windows with "EPERM, operation not permitted"](https://github.com/Medium/phantomjs/issues/19), you'll need to 
 temporarily disable Windows Anti Virus real-time protection:
 
-![](/images/troubleshooting/disable-av.png)
+![](./images/troubleshooting/disable-av.png)

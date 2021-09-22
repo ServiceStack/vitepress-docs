@@ -3,7 +3,7 @@ slug: jupyter-notebooks-fsharp
 title: F# Jupyter Notebooks
 ---
 
-![](../images/apps/jupyter-fsharp.png)
+![](./images/apps/jupyter-fsharp.png)
 
 Jupyter Commands lets you generate F# Jupyter Notebooks for calling ServiceStack APIs in a single command.
 

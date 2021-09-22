@@ -5,7 +5,7 @@ slug: templates-single-page-apps
 
 The [ServiceStackVS VS.NET extension](https://github.com/ServiceStack/ServiceStackVS) contains a pre-configured Single Page App VS.NET template for each of the popular JavaScript frameworks:
 
-[![](/images/ssvs/new-spa-project.png)](/create-your-first-webservice#step-1-download-and-install-servicestackvs)
+[![](./images/ssvs/new-spa-project.png)](/create-your-first-webservice#step-1-download-and-install-servicestackvs)
 
 The Single Page App (SPA) project templates can also be created using the [dotnet-new](/dotnet-new) command line tool:
 
