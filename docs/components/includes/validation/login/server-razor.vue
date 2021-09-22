@@ -1,5 +1,8 @@
 <template>
-  <link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-d9b0ae634c1abe51fe671d575be5a7d2.css">
+  <div class="float-right">
+    <a href="https://github.com/NetCoreApps/Validation/blob/master/world/wwwroot/server-razor/login.cshtml">/server-razor/login.cshtml</a>
+  </div>
+  <h3>Source Code and References</h3>
   <div id="gist94730361" class="gist">
     <div class="gist-file" translate="no">
       <div class="gist-data">

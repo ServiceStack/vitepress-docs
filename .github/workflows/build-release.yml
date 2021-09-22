@@ -1,0 +1,17 @@
+name: Build and Release
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Install and build
+        run: |
+          yarn install
+          yarn docs:build
