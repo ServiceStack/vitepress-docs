@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@servicestack/client": "^1.0.55",
     "vitepress": "^0.18.1"
   },
   "scripts": {

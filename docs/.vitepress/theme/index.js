@@ -11,6 +11,7 @@ import apphostAuthValidation from '../../components/gists/apphost-auth-validatio
 import customValidatorContact from '../../components/gists/custom-validator-contact.vue'
 import scriptsRazorHelpers from '../../components/gists/scripts-razor-helpers.vue'
 import contactDtos from '../../components/gists/contact-dtos.vue'
+import chinookData from '../../components/chinook-data.vue'
 import './custom.css'
 
 export default {
@@ -28,6 +29,7 @@ export default {
         app.component('customValidatorContact',customValidatorContact)
         app.component('scriptsRazorHelpers',scriptsRazorHelpers)
         app.component('contactDtos',contactDtos)
+        app.component('chinookData',chinookData)
         // register global components
     }
 }
