@@ -1,29 +1,41 @@
 <template>
+  <input type="text" v-model="query">
   <ul>
-    <li v-for="album in albums">{{album.title}}</li>
+    <li v-for="artist in results">{{ artist.name }}</li>
   </ul>
 </template>
 
-<script>
-import { ref, onMounted } from 'vue'
+<script lang="ts">
+import {ref, watch } from 'vue'
 import {JsonServiceClient} from '@servicestack/client'
-import {Albums, Hello, QueryAlbums} from "../shared/dtos";
+import {Artists, QueryArtists} from "../shared/dtos";
+
+let client = new JsonServiceClient("https://chinook.netcore.io")
 
 export default {
   name: "chinook-data",
-  setup(props) {
-    const albums = ref([])
-    let client = new JsonServiceClient("https://chinook.netcore.io")
-    const getAlbums = async () => {
-      let req = new QueryAlbums()
-      albums.value = (await client.get(req)).results
-    }
+  setup() {
+    const data: Artists[] = [];
+    const results = ref(data)
+    const query = ref("")
 
-    onMounted(getAlbums)
+    const updateArtists = async (val) => {
+      if(!val) {
+        results.value = [];
+        return;
+      }
+      let req = new QueryArtists()
+      req.nameStartsWith = val
+      results.value = (await client.get(req)).results
+    };
+
+    watch(query, async (newVal) => {
+      await updateArtists(newVal)
+    })
 
     return {
-      albums,
-      getAlbums
+      query: query,
+      results: results
     }
   }
 }
