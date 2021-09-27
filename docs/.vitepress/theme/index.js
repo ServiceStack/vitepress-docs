@@ -13,6 +13,7 @@ import scriptsRazorHelpers from '../../components/gists/scripts-razor-helpers.vu
 import contactDtos from '../../components/gists/contact-dtos.vue'
 import chinookData from '../../components/chinook-data.vue'
 import HelloApi from "../../components/HelloApi.vue";
+import ytEmbed from '../../components/yt-embed.vue';
 import './custom.css'
 
 export default {
@@ -32,6 +33,7 @@ export default {
         app.component('contactDtos',contactDtos)
         app.component('chinookData',chinookData)
         app.component('HelloApi',HelloApi)
+        app.component('ytEmbed', ytEmbed)
         // register global components
     }
 }

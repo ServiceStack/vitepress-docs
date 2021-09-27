@@ -1,1257 +1,1238 @@
-{
-  "/": [
-    {
-      "text": "Overview",
-      "children": [
-        {
-          "text": "Why ServiceStack",
-          "link": "/why-servicestack"
-        },
-        {
-          "text": "Architecture Overview",
-          "link": "/architecture-overview"
-        },
-        {
-          "text": "Servicify existing Systems",
-          "link": "/servicify"
-        },
-        {
-          "text": "Explore ServiceStack",
-          "link": "/explore-servicestack"
-        }
-      ]
-    },
-    {
-      "text": "Releases",
-      "children": [
-        {
-          "text": "Latest Release Notes",
-          "link": "/releases/v5.12"
-        },
-        {
-          "text": "Release Notes History",
-          "link": "/release-notes-history"
-        },
-        {
-          "text": "Pre-release MyGet Packages",
-          "link": "/myget"
-        }
-      ]
-    },
-    {
-      "text": "Getting Started",
-      "children": [
-        {
-          "text": "Create your first WebService",
-          "link": "/create-your-first-webservice"
-        },
-        {
-          "text": "Your first WebService explained",
-          "link": "/your-first-webservice-explained"
-        },
-        {
-          "text": "Service API Design",
-          "link": "/api-design"
-        },
-        {
-          "text": "Service Return Types",
-          "link": "/service-return-types"
-        },
-        {
-          "text": "Design RESTful Services",
-          "link": "/design-rest-services"
-        },
-        {
-          "text": "Design Message-based APIs",
-          "link": "/design-message-based-apis"
-        },
-        {
-          "text": "Modular Startup",
-          "link": "/modular-startup"
-        },
-        {
-          "text": "Unified Navigation",
-          "link": "/navigation"
-        },
-        {
-          "text": "dotnet tool - Win/Mac/Linux Utility Belt",
-          "link": "/dotnet-tool"
-        },
-        {
-          "text": "app tool - .NET Core Windows Desktop",
-          "link": "/netcore-windows-desktop"
-        },
-        {
-          "text": "mix tool - Mix n' Match .NET Apps",
-          "link": "/mix-tool"
-        },
-        {
-          "text": "Post Command - Inspect/Call HTTP APIs",
-          "link": "/post-command"
-        }
-      ]
-    },
-    {
-      "text": "VS.NET Templates",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/templates-overview"
-        },
-        {
-          "text": "ASP.NET Core on .NET Framework",
-          "link": "/templates-corefx"
-        },
-        {
-          "text": "x new - Project Template",
-          "link": "/dotnet-new"
-        },
-        {
-          "text": "Single Page App Templates",
-          "link": "/templates-single-page-apps"
-        },
-        {
-          "text": "Website Templates",
-          "link": "/templates-websites"
-        },
-        {
-          "text": "Empty Starting Templates",
-          "link": "/templates-empty-starting"
-        },
-        {
-          "text": "Vue and React \"lite\" Templates",
-          "link": "/templates-lite"
-        },
-        {
-          "text": "Vuetify Templates",
-          "link": "/templates-vuetify"
-        },
-        {
-          "text": "Nuxt Templates",
-          "link": "/templates-nuxt"
-        },
-        {
-          "text": "Vue Templates",
-          "link": "/templates-vue"
-        },
-        {
-          "text": "React Templates",
-          "link": "/templates-react"
-        },
-        {
-          "text": "Svelte Templates",
-          "link": "/templates-svelte"
-        },
-        {
-          "text": "Angular Templates",
-          "link": "/templates-angular"
-        },
-        {
-          "text": "AWS Lambda Templates",
-          "link": "/templates-aws"
-        },
-        {
-          "text": "Desktop Templates",
-          "link": "/templates-desktop"
-        },
-        {
-          "text": "Blazor Templates",
-          "link": "/templates-blazor"
-        },
-        {
-          "text": "Vue, React, Angular Components",
-          "link": "/spa-components"
-        },
-        {
-          "text": "Tour of Webpack",
-          "link": "/tour-of-webpack"
-        },
-        {
-          "text": "Cross platform dotnet scripts",
-          "link": "/dotnet-scripts"
-        }
-      ]
-    },
-    {
-      "text": "GitHub Action Templates",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/github-action-templates"
-        },
-        {
-          "text": "GitHub GHR & Digital Ocean",
-          "link": "/do-github-action-mix-deployment"
-        },
-        {
-          "text": "AWS ECR & ECS with NGINX",
-          "link": "/mix-github-actions-aws-ecs"
-        }
-      ]
-    },
-    {
-      "text": "Background Concepts",
-      "children": [
-        {
-          "text": "What is a Message-based Web Service",
-          "link": "/what-is-a-message-based-web-service"
-        },
-        {
-          "text": "Advantages of message-based Services",
-          "link": "/advantages-of-message-based-web-services"
-        },
-        {
-          "text": "Why Remote Services should use DTOs",
-          "link": "/why-remote-services-use-dtos"
-        },
-        {
-          "text": "Complexity, Services and Role of DTOs",
-          "link": "/service-complexity-and-dto-roles"
-        },
-        {
-          "text": "API First Development",
-          "link": "/api-first-development"
-        }
-      ]
-    },
-    {
-      "text": "ServiceStack Studio",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/studio"
-        },
-        {
-          "text": "Studio - User Management",
-          "link": "/studio-users"
-        },
-        {
-          "text": "Studio - AutoQuery UI",
-          "link": "/studio-autoquery"
-        },
-        {
-          "text": "Studio - DB Validation Rules",
-          "link": "/studio-validation-rules"
-        }
-      ]
-    },
-    {
-      "text": "Reference",
-      "children": [
-        {
-          "text": "AppHost",
-          "link": "/host-configuration"
-        },
-        {
-          "text": "IOC",
-          "link": "/ioc"
-        },
-        {
-          "text": "Routing",
-          "link": "/routing"
-        },
-        {
-          "text": "Order of Operations",
-          "link": "/order-of-operations"
-        },
-        {
-          "text": "Customize HTTP Responses",
-          "link": "/customize-http-responses"
-        },
-        {
-          "text": "Customize JSON Responses",
-          "link": "/customize-json-responses"
-        },
-        {
-          "text": "Configuration & AppSettings",
-          "link": "/appsettings"
-        },
-        {
-          "text": "Metadata Pages",
-          "link": "/metadata-page"
-        },
-        {
-          "text": "SVG Support",
-          "link": "/svg"
-        },
-        {
-          "text": "REST, SOAP & default endpoints",
-          "link": "/endpoints"
-        },
-        {
-          "text": "SOAP support",
-          "link": "/soap-support"
-        }
-      ]
-    },
-    {
-      "text": "Security",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/security"
-        },
-        {
-          "text": "Authentication & Authorization",
-          "link": "/authentication-and-authorization"
-        },
-        {
-          "text": "Auth Repository",
-          "link": "/auth-repository"
-        },
-        {
-          "text": "Using ServiceStack Auth in MVC",
-          "link": "/authentication-identity-servicestack"
-        },
-        {
-          "text": "Using ASP.NET Identity Auth",
-          "link": "/authentication-identity-aspnet"
-        },
-        {
-          "text": "Using IdentityServer4 Auth",
-          "link": "/authentication-identityserver"
-        },
-        {
-          "text": "Sessions",
-          "link": "/sessions"
-        },
-        {
-          "text": "JWT AuthProvider",
-          "link": "/jwt-authprovider"
-        },
-        {
-          "text": "API Key AuthProvider",
-          "link": "/api-key-authprovider"
-        },
-        {
-          "text": "Sign in with Apple AuthProvider",
-          "link": "/signin-with-apple"
-        },
-        {
-          "text": "Open Id 2.0 Support",
-          "link": "/openid"
-        },
-        {
-          "text": "Restricting Services",
-          "link": "/restricting-services"
-        },
-        {
-          "text": "Anti Forgery",
-          "link": "/anti-forgery"
-        }
-      ]
-    },
-    {
-      "text": "Error Handling",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/error-handling"
-        },
-        {
-          "text": "Validation",
-          "link": "/validation"
-        },
-        {
-          "text": "World Validation",
-          "link": "/world-validation"
-        },
-        {
-          "text": "Declarative Validation",
-          "link": "/declarative-validation"
-        },
-        {
-          "text": "Debugging",
-          "link": "/debugging"
-        }
-      ]
-    },
-    {
-      "text": "AutoQuery",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/autoquery"
-        },
-        {
-          "text": "Why Not OData",
-          "link": "/why-not-odata"
-        },
-        {
-          "text": "AutoQuery RDBMS",
-          "link": "/autoquery-rdbms"
-        },
-        {
-          "text": "AutoQuery Data",
-          "link": "/autoquery-data"
-        },
-        {
-          "text": "AutoQuery Data Memory",
-          "link": "/autoquery-memory"
-        },
-        {
-          "text": "AutoQuery Data Service",
-          "link": "/autoquery-service"
-        },
-        {
-          "text": "AutoQuery Data DynamoDB",
-          "link": "/autoquery-dynamodb"
-        },
-        {
-          "text": "AutoQuery CRUD",
-          "link": "/autoquery-crud"
-        },
-        {
-          "text": "AutoQuery Audit Log",
-          "link": "/autoquery-audit-log"
-        },
-        {
-          "text": "AutoGen",
-          "link": "/autogen"
-        },
-        {
-          "text": "AutoQuery CRUD Bookings Demo",
-          "link": "/autoquery-crud-bookings"
-        }
-      ]
-    },
-    {
-      "text": "Server Events",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/server-events"
-        },
-        {
-          "text": "C# Client",
-          "link": "/csharp-server-events-client"
-        },
-        {
-          "text": "TypeScript Client",
-          "link": "/typescript-server-events-client"
-        },
-        {
-          "text": "Java Client",
-          "link": "/java-server-events-client"
-        },
-        {
-          "text": "JavaScript Client",
-          "link": "/javascript-server-events-client"
-        },
-        {
-          "text": "gRPC Clients",
-          "link": "/server-events-grpc"
-        },
-        {
-          "text": "Redis Server Events",
-          "link": "/redis-server-events"
-        }
-      ]
-    },
-    {
-      "text": "Service Gateway",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/service-gateway"
-        },
-        {
-          "text": "Service Discovery",
-          "link": "/service-discovery"
-        }
-      ]
-    },
-    {
-      "text": "Clients",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/clients-overview"
-        },
-        {
-          "text": "C#/.NET Client",
-          "link": "/csharp-client"
-        },
-        {
-          "text": "TypeScript Client",
-          "link": "/typescript-add-servicestack-reference#typescript-serviceclient"
-        },
-        {
-          "text": "JavaScript Client",
-          "link": "/javascript-client"
-        },
-        {
-          "text": "Java Client",
-          "link": "/java-add-servicestack-reference#jsonserviceclient-api"
-        },
-        {
-          "text": "Swift Client",
-          "link": "/swift-add-servicestack-reference#swift-client-usage"
-        },
-        {
-          "text": "Dart Client",
-          "link": "/dart-add-servicestack-reference#example-usage"
-        },
-        {
-          "text": "Silverlight Client",
-          "link": "/silverlight-client"
-        },
-        {
-          "text": "MQ Clients",
-          "link": "/messaging#mq-client-architecture"
-        }
-      ]
-    },
-    {
-      "text": "Jupyter Notebooks",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/jupyter-notebooks"
-        },
-        {
-          "text": "Python Jupyter Notebooks",
-          "link": "/jupyter-notebooks-python"
-        },
-        {
-          "text": "C# Jupyter Notebooks",
-          "link": "/jupyter-notebooks-csharp"
-        },
-        {
-          "text": "F# Jupyter Notebooks",
-          "link": "/jupyter-notebooks-fsharp"
-        },
-        {
-          "text": "Reports and Testing",
-          "link": "/jupyter-notebooks-reporting"
-        }
-      ]
-    },
-    {
-      "text": "Add ServiceStack Reference",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/add-servicestack-reference"
-        },
-        {
-          "text": "C# Add Reference",
-          "link": "/csharp-add-servicestack-reference"
-        },
-        {
-          "text": "TypeScript Add Reference",
-          "link": "/typescript-add-servicestack-reference"
-        },
-        {
-          "text": "Python Add Reference",
-          "link": "/python-add-servicestack-reference"
-        },
-        {
-          "text": "Swift Add Reference",
-          "link": "/swift-add-servicestack-reference"
-        },
-        {
-          "text": "Java Add Reference",
-          "link": "/java-add-servicestack-reference"
-        },
-        {
-          "text": "Kotlin Add Reference",
-          "link": "/kotlin-add-servicestack-reference"
-        },
-        {
-          "text": "Dart Add Reference",
-          "link": "/dart-add-servicestack-reference"
-        },
-        {
-          "text": "F# Add Reference",
-          "link": "/fsharp-add-servicestack-reference"
-        },
-        {
-          "text": "VB.NET Add Reference",
-          "link": "/vbnet-add-servicestack-reference"
-        }
-      ]
-    },
-    {
-      "text": "ServiceStack gRPC",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/grpc"
-        },
-        {
-          "text": "SSL Configuration",
-          "link": "/grpc-ssl"
-        },
-        {
-          "text": "C#/F#/VB.NET Generic Clients",
-          "link": "/grpc-generic"
-        },
-        {
-          "text": "gRPC Flutter",
-          "link": "/grpc-flutter"
-        },
-        {
-          "text": "gRPC Android",
-          "link": "/grpc-android"
-        },
-        {
-          "text": "gRPC C#",
-          "link": "/grpc-csharp"
-        },
-        {
-          "text": "gRPC Swift",
-          "link": "/grpc-swift"
-        },
-        {
-          "text": "gRPC Java",
-          "link": "/grpc-java"
-        },
-        {
-          "text": "gRPC Dart",
-          "link": "/grpc-dart"
-        },
-        {
-          "text": "gRPC GO",
-          "link": "/grpc-go"
-        },
-        {
-          "text": "gRPC Node.js",
-          "link": "/grpc-nodejs"
-        },
-        {
-          "text": "gRPC Python",
-          "link": "/grpc-python"
-        },
-        {
-          "text": "gRPC Ruby",
-          "link": "/grpc-ruby"
-        },
-        {
-          "text": "gRPC PHP",
-          "link": "/grpc-php"
-        }
-      ]
-    },
-    {
-      "text": "MQ Messaging",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/messaging"
-        },
-        {
-          "text": "Background MQ",
-          "link": "/background-mq"
-        },
-        {
-          "text": "Rabbit MQ",
-          "link": "/rabbit-mq"
-        },
-        {
-          "text": "Redis MQ",
-          "link": "/redis-mq"
-        },
-        {
-          "text": "Amazon SQS MQ",
-          "link": "/amazon-sqs-mq"
-        },
-        {
-          "text": "Azure Service Bus MQ",
-          "link": "/azure-service-bus-mq"
-        }
-      ]
-    },
-    {
-      "text": "Encrypted Messaging",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/encrypted-messaging"
-        },
-        {
-          "text": "Encrypted Service Client",
-          "link": "/encrypted-messaging#encrypted-service-client"
-        }
-      ]
-    },
-    {
-      "text": "Advanced",
-      "children": [
-        {
-          "text": "Logging",
-          "link": "/logging"
-        },
-        {
-          "text": "Request & Response filters",
-          "link": "/request-and-response-filters"
-        },
-        {
-          "text": "Filter attributes",
-          "link": "/filter-attributes"
-        },
-        {
-          "text": "Access HTTP features in services",
-          "link": "/access-http-specific-features-in-services"
-        },
-        {
-          "text": "Serialization & Deserialization",
-          "link": "/serialization-deserialization"
-        },
-        {
-          "text": "Auto-Mapping",
-          "link": "/auto-mapping"
-        },
-        {
-          "text": "Auto Batched Requests",
-          "link": "/auto-batched-requests"
-        },
-        {
-          "text": "Virtual File System",
-          "link": "/virtual-file-system"
-        },
-        {
-          "text": "Multitenancy",
-          "link": "/multitenancy"
-        },
-        {
-          "text": "Physical Project Structure",
-          "link": "/physical-project-structure"
-        },
-        {
-          "text": "Modularizing Services",
-          "link": "/modularizing-services"
-        },
-        {
-          "text": "Built-in profiling",
-          "link": "/built-in-profiling"
-        },
-        {
-          "text": "Hot Reloading",
-          "link": "/hot-reloading"
-        },
-        {
-          "text": "HTML, CSS and JS Minifiers",
-          "link": "/html-css-and-javascript-minification"
-        },
-        {
-          "text": "MVC Integration",
-          "link": "/mvc-integration"
-        },
-        {
-          "text": "ServiceStack Integration",
-          "link": "/servicestack-integration"
-        },
-        {
-          "text": "Run side-by-side with another fx",
-          "link": "/servicestack-side-by-side-with-another-web-framework"
-        },
-        {
-          "text": "Versioning",
-          "link": "/versioning"
-        },
-        {
-          "text": "Config API",
-          "link": "/config-api"
-        },
-        {
-          "text": "Concurrency Model",
-          "link": "/concurrency-model"
-        },
-        {
-          "text": "Form Hijacking Prevention",
-          "link": "/form-hijacking-prevention"
-        },
-        {
-          "text": "Create a WebService from scratch",
-          "link": "/create-webservice-from-scratch"
-        }
-      ]
-    },
-    {
-      "text": "Formats",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/formats"
-        },
-        {
-          "text": "JSON Format",
-          "link": "https://github.com/ServiceStack/ServiceStack.Text/"
-        },
-        {
-          "text": "JSV Format",
-          "link": "/jsv-format"
-        },
-        {
-          "text": "CSV Format",
-          "link": "/csv-format"
-        },
-        {
-          "text": "MessagePack Format",
-          "link": "/messagepack-format"
-        },
-        {
-          "text": "ProtoBuf Format",
-          "link": "/protobuf-format"
-        },
-        {
-          "text": "Wire Format",
-          "link": "/wire-format"
-        },
-        {
-          "text": "HTML5 Report Format",
-          "link": "/html5reportformat"
-        }
-      ]
-    },
-    {
-      "text": ".NET Core",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/netcore"
-        },
-        {
-          "text": "Smart MVC Razor Pages",
-          "link": "/netcore-razor"
-        },
-        {
-          "text": "Razor UI Controls",
-          "link": "/razor-ui-controls"
-        },
-        {
-          "text": ".NET Core Redis",
-          "link": "/netcore-redis"
-        },
-        {
-          "text": "Configure localhost dev cert",
-          "link": "/netcore-localhost-cert"
-        },
-        {
-          "text": "Deploy to Amazon Linux 2 AMI",
-          "link": "/deploy-netcore-to-amazon-linux-2-ami"
-        },
-        {
-          "text": "Deploy .NET Core Apps to AWS ECS",
-          "link": "/deploy-netcore-docker-aws-ecs"
-        },
-        {
-          "text": "Deploy .NET Core Apps using rsync",
-          "link": "/netcore-deploy-rsync"
-        }
-      ]
-    },
-    {
-      "text": "Utils",
-      "children": [
-        {
-          "text": "HTTP Utils",
-          "link": "/http-utils"
-        },
-        {
-          "text": "Dump Utils",
-          "link": "/dump-utils"
-        },
-        {
-          "text": "Reflection Utils",
-          "link": "/reflection-utils"
-        },
-        {
-          "text": "JS Utils",
-          "link": "/js-utils"
-        },
-        {
-          "text": "Adhoc Utils",
-          "link": "/adhoc-utils"
-        },
-        {
-          "text": "Simple IOC",
-          "link": "/simple-ioc"
-        }
-      ]
-    },
-    {
-      "text": "Caching",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/caching"
-        },
-        {
-          "text": "HTTP Caching",
-          "link": "/http-caching"
-        },
-        {
-          "text": "CacheResponse Attribute",
-          "link": "/cacheresponse-attribute"
-        },
-        {
-          "text": "Cache Aware Clients",
-          "link": "/cache-aware-clients"
-        },
-        {
-          "text": "Compression",
-          "link": "/compression"
-        }
-      ]
-    },
-    {
-      "text": "Plugins",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/plugins"
-        },
-        {
-          "text": "Open API",
-          "link": "/openapi"
-        },
-        {
-          "text": "Swagger API",
-          "link": "/swagger-api"
-        },
-        {
-          "text": "User Admin Feature",
-          "link": "/admin-users"
-        },
-        {
-          "text": "CORS Feature",
-          "link": "/corsfeature"
-        },
-        {
-          "text": "Proxy Feature",
-          "link": "/proxy-feature"
-        },
-        {
-          "text": "Request logger",
-          "link": "/request-logger"
-        },
-        {
-          "text": "Lisp TCP REPL Server",
-          "link": "/lisp-tcp-repl-server"
-        },
-        {
-          "text": "Postman",
-          "link": "/postman"
-        },
-        {
-          "text": "Sitemaps",
-          "link": "/sitemaps"
-        },
-        {
-          "text": "Cancellable Requests",
-          "link": "/cancellable-requests"
-        },
-        {
-          "text": "Webhooks",
-          "link": "/webhooks"
-        }
-      ]
-    },
-    {
-      "text": "View Engines",
-      "children": [
-        {
-          "text": "Razor & Markdown Razor",
-          "link": "http://razor.servicestack.net/"
-        },
-        {
-          "text": "Razor Notes",
-          "link": "/razor-notes"
-        },
-        {
-          "text": "View and Template Selection",
-          "link": "/view-and-template-selection"
-        },
-        {
-          "text": "Compiled Razor Views",
-          "link": "/compiled-razor-views"
-        },
-        {
-          "text": "Razor Views vs Content Pages",
-          "link": "/razor-views-vs-content-pages"
-        }
-      ]
-    },
-    {
-      "text": "JavaScript Web Apps",
-      "children": [
-        {
-          "text": "Vue Components",
-          "link": "/vue-components"
-        },
-        {
-          "text": "Embedded UMD @servicestack/client",
-          "link": "/servicestack-client-umd"
-        },
-        {
-          "text": "ss-utils.js JavaScript Client Library",
-          "link": "/ss-utils-js"
-        }
-      ]
-    },
-    {
-      "text": "#Script",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "https://sharpscript.net"
-        },
-        {
-          "text": "#Script Pages",
-          "link": "https://sharpscript.net/docs/sharp-pages"
-        },
-        {
-          "text": "Sharp Apps",
-          "link": "https://sharpscript.net/docs/sharp-apps"
-        },
-        {
-          "text": "Gist Desktop Apps",
-          "link": "https://sharpscript.net/docs/gist-desktop-apps"
-        },
-        {
-          "text": "Sharp APIs",
-          "link": "https://sharpscript.net/docs/sharp-apis"
-        },
-        {
-          "text": "ServiceStack Scripts",
-          "link": "https://sharpscript.net/docs/servicestack-scripts"
-        },
-        {
-          "text": "#Script Code",
-          "link": "https://sharpscript.net/scode/"
-        },
-        {
-          "text": "#Script Lisp",
-          "link": "https://sharpscript.net/lisp/"
-        }
-      ]
-    },
-    {
-      "text": "Hosts",
-      "children": [
-        {
-          "text": "IIS",
-          "link": "/iis"
-        },
-        {
-          "text": "Self-hosting",
-          "link": "/self-hosting"
-        }
-      ]
-    },
-    {
-      "text": "Tests",
-      "children": [
-        {
-          "text": "Testing",
-          "link": "/testing"
-        },
-        {
-          "text": "HowTo write unit & integration tests",
-          "link": "/howto-write-unit-integration-tests"
-        }
-      ]
-    },
-    {
-      "text": "ServiceStackVS",
-      "children": [
-        {
-          "text": "Install ServiceStackVS",
-          "link": "/install-servicestackvs"
-        },
-        {
-          "text": "TypeScript React Template",
-          "link": "https://github.com/ServiceStackApps/typescript-react-template/"
-        },
-        {
-          "text": "React, Redux Chat App",
-          "link": "https://github.com/ServiceStackApps/ReactChat"
-        },
-        {
-          "text": "AngularJS App Template",
-          "link": "https://github.com/ServiceStack/ServiceStackVS/blob/master/docs/angular-spa.md"
-        },
-        {
-          "text": "React Desktop Apps",
-          "link": "https://github.com/ServiceStackApps/ReactDesktopApps"
-        },
-        {
-          "text": "Embedded Native Desktop Apps",
-          "link": "https://github.com/ServiceStack/ServiceStack.Gap"
-        }
-      ]
-    },
-    {
-      "text": "Java",
-      "children": [
-        {
-          "text": "Java ServiceStack Resources",
-          "link": "/java"
-        },
-        {
-          "text": "Android Studio & IntelliJ",
-          "link": "/java-add-servicestack-reference#servicestack-idea-android-studio-plugin"
-        },
-        {
-          "text": "Eclipse Integration",
-          "link": "https://github.com/ServiceStack/ServiceStack.Java/tree/master/src/ServiceStackEclipse#eclipse-integration-with-servicestack"
-        }
-      ]
-    },
-    {
-      "text": "Other Languages",
-      "children": [
-        {
-          "text": "Swift",
-          "link": "/swift"
-        },
-        {
-          "text": "F#",
-          "link": "/fsharp"
-        },
-        {
-          "text": "VB.NET",
-          "link": "/vbnet"
-        }
-      ]
-    },
-    {
-      "text": "Mono",
-      "children": [
-        {
-          "text": "Overview",
-          "link": "/mono"
-        },
-        {
-          "text": "Run ServiceStack as a daemon on Linux",
-          "link": "/servicestack-as-daemon-on-linux"
-        },
-        {
-          "text": "Run ServiceStack in Fastcgi on nginx",
-          "link": "/servicestack-in-fastcgi-hosted-on-nginx"
-        },
-        {
-          "text": "Linux-Hosting-Options",
-          "link": "/linux-hosting-options"
-        }
-      ]
-    },
-    {
-      "text": "Amazon Web Services",
-      "children": [
-        {
-          "text": "ServiceStack.Aws",
-          "link": "https://github.com/ServiceStack/ServiceStack.Aws"
-        },
-        {
-          "text": "PocoDynamo",
-          "link": "https://github.com/ServiceStack/PocoDynamo"
-        },
-        {
-          "text": "AWS Live Demos",
-          "link": "https://github.com/ServiceStackApps/AwsApps"
-        },
-        {
-          "text": "Getting Started with AWS",
-          "link": "https://github.com/ServiceStackApps/AwsGettingStarted"
-        }
-      ]
-    },
-    {
-      "text": "Deployment",
-      "children": [
-        {
-          "text": "Deploy Multiple Sites to single AWS",
-          "link": "/deploy-multiple-sites-to-aws"
-        },
-        {
-          "text": "Simple Deployments with WebDeploy",
-          "link": "/simple-deployments-to-aws"
-        },
-        {
-          "text": "Deployments with OctopusDeploy",
-          "link": "/advanced-deployment-octopus-deploy"
-        }
-      ]
-    },
-    {
-      "text": "Install 3rd Party Products",
-      "children": [
-        {
-          "text": "Redis on Windows",
-          "link": "https://github.com/ServiceStack/redis-windows"
-        },
-        {
-          "text": "RabbitMQ on Windows",
-          "link": "https://github.com/ServiceStack/rabbitmq-windows"
-        },
-        {
-          "text": "Redis SSL on Azure",
-          "link": "/ssl-redis-azure"
-        }
-      ]
-    },
-    {
-      "text": "Use Cases",
-      "children": [
-        {
-          "text": "Azure",
-          "link": "/azure"
-        },
-        {
-          "text": "NHibernate",
-          "link": "/nhibernate"
-        }
-      ]
-    },
-    {
-      "text": "Performance",
-      "children": [
-        {
-          "text": "Real world performance",
-          "link": "/real-world-performance"
-        }
-      ]
-    },
-    {
-      "text": "Other Products",
-      "children": [
-        {
-          "text": "ServiceStack.Redis",
-          "link": "https://github.com/ServiceStack/ServiceStack.Redis"
-        },
-        {
-          "text": "ServiceStack.OrmLite",
-          "link": "https://github.com/ServiceStack/ServiceStack.OrmLite"
-        },
-        {
-          "text": "ServiceStack.Text",
-          "link": "https://github.com/ServiceStack/ServiceStack.Text"
-        },
-        {
-          "text": "ServiceStack.Aws",
-          "link": "https://github.com/ServiceStack/ServiceStack.Aws"
-        },
-        {
-          "text": "Stripe",
-          "link": "https://github.com/ServiceStack/Stripe"
-        },
-        {
-          "text": "vuedesktop.com",
-          "link": "https://www.vuedesktop.com"
-        }
-      ]
-    },
-    {
-      "text": "Future",
-      "children": [
-        {
-          "text": "Roadmap",
-          "link": "/roadmap"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "text": "Overview",
+    "children": [
+      {
+        "text": "Why ServiceStack",
+        "link": "/why-servicestack"
+      },
+      {
+        "text": "Architecture Overview",
+        "link": "/architecture-overview"
+      },
+      {
+        "text": "Servicify existing Systems",
+        "link": "/servicify"
+      },
+      {
+        "text": "Explore ServiceStack",
+        "link": "/explore-servicestack"
+      }
+    ]
+  },
+  {
+    "text": "Getting Started",
+    "children": [
+      {
+        "text": "Create your first WebService",
+        "link": "/create-your-first-webservice"
+      },
+      {
+        "text": "Your first WebService explained",
+        "link": "/your-first-webservice-explained"
+      },
+      {
+        "text": "Service API Design",
+        "link": "/api-design"
+      },
+      {
+        "text": "Service Return Types",
+        "link": "/service-return-types"
+      },
+      {
+        "text": "Design RESTful Services",
+        "link": "/design-rest-services"
+      },
+      {
+        "text": "Design Message-based APIs",
+        "link": "/design-message-based-apis"
+      },
+      {
+        "text": "Modular Startup",
+        "link": "/modular-startup"
+      },
+      {
+        "text": "Unified Navigation",
+        "link": "/navigation"
+      },
+      {
+        "text": "dotnet tool - Win/Mac/Linux Utility Belt",
+        "link": "/dotnet-tool"
+      },
+      {
+        "text": "app tool - .NET Core Windows Desktop",
+        "link": "/netcore-windows-desktop"
+      },
+      {
+        "text": "mix tool - Mix n' Match .NET Apps",
+        "link": "/mix-tool"
+      },
+      {
+        "text": "Post Command - Inspect/Call HTTP APIs",
+        "link": "/post-command"
+      }
+    ]
+  },
+  {
+    "text": "VS.NET Templates",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/templates-overview"
+      },
+      {
+        "text": "ASP.NET Core on .NET Framework",
+        "link": "/templates-corefx"
+      },
+      {
+        "text": "x new - Project Template",
+        "link": "/dotnet-new"
+      },
+      {
+        "text": "Single Page App Templates",
+        "link": "/templates-single-page-apps"
+      },
+      {
+        "text": "Website Templates",
+        "link": "/templates-websites"
+      },
+      {
+        "text": "Empty Starting Templates",
+        "link": "/templates-empty-starting"
+      },
+      {
+        "text": "Vue and React \"lite\" Templates",
+        "link": "/templates-lite"
+      },
+      {
+        "text": "Vuetify Templates",
+        "link": "/templates-vuetify"
+      },
+      {
+        "text": "Nuxt Templates",
+        "link": "/templates-nuxt"
+      },
+      {
+        "text": "Vue Templates",
+        "link": "/templates-vue"
+      },
+      {
+        "text": "React Templates",
+        "link": "/templates-react"
+      },
+      {
+        "text": "Svelte Templates",
+        "link": "/templates-svelte"
+      },
+      {
+        "text": "Angular Templates",
+        "link": "/templates-angular"
+      },
+      {
+        "text": "AWS Lambda Templates",
+        "link": "/templates-aws"
+      },
+      {
+        "text": "Desktop Templates",
+        "link": "/templates-desktop"
+      },
+      {
+        "text": "Blazor Templates",
+        "link": "/templates-blazor"
+      },
+      {
+        "text": "Vue, React, Angular Components",
+        "link": "/spa-components"
+      },
+      {
+        "text": "Tour of Webpack",
+        "link": "/tour-of-webpack"
+      },
+      {
+        "text": "Cross platform dotnet scripts",
+        "link": "/dotnet-scripts"
+      }
+    ]
+  },
+  {
+    "text": "GitHub Action Templates",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/github-action-templates"
+      },
+      {
+        "text": "GitHub GHR & Digital Ocean",
+        "link": "/do-github-action-mix-deployment"
+      },
+      {
+        "text": "AWS ECR & ECS with NGINX",
+        "link": "/mix-github-actions-aws-ecs"
+      }
+    ]
+  },
+  {
+    "text": "Background Concepts",
+    "children": [
+      {
+        "text": "What is a Message-based Web Service",
+        "link": "/what-is-a-message-based-web-service"
+      },
+      {
+        "text": "Advantages of message-based Services",
+        "link": "/advantages-of-message-based-web-services"
+      },
+      {
+        "text": "Why Remote Services should use DTOs",
+        "link": "/why-remote-services-use-dtos"
+      },
+      {
+        "text": "Complexity, Services and Role of DTOs",
+        "link": "/service-complexity-and-dto-roles"
+      },
+      {
+        "text": "API First Development",
+        "link": "/api-first-development"
+      }
+    ]
+  },
+  {
+    "text": "ServiceStack Studio",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/studio"
+      },
+      {
+        "text": "Studio - User Management",
+        "link": "/studio-users"
+      },
+      {
+        "text": "Studio - AutoQuery UI",
+        "link": "/studio-autoquery"
+      },
+      {
+        "text": "Studio - DB Validation Rules",
+        "link": "/studio-validation-rules"
+      }
+    ]
+  },
+  {
+    "text": "Reference",
+    "children": [
+      {
+        "text": "AppHost",
+        "link": "/host-configuration"
+      },
+      {
+        "text": "IOC",
+        "link": "/ioc"
+      },
+      {
+        "text": "Routing",
+        "link": "/routing"
+      },
+      {
+        "text": "Order of Operations",
+        "link": "/order-of-operations"
+      },
+      {
+        "text": "Customize HTTP Responses",
+        "link": "/customize-http-responses"
+      },
+      {
+        "text": "Customize JSON Responses",
+        "link": "/customize-json-responses"
+      },
+      {
+        "text": "Configuration & AppSettings",
+        "link": "/appsettings"
+      },
+      {
+        "text": "Metadata Pages",
+        "link": "/metadata-page"
+      },
+      {
+        "text": "SVG Support",
+        "link": "/svg"
+      },
+      {
+        "text": "REST, SOAP & default endpoints",
+        "link": "/endpoints"
+      },
+      {
+        "text": "SOAP support",
+        "link": "/soap-support"
+      }
+    ]
+  },
+  {
+    "text": "Security",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/security"
+      },
+      {
+        "text": "Authentication & Authorization",
+        "link": "/authentication-and-authorization"
+      },
+      {
+        "text": "Auth Repository",
+        "link": "/auth-repository"
+      },
+      {
+        "text": "Using ServiceStack Auth in MVC",
+        "link": "/authentication-identity-servicestack"
+      },
+      {
+        "text": "Using ASP.NET Identity Auth",
+        "link": "/authentication-identity-aspnet"
+      },
+      {
+        "text": "Using IdentityServer4 Auth",
+        "link": "/authentication-identityserver"
+      },
+      {
+        "text": "Sessions",
+        "link": "/sessions"
+      },
+      {
+        "text": "JWT AuthProvider",
+        "link": "/jwt-authprovider"
+      },
+      {
+        "text": "API Key AuthProvider",
+        "link": "/api-key-authprovider"
+      },
+      {
+        "text": "Sign in with Apple AuthProvider",
+        "link": "/signin-with-apple"
+      },
+      {
+        "text": "Open Id 2.0 Support",
+        "link": "/openid"
+      },
+      {
+        "text": "Restricting Services",
+        "link": "/restricting-services"
+      },
+      {
+        "text": "Anti Forgery",
+        "link": "/anti-forgery"
+      }
+    ]
+  },
+  {
+    "text": "Error Handling",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/error-handling"
+      },
+      {
+        "text": "Validation",
+        "link": "/validation"
+      },
+      {
+        "text": "World Validation",
+        "link": "/world-validation"
+      },
+      {
+        "text": "Declarative Validation",
+        "link": "/declarative-validation"
+      },
+      {
+        "text": "Debugging",
+        "link": "/debugging"
+      }
+    ]
+  },
+  {
+    "text": "AutoQuery",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/autoquery"
+      },
+      {
+        "text": "Why Not OData",
+        "link": "/why-not-odata"
+      },
+      {
+        "text": "AutoQuery RDBMS",
+        "link": "/autoquery-rdbms"
+      },
+      {
+        "text": "AutoQuery Data",
+        "link": "/autoquery-data"
+      },
+      {
+        "text": "AutoQuery Data Memory",
+        "link": "/autoquery-memory"
+      },
+      {
+        "text": "AutoQuery Data Service",
+        "link": "/autoquery-service"
+      },
+      {
+        "text": "AutoQuery Data DynamoDB",
+        "link": "/autoquery-dynamodb"
+      },
+      {
+        "text": "AutoQuery CRUD",
+        "link": "/autoquery-crud"
+      },
+      {
+        "text": "AutoQuery Audit Log",
+        "link": "/autoquery-audit-log"
+      },
+      {
+        "text": "AutoGen",
+        "link": "/autogen"
+      },
+      {
+        "text": "AutoQuery CRUD Bookings Demo",
+        "link": "/autoquery-crud-bookings"
+      }
+    ]
+  },
+  {
+    "text": "Server Events",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/server-events"
+      },
+      {
+        "text": "C# Client",
+        "link": "/csharp-server-events-client"
+      },
+      {
+        "text": "TypeScript Client",
+        "link": "/typescript-server-events-client"
+      },
+      {
+        "text": "Java Client",
+        "link": "/java-server-events-client"
+      },
+      {
+        "text": "JavaScript Client",
+        "link": "/javascript-server-events-client"
+      },
+      {
+        "text": "gRPC Clients",
+        "link": "/server-events-grpc"
+      },
+      {
+        "text": "Redis Server Events",
+        "link": "/redis-server-events"
+      }
+    ]
+  },
+  {
+    "text": "Service Gateway",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/service-gateway"
+      },
+      {
+        "text": "Service Discovery",
+        "link": "/service-discovery"
+      }
+    ]
+  },
+  {
+    "text": "Clients",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/clients-overview"
+      },
+      {
+        "text": "C#/.NET Client",
+        "link": "/csharp-client"
+      },
+      {
+        "text": "TypeScript Client",
+        "link": "/typescript-add-servicestack-reference#typescript-serviceclient"
+      },
+      {
+        "text": "JavaScript Client",
+        "link": "/javascript-client"
+      },
+      {
+        "text": "Java Client",
+        "link": "/java-add-servicestack-reference#jsonserviceclient-api"
+      },
+      {
+        "text": "Swift Client",
+        "link": "/swift-add-servicestack-reference#swift-client-usage"
+      },
+      {
+        "text": "Dart Client",
+        "link": "/dart-add-servicestack-reference#example-usage"
+      },
+      {
+        "text": "Silverlight Client",
+        "link": "/silverlight-client"
+      },
+      {
+        "text": "MQ Clients",
+        "link": "/messaging#mq-client-architecture"
+      }
+    ]
+  },
+  {
+    "text": "Jupyter Notebooks",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/jupyter-notebooks"
+      },
+      {
+        "text": "Python Jupyter Notebooks",
+        "link": "/jupyter-notebooks-python"
+      },
+      {
+        "text": "C# Jupyter Notebooks",
+        "link": "/jupyter-notebooks-csharp"
+      },
+      {
+        "text": "F# Jupyter Notebooks",
+        "link": "/jupyter-notebooks-fsharp"
+      },
+      {
+        "text": "Reports and Testing",
+        "link": "/jupyter-notebooks-reporting"
+      }
+    ]
+  },
+  {
+    "text": "Add ServiceStack Reference",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/add-servicestack-reference"
+      },
+      {
+        "text": "C# Add Reference",
+        "link": "/csharp-add-servicestack-reference"
+      },
+      {
+        "text": "TypeScript Add Reference",
+        "link": "/typescript-add-servicestack-reference"
+      },
+      {
+        "text": "Python Add Reference",
+        "link": "/python-add-servicestack-reference"
+      },
+      {
+        "text": "Swift Add Reference",
+        "link": "/swift-add-servicestack-reference"
+      },
+      {
+        "text": "Java Add Reference",
+        "link": "/java-add-servicestack-reference"
+      },
+      {
+        "text": "Kotlin Add Reference",
+        "link": "/kotlin-add-servicestack-reference"
+      },
+      {
+        "text": "Dart Add Reference",
+        "link": "/dart-add-servicestack-reference"
+      },
+      {
+        "text": "F# Add Reference",
+        "link": "/fsharp-add-servicestack-reference"
+      },
+      {
+        "text": "VB.NET Add Reference",
+        "link": "/vbnet-add-servicestack-reference"
+      }
+    ]
+  },
+  {
+    "text": "ServiceStack gRPC",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/grpc"
+      },
+      {
+        "text": "SSL Configuration",
+        "link": "/grpc-ssl"
+      },
+      {
+        "text": "C#/F#/VB.NET Generic Clients",
+        "link": "/grpc-generic"
+      },
+      {
+        "text": "gRPC Flutter",
+        "link": "/grpc-flutter"
+      },
+      {
+        "text": "gRPC Android",
+        "link": "/grpc-android"
+      },
+      {
+        "text": "gRPC C#",
+        "link": "/grpc-csharp"
+      },
+      {
+        "text": "gRPC Swift",
+        "link": "/grpc-swift"
+      },
+      {
+        "text": "gRPC Java",
+        "link": "/grpc-java"
+      },
+      {
+        "text": "gRPC Dart",
+        "link": "/grpc-dart"
+      },
+      {
+        "text": "gRPC GO",
+        "link": "/grpc-go"
+      },
+      {
+        "text": "gRPC Node.js",
+        "link": "/grpc-nodejs"
+      },
+      {
+        "text": "gRPC Python",
+        "link": "/grpc-python"
+      },
+      {
+        "text": "gRPC Ruby",
+        "link": "/grpc-ruby"
+      },
+      {
+        "text": "gRPC PHP",
+        "link": "/grpc-php"
+      }
+    ]
+  },
+  {
+    "text": "MQ Messaging",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/messaging"
+      },
+      {
+        "text": "Background MQ",
+        "link": "/background-mq"
+      },
+      {
+        "text": "Rabbit MQ",
+        "link": "/rabbit-mq"
+      },
+      {
+        "text": "Redis MQ",
+        "link": "/redis-mq"
+      },
+      {
+        "text": "Amazon SQS MQ",
+        "link": "/amazon-sqs-mq"
+      },
+      {
+        "text": "Azure Service Bus MQ",
+        "link": "/azure-service-bus-mq"
+      }
+    ]
+  },
+  {
+    "text": "Encrypted Messaging",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/encrypted-messaging"
+      },
+      {
+        "text": "Encrypted Service Client",
+        "link": "/encrypted-messaging#encrypted-service-client"
+      }
+    ]
+  },
+  {
+    "text": "Advanced",
+    "children": [
+      {
+        "text": "Logging",
+        "link": "/logging"
+      },
+      {
+        "text": "Request & Response filters",
+        "link": "/request-and-response-filters"
+      },
+      {
+        "text": "Filter attributes",
+        "link": "/filter-attributes"
+      },
+      {
+        "text": "Access HTTP features in services",
+        "link": "/access-http-specific-features-in-services"
+      },
+      {
+        "text": "Serialization & Deserialization",
+        "link": "/serialization-deserialization"
+      },
+      {
+        "text": "Auto-Mapping",
+        "link": "/auto-mapping"
+      },
+      {
+        "text": "Auto Batched Requests",
+        "link": "/auto-batched-requests"
+      },
+      {
+        "text": "Virtual File System",
+        "link": "/virtual-file-system"
+      },
+      {
+        "text": "Multitenancy",
+        "link": "/multitenancy"
+      },
+      {
+        "text": "Physical Project Structure",
+        "link": "/physical-project-structure"
+      },
+      {
+        "text": "Modularizing Services",
+        "link": "/modularizing-services"
+      },
+      {
+        "text": "Built-in profiling",
+        "link": "/built-in-profiling"
+      },
+      {
+        "text": "Hot Reloading",
+        "link": "/hot-reloading"
+      },
+      {
+        "text": "HTML, CSS and JS Minifiers",
+        "link": "/html-css-and-javascript-minification"
+      },
+      {
+        "text": "MVC Integration",
+        "link": "/mvc-integration"
+      },
+      {
+        "text": "ServiceStack Integration",
+        "link": "/servicestack-integration"
+      },
+      {
+        "text": "Run side-by-side with another fx",
+        "link": "/servicestack-side-by-side-with-another-web-framework"
+      },
+      {
+        "text": "Versioning",
+        "link": "/versioning"
+      },
+      {
+        "text": "Config API",
+        "link": "/config-api"
+      },
+      {
+        "text": "Concurrency Model",
+        "link": "/concurrency-model"
+      },
+      {
+        "text": "Form Hijacking Prevention",
+        "link": "/form-hijacking-prevention"
+      },
+      {
+        "text": "Create a WebService from scratch",
+        "link": "/create-webservice-from-scratch"
+      }
+    ]
+  },
+  {
+    "text": "Formats",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/formats"
+      },
+      {
+        "text": "JSON Format",
+        "link": "https://github.com/ServiceStack/ServiceStack.Text/"
+      },
+      {
+        "text": "JSV Format",
+        "link": "/jsv-format"
+      },
+      {
+        "text": "CSV Format",
+        "link": "/csv-format"
+      },
+      {
+        "text": "MessagePack Format",
+        "link": "/messagepack-format"
+      },
+      {
+        "text": "ProtoBuf Format",
+        "link": "/protobuf-format"
+      },
+      {
+        "text": "Wire Format",
+        "link": "/wire-format"
+      },
+      {
+        "text": "HTML5 Report Format",
+        "link": "/html5reportformat"
+      }
+    ]
+  },
+  {
+    "text": ".NET Core",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/netcore"
+      },
+      {
+        "text": "Smart MVC Razor Pages",
+        "link": "/netcore-razor"
+      },
+      {
+        "text": "Razor UI Controls",
+        "link": "/razor-ui-controls"
+      },
+      {
+        "text": ".NET Core Redis",
+        "link": "/netcore-redis"
+      },
+      {
+        "text": "Configure localhost dev cert",
+        "link": "/netcore-localhost-cert"
+      },
+      {
+        "text": "Deploy to Amazon Linux 2 AMI",
+        "link": "/deploy-netcore-to-amazon-linux-2-ami"
+      },
+      {
+        "text": "Deploy .NET Core Apps to AWS ECS",
+        "link": "/deploy-netcore-docker-aws-ecs"
+      },
+      {
+        "text": "Deploy .NET Core Apps using rsync",
+        "link": "/netcore-deploy-rsync"
+      }
+    ]
+  },
+  {
+    "text": "Utils",
+    "children": [
+      {
+        "text": "HTTP Utils",
+        "link": "/http-utils"
+      },
+      {
+        "text": "Dump Utils",
+        "link": "/dump-utils"
+      },
+      {
+        "text": "Reflection Utils",
+        "link": "/reflection-utils"
+      },
+      {
+        "text": "JS Utils",
+        "link": "/js-utils"
+      },
+      {
+        "text": "Adhoc Utils",
+        "link": "/adhoc-utils"
+      },
+      {
+        "text": "Simple IOC",
+        "link": "/simple-ioc"
+      }
+    ]
+  },
+  {
+    "text": "Caching",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/caching"
+      },
+      {
+        "text": "HTTP Caching",
+        "link": "/http-caching"
+      },
+      {
+        "text": "CacheResponse Attribute",
+        "link": "/cacheresponse-attribute"
+      },
+      {
+        "text": "Cache Aware Clients",
+        "link": "/cache-aware-clients"
+      },
+      {
+        "text": "Compression",
+        "link": "/compression"
+      }
+    ]
+  },
+  {
+    "text": "Plugins",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/plugins"
+      },
+      {
+        "text": "Open API",
+        "link": "/openapi"
+      },
+      {
+        "text": "Swagger API",
+        "link": "/swagger-api"
+      },
+      {
+        "text": "User Admin Feature",
+        "link": "/admin-users"
+      },
+      {
+        "text": "CORS Feature",
+        "link": "/corsfeature"
+      },
+      {
+        "text": "Proxy Feature",
+        "link": "/proxy-feature"
+      },
+      {
+        "text": "Request logger",
+        "link": "/request-logger"
+      },
+      {
+        "text": "Lisp TCP REPL Server",
+        "link": "/lisp-tcp-repl-server"
+      },
+      {
+        "text": "Postman",
+        "link": "/postman"
+      },
+      {
+        "text": "Sitemaps",
+        "link": "/sitemaps"
+      },
+      {
+        "text": "Cancellable Requests",
+        "link": "/cancellable-requests"
+      },
+      {
+        "text": "Webhooks",
+        "link": "/webhooks"
+      }
+    ]
+  },
+  {
+    "text": "View Engines",
+    "children": [
+      {
+        "text": "Razor & Markdown Razor",
+        "link": "http://razor.servicestack.net/"
+      },
+      {
+        "text": "Razor Notes",
+        "link": "/razor-notes"
+      },
+      {
+        "text": "View and Template Selection",
+        "link": "/view-and-template-selection"
+      },
+      {
+        "text": "Compiled Razor Views",
+        "link": "/compiled-razor-views"
+      },
+      {
+        "text": "Razor Views vs Content Pages",
+        "link": "/razor-views-vs-content-pages"
+      }
+    ]
+  },
+  {
+    "text": "JavaScript Web Apps",
+    "children": [
+      {
+        "text": "Vue Components",
+        "link": "/vue-components"
+      },
+      {
+        "text": "Embedded UMD @servicestack/client",
+        "link": "/servicestack-client-umd"
+      },
+      {
+        "text": "ss-utils.js JavaScript Client Library",
+        "link": "/ss-utils-js"
+      }
+    ]
+  },
+  {
+    "text": "#Script",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "https://sharpscript.net"
+      },
+      {
+        "text": "#Script Pages",
+        "link": "https://sharpscript.net/docs/sharp-pages"
+      },
+      {
+        "text": "Sharp Apps",
+        "link": "https://sharpscript.net/docs/sharp-apps"
+      },
+      {
+        "text": "Gist Desktop Apps",
+        "link": "https://sharpscript.net/docs/gist-desktop-apps"
+      },
+      {
+        "text": "Sharp APIs",
+        "link": "https://sharpscript.net/docs/sharp-apis"
+      },
+      {
+        "text": "ServiceStack Scripts",
+        "link": "https://sharpscript.net/docs/servicestack-scripts"
+      },
+      {
+        "text": "#Script Code",
+        "link": "https://sharpscript.net/scode/"
+      },
+      {
+        "text": "#Script Lisp",
+        "link": "https://sharpscript.net/lisp/"
+      }
+    ]
+  },
+  {
+    "text": "Hosts",
+    "children": [
+      {
+        "text": "IIS",
+        "link": "/iis"
+      },
+      {
+        "text": "Self-hosting",
+        "link": "/self-hosting"
+      }
+    ]
+  },
+  {
+    "text": "Tests",
+    "children": [
+      {
+        "text": "Testing",
+        "link": "/testing"
+      },
+      {
+        "text": "HowTo write unit & integration tests",
+        "link": "/howto-write-unit-integration-tests"
+      }
+    ]
+  },
+  {
+    "text": "ServiceStackVS",
+    "children": [
+      {
+        "text": "Install ServiceStackVS",
+        "link": "/install-servicestackvs"
+      },
+      {
+        "text": "TypeScript React Template",
+        "link": "https://github.com/ServiceStackApps/typescript-react-template/"
+      },
+      {
+        "text": "React, Redux Chat App",
+        "link": "https://github.com/ServiceStackApps/ReactChat"
+      },
+      {
+        "text": "AngularJS App Template",
+        "link": "https://github.com/ServiceStack/ServiceStackVS/blob/master/docs/angular-spa.md"
+      },
+      {
+        "text": "React Desktop Apps",
+        "link": "https://github.com/ServiceStackApps/ReactDesktopApps"
+      },
+      {
+        "text": "Embedded Native Desktop Apps",
+        "link": "https://github.com/ServiceStack/ServiceStack.Gap"
+      }
+    ]
+  },
+  {
+    "text": "Java",
+    "children": [
+      {
+        "text": "Java ServiceStack Resources",
+        "link": "/java"
+      },
+      {
+        "text": "Android Studio & IntelliJ",
+        "link": "/java-add-servicestack-reference#servicestack-idea-android-studio-plugin"
+      },
+      {
+        "text": "Eclipse Integration",
+        "link": "https://github.com/ServiceStack/ServiceStack.Java/tree/master/src/ServiceStackEclipse#eclipse-integration-with-servicestack"
+      }
+    ]
+  },
+  {
+    "text": "Other Languages",
+    "children": [
+      {
+        "text": "Swift",
+        "link": "/swift"
+      },
+      {
+        "text": "F#",
+        "link": "/fsharp"
+      },
+      {
+        "text": "VB.NET",
+        "link": "/vbnet"
+      }
+    ]
+  },
+  {
+    "text": "Mono",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/mono"
+      },
+      {
+        "text": "Run ServiceStack as a daemon on Linux",
+        "link": "/servicestack-as-daemon-on-linux"
+      },
+      {
+        "text": "Run ServiceStack in Fastcgi on nginx",
+        "link": "/servicestack-in-fastcgi-hosted-on-nginx"
+      },
+      {
+        "text": "Linux-Hosting-Options",
+        "link": "/linux-hosting-options"
+      }
+    ]
+  },
+  {
+    "text": "Amazon Web Services",
+    "children": [
+      {
+        "text": "ServiceStack.Aws",
+        "link": "https://github.com/ServiceStack/ServiceStack.Aws"
+      },
+      {
+        "text": "PocoDynamo",
+        "link": "https://github.com/ServiceStack/PocoDynamo"
+      },
+      {
+        "text": "AWS Live Demos",
+        "link": "https://github.com/ServiceStackApps/AwsApps"
+      },
+      {
+        "text": "Getting Started with AWS",
+        "link": "https://github.com/ServiceStackApps/AwsGettingStarted"
+      }
+    ]
+  },
+  {
+    "text": "Deployment",
+    "children": [
+      {
+        "text": "Deploy Multiple Sites to single AWS",
+        "link": "/deploy-multiple-sites-to-aws"
+      },
+      {
+        "text": "Simple Deployments with WebDeploy",
+        "link": "/simple-deployments-to-aws"
+      },
+      {
+        "text": "Deployments with OctopusDeploy",
+        "link": "/advanced-deployment-octopus-deploy"
+      }
+    ]
+  },
+  {
+    "text": "Install 3rd Party Products",
+    "children": [
+      {
+        "text": "Redis on Windows",
+        "link": "https://github.com/ServiceStack/redis-windows"
+      },
+      {
+        "text": "RabbitMQ on Windows",
+        "link": "https://github.com/ServiceStack/rabbitmq-windows"
+      },
+      {
+        "text": "Redis SSL on Azure",
+        "link": "/ssl-redis-azure"
+      }
+    ]
+  },
+  {
+    "text": "Use Cases",
+    "children": [
+      {
+        "text": "Azure",
+        "link": "/azure"
+      },
+      {
+        "text": "NHibernate",
+        "link": "/nhibernate"
+      }
+    ]
+  },
+  {
+    "text": "Performance",
+    "children": [
+      {
+        "text": "Real world performance",
+        "link": "/real-world-performance"
+      }
+    ]
+  },
+  {
+    "text": "Other Products",
+    "children": [
+      {
+        "text": "ServiceStack.Redis",
+        "link": "https://github.com/ServiceStack/ServiceStack.Redis"
+      },
+      {
+        "text": "ServiceStack.OrmLite",
+        "link": "https://github.com/ServiceStack/ServiceStack.OrmLite"
+      },
+      {
+        "text": "ServiceStack.Text",
+        "link": "https://github.com/ServiceStack/ServiceStack.Text"
+      },
+      {
+        "text": "ServiceStack.Aws",
+        "link": "https://github.com/ServiceStack/ServiceStack.Aws"
+      },
+      {
+        "text": "Stripe",
+        "link": "https://github.com/ServiceStack/Stripe"
+      },
+      {
+        "text": "vuedesktop.com",
+        "link": "https://www.vuedesktop.com"
+      }
+    ]
+  },
+  {
+    "text": "Future",
+    "children": [
+      {
+        "text": "Roadmap",
+        "link": "/roadmap"
+      }
+    ]
+  }
+]
