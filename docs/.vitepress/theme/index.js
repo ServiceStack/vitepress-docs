@@ -12,6 +12,7 @@ import customValidatorContact from '../../components/gists/custom-validator-cont
 import scriptsRazorHelpers from '../../components/gists/scripts-razor-helpers.vue'
 import contactDtos from '../../components/gists/contact-dtos.vue'
 import chinookData from '../../components/chinook-data.vue'
+import HelloApi from "../../components/HelloApi.vue";
 import './custom.css'
 
 export default {
@@ -30,6 +31,7 @@ export default {
         app.component('scriptsRazorHelpers',scriptsRazorHelpers)
         app.component('contactDtos',contactDtos)
         app.component('chinookData',chinookData)
+        app.component('HelloApi',HelloApi)
         // register global components
     }
 }

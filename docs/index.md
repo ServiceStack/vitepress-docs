@@ -1,21 +1,9 @@
 ---
-home: true
-heroImage: /logo.png
-heroAlt: Logo image
-heroText: Hero Title
-tagline: Hero subtitle
-actionText: Get Started
-actionLink: /guide/
-features:
-- title: Simplicity First
-  details: Minimal setup with markdown-centered project structure helps you focus on writing.
-- title: Vue-Powered
-  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
-- title: Performant
-  details: VitePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-  footer: MIT Licensed | Copyright © 2019-present Evan You
+layout: default
+title: ServiceStack Resources
 ---
-- [servicestack.net](https://servicestack.net) - See ServiceStack's Website for product info and pricing 
+
+- [servicestack.net](https://servicestack.net) - See ServiceStack's Website for product info and pricing
 - [StackOverflow](https://stackoverflow.com/questions/ask?tags=servicestack) - Ask questions on StackOverflow using the `servicestack` tag
 - [Customer Forums](https://forums.servicestack.net/) - Customers can get Technical Support in the Customer Forums
 - [Issue Tracker](https://github.com/ServiceStack/Issues) - Report issues on our Issue Tracker

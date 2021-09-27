@@ -30,7 +30,6 @@ import mycontent from './path/mycontent.md';
 ```
 
 - `Cannot read property 'X' of undefined` happens when you haven't code fenced or escaped double curly brace. `{% raw %}{{test}}{% endraw %}` within code fences should be removed as they will be rendered in vitepress.
- - Once code fenced `{{X}}` will try to replace with local frontmatter values. If you are trying to show a code example using `{{X}}`, you will need to wrap the whole code fence in `::: v-pre` at line above, and `:::` at line below.
 - Assets should be relative links as recommended in official docs, so change `![](/myimage.png)` to a relative path. This is because vitepress handles assets.
 
 
