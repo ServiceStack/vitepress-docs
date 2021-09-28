@@ -1,3 +1,4 @@
 ﻿import {JsonServiceClient} from '@servicestack/client'
-let client = new JsonServiceClient('https://chinook.netcore.io')
+let url = import.meta.env.DEV ? 'https://localhost:5001' : 'https://chinook.netcore.io';
+let client = new JsonServiceClient(url)
 export default client

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
@@ -42,8 +43,19 @@ namespace VitepressDocs
         {
             SetConfig(new HostConfig
             {
-                DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), false)
+                DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), false),
+                UseSameSiteCookies = true
             });
+            
+            Plugins.Add(new CorsFeature(
+                new[]
+                {
+                    "http://localhost:3000",
+                    "https://docs-vitepress.servicestack.net"
+                },
+                allowCredentials: true,
+                allowedHeaders: "Content-Type, Allow, Authorization"
+            ));
         }
     }
 }
