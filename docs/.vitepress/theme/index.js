@@ -12,7 +12,6 @@ import apphostAuthValidation from '../../src/components/gists/apphost-auth-valid
 import customValidatorContact from '../../src/components/gists/custom-validator-contact.vue'
 import scriptsRazorHelpers from '../../src/components/gists/scripts-razor-helpers.vue'
 import contactDtos from '../../src/components/gists/contact-dtos.vue'
-import chinookData from '../../src/components/chinook-data.vue'
 import HelloApi from "../../src/components/HelloApi.vue";
 import ytEmbed from '../../src/components/yt-embed.vue';
 import './custom.css'
@@ -32,7 +31,6 @@ export default {
         app.component('customValidatorContact',customValidatorContact)
         app.component('scriptsRazorHelpers',scriptsRazorHelpers)
         app.component('contactDtos',contactDtos)
-        app.component('chinookData',chinookData)
         app.component('HelloApi',HelloApi)
         app.component('ytEmbed', ytEmbed)
         // register global components

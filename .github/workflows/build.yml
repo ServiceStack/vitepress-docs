@@ -1,8 +1,10 @@
-name: Build
+name: Build Server
 
 on:
   pull_request: {}
   push:
+    tags-ignore:
+      - v*
     paths-ignore:
       - 'docs/**'
       - 'package.json'
