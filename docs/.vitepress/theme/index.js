@@ -1,19 +1,20 @@
 import DefaultTheme from 'vitepress/theme'
 import cleanUrlsMd from '../../includes/clean-urls.md'
 import webNewCorefxMd from '../../includes/web-new-corefx.md'
-import applyMdGist from '../../components/gists/apply-md.vue'
 import webTroubleMd from '../../includes/web-trouble.md'
-import clientLoginUis from '../../components/client-login-uis.vue'
-import clientContactUis from '../../components/client-contacts-uis.vue'
-import serverLoginUis from '../../components/server-login-uis.vue'
-import serverContactUis from '../../components/server-contacts-uis.vue'
-import apphostAuthValidation from '../../components/gists/apphost-auth-validation.vue'
-import customValidatorContact from '../../components/gists/custom-validator-contact.vue'
-import scriptsRazorHelpers from '../../components/gists/scripts-razor-helpers.vue'
-import contactDtos from '../../components/gists/contact-dtos.vue'
-import chinookData from '../../components/chinook-data.vue'
-import HelloApi from "../../components/HelloApi.vue";
-import ytEmbed from '../../components/yt-embed.vue';
+
+import applyMdGist from '../../src/components/gists/apply-md.vue'
+import clientLoginUis from '../../src/components/client-login-uis.vue'
+import clientContactUis from '../../src/components/client-contacts-uis.vue'
+import serverLoginUis from '../../src/components/server-login-uis.vue'
+import serverContactUis from '../../src/components/server-contacts-uis.vue'
+import apphostAuthValidation from '../../src/components/gists/apphost-auth-validation.vue'
+import customValidatorContact from '../../src/components/gists/custom-validator-contact.vue'
+import scriptsRazorHelpers from '../../src/components/gists/scripts-razor-helpers.vue'
+import contactDtos from '../../src/components/gists/contact-dtos.vue'
+import chinookData from '../../src/components/chinook-data.vue'
+import HelloApi from "../../src/components/HelloApi.vue";
+import ytEmbed from '../../src/components/yt-embed.vue';
 import './custom.css'
 
 export default {

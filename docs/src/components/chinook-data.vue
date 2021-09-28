@@ -9,8 +9,7 @@
 import {ref, watch } from 'vue'
 import {JsonServiceClient} from '@servicestack/client'
 import {Artists, QueryArtists} from "../shared/dtos";
-
-let client = new JsonServiceClient("https://chinook.netcore.io")
+import client from '../shared/client';
 
 export default {
   name: "chinook-data",

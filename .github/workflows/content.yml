@@ -1,6 +1,10 @@
-name: Build and Release
+name: Build and Release Content
 
-on: [push]
+on: 
+  push:
+    paths:
+      - 'docs/**'
+      - 'package.json'
 
 jobs:
   build:
