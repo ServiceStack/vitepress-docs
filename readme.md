@@ -36,5 +36,6 @@ import mycontent from './path/mycontent.md';
 ## Vue 3 and class components
 At the time of writing the API and packages to support [Vue 3 class components is not stable](https://github.com/vuejs/vue-class-component/issues/406), sticking with standard Vue 3 components for this template. Vue creator also not backing class components due to [`Typing Complexity`](https://github.com/vuejs/rfcs/pull/17#issuecomment-494242121).
 
-
+## Clean URLs not supported
+https://github.com/vuejs/vitepress/issues/219
 
