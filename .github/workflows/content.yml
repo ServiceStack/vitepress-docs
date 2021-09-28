@@ -5,8 +5,6 @@ on:
     paths:
       - 'docs/**'
       - 'package.json'
-    tags-ignore:
-      - v*
 
 jobs:
   build:
