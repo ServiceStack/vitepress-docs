@@ -7,7 +7,6 @@
 
 <script lang="ts">
 import {ref, watch } from 'vue'
-import {JsonServiceClient} from '@servicestack/client'
 import {Hello} from "../shared/dtos";
 import client from "../shared/client"
 
