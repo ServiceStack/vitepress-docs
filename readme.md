@@ -39,3 +39,14 @@ At the time of writing the API and packages to support [Vue 3 class components i
 ## Clean URLs not supported
 https://github.com/vuejs/vitepress/issues/219
 
+## Rider experience
+Since the content directory of vitepress will be separate from the server (we don't want to deploy server with files from static site), and Rider/Visual Studio only show files "in the solution", we end up with the need to either:
+
+- Use different tools to edit content/static site VS server
+- Change the way we use our IDE to support editing both.
+
+Rider has a "File System" view that replaces the Solution Explorer which works quite well but I think there is an advantage of editing content vs server using different tools. I don't think it is worth prescribing _how_ this part of the dev workflow works since it will be upto a developer/companies preferred skills.
+
+The advantage of using separate tools I think enables workflows that plays into JamStack patterns strengths and enables non-developers to take ownership of content.
+
+
