@@ -233,7 +233,7 @@ For example, clean URLs can be used but the client side of Vitepress always appe
 
 When migrating our side, it was frustrating the the stacktrace would try to point to a line of the Markdown for the source of the issue but it would be nearly always off. It showed me an unrelated line, but it was close so it was usually pretty easy to see code near by that wasn't working. If I couldn't, I could very quickly delete + save + retry, trial and error method of finding the right line of code. Not ideal, but can work around it.
 
-<h2 class="mb-8"></h2>
+<h2 class="mb-8">Test</h2>
 
 Test
 

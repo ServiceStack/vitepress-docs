@@ -6,7 +6,8 @@ module.exports = {
       './docs/.vitepress/**/*.vue',
       './docs/.vitepress/**/*.ts',
       './docs/src/**/*.vue',
-      './docs/src/**/*.html'
+      './docs/src/**/*.html',
+      './docs/*.md'
     ],
     options: {
       safelist: ['html', 'body'],
