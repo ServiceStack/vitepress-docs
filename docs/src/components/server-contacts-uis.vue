@@ -1,9 +1,20 @@
 <template>
-  <link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-d9b0ae634c1abe51fe671d575be5a7d2.css">
-  <button @click="currentTabComponent = 'tab1'">Script Pages</button>
-  <button @click="currentTabComponent = 'tab2'">Server TypeScript</button>
-  <button @click="currentTabComponent = 'tab3'">Server jQuery</button>
-  <button @click="currentTabComponent = 'tab4'">Server Razor</button>
+  <button class="border-0 p-4 box-border rounded"
+          :class="{'text-white': isActive('tab1'), 'bg-blue-600': isActive('tab1')}"
+          @click="currentTabComponent = 'tab1'">Script Pages
+  </button>
+  <button class="border-0 p-4 box-border rounded"
+          :class="{'text-white': isActive('tab2'), 'bg-blue-600': isActive('tab2')}"
+          @click="currentTabComponent = 'tab2'">Server TypeScript
+  </button>
+  <button class="border-0 p-4 box-border rounded"
+          :class="{'text-white': isActive('tab3'), 'bg-blue-600': isActive('tab3')}"
+          @click="currentTabComponent = 'tab3'">Server jQuery
+  </button>
+  <button class="border-0 p-4 box-border rounded"
+          :class="{'text-white': isActive('tab4'), 'bg-blue-600': isActive('tab4')}"
+          @click="currentTabComponent = 'tab4'">Server Razor
+  </button>
   <keep-alive>
     <component :is="currentTabComponent"></component>
   </keep-alive>
@@ -14,6 +25,7 @@ import tab1 from "../../.vitepress/includes/validation/contacts/server-sharp.md"
 import tab2 from "../../.vitepress/includes/validation/contacts/server-ts.md";
 import tab3 from "../../.vitepress/includes/validation/contacts/server-jquery.md";
 import tab4 from "../../.vitepress/includes/validation/contacts/server-razor.md";
+
 export default {
   name: "server-contacts-uis",
   components: {
@@ -24,7 +36,10 @@ export default {
   },
   data() {
     return {
-      currentTabComponent: "tab1"
+      currentTabComponent: "tab1",
+      isActive(tab) {
+        return this.currentTabComponent == tab;
+      }
     }
   }
 }

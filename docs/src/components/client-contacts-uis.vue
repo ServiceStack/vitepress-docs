@@ -1,8 +1,16 @@
 <template>
-  <button @click="currentTabComponent = 'tab1'">Vuetify</button>
-  <button @click="currentTabComponent = 'tab2'">Client TypeScript</button>
-  <button @click="currentTabComponent = 'tab3'">Client jQuery</button>
-  <button @click="currentTabComponent = 'tab4'">Client Razor</button>
+  <button class="border-0 p-4 box-border rounded"
+          :class="{'text-white': isActive('tab1'), 'bg-blue-600': isActive('tab1')}"
+      @click="currentTabComponent = 'tab1'">Vuetify</button>
+  <button class="border-0 p-4 box-border rounded"
+          :class="{'text-white': isActive('tab2'), 'bg-blue-600': isActive('tab2')}"
+      @click="currentTabComponent = 'tab2'">Client TypeScript</button>
+  <button class="border-0 p-4 box-border rounded"
+          :class="{'text-white': isActive('tab3'), 'bg-blue-600': isActive('tab3')}"
+      @click="currentTabComponent = 'tab3'">Client jQuery</button>
+  <button class="border-0 p-4 box-border rounded"
+          :class="{'text-white': isActive('tab4'), 'bg-blue-600': isActive('tab4')}"
+      @click="currentTabComponent = 'tab4'">Client Razor</button>
   <keep-alive>
     <component :is="currentTabComponent"></component>
   </keep-alive>
@@ -23,7 +31,10 @@ export default {
   },
   data() {
     return {
-      currentTabComponent: "tab1"
+      currentTabComponent: "tab1",
+      isActive(tab) {
+        return this.currentTabComponent == tab;
+      }
     }
   }
 }
