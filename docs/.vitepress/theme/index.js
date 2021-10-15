@@ -9,6 +9,7 @@ import serverLoginUis from '../../src/components/server-login-uis.vue'
 import serverContactUis from '../../src/components/server-contacts-uis.vue'
 import HelloApi from "../../src/components/HelloApi.vue";
 import ytEmbed from '../../src/components/yt-embed.vue';
+import nugetPackage from '../../src/components/nuget-ref.vue';
 import './custom.css'
 
 DefaultTheme.enhanceApp = ({ app }) => {
@@ -21,6 +22,7 @@ DefaultTheme.enhanceApp = ({ app }) => {
     app.component('serverContactUis',serverContactUis)
     app.component('HelloApi',HelloApi)
     app.component('ytEmbed', ytEmbed)
+    app.component('nugetPackage',nugetPackage)
 }
 
 export default DefaultTheme;
