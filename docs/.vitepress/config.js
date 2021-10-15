@@ -4,7 +4,7 @@ module.exports = {
     title: 'ServiceStack',
     description: 'Docs',
     themeConfig: {
-        repo: 'Layoric/vitepress-starter',
+        repo: 'ServiceStack/vitepress-docs',
         editLinks: true,
         editLinkText: 'Edit this page on GitHub',
         lastUpdated: 'Last Updated',

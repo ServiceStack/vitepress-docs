@@ -170,8 +170,10 @@ argument tells the control to render multiple controls in-line whilst you can us
 We also see the introduction of the `sendToGateway` method used to send the `GetContacts` Request DTO to call its Service using the 
 [Service Gateway](/service-gateway), the Response of which is used to render the list of contacts on the Server. 
 
+:::v-pre
 Another difference is that there are multiple `<form>` elements on this page to handle deleting a contact by submitting an empty form post to
 `/contacts/{{Id}}/delete`.
+:::
 
 **Sharp Pages** doesn't need to specify its own `ErrorView` or `Continue` Request params as its the default view used for `ContactServices`: 
 

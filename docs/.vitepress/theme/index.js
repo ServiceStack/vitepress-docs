@@ -16,23 +16,21 @@ import HelloApi from "../../src/components/HelloApi.vue";
 import ytEmbed from '../../src/components/yt-embed.vue';
 import './custom.css'
 
-export default {
-    ...DefaultTheme,
-    enhanceApp({ app }) {
-        app.component('cleanUrlsMd',cleanUrlsMd)
-        app.component('webNewCorefxMd',webNewCorefxMd)
-        app.component('applyMdGist',applyMdGist)
-        app.component('webTroubleMd',webTroubleMd)
-        app.component('clientLoginUis',clientLoginUis)
-        app.component('clientContactUis',clientContactUis)
-        app.component('serverLoginUis',serverLoginUis)
-        app.component('serverContactUis',serverContactUis)
-        app.component('apphostAuthValidation',apphostAuthValidation)
-        app.component('customValidatorContact',customValidatorContact)
-        app.component('scriptsRazorHelpers',scriptsRazorHelpers)
-        app.component('contactDtos',contactDtos)
-        app.component('HelloApi',HelloApi)
-        app.component('ytEmbed', ytEmbed)
-        // register global components
-    }
+DefaultTheme.enhanceApp = ({ app }) => {
+    app.component('cleanUrlsMd',cleanUrlsMd)
+    app.component('webNewCorefxMd',webNewCorefxMd)
+    app.component('applyMdGist',applyMdGist)
+    app.component('webTroubleMd',webTroubleMd)
+    app.component('clientLoginUis',clientLoginUis)
+    app.component('clientContactUis',clientContactUis)
+    app.component('serverLoginUis',serverLoginUis)
+    app.component('serverContactUis',serverContactUis)
+    app.component('apphostAuthValidation',apphostAuthValidation)
+    app.component('customValidatorContact',customValidatorContact)
+    app.component('scriptsRazorHelpers',scriptsRazorHelpers)
+    app.component('contactDtos',contactDtos)
+    app.component('HelloApi',HelloApi)
+    app.component('ytEmbed', ytEmbed)
 }
+
+export default DefaultTheme;

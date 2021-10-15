@@ -1,3 +1,29 @@
-aside {
-    width:12rem;
+@tailwind utilities;
+
+.container {
+    max-width: 64rem !important;
 }
+
+@media (min-width: 960px) {
+    .sidebar {
+        width: 22rem !important;
+    }
+    .sidebar-link > .sidebar-link-item {
+        padding-right: 0.25rem !important;
+    }
+}
+
+.video-hd { width: 896px; height: 504px }
+
+@media (max-width: 1580px) {
+}
+@media (max-width: 768px) {
+    .video-hd { width: 768px; height: 432px }
+}
+@media (max-width: 414px) {
+    .video-hd { width: 414px; height: 233px }
+}
+@media (max-width: 375px) {
+    .video-hd { width: 375px; height: 211px }
+}
+

@@ -222,7 +222,7 @@ Vitepress feels instant even on large pages. Opening up the network tab to see t
 This might be a drawback for some, but if you are comfortable with development using Vue (2 or 3), you will love the fact you can just use Vue components in your static site. There are limitations given components need to be server side rendered during build time, but once this pattern is followed, it is very productive.
 
 ### Simple config
-The minimal example of a Vitepress site is 2 files. An `index.md` and a `package.json`. There are loads of convention based defaults which you will need to learn to customize your site, but these are pretty few. If you are looking to build a content heavy site using a SSG, especially a documentation site, you will be able to get going very quickly with Vitepress.
+The minimal example of a Vitepress site is 2 files. An `index.md` and a `package.json`. There are loads of convention based defaults which you can use to customize your site, but they are well documented on the Vitepress docs site. If you are looking to build a content heavy site using a SSG, especially a documentation site, you will be able to get going very quickly with Vitepress.
 
 ## Vitepress drawbacks
 Saying all that, it does have its tradeoffs. The biggest of which is that it is a young project still in active development. There are still rough edges, especially when it comes to more complex hosting.
@@ -233,8 +233,9 @@ For example, clean URLs can be used but the client side of Vitepress always appe
 
 When migrating our side, it was frustrating the the stacktrace would try to point to a line of the Markdown for the source of the issue but it would be nearly always off. It showed me an unrelated line, but it was close so it was usually pretty easy to see code near by that wasn't working. If I couldn't, I could very quickly delete + save + retry, trial and error method of finding the right line of code. Not ideal, but can work around it.
 
-## Deployment
+<h2 class="mb-8"></h2>
 
+Test
 
 ## Why single repository
 

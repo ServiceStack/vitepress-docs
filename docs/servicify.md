@@ -2,17 +2,11 @@
 slug: servicify
 title: Instantly Servicify existing Systems
 ---
-<style>
-.video-hd {
-    width:100%;
-    height:auto;
-    margin: 20px;
-}
-</style>
-In addition to [AutoQuery](/autoquery-rdbms) automatically providing your Services implementations, 
+
+In addition to [AutoQuery](/autoquery-rdbms) automatically providing your Services implementations,
 [Studio](/studio) providing its instant UI, ServiceStack also gained the capability to **[generate your entire API](/autogen)** including Typed API contracts, data models, implementations & human-friendly pluralized HTTP API routes over an existing System RDBMS's tables.
 
-<ytEmbed video='NaJ7TW-Q_pU' />
+<iframe class="video-hd" src="https://www.youtube.com/embed/NaJ7TW-Q_pU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## [AutoGen](/autogen)
 
