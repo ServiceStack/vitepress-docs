@@ -3,9 +3,9 @@ title: .NET Core Overview
 slug: netcore
 ---
 <script setup>
-import webnewtable from './includes/web-new-netcore.md';
-import corefxtable from './includes/web-new-corefx.md';
-import netfxtable from './includes/web-new-netfx.md';
+import webnewtable from './.vitepress/includes/web-new-netcore.md';
+import corefxtable from './.vitepress/includes/web-new-corefx.md';
+import netfxtable from './.vitepress/includes/web-new-netfx.md';
 </script>
 
 

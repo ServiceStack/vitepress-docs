@@ -1,7 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
-import cleanUrlsMd from '../../includes/clean-urls.md'
-import webNewCorefxMd from '../../includes/web-new-corefx.md'
-import webTroubleMd from '../../includes/web-trouble.md'
+import cleanUrlsMd from './../includes/clean-urls.md'
+import webNewCorefxMd from '../includes/web-new-corefx.md'
+import webTroubleMd from '../includes/web-trouble.md'
 
 import applyMdGist from '../../src/components/gists/apply-md.vue'
 import clientLoginUis from '../../src/components/client-login-uis.vue'

@@ -179,7 +179,7 @@ This use of `capture` and passing the content to be converted is done by default
 
 ```markdown
 <script setup>
-import netfxtable from './includes/web-new-netfx.md';
+import netfxtable from './.vitepress/includes/web-new-netfx.md';
 </script>
 
 <netfxtable />

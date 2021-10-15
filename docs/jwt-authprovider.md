@@ -3,7 +3,7 @@ slug: jwt-authprovider
 title: JWT Auth Provider
 ---
 <script setup>
-import jwtServiceClients from './includes/jwt-service-clients.md';
+import jwtServiceClients from './.vitepress/includes/jwt-service-clients.md';
 </script>
 
 The `JwtAuthProvider` is our integrated Auth solution for the popular [JSON Web Tokens](https://jwt.io/) (JWT) industry standard which is easily enabled by registering the `JwtAuthProvider` with the `AuthFeature` plugin:

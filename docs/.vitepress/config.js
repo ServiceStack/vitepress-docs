@@ -38,6 +38,5 @@ module.exports = {
     },
     head: [
 
-    ],
-    srcExclude: ['docs/includes/**']
+    ]
 }

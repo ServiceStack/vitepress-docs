@@ -4,7 +4,7 @@ title: ServiceStack's .NET Core Utility Belt
 ---
 <script setup>
 
-import webTrouble from './includes/web-trouble.md';
+import webTrouble from './.vitepress/includes/web-trouble.md';
 </script>
 
 Our `x` and `app` dotnet tools are a versatile invaluable companion for all ServiceStack developers where it's 
