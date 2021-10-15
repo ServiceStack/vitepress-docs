@@ -1,18 +1,22 @@
 <template>
-  <button class="border-0 p-4 box-border rounded"
-          :class="{'text-white': isActive('tab1'), 'bg-blue-600': isActive('tab1')}"
+  <button class="border-0 p-4 box-border rounded bg-white"
+          :class="{'text-white': isActive('tab1'), 'bg-blue-600': isActive('tab1'),
+          'text-blue-600': !isActive('tab1')}"
           @click="currentTabComponent = 'tab1'">Script Pages
   </button>
-  <button class="border-0 p-4 box-border rounded"
-          :class="{'text-white': isActive('tab2'), 'bg-blue-600': isActive('tab2')}"
+  <button class="border-0 p-4 box-border rounded bg-white"
+          :class="{'text-white': isActive('tab2'), 'bg-blue-600': isActive('tab2'),
+          'text-blue-600': !isActive('tab2')}"
           @click="currentTabComponent = 'tab2'">Server TypeScript
   </button>
-  <button class="border-0 p-4 box-border rounded"
-          :class="{'text-white': isActive('tab3'), 'bg-blue-600': isActive('tab3')}"
+  <button class="border-0 p-4 box-border rounded bg-white"
+          :class="{'text-white': isActive('tab3'), 'bg-blue-600': isActive('tab3'),
+          'text-blue-600': !isActive('tab3')}"
           @click="currentTabComponent = 'tab3'">Server jQuery
   </button>
-  <button class="border-0 p-4 box-border rounded"
-          :class="{'text-white': isActive('tab4'), 'bg-blue-600': isActive('tab4')}"
+  <button class="border-0 p-4 box-border rounded bg-white"
+          :class="{'text-white': isActive('tab4'), 'bg-blue-600': isActive('tab4'),
+          'text-blue-600': !isActive('tab4')}"
           @click="currentTabComponent = 'tab4'">Server Razor
   </button>
   <keep-alive>
