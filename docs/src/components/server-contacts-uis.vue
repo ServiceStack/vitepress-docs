@@ -1,6 +1,6 @@
 <template>
   <link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-d9b0ae634c1abe51fe671d575be5a7d2.css">
-  <button @click="currentTabComponent = 'tab1'">#Script Pages</button>
+  <button @click="currentTabComponent = 'tab1'">Script Pages</button>
   <button @click="currentTabComponent = 'tab2'">Server TypeScript</button>
   <button @click="currentTabComponent = 'tab3'">Server jQuery</button>
   <button @click="currentTabComponent = 'tab4'">Server Razor</button>
@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import tab1 from "./includes/validation/contacts/server-sharp.vue";
-import tab2 from "./includes/validation/contacts/server-ts.vue";
-import tab3 from "./includes/validation/contacts/server-jquery.vue";
-import tab4 from "./includes/validation/contacts/server-razor.vue";
+import tab1 from "../../.vitepress/includes/validation/contacts/server-sharp.md";
+import tab2 from "../../.vitepress/includes/validation/contacts/server-ts.md";
+import tab3 from "../../.vitepress/includes/validation/contacts/server-jquery.md";
+import tab4 from "../../.vitepress/includes/validation/contacts/server-razor.md";
 export default {
   name: "server-contacts-uis",
   components: {

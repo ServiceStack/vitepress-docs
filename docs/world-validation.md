@@ -3,7 +3,7 @@ slug: world-validation
 title: World Validation
 ---
 
-The [World Validation App](https://github.com/NetCoreApps/Validation) covers a typical App example you'd find in most Apps, 
+The [World Validation App](https://github.com/NetCoreApps/Validation) covers a typical Apps examples you would find in most Apps, 
 including **Login** and **Registration Forms** to **Sign In** and **Register** new Users who are then able to access the 
 **same protected Services** to maintain their own private contact lists. 
 It's a compact example that tries to cover a lot of use-cases typical in a real-world App, including maintaining a separate Data and DTO Model 
@@ -15,7 +15,7 @@ As of this writing there **4 different server HTML** generated strategies that u
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/apps/Validation/home.png)](https://github.com/NetCoreApps/Validation)
 
-<h4 align="center">
+<h4 align="center" class="mt-8">
   View Source on GitHub <a href="https://github.com/NetCoreApps/Validation">NetCoreApps/Validation</a> - 
   Live Demo <a href="http://validation.web-app.io">validation.web-app.io</a>
 </h4>
@@ -49,20 +49,20 @@ This is the shared backend Server implementation that all UIs are using:
 
 All Auth Configuration is encapsulated within a "no-touch" `IConfigureAppHost` plugin that's run once on Startup:
 
-<apphostAuthValidation></apphostAuthValidation>
+<<< @/.vitepress/includes/gists/apphost-auth-validation.cs
 
 All Services and Validators used in this App. Extension methods are used to DRY reusable code and a Custom
 [Auto Mapping](/auto-mapping) handles conversion between the `Contact` Data Model and Contact`` DTO:
 
-<customValidatorContact></customValidatorContact>
+<<< @/.vitepress/includes/gists/custom-validator-contact.cs
 
 The dynamic App data used within ServiceStack Sharp Pages and Razor pages are maintained within Custom `ContactScripts` and `RazorHelpers`:
 
-<scriptsRazorHelpers></scriptsRazorHelpers>
+<<< @/.vitepress/includes/gists/scripts-razor-helpers.cs
 
 Typed Request/Response Service Contracts including Data and DTO models that utilizes Enum's:
 
-<contactDtos></contactDtos>
+<<< @/.vitepress/includes/gists/contact-dtos.cs
 
 Each UI implements 4 different screens which are linked from:
 

@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import tab1 from './includes/validation/login/vuetify.vue';
-import tab2 from './includes/validation/login/client-ts.vue';
-import tab3 from './includes/validation/login/client-jquery.vue';
-import tab4 from './includes/validation/login/client-razor.vue';
+import tab1 from '../../.vitepress/includes/validation/login/vuetify.md';
+import tab2 from '../../.vitepress/includes/validation/login/client-ts.md';
+import tab3 from '../../.vitepress/includes/validation/login/client-jquery.md';
+import tab4 from '../../.vitepress/includes/validation/login/client-razor.md';
 export default {
   name: "client-login-uis",
   components: {

@@ -1,5 +1,4 @@
 <template>
-  <link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-d9b0ae634c1abe51fe671d575be5a7d2.css">
   <button @click="currentTabComponent = 'tab1'">Vuetify</button>
   <button @click="currentTabComponent = 'tab2'">Client TypeScript</button>
   <button @click="currentTabComponent = 'tab3'">Client jQuery</button>
@@ -10,10 +9,10 @@
 </template>
 
 <script>
-import tab1 from './includes/validation/contacts/vuetify.vue';
-import tab2 from './includes/validation/contacts/client-ts.vue';
-import tab3 from './includes/validation/contacts/client-jquery.vue';
-import tab4 from './includes/validation/contacts/client-razor.vue';
+import tab1 from '../../.vitepress/includes/validation/contacts/vuetify.md';
+import tab2 from '../../.vitepress/includes/validation/contacts/client-ts.md';
+import tab3 from '../../.vitepress/includes/validation/contacts/client-jquery.md';
+import tab4 from '../../.vitepress/includes/validation/contacts/client-razor.md';
 export default {
   name: "client-contacts-uis",
   components: {
