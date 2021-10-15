@@ -5,6 +5,7 @@ module.exports = {
     description: 'Docs',
     themeConfig: {
         repo: 'ServiceStack/vitepress-docs',
+        docsDir: 'docs',
         editLinks: true,
         editLinkText: 'Edit this page on GitHub',
         lastUpdated: 'Last Updated',
