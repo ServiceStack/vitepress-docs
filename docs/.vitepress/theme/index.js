@@ -12,17 +12,21 @@ import ytEmbed from '../../src/components/yt-embed.vue';
 import nugetPackage from '../../src/components/nuget-ref.vue';
 import './custom.css'
 
-DefaultTheme.enhanceApp = ({ app }) => {
-    app.component('cleanUrlsMd',cleanUrlsMd)
-    app.component('webNewCorefxMd',webNewCorefxMd)
-    app.component('webTroubleMd',webTroubleMd)
-    app.component('clientLoginUis',clientLoginUis)
-    app.component('clientContactUis',clientContactUis)
-    app.component('serverLoginUis',serverLoginUis)
-    app.component('serverContactUis',serverContactUis)
-    app.component('HelloApi',HelloApi)
-    app.component('ytEmbed', ytEmbed)
-    app.component('nugetPackage',nugetPackage)
-}
+import Layout from './Layout.vue';
 
-export default DefaultTheme;
+export default {
+    ...DefaultTheme,
+    Layout: Layout,
+    enhanceApp: ({ app }) => {
+        app.component('cleanUrlsMd',cleanUrlsMd)
+        app.component('webNewCorefxMd',webNewCorefxMd)
+        app.component('webTroubleMd',webTroubleMd)
+        app.component('clientLoginUis',clientLoginUis)
+        app.component('clientContactUis',clientContactUis)
+        app.component('serverLoginUis',serverLoginUis)
+        app.component('serverContactUis',serverContactUis)
+        app.component('HelloApi',HelloApi)
+        app.component('ytEmbed', ytEmbed)
+        app.component('nugetPackage',nugetPackage)
+    }
+};
