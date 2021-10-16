@@ -12,8 +12,10 @@
     "vue-clipboard3": "^1.0.1"
   },
   "scripts": {
+    "postinstall": "node -e \"var fs=require('fs'),js='node_modules/vitepress/dist/client/app/router.js';fs.writeFileSync(js,fs.readFileSync(js,'utf8').replace(`url.pathname += '.html';`,``))\"",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
+    "docs:build-mpa": "vitepress build --mpa docs #gens static .html with no js, but broken now",
     "docs:serve": "vitepress serve docs"
   },
   "postcss": {
