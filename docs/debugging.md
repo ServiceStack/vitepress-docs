@@ -104,7 +104,9 @@ SetConfig(new HostConfig { AdminAuthSecret = "secretz" });
 
 By-pass protected services using query string:
 
-    /my-service?authsecret=secretz
+```
+/my-service?authsecret=secretz
+```
 
 Or if using a Service Client it can be sent in the `authsecret` Cookie or `X-Param-Override-authsecret` HTTP Header.
 
@@ -179,7 +181,9 @@ A even greater way to get deeper insights into a Live running remote ServiceStac
 ServiceStack App where you're able to perform live queries, access IOC dependencies, invoke internal Server functions and query
 the state of a running Server to provide invaluable insight when diagnosing issues on a remote server.
 
-> YouTube: [youtu.be/HO523cFkDfk](https://youtu.be/HO523cFkDfk)
+::: info YouTube
+[youtu.be/HO523cFkDfk](https://youtu.be/HO523cFkDfk)
+:::
 
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/sharpscript/lisp-tcp-repl.gif)](https://youtu.be/HO523cFkDfk)
 
@@ -218,7 +222,9 @@ Add an In-Memory `IRequestLogger` and service with the default route at `/reques
 live log of the most recent requests (and their responses). Supports multiple config options incl. 
 Rolling-size capacity, error and session tracking, hidden request bodies for sensitive services, etc.
 
-    Plugins.Add(new RequestLogsFeature());
+```cs
+Plugins.Add(new RequestLogsFeature());
+```
 
 The `IRequestLogger` is a great way to introspect and analyze your service requests in real-time. 
 Here's a screenshot from the [http://bootstrapapi.servicestack.net](http://bootstrapapi.servicestack.net) 

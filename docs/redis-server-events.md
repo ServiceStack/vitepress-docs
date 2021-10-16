@@ -42,8 +42,6 @@ To showcase Redis ServerEvents in action, we've prepared a stand-alone [ServiceS
 
 [![Redis ServerEvents Preview](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/release-notes/redis-server-events.gif)](https://github.com/ServiceStack/ServiceStack.Gap/raw/master/deploy/Chat.zip)
 
-> As Chat only runs on **2 back-end Services**, it fits well within [ServiceStack's Free Quota's](https://servicestack.net/download#free-quotas) which can be further customized and enhanced without a commercial license.
-
 ### Redis ServerEvents Chat Usage
 
 Running **Chat.exe** without any arguments will run Chat using the default **Memory ServerEvents**. This can be changed to use **Redis ServerEvents** by [un-commenting this line in appsettings.txt](https://github.com/ServiceStack/ServiceStack.Gap/blob/master/src/Chat/Chat/appsettings.txt#L5):

@@ -18,7 +18,9 @@ which is preconfigured in all [ServiceStackVS TypeScript VS.NET Templates](https
 
 npm based projects can install it with:
 
-    npm install @servicestack/client
+```bash
+$ npm install @servicestack/client
+```
 
 To configure Server Sent Events on the client create a new instance of `ServerEventsClient` with the
 **baseUrl** and the **channels** you want to connect to, e.g:
@@ -119,7 +121,9 @@ const client = new ServerEventsClient("/", channels, {
 
 The selector to invoke a global event handler is:
 
-    cmd.{handler} {message}
+```
+cmd.{handler} {message}
+```
 
 Which can be sent in ServiceStack with:
 
@@ -171,11 +175,15 @@ public class MyServices : Service
 
 All server event handler options also support a postfix CSS selector for specifying what each handler should be bound to with a `$` followed by the CSS selector, e.g:
 
-    cmd.{handler}${cssSelector}
+```
+cmd.{handler}${cssSelector}
+```
 
 A concrete example for calling the above API would be:
 
-    cmd.paintGreen$#btnPaint
+```
+cmd.paintGreen$#btnPaint
+```
 
 Which will bind `this` to the `#btnSubmit` HTML Element.
 
@@ -187,22 +195,30 @@ Spaces in CSS selectors need to be encoded with `%20`
 
 As it's a popular use-case Server Events also has native support for modifying CSS properties with:
 
-    css.{propertyName}${cssSelector} {propertyValue}
+```
+css.{propertyName}${cssSelector} {propertyValue}
+```
 
 Where the message is the property value, which roughly translates to:
 
-    document.querySelectorAll({cssSelector}).style[{propertyName}] = {propertyValue}
+```js
+document.querySelectorAll({cssSelector}).style[{propertyName}] = {propertyValue}
+```
 
 When no CSS selector is specified it falls back to `document.body` by default.
 
-    css.background #eceff1
+```
+css.background #eceff1
+```
 
 Some other examples include:
 
-    css.background$#top #673ab7   // $('#top').css('background','#673ab7')
-    css.font$li bold 12px verdana // $('li').css('font','bold 12px verdana')
-    css.visibility$a,img hidden   // $('a,img').css('visibility','#673ab7')
-    css.visibility$a%20img hidden // $('a img').css('visibility','hidden')
+```
+css.background$#top #673ab7   // $('#top').css('background','#673ab7')
+css.font$li bold 12px verdana // $('li').css('font','bold 12px verdana')
+css.visibility$a,img hidden   // $('a,img').css('visibility','#673ab7')
+css.visibility$a%20img hidden // $('a img').css('visibility','hidden')
+```
 
 ### Receivers
 
@@ -220,7 +236,9 @@ receiver.method(argument)
 
 Support for receivers is available in the following format:
 
-    {receiver}.{target} {msg}
+```
+{receiver}.{target} {msg}
+```
 
 ### Registering Receivers
 
@@ -246,8 +264,10 @@ const client = new ServerEventsClient("/", channels)
 
 Once registered you can set any property or call any method on a receiver with:
 
-    document.title New Window Title
-    window.location http://google.com
+```
+document.title New Window Title
+window.location http://google.com
+```
 
 Where if `{target}` was a function it will be invoked with the message, otherwise its property will be set.
 By default when no `{cssSelector}` is defined, `this` is bound to the **receiver** instance.
@@ -280,9 +300,11 @@ const client = new ServerEventsClient("/", channels, {
 
 This registers a custom `tv` receiver that can now be called with:
 
-    tv.watch http://youtu.be/518XP8prwZo
-    tv.watch https://servicestack.net/img/logo-220.png
-    tv.off
+```
+tv.watch http://youtu.be/518XP8prwZo
+tv.watch https://servicestack.net/img/logo-220.png
+tv.off
+```
 
 ### Receiver Constructors
 
@@ -305,7 +327,9 @@ const client = new ServerEventsClient("/", channels, {
 
 Which will invoke `backgroundImage` method off a new instance of the `CssReceiver` class that's triggered with:
 
-    css.background-image url(https://bit.ly/1yIJOBH)
+```
+css.background-image url(https://bit.ly/1yIJOBH)
+```
 
 and can be sent to all subscriptions on the **home** channel in ServiceStack with:
 
@@ -427,8 +451,10 @@ client.addListener("customEvent", e => { ... });
 
 The selector to trigger this custom event is:
 
-    trigger.customEvent arg
-    trigger.customEvent {json}
+```
+trigger.customEvent arg
+trigger.customEvent {json}
+```
 
 Which can be sent in ServiceStack with a simple or complex type argument, e.g:
 

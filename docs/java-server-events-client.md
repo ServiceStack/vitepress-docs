@@ -18,10 +18,12 @@ can be installed in your
 [build.gradle](https://github.com/ServiceStackApps/AndroidJavaChat/blob/master/src/androidchat/app/build.gradle)
 with:
 
-    dependencies {
-        implementation 'net.servicestack:android:1.0.48'
-        ...
-    }
+```groovy
+dependencies {
+    implementation 'net.servicestack:android:1.0.48'
+    ...
+}
+```
 
 Or in Maven with:
 
@@ -38,7 +40,9 @@ Other Java/JVM languages running on the JVM (JRE 7+) can use the `ServerEventsCl
 [net.servicestack:client](https://bintray.com/servicestack/maven/ServiceStack.Client) package which can 
 be installed using Gradle:
 
-    compile 'net.servicestack:client:1.0.48'
+```
+compile 'net.servicestack:client:1.0.48'
+```
 
 Or Maven:
 
@@ -147,7 +151,9 @@ ServerEventsClient client = new AndroidServerEventsClient(baseUrl, "home")
 
 The selector to invoke a global event handler is:
 
-    cmd.{handler} {message}
+```
+cmd.{handler} {message}
+```
 
 Which can be sent in ServiceStack with:
 
@@ -183,11 +189,15 @@ ChatMessage chatMsg = JsonUtils.fromJson(e.getJson(), ChatMessage.class); //Comp
 
 All server event handler options also support a postfix CSS selector for specifying what each handler should be bound to with a `$` followed by the CSS selector, e.g:
 
-    cmd.{handler}${cssSelector} {value}
+```
+cmd.{handler}${cssSelector} {value}
+```
 
 A concrete example for calling the above API would be:
 
-    cmd.paint$#town red
+```
+cmd.paint$#town red
+```
 
 ::: info
 Spaces in CSS selectors need to be encoded with `%20`
@@ -247,7 +257,9 @@ receiver.method(argument)
 
 Support for receivers is available in the following format:
 
-    {receiver}.{target} {msg}
+```
+{receiver}.{target} {msg}
+```
 
 ### Registering Receivers
 
@@ -307,7 +319,9 @@ public class MyResolver implements IResolver {
 
 Which will invoke `backgroundImage` method off a new instance of the `CssReceiver` class that's triggered with:
 
-    css.background-image url(https://bit.ly/1yIJOBH)
+```
+css.background-image url(https://bit.ly/1yIJOBH)
+```
 
 and can be sent to all subscriptions on the **home** channel in ServiceStack with:
 
@@ -458,8 +472,10 @@ client.addListener("customEvent", msgs1::add);
 
 The selector to trigger this custom event is:
 
-    trigger.customEvent arg
-    trigger.customEvent {json}
+```
+trigger.customEvent arg
+trigger.customEvent {json}
+```
 
 Which can be sent in ServiceStack with a simple or complex type argument, e.g:
 

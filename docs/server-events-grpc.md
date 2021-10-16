@@ -8,8 +8,10 @@ slug: server-events-grpc
 In addition to standard Services which gRPC Refers to as **Unary RPC**, i.e. where clients sends a single request to the server and 
 gets a single response back. Another very useful communication style supported by gRPC is **Server streaming**:
 
-> the client sends a request to the server and gets a stream to read a sequence of messages back. The client reads from the returned stream 
-until there are no more messages. gRPC guarantees message ordering within an individual RPC call.
+::: info
+the client sends a request to the server and gets a stream to read a sequence of messages back. The client reads from the returned stream 
+until there are no more messages. gRPC guarantees message ordering within an individual RPC call
+:::
 
 #### StreamServerEvents
 
@@ -24,7 +26,9 @@ interrupted service.
 As a first class supported communication channel clients can instead leverage gRPC's library infrastructure which is perfectly suited for
 streaming real-time Server Events over an efficient persistent HTTP/2 channel that's available from the `StreamServerEvents` gRPC Service:
 
-    rpc ServerStreamServerEvents(StreamServerEvents) returns (stream StreamServerEventsResponse) {}
+```proto
+rpc ServerStreamServerEvents(StreamServerEvents) returns (stream StreamServerEventsResponse) {}
+```
 
 Which gives all `protoc` supported languages a Typed Client for consuming your [Server Events](/server-events).
 
@@ -74,11 +78,13 @@ await foreach (var msg in stream)
 If connected whilst running the [TodoWorld CRUD Example](https://todoworld.servicestack.net/#user-content-c-local-development-grpc-ssl-crud-example)
 this stream will output something similar to:
 
-    EVENT cmd.onConnect []: #-1 user1
-    EVENT cmd.onJoin [todos]: #-1 user1
-    EVENT todos.create [todos]: #1 ServiceStack
-    EVENT todos.update [todos]: #1 gRPC
-    EVENT todos.delete [todos]: 1
+```
+EVENT cmd.onConnect []: #-1 user1
+EVENT cmd.onJoin [todos]: #-1 user1
+EVENT todos.create [todos]: #1 ServiceStack
+EVENT todos.update [todos]: #1 gRPC
+EVENT todos.delete [todos]: 1
+```
 
 #### protoc Dart Streams
 

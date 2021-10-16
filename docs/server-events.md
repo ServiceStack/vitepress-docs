@@ -105,11 +105,13 @@ class ServerEventsFeature
 }
 ```
 
-> The paths allow you to customize the routes for the built-in Server Events API's, whilst setting either path to `null` disables that feature. 
+::: info
+The paths lets you customize the routes for the built-in Server Events API's, whilst setting a path to `null` disables that feature
+:::
 
 ### Custom Event Hooks
 
-There are also a number of hooks available providing entry points where custom logic can be added to modify or enhance existing behavior:
+A number of hooks are available providing entry points where custom logic can be added to modify or enhance existing behavior:
 
 ```csharp
 class ServerEventsFeature
@@ -134,7 +136,9 @@ class ServerEventsFeature
 
 The way your Services send notifications is via the `IServerEvents` API which defaults to an in-memory `MemoryServerEvents` implementation which keeps a record of all subscriptions and connections in memory:
 
-> Server Events can also be configured to use a [distributed Redis backend](/redis-server-events) which allows Server Events to work across load-balanced app servers.
+::: info
+Server Events can be configured to use a [distributed Redis backend](/redis-server-events) allowing it to work across load-balanced app servers
+:::
 
 ```csharp
 public interface IServerEvents : IDisposable
@@ -281,7 +285,9 @@ new ServerEventsFeature {
 
 Standard Publish / Subscribe patterns include the concept of a **Channel** upon which to subscribe and publish messages to. The channel in Server Events can be any arbitrary string which is declared on the fly when it's first used. 
 
-> As Request DTO names are unique in ServiceStack they also make good channel names which benefit from providing a typed API for free, e.g: `typeof(Request).Name`.
+::: info Tip
+As Request DTO names are unique in ServiceStack they can make for good channel names which benefit from providing a typed API for free, e.g: `nameof(Request)`
+:::
 
 The API to send a message to a specific channel is:
 
@@ -309,7 +315,9 @@ The following Server and Client callbacks are fired when a client first makes a 
  6. `ServerEventsFeature.OnUpdateAsync()` - Fired after the subscription is updated (e.g. subscribed Channels are updated)
  7. **(Client)** - If `ServerEventsFeature.NotifyChannelOfSubscriptions = true` every client in the same channel receives a `cmd.onJoin` message to notify them that a new subscription has joined the channel as well as a `cmd.onLeave` message when subscription leaves the channel
 
-> The `cmd.onConnect`, `cmd.onJoin` and `cmd.onLeave` messages can be handled with the [Global Event Handlers](/javascript-server-events-client#global-event-handlers) on the JavaScript Client and the [Message Event Handlers](/csharp-server-events-client#message-event-handlers) or the [Global Receiver](/csharp-server-events-client#the-global-receiver) .NET ServerEventClient.
+::: info
+The `cmd.onConnect`, `cmd.onJoin` and `cmd.onLeave` messages can be handled with the [Global Event Handlers](/javascript-server-events-client#global-event-handlers) on the JavaScript Client and the [Message Event Handlers](/csharp-server-events-client#message-event-handlers) or the [Global Receiver](/csharp-server-events-client#the-global-receiver) .NET ServerEventClient
+:::
 
 ### Heartbeats
 
@@ -354,7 +362,9 @@ chat: function (m, e) {
 
 You can specify to use an alternative selector by prefixing the message with a `/{selector}`, e.g: 
 
-    /cmd.announce This is your captain speaking ...
+```
+/cmd.announce This is your captain speaking ...
+```
 
 When a selector is specified in Chat it routes the message to the `/channels/{Channel}/raw` Service which passes the raw message through as a string. Normal Chat entries are instead posted to the `/channels/{Channel}/chat` Service, adding additional metadata to the chat message with the user id and name of the sender so it can be displayed in the chat log. The Javascript code that calls both Services is simply: 
 
@@ -373,12 +383,16 @@ if (msg[0] == "/") {
 
 Another special syntax supported in Chat is the ability to send messages to other users by prefixing it with `@` followed by the username, e.g:
 
-    @mythz this is a private message
-    @mythz /tv.watch http://youtu.be/518XP8prwZo
+```
+@mythz this is a private message
+@mythz /tv.watch http://youtu.be/518XP8prwZo
+```
 
 There's also a special `@me` alias to send a message to yourself, e.g:
 
-    @me /tv.watch http://youtu.be/518XP8prwZo
+```
+@me /tv.watch http://youtu.be/518XP8prwZo
+```
 
 ## Server Event Services
 
@@ -505,8 +519,10 @@ public class UpdateEventSubscriber : IReturn<UpdateEventSubscriberResponse>
 
 This lets you modify your active subscription with channels you want to join or leave with a HTTP POST Request, e.g:
 
-    POST /event-subscribers/{subId}
-    SubscribeChannels=chan1,chan2&UnsubscribeChannels=chan3,chan4
+```
+POST /event-subscribers/{subId}
+SubscribeChannels=chan1,chan2&UnsubscribeChannels=chan3,chan4
+```
 
 ### onUpdate Notification
 

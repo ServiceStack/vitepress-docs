@@ -362,8 +362,10 @@ client.AddListener("customEvent", msg => { ... });
 
 The selector to trigger this custom event is:
 
-    trigger.customEvent arg
-    trigger.customEvent {json}
+```
+trigger.customEvent arg
+trigger.customEvent {json}
+```
 
 Which can be sent in ServiceStack with a simple or complex type argument, e.g:
 

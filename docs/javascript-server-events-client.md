@@ -93,7 +93,9 @@ $(document).bindHandlers({
 
 The selector to invoke a global event handler is:
 
-    cmd.{handler}
+```
+cmd.{handler}
+```
 
 Where `{handler}` is the name of the handler you want to invoke, e.g `cmd.paintGreen`. When invoked from a server event the message (deserialized from JSON) is the first argument, the Server Sent DOM Event is the 2nd argument and `this` by default is assigned to `document.body`.
 
@@ -139,11 +141,15 @@ public class MyServices : Service
 
 All server event handler options also support a postfix jQuery selector for specifying what each handler should be bound to with a `$` followed by the jQuery selector, e.g:
 
-    cmd.{handler}${jQuerySelector}
+```
+cmd.{handler}${jQuerySelector}
+```
 
 A concrete example for calling the above API would be:
 
-    cmd.paintGreen$#btnPaint
+```
+cmd.paintGreen$#btnPaint
+```
 
 Which will bind `this` to the `#btnSubmit` HTML Element, retaining the same behavior as if it were called with `data-click="paintGreen"`.
 
@@ -155,22 +161,30 @@ Spaces in jQuery selectors need to be encoded with `%20`
 
 As it's a popular use-case Server Events also has native support for modifying CSS properties with:
 
-    css.{propertyName}${jQuerySelector} {propertyValue}
+```
+css.{propertyName}${jQuerySelector} {propertyValue}
+```
 
 Where the message is the property value, which roughly translates to:
 
-    $({jQuerySelector}).css({propertyName}, {propertyValue})
+```js
+$({jQuerySelector}).css({propertyName}, {propertyValue})
+```
 
 When no jQuery selector is specified it falls back to `document.body` by default.
 
-    /css.background #eceff1
+```
+/css.background #eceff1
+```
 
 Some other examples include:
 
-    /css.background$#top #673ab7   // $('#top').css('background','#673ab7')
-    /css.font$li bold 12px verdana // $('li').css('font','bold 12px verdana')
-    /css.visibility$a,img hidden   // $('a,img').css('visibility','#673ab7')
-    /css.visibility$a%20img hidden // $('a img').css('visibility','hidden')
+```
+/css.background$#top #673ab7   // $('#top').css('background','#673ab7')
+/css.font$li bold 12px verdana // $('li').css('font','bold 12px verdana')
+/css.visibility$a,img hidden   // $('a,img').css('visibility','#673ab7')
+/css.visibility$a%20img hidden // $('a img').css('visibility','hidden')
+```
 
 ### jQuery Events
 
@@ -186,8 +200,10 @@ $(document).on('customEvent', function(event, arg, msgEvent){
 
 The selector to trigger this event is:
 
-    trigger.customEvent arg
-    trigger.customEvent$#btnPaint arg
+```
+trigger.customEvent arg
+trigger.customEvent$#btnPaint arg
+```
 
 Where if no jQuery selector is specified it defaults to `document`. These selectors are equivalent to:
 
@@ -212,7 +228,9 @@ receiver.method(argument)
 
 Support for receivers is available in the following format:
 
-    {receiver}.{target} {msg}
+```
+{receiver}.{target} {msg}
+```
 
 ### Registering Receivers
 
@@ -227,8 +245,10 @@ $.ss.eventReceivers = {
 
 Once registered you can set any property or call any method on a receiver with:
 
-    document.title New Window Title
-    window.location http://google.com
+```
+document.title New Window Title
+window.location http://google.com
+```
 
 Where if `{target}` was a function it will be invoked with the message, otherwise its property will be set.
 By default when no `{jQuerySelector}` is defined, `this` is bound to the **receiver** instance.
@@ -258,9 +278,11 @@ $(source).handleServerEvents({
 
 This registers a custom `tv` receiver that can now be called with:
 
-    tv.watch http://youtu.be/518XP8prwZo
-    tv.watch https://servicestack.net/img/logo-220.png
-    tv.off
+```
+tv.watch http://youtu.be/518XP8prwZo
+tv.watch https://servicestack.net/img/logo-220.png
+tv.off
+```
 
 ### Un Registering a Receiver
 
