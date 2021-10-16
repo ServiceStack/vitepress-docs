@@ -5,8 +5,8 @@ let navIndex = require('./sidebar/index.json'),
     navGrpc = require('./sidebar/grpc.json')
 
 module.exports = {
-    title: 'ServiceStack',
-    description: 'Docs',
+    title: 'Documentation',
+    description: 'ServiceStack Docs',
     themeConfig: {
         repo: 'ServiceStack/vitepress-docs',
         docsDir: 'docs',
