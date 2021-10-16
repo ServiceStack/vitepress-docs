@@ -27,3 +27,13 @@
     .video-hd { width: 375px; height: 211px }
 }
 
+::-webkit-scrollbar { width:8px; height:5px }
+::-webkit-scrollbar-thumb { background-color:#ccc; }
+
+
+.nav-bar-title {
+    background: url(../../images/logo-only.svg) no-repeat;
+    font-size: 1.6rem !important;
+    padding-left: 2.5rem;
+    font-weight: 700 !important;
+}
