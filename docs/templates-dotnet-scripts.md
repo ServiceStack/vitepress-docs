@@ -1,5 +1,5 @@
 ---
-slug: dotnet-scripts
+slug: templates-dotnet-scripts
 title: Cross platform dotnet scripts
 ---
 

@@ -828,5 +828,5 @@ Building upon AutoQuery is a number of other features that increase the capabili
 
  - [Declarative Validation](/declarative-validation)
  - [Executable Audit Log](/autoquery-audit-log)
- - [Instantly Servicify with AutoGen](/autogen)
+ - [Instantly Servicify with AutoGen](/autoquery-autogen)
  

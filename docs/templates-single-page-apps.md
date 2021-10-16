@@ -150,9 +150,9 @@ Will be evaluated on the server and render the expected:
  
     Copyright © 2018
 
-### [Quick tour of Webpack](/tour-of-webpack)
+### [Quick tour of Webpack](/templates-webpack)
 
-Most SPA projects are pre-configured with tooling to manage their own Webpack app builds, but if you want to learn more please see the [Tour of Webpack](/tour-of-webpack).
+Most SPA projects are pre-configured with tooling to manage their own Webpack app builds, but if you want to learn more please see the [Tour of Webpack](/templates-webpack).
 
 ### Watched .NET Core builds
 

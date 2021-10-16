@@ -499,7 +499,7 @@ public object Post(RawBytes request)
 
 ### Pluralize and Singularize
 
-In order to use optimal user-friendly routes in [AutoGen AutoQuery Services](/autogen), an interned version of 
+In order to use optimal user-friendly routes in [AutoGen AutoQuery Services](/autoquery-autogen), an interned version of 
 [Andrew Peters port of Rails Inflector](http://andrewpeters.net/inflectornet/) is available under the `Words` static class
 that you can use to `Pluralize` or `Singularize` routes:
 

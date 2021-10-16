@@ -479,7 +479,7 @@ We've added 2 new "Cloud-Ready" [Caching Providers](/caching) for Amazon's AWS D
 
 ### Authentication
 
-We've added RavenDB to our list of supported [Auth Provider backends](/authentication-and-authorization) and extended our [OpenId support](/openid) to include DotNetAuth's support for Google, Yahoo and alternate Custom OpenId providers:
+We've added RavenDB to our list of supported [Auth Provider backends](/authentication-and-authorization) and extended our [OpenId support](/auth-openid) to include DotNetAuth's support for Google, Yahoo and alternate Custom OpenId providers:
 
   - [ServiceStack.Authentication.RavenDb](https://nuget.org/packages/ServiceStack.Authentication.RavenDb/) on NuGet
   - [Google, Yahoo, MyOpenId and Custom OpenId](https://nuget.org/packages/ServiceStack.Authentication.OpenId/) on NuGet

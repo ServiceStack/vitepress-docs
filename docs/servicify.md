@@ -4,17 +4,17 @@ title: Instantly Servicify existing Systems
 ---
 
 In addition to [AutoQuery](/autoquery-rdbms) automatically providing your Services implementations,
-[Studio](/studio) providing its instant UI, ServiceStack also gained the capability to **[generate your entire API](/autogen)** including Typed API contracts, data models, implementations & human-friendly pluralized HTTP API routes over an existing System RDBMS's tables.
+[Studio](/studio) providing its instant UI, ServiceStack also gained the capability to **[generate your entire API](/autoquery-autogen)** including Typed API contracts, data models, implementations & human-friendly pluralized HTTP API routes over an existing System RDBMS's tables.
 
 <iframe class="video-hd" src="https://www.youtube.com/embed/NaJ7TW-Q_pU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-## [AutoGen](/autogen)
+## [AutoGen](/autoquery-autogen)
 
 ServiceStack's **AutoGen** enables a number of exciting possibilities, predominantly it's the fastest way to ServiceStack-ify an existing systems RDBMS where it will serve as an invaluable tool for anyone wanting to quickly migrate to ServiceStack and access its functionality ecosystem around ServiceStack Services:
 
 <img src="https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/svg/servicify.svg" width="100%">
 
-**[AutoGen's](/autogen)** code generation is programmatically customizable where the generated types can be easily augmented with additional declarative attributes to inject your App's conventions into the auto generated Services & Types to apply custom behavior like Authorization & additional validation rules. 
+**[AutoGen's](/autoquery-autogen)** code generation is programmatically customizable where the generated types can be easily augmented with additional declarative attributes to inject your App's conventions into the auto generated Services & Types to apply custom behavior like Authorization & additional validation rules. 
 
 After codifying your system conventions the generated classes can optionally be "ejected" where code-first development can continue as normal.
 

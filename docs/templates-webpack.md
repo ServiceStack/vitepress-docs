@@ -1,6 +1,6 @@
 ---
+slug: templates-webpack
 title: Tour of Webpack
-slug: tour-of-webpack
 ---
 
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/ssvs/webpack-overview.png)](https://webpack.js.org)
@@ -232,10 +232,10 @@ Loaders only loads and transforms files on a **per-file** basis, anything more a
  3. References the **vendor** `.js` and `.css` bundles in the App's Webpack build
  4. Generate the WebApps `index.html`, based on [index.template.ejs](https://github.com/NetFrameworkTemplates/react-desktop-apps-netfx/blob/master/MyApp/index.template.ejs) and compiled with [lodash template](https://lodash.com/docs/4.17.4#template), which also takes care of injecting any `.css` and `.js` output bundle references
  5. Injects the vendor  `.js` and `.css` bundles in the generated `wwwroot/index.html`
-  
+
 ```js
 plugins: [
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': isDev ? '"development"' : '"production"' }),
+    new webpack.DefinePlugin({ '_process.env.NODE_ENV': isDev ? '"development"' : '"production"' }),
     new webpack.WatchIgnorePlugin([root("wwwroot")]),
     ...when(!isTest, [
         new webpack.DllReferencePlugin({
@@ -272,7 +272,9 @@ SetConfig(new HostConfig {
 
 When your App is ready to deploy, run the `publish` npm (or Gulp) script to package your App for deployment:
 
-    npm run publish
+```bash
+npm run publish
+```
 
 Which creates a production build of your App where the `.css` files are written using [ExtractTextPlugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) and the resulting `.js` files minified with UglifyJS. The full production build is generated in in `/wwwroot/dist` folder where it's ready for an XCOPY, rsync or MSDeploy deployment.
 
@@ -317,7 +319,6 @@ In production builds the `file-loader` copies their references to the output fol
         ? 'url-loader?limit=10000&name=img/[name].[hash].[ext]' 
         : 'file-loader?name=img/[name].[ext]'
 },
-
 ```
 
 `require()` can also be used to load resources in other files which is how images can be imported in the [index.template.ejs](https://github.com/NetCoreTemplates/vue-spa/blob/master/MyApp/index.template.ejs) home page template:
@@ -348,17 +349,19 @@ You'll use development builds when developing your app locally which you can run
  
 This will generate your App in the `/wwwroot/dist` folder similar to:
  
-    /wwwroot
-        /dist
-            /img
-                logo.png
-                ...
-            app.bundle.js
-            vendor.dll.css
-            vendor.dll.js
-            vendor-manifest.json
-    index.html
- 
+ ```
+/wwwroot
+    /dist
+        /img
+            logo.png
+            ...
+        app.bundle.js
+        vendor.dll.css
+        vendor.dll.js
+        vendor-manifest.json
+index.html
+```
+
 The lack of `.css` files or source-maps are due to being embedded in the `.js` bundles and injected in the browser's DOM within `<style></style>` tags. 
  
 After the Webpack development build has completed you can just run or refresh your ASP.NET Web App to view the latest changes.

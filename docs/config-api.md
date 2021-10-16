@@ -20,7 +20,7 @@ Benefits over existing XML Configuration APIs include:
 
 and promotes less-coupling since its only an [interface](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/Configuration/IResourceManager.cs) so can easily be swapped to have [Plugins](/plugins) source their complex configuration from an different source (e.g. from a central DB) without a rewrite. 
 
-[OpenId](/openid) providers like the [FacebookAuthProvider](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.ServiceInterface/Auth/FacebookAuthProvider.cs#L23) is an example of Plugins that require multiple configuration settings but remain de-coupled from any one configuration source (e.g. Web.config).
+[OpenId](/auth-openid) providers like the [FacebookAuthProvider](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.ServiceInterface/Auth/FacebookAuthProvider.cs#L23) is an example of Plugins that require multiple configuration settings but remain de-coupled from any one configuration source (e.g. Web.config).
 
 ### Example AppSettings Usage
 

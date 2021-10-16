@@ -548,4 +548,4 @@ supports packaging your Web App into 4 different ASP.NET, Winforms, OSX Cocoa an
 
 ## Learn more
 
-To learn more about how Webpack is used in this Template see [Tour of Webpack](/tour-of-webpack).
+To learn more about how Webpack is used in this Template see [Tour of Webpack](/templates-webpack).

@@ -1,9 +1,7 @@
 ---
-slug: security
+slug: auth
 title: Security Overview
 ---
-
-## Authentication
 
 See the [Authentication and Authorization](/authentication-and-authorization) docs to learn about Authentication in ServiceStack which
 is encompassed by the high-level Overview:
@@ -77,7 +75,7 @@ Additional documentation for specific Auth Providers:
 
   - [JWT Auth Provider](/jwt-authprovider)
   - [API Key Auth Provider](/api-key-authprovider)
-  - [Open Id 2.0 Support](/openid)     
+  - [Open Id 2.0 Support](/auth-openid)     
 
 ## ASP.NET Core Project Templates with integrated Auth 
 
@@ -138,7 +136,7 @@ See the [Session docs](/sessions) for more info about customizing Sessions and h
 
 ### Restricting Services
 
-See the [Restricting Services docs](/restricting-services) for learning how to control the Visibility and Access restrictions on any service using the `[Restrict]` attribute. 
+See the [Restricting Services docs](/auth-restricting-services) for learning how to control the Visibility and Access restrictions on any service using the `[Restrict]` attribute. 
 
 
 <a name="community"></a>

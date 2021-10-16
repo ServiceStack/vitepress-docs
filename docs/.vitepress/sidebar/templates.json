@@ -1,0 +1,83 @@
+[
+    {
+        "text": "Project Templates",
+        "children": [
+          {
+            "text": "Overview",
+            "link": "/templates-overview"
+          },
+          {
+            "text": "ASP.NET Core on .NET Framework",
+            "link": "/templates-corefx"
+          },
+          {
+            "text": "x new - Project Template",
+            "link": "/dotnet-new"
+          },
+          {
+            "text": "Single Page App Templates",
+            "link": "/templates-single-page-apps"
+          },
+          {
+            "text": "Website Templates",
+            "link": "/templates-websites"
+          },
+          {
+            "text": "Empty Starting Templates",
+            "link": "/templates-empty-starting"
+          },
+          {
+            "text": "Vue and React \"lite\" Templates",
+            "link": "/templates-lite"
+          },
+          {
+            "text": "Vuetify Templates",
+            "link": "/templates-vuetify"
+          },
+          {
+            "text": "Nuxt Templates",
+            "link": "/templates-nuxt"
+          },
+          {
+            "text": "Vue Templates",
+            "link": "/templates-vue"
+          },
+          {
+            "text": "React Templates",
+            "link": "/templates-react"
+          },
+          {
+            "text": "Svelte Templates",
+            "link": "/templates-svelte"
+          },
+          {
+            "text": "Angular Templates",
+            "link": "/templates-angular"
+          },
+          {
+            "text": "AWS Lambda Templates",
+            "link": "/templates-aws"
+          },
+          {
+            "text": "Desktop Templates",
+            "link": "/templates-desktop"
+          },
+          {
+            "text": "Blazor Templates",
+            "link": "/templates-blazor"
+          },
+          {
+            "text": "Vue, React, Angular Components",
+            "link": "/templates-spa-components"
+          },
+          {
+            "text": "Tour of Webpack",
+            "link": "/templates-webpack"
+          },
+          {
+            "text": "Cross platform dotnet scripts",
+            "link": "/templates-dotnet-scripts"
+          }
+        ]
+    }
+]

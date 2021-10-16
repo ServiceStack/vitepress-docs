@@ -268,7 +268,7 @@ One of the benefits of utilizing smart generic Service Clients is being able to 
 Authentication that would be tedious and error prone for all API Consumers to have to implement manually.
 
 All smart generic Service Clients have support for most of [built-in Authentication](/authentication-and-authorization) options
-including [OAuth Providers](https://github.com/ServiceStackApps/AndroidJavaChat) and [Sign In with Apple](/signin-with-apple)
+including [OAuth Providers](https://github.com/ServiceStackApps/AndroidJavaChat) and [Sign In with Apple](/auth-signin-with-apple)
 that are able to take advantage of the integrated and transparent JWT and Refresh Token Cookie support.
 
 ### Refresh Token Cookies supported in all Service Clients
@@ -337,7 +337,7 @@ If you're updating references frequently you can save time by [assigning it a ke
  - **Reusable** Generated DTOs are not coupled to any endpoint or format. Defaults are both partial and virtual for maximum re-use 
  - **Resilient** Messaging-based services offer a number of [advantages over RPC Services](/advantages-of-message-based-web-services)
  - **Flexible** DTO generation is customizable, Server and Clients can override built-in defaults
- - **Integrated** Rich Service metadata annotated on DTO's, [Internal Services](/restricting-services) are excluded when accessed externally
+ - **Integrated** Rich Service metadata annotated on DTO's, [Internal Services](/auth-restricting-services) are excluded when accessed externally
 
 ## In Contrast with WCF's Add Service Reference
 
@@ -407,7 +407,7 @@ nativeTypes.MetadataTypesConfig.IgnoreTypes.Add(typeof(TypeToIgnore));
 ```
 
 If you only want to limit code generation based on where the reference is being added from you can use the 
-[Restrict Attribute](/restricting-services), 
+[Restrict Attribute](/auth-restricting-services), 
 E.g you can limit types to only appear when the reference is added from localhost:
 
 ```csharp

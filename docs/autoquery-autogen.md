@@ -1,6 +1,6 @@
 ---
-slug: autogen
-title: AutoGen AutoQuery & CRUD Services
+slug: autoquery-autogen
+title: AutoQuery AutoGen CRUD Services
 ---
 
 Long time users of ServiceStack will know it's a staunch proponent of **code-first development** where your C# Types retains the master authority of your App's logic, although there are a number of times where you have to work with existing databases which would require significant effort to create the initial code-first Data Models. Historically we've pointed people to use [OrmLite's T4 Template Support](https://github.com/ServiceStack/ServiceStack.OrmLite#t4-template-support) which provides a decent initial stab, however it's limited in its capability and offers a sub par development experience.

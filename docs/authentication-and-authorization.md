@@ -150,7 +150,7 @@ There are also a number Auth Providers have a dependency on `DotNetOpenAuth` tha
 
 
 The OAuth2 Providers are in [ServiceStack.Authentication.OAuth2](https://www.nuget.org/packages/ServiceStack.Authentication.OAuth2/) whilst the Open ID providers 
-are in [ServiceStack.Authentication.OpenId](https://www.nuget.org/packages/ServiceStack.Authentication.OpenId/) NuGet packages. More info available in [OAuth2 and OpenId 2.0 docs](/openid). Although they should be considered legacy as DotNetOpenAuth is no longer maintained and can't be used in ASP.NET Core projects.
+are in [ServiceStack.Authentication.OpenId](https://www.nuget.org/packages/ServiceStack.Authentication.OpenId/) NuGet packages. More info available in [OAuth2 and OpenId 2.0 docs](/auth-openid). Although they should be considered legacy as DotNetOpenAuth is no longer maintained and can't be used in ASP.NET Core projects.
 
 ### Community Auth Providers
 
@@ -963,7 +963,7 @@ new CredentialsAuthProvider {
 
 When enabled this lets **In Process** Service Requests to login as a specified user without needing to provide their password. 
 
-For example this could be used to create an [Intranet Restricted](/restricting-services) **Admin-Only** Service that lets you login as another user so you can debug their account without knowing their password with:
+For example this could be used to create an [Intranet Restricted](/auth-restricting-services) **Admin-Only** Service that lets you login as another user so you can debug their account without knowing their password with:
 
 ```csharp
 [RequiredRole("Admin")]

@@ -38,9 +38,9 @@
     - [AWS Lambda Templates](/templates-aws)
     - [Desktop Templates](/templates-desktop)
     - [Blazor Templates](/templates-blazor)
-    - [Vue, React, Angular Components](/spa-components)
-    - [Tour of Webpack](/tour-of-webpack)
-    - [Cross platform dotnet scripts](/dotnet-scripts)
+    - [Vue, React, Angular Components](/templates-spa-components)
+    - [Tour of Webpack](/templates-webpack)
+    - [Cross platform dotnet scripts](/templates-dotnet-scripts)
 - ##### GitHub Action Templates
     - [Overview](/github-action-templates)
     - [GitHub GHR & Digital Ocean](/do-github-action-mix-deployment)
@@ -98,7 +98,7 @@
     - [AutoQuery Data DynamoDB](/autoquery-dynamodb)
     - [AutoQuery CRUD](/autoquery-crud)
     - [AutoQuery Audit Log](/autoquery-audit-log)
-    - [AutoGen](/autogen)
+    - [AutoGen](/autoquery-autogen)
     - [AutoQuery CRUD Bookings Demo](/autoquery-crud-bookings)
 - ##### Server Events
     - [Overview](/server-events)

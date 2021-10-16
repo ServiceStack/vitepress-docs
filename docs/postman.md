@@ -29,7 +29,7 @@ This will open up the import dialog, where you can paste the metadata url and cl
 
 ### Available Routes 
 
-Once imported it will populate a list of available operations that can be selected and easily called from within the Postman UI. Just like the [Swagger Support](/swagger-api) the list of operations returned respects the [Restriction Attributes](/restricting-services) and only shows the operations each user is allowed to see. The operations returned also favour custom user-defined routes, when none exists it will fallback to use the [pre-defined routes](/routing#pre-defined-routes).
+Once imported it will populate a list of available operations that can be selected and easily called from within the Postman UI. Just like the [Swagger Support](/swagger-api) the list of operations returned respects the [Restriction Attributes](/auth-restricting-services) and only shows the operations each user is allowed to see. The operations returned also favour custom user-defined routes, when none exists it will fallback to use the [pre-defined routes](/routing#pre-defined-routes).
 
 ### Label Customization
 

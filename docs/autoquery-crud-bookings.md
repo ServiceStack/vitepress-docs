@@ -52,7 +52,7 @@ Then mix in your desired features. E.g. In order for this project to be self-hos
 
     $ app mix auth auth-db sqlite
 
-But if you also wanted to enable the new [Sign in with Apple](/signin-with-apple) and use SQL Server you'll instead run:
+But if you also wanted to enable the new [Sign in with Apple](/auth-signin-with-apple) and use SQL Server you'll instead run:
 
     $ app mix auth-ext auth-db sqlserver
 

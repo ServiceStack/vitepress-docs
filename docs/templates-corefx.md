@@ -120,7 +120,7 @@ Some solutions that have been known to resolve these issues include:
    - [System.Net.Http](https://stackoverflow.com/a/48867478/85785)
  3. [Install the missing .dll into the GAC](https://stackoverflow.com/a/62770487/85785)
  4. If you had an existing binding redirect, try removing it
- 5. Adding `<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>` to your project's .csproj 
+ 5. Adding `<AutoGenerateBindingRedirects>true</autoquery-autogenerateBindingRedirects>` to your project's .csproj 
  6. Uninstalling and Reinstalling the problem packages from your projects
  7. Clean Solution and remove project artifacts, including Nuget `/packages` and project `/bin` and `/obj` folders
  8. Upgrading to the latest version of the .NET Framework (v4.7.2+)

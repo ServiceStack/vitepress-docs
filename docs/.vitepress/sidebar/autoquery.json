@@ -1,0 +1,51 @@
+[
+  {
+    "text": "AutoQuery",
+    "children": [
+      {
+        "text": "Overview",
+        "link": "/autoquery"
+      },
+      {
+        "text": "AutoQuery RDBMS",
+        "link": "/autoquery-rdbms"
+      },
+      {
+        "text": "AutoQuery Data",
+        "link": "/autoquery-data"
+      },
+      {
+        "text": "AutoQuery Data Memory",
+        "link": "/autoquery-memory"
+      },
+      {
+        "text": "AutoQuery Data Service",
+        "link": "/autoquery-service"
+      },
+      {
+        "text": "AutoQuery Data DynamoDB",
+        "link": "/autoquery-dynamodb"
+      },
+      {
+        "text": "AutoQuery CRUD",
+        "link": "/autoquery-crud"
+      },
+      {
+        "text": "AutoQuery Audit Log",
+        "link": "/autoquery-audit-log"
+      },
+      {
+        "text": "AutoGen",
+        "link": "/autoquery-autogen"
+      },
+      {
+        "text": "AutoQuery CRUD Bookings Demo",
+        "link": "/autoquery-crud-bookings"
+      },
+      {
+        "text": "Why Not OData",
+        "link": "/why-not-odata"
+      }
+   ]
+  }
+]

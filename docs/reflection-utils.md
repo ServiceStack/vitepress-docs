@@ -7,7 +7,7 @@ Most of ServiceStack's libraries relies on the high-performance reusable utiliti
 
 ## Dynamically adding Attributes
 
-Many of ServiceStack features are lit up by decorating Request DTOs or Service Implementations with Attributes, In ServiceStack these attributes can also be dynamically added using the `.AddAttributes()` Extension method which enables an auto dynamic Fluent API for programmatically enabling behavior without needing to learn an alternative API for each feature, e.g. We can use this to add Custom Routes, [Restrict Services](/restricting-services) and add [Filter Attributes](/filter-attributes) dynamically with:
+Many of ServiceStack features are lit up by decorating Request DTOs or Service Implementations with Attributes, In ServiceStack these attributes can also be dynamically added using the `.AddAttributes()` Extension method which enables an auto dynamic Fluent API for programmatically enabling behavior without needing to learn an alternative API for each feature, e.g. We can use this to add Custom Routes, [Restrict Services](/auth-restricting-services) and add [Filter Attributes](/filter-attributes) dynamically with:
 
 ```csharp
 public class AppHost : AppHostBase 

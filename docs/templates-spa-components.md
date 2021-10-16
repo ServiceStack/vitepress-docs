@@ -1,6 +1,6 @@
 ---
 title: Single Page App Components
-slug: spa-components
+slug: templates-spa-components
 ---
 
 ## SPA Component Libraries
