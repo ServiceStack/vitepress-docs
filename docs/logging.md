@@ -1,8 +1,6 @@
 ---
-slug: logging
+title: An implementation-free logging API for .Net
 ---
-
-## An implementation-free logging API for .Net
 
 **ServiceStack.Logging** is an implementation and dependency-free logging API with adapters for all of .NET's popular logging providers. It allows your business logic to bind to an easily-mockable and testable dependency-free interface whilst providing the flexibility to switch logging providers at runtime.
 
