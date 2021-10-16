@@ -1,5 +1,10 @@
 @tailwind utilities;
 
+:root {
+    --c-brand: #007bff;
+    --c-brand-light: #747bff;
+}
+
 .container {
     max-width: 64rem !important;
 }
