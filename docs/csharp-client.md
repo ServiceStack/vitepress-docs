@@ -9,11 +9,15 @@ Using DTOs to define your web service interface makes it possible to provide str
 
 **Note**: you have to install the NuGet package **ServiceStack.Client** in your client project, e.g. with the following command in the package manager console:
 
-    PM> Install-Package ServiceStack.Client
+::: nuget
+`<PackageReference Include="ServiceStack.Client" Version="5.*" />`
+:::
 
 Alternatively you can use the [HttpClient-based JsonHttpClient](/csharp-client#jsonhttpclient) in:
 
-    PM> Install-Package ServiceStack.HttpClient
+::: nuget
+`<PackageReference Include="ServiceStack.HttpClient" Version="5.*" />`
+:::
 
 These packages also contain PCL versions of the Service Clients available with support for [Xamarin.iOS, Xamarin.Android, Windows Store, WPF and Silverlight 5](https://github.com/ServiceStackApps/HelloMobile) platforms.
 
@@ -821,7 +825,9 @@ As .NET's HttpClient only supports async APIs it needs to use "sync over async" 
 
 JsonHttpClient can be downloaded from NuGet at:
 
-    > Install-Package ServiceStack.HttpClient
+::: nuget
+`<PackageReference Include="ServiceStack.HttpClient" Version="5.*" />`
+:::
 
 ### Xamarin Native HttpClient
 
@@ -901,7 +907,9 @@ Whilst the list below contain the built-in clients based on .NET's built-in `Htt
 
 The HttpWebRequest clients above are available in:
 
-    > Install-Package ServiceStack.Client
+::: nuget
+`<PackageReference Include="ServiceStack.Client" Version="5.*" />`
+:::
 
 # Community Resources
 

@@ -111,8 +111,13 @@ You can then easily [Convert this empty template into a functional ServiceStack 
 
 1) Installing [ServiceStack and any other dependency](https://github.com/ServiceStackApps/Todos/blob/master/src/Todos/packages.config) you want to use, e.g:
 
-	PM> Install-Package ServiceStack
-	PM> Install-Package ServiceStack.Redis
+::: nuget
+`<PackageReference Include="ServiceStack" Version="5.*" />`
+:::
+
+::: nuget
+`<PackageReference Include="ServiceStack.Redis" Version="5.*" />`
+:::
    
 2) Adding the [ASP.NET HTTP Handler mapping](https://github.com/ServiceStackApps/Todos/blob/fdcffd37d4ad49daa82b01b5876a9f308442db8c/src/Todos/Web.config#L34-L39) to route all requests to ServiceStack:
 

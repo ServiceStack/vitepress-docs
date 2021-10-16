@@ -32,8 +32,6 @@ You can also use [ServiceStackVS](/create-your-first-webservice#step-1-download-
 * [F# Add ServiceStack Reference](/fsharp-add-servicestack-reference)
 * [VB.NET Add ServiceStack Reference](/vbnet-add-servicestack-reference)
 
-***
-
 ### .NET Clients
 
 There are multiple C# service clients included, each optimized for their respective formats:

@@ -11,7 +11,9 @@ A more flexible approach to read any arbitrary JavaScript or JSON data structure
 
 The `#Script` JSON and JS Utils are available from the [ServiceStack.Common](https://www.nuget.org/packages/ServiceStack.Common) NuGet package:
 
-    PM> Install-Package ServiceStack.Common
+::: nuget
+`<PackageReference Include="ServiceStack.Common" Version="5.*" />`
+:::
 
 Which will enable access to the JSON API which preserves the Type which can be used to parse JavaScript or JSON literals:
 

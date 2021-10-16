@@ -93,9 +93,11 @@ To make it more automated, a "Trigger" should be added so that every time a chec
 Another requirement is that the application you want to package will require a new NuGet dependency on **OctoPack**. OctoPack is a package for Octopus Deploy which adds a new build target to your application to be used with the TeamCity plugin. 
 
 You can add it to your application with the following NuGet command in Visual Studio:
-```shell
-    PM> Install-Package OctoPack
-```
+
+::: nuget
+`<PackageReference Include="OctoPack" Version="3.*" />`
+:::
+
 Once added, the TeamCity plugin will do the rest if the checkbox is ticked. It is worth mentioning that because OctoPack is running as a new target, it can be manually incorporated into an existing building configuration using MSBuild by just adding the target. It’s also an open source project so more information can be found on the [OctoPack Github page](https://github.com/OctopusDeploy/OctoPack).
 
 The next build configuration has a single step which is responsible for notifying Octopus Deploy to proceed with the deployment of a specific project to a specific environment. The reason we have these steps has two different build configurations is due to the requirement of having the NuGet packages published on the TeamCity NuGet feed. These packages will not appear until the build configuration that produces the package has completed. By separating them, we’re ensuring that TeamCity will have published the latest package version ready for Octopus Deploy.

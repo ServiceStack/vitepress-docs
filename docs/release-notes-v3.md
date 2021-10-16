@@ -50,39 +50,40 @@ We've simplified the build system which now has consistent naming, behavior and 
 
 ServiceStack now supports Google and LinkedIn OAuth2 providers thanks to [@RobertTheGrey](https://twitter.com/RobertTheGrey) which you can add to your project with:
 
-```shell
-    PM> Install-Package ServiceStack.Authentication.OAuth2
-```
+::: nuget
+`<PackageReference Include="ServiceStack.Authentication.OAuth2" Version="5.*" />`
+:::
 
 The OAuth2 providers is pre-configured with sensible defaults to cater for the most common use-cases which as is the case with all Auth providers are overridable in AppHost or Web.Config. The [AuthWeb Tests](https://github.com/ServiceStack/ServiceStack/tree/master/tests/ServiceStack.AuthWeb.Tests) project shows the simplest [AppHost code](https://github.com/ServiceStack/ServiceStack/blob/master/tests/ServiceStack.AuthWeb.Tests/AppHost.cs#L75) and [Web.config](https://github.com/ServiceStack/ServiceStack/blob/master/tests/ServiceStack.AuthWeb.Tests/Web.config#L20) configuration required to register all Auth Providers within the same service, e.g. the minimum configuration to get started with new LinkedIn and Google OAuth2 providers is:
 
 ```xml
-    <!-- Create Google App at: https://code.google.com/apis/console/ -->
-    <add key="oauth.GoogleOAuth.ConsumerKey" value="731622862518.apps.googleusercontent.com"/>
-    <add key="oauth.GoogleOAuth.ConsumerSecret" value="BvumMTV9VEyHj_2uMfDXHaaP"/>
+<!-- Create Google App at: https://code.google.com/apis/console/ -->
+<add key="oauth.GoogleOAuth.ConsumerKey" value="731622862518.apps.googleusercontent.com"/>
+<add key="oauth.GoogleOAuth.ConsumerSecret" value="BvumMTV9VEyHj_2uMfDXHaaP"/>
 
-    <!-- Create LinkedIn App at: https://www.linkedin.com/secure/developer?newapp= -->
-    <add key="oauth.LinkedIn.ConsumerKey" value="ck8n5g2fxd6o"/>
-    <add key="oauth.LinkedIn.ConsumerSecret" value="Mpy9Pl4uTnRrSee8"/>
+<!-- Create LinkedIn App at: https://www.linkedin.com/secure/developer?newapp= -->
+<add key="oauth.LinkedIn.ConsumerKey" value="ck8n5g2fxd6o"/>
+<add key="oauth.LinkedIn.ConsumerSecret" value="Mpy9Pl4uTnRrSee8"/>
 ```
 
 ### Cascading configuration
 
 ServiceStack Auth providers also support *cascading configuration* for all built-in properties, where if a property for a specific auth provider doesn't exist, it will look for the *global fallback* property without the Auth Provider name. This is useful for DRY'ing repetitive configuration that's the same for all Auth providers like the **RedirectionUrl** and **CallbackUrl** properties, E.g. instead of repeating the same information for every Auth Provider like:
-```xml
-    <add key="oauth.twitter.RedirectUrl"    value="http://yourhostname.com/"/>
-    <add key="oauth.twitter.CallbackUrl"    value="http://yourhostname.com/auth/twitter"/>    
 
-    <add key="oauth.facebook.RedirectUrl"    value="http://yourhostname.com/"/>
-    <add key="oauth.facebook.CallbackUrl"    value="http://yourhostname.com/auth/facebook"/>
+```xml
+<add key="oauth.twitter.RedirectUrl"    value="http://yourhostname.com/"/>
+<add key="oauth.twitter.CallbackUrl"    value="http://yourhostname.com/auth/twitter"/>    
+
+<add key="oauth.facebook.RedirectUrl"    value="http://yourhostname.com/"/>
+<add key="oauth.facebook.CallbackUrl"    value="http://yourhostname.com/auth/facebook"/>
 ```
 
 You can instead just provide *global properties* that are used as a fallback in all Auth providers, e.g:
+
 ```xml
-    <add key="oauth.RedirectUrl"    value="http://yourhostname.com/"/>
-    <add key="oauth.CallbackUrl"    value="http://yourhostname.com/auth/{0}"/>
+<add key="oauth.RedirectUrl"    value="http://yourhostname.com/"/>
+<add key="oauth.CallbackUrl"    value="http://yourhostname.com/auth/{0}"/>
 ```
-  
 
 The `{0}` is always substituted with the Provider name (e.g. 'twitter').
 
@@ -154,7 +155,9 @@ Most of the metadata ServiceStack knows about your services are accessible from 
 
 Whilst OrmLite is foremost a code-first POCO ORM, when you have to work with an existing database, the OrmLite T4 templates by [@gkathire](https://github.com/gkathire) makes it easy to get started quickly by creating code-generated POCO's for all your DB tables as well as strong-typed wrappers for existing stored procedures. These OrmLite T4 Content templates are now available to any project via NuGet:
 
-    PM> Install-Package ServiceStack.OrmLite.T4
+::: nuget
+`<PackageReference Include="ServiceStack.OrmLite.T4" Version="5.*" />`
+:::
 
 [@jokecamp](https://twitter.com/jokecamp) has a nice writeup showing how to use [OrmLite's T4 templates in action](http://jokecamp.wordpress.com/2013/09/07/code-generation-using-servicestack-ormlite-and-t4-text-templates/).
 
@@ -780,7 +783,9 @@ By far the biggest feature in this release is ServiceStack's much improved HTML 
 
 ServiceStack's Razor support comes conveniently packaged inside a [NuGet package](https://nuget.org/packages/ServiceStack.Razor) that you can immediately get going with after creating any empty ASP.NET or Console Application (.NET 4.0+) and running:
 
-    PM> Install-Package ServiceStack.Razor
+::: nuget
+`<PackageReference Include="ServiceStack.Razor" Version="5.*" />`
+:::
 
 ## Improved Mono Support
 

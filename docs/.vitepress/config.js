@@ -1,3 +1,5 @@
+let container = require('markdown-it-container')
+
 let navIndex = require('./sidebar/index.json'), 
     navTemplates = require('./sidebar/templates.json'),
     navAutoQuery = require('./sidebar/autoquery.json'),
@@ -35,5 +37,27 @@ module.exports = {
     },
     head: [
         ['script', { src: 'custom.js' }]
-    ]
+    ],
+    markdown: {
+        config: md => {
+            md.use(container, 'nuget', { 
+                render(tokens, idx) {
+                    const token = tokens[idx]
+                    if (token.nesting === 1) {
+                        return `<div class="package-reference-box">
+                        <div class="flex">
+                            <div class="flex-grow pre-container" style="background:#002440">
+                                <pre class="sh copy m-0 p-0 pl-2 py-1 align-middle" style="background:#002440">`
+                    } else {
+                        return `</pre>
+                                    </div>
+                                <div class="flex-shrink"><i class="svg-copy inline-block w-8 h-full" title="copy" onclick="copy(this)"></i><b></b></div>
+                            </div>
+                            <div class="copy-text w-full text-right h-6"></div>
+                        </div>\n`
+                    }
+                }
+            })
+        }
+    }
 }

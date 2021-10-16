@@ -17,11 +17,15 @@ Otherwise another fast binary serializer that supports attribute-less POCOs is t
 
 As it requires an external **protobuf-net.dll** dependency ProtoBuf support is not automatically bundled inside ServiceStack, but it is easily installed with the [ServiceStack.ProtoBuf](https://nuget.org/packages/ServiceStack.ProtoBuf) NuGet package:
 
-    PM> Install-Package ServiceStack.ProtoBuf
+::: nuget
+`<PackageReference Include="ServiceStack.ProtoBuf" Version="5.*" />`
+:::
 
 After the NuGet Package is added to your Project, enable the ProtoBuf format in your `AppHost` with:
 
-    Plugins.Add(new ProtoBufFormat());
+```cs
+Plugins.Add(new ProtoBufFormat());
+```
 
 The NuGet plugin also includes the **ProtoBufServiceClient** client below so you can easily call it from any C# Client.
 

@@ -12,7 +12,9 @@ The [ServiceStack.Redis](https://www.nuget.org/packages/ServiceStack.Redis) NuGe
 Use [ServiceStack.Redis.Core](https://www.nuget.org/packages/ServiceStack.Redis.Core) instead if you're running 
 [ASP.NET Core Apps on the .NET Framework](https://docs.servicestack.net/templates-corefx)
 
-    PM> Install-Package ServiceStack.Redis.Core
+::: nuget
+`<PackageReference Include="ServiceStack.Redis.Core" Version="5.*" />`
+:::
 
 ### Basic Example
 

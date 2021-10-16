@@ -16,7 +16,9 @@ Wire is easily installed with the [ServiceStack.Wire](https://nuget.org/packages
 
 After the NuGet Package is added to your Project, enable the Wire format in your `AppHost` with:
 
-    Plugins.Add(new WireFormat());
+```cs
+Plugins.Add(new WireFormat());
+```
 
 The NuGet plugin also includes the **WireServiceClient** client below so you can 
 easily call it from any C# Client.

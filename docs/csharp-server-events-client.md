@@ -5,9 +5,9 @@ title: C# Server Events Client
 
 Like ServiceStack's other [C# Service Clients](/csharp-client), the new `ServerEventsClient` is a [portable library](https://github.com/ServiceStackApps/HelloMobile) contained in the `ServiceStack.Client` NuGet package:
 
-```
-PM> Install-Package ServiceStack.Client
-```
+::: nuget
+`<PackageReference Include="ServiceStack.Client" Version="5.*" />`
+:::
 
 And like the Service Clients it requires the `BaseUri` of your ServiceStack instance as well as an optional `channel` for the client to subscribe to:
 

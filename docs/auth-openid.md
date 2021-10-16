@@ -7,7 +7,9 @@ Contained in the [ServiceStack.Authentication.OpenId](http://nuget.org/packages/
 
 ### Install via NuGet
 
-    PM> Install-Package ServiceStack.Authentication.OpenId
+::: nuget
+`<PackageReference Include="ServiceStack.Authentication.OpenId" Version="5.*" />`
+:::
 
 ## Easy configuration, plugs into ServiceStack's Auth Provider model
 

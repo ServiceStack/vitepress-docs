@@ -7,14 +7,15 @@ title: Azure Resources
 
 ServiceStack.Azure package provides support to Azure ServiceBus and Azure Blob Storage. All features are incapsulated in single ServiceStack.Azure package. To install package run from NuGet
 
-    PM> Install-Package ServiceStack.Azure
+::: nuget
+`<PackageReference Include="ServiceStack.Azure" Version="5.*" />`
+:::
 
 ServiceStack.Azure includes implementation of the following ServiceStack providers:
 
 - [ServiceBusMqServer](#ServiceBusMqServer) - [MQ Server](https://docs.servicestack.net/messaging) for invoking ServiceStack Services via Azure ServiceBus
 - [AzureBlobVirtualFiles](#virtual-filesystem-backed-by-azure-blob-storage) - Virtual file system based on Azure Blob Storage
 - [AzureTableCacheClient](#caching-support-with-azure-table-storage) - Cache client over Azure Table Storage
-
 
 ### ServiceBusMqServer
 
