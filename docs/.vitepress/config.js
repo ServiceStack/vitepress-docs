@@ -38,6 +38,6 @@ module.exports = {
         }
     },
     head: [
-
+        ['script', { src: 'custom.js' }]
     ]
 }
