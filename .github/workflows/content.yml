@@ -36,7 +36,7 @@ jobs:
           aws cloudfront create-invalidation --distribution-id E3HOW7P0JDVHIV --paths "/*"
       - name: Deploy to GitHub Pages
         run: |
-          cd docs/.vuepress/dist
+          cd docs/.vitepress/dist
           git init
           git add -A
           git config --local user.email "action@github.com"
