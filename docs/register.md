@@ -45,10 +45,13 @@ Otherwise for a self-hosting Console Application, place it before initializing t
 
 To simplify license key registration when developing multiple ServiceStack solutions you can register the License Key once in the SERVICESTACK_LICENSE Environment Variable on each pc using ServiceStack libraries:
 
-    Variable               Value    
-    SERVICESTACK_LICENSE   {licenseKeyText}
+| Variable | Value |
+|:-|:-|
+| SERVICESTACK_LICENSE | `{licenseKeyText}` |
 
-> Note: you'll need to restart IIS or VS.NET for them to pickup any new Environment Variables.
+::: info
+you'll need to restart IIS or VS.NET for them to pickup any new Environment Variables.
+:::
 
 ### d) Copy license key text into an external text file
 
@@ -64,7 +67,7 @@ protected void Application_Start(object sender, EventArgs e)
 
 For Self-Hosting set the BuildAction to Copy if Newer and use "~/license.txt".MapAbsolutePath() extension method.
 
-> Note: the license key is white-space insensitive so can be broken up over multiple lines.
-
-
+::: info
+the license key is white-space insensitive so can be broken up over multiple lines.
+:::
 

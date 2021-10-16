@@ -179,7 +179,9 @@ A concrete example for calling the above API would be:
 
 Which will bind `this` to the `#btnSubmit` HTML Element.
 
-> Note: Spaces in CSS selectors need to be encoded with `%20`
+::: info
+Spaces in CSS selectors need to be encoded with `%20`
+:::
 
 ### Modifying CSS
 

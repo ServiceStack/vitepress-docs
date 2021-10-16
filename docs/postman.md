@@ -11,7 +11,9 @@ Plugins.Add(new PostmanFeature());
 Plugins.Add(new CorsFeature());
 ```
 
-> Note: As Postman makes cross-site requests, is also requires CORS support. 
+::: info
+As Postman makes cross-site requests, is also requires CORS support. 
+:::
 
 Once enabled, a link with appear in your metadata page:
 

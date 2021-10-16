@@ -3,9 +3,11 @@ slug: host-configuration
 title: AppHost Configuration
 ---
 
-<iframe width="896" height="525" src="https://www.youtube.com/embed/mOpx5mUGoqI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe class="mt-4" width="896" height="525" src="https://www.youtube.com/embed/mOpx5mUGoqI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-> YouTube: [https://youtu.be/mOpx5mUGoqI](https://youtu.be/mOpx5mUGoqI)
+::: info YouTube
+[youtu.be/mOpx5mUGoqI](https://youtu.be/mOpx5mUGoqI)
+:::
 
 ### Anatomy of a ServiceStack AppHost
 
@@ -39,7 +41,9 @@ public class AppHost
 }
 ```
 
-> Note: [DebugMode](/debugging#debugmode) should be not be `true` when deployed to production.
+::: info
+[DebugMode](/debugging#debugmode) should be not be `true` when deployed to production.
+:::
 
 ### Physical Project Structure
 

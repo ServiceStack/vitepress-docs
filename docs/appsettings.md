@@ -138,7 +138,9 @@ var appSettings = new TextFileSettings("~/app.settings".MapHostAbsolutePath());
 
 Each appSetting is on a new line with the **Key** and **Value** separated by a space:
 
-    {Key} {Value}\n
+```
+{Key} {Value}\n
+```
 
 > The delimiter can be changed in the constructor e.g. `new TextFileSettings(path,delimiter:": ");`
 
@@ -263,9 +265,9 @@ Directly within Razor views:
 
 ```html
 <style>
-    body {
-        background-image: url(@AppSettings.Get("background","/img/bg.jpg")) 
-    }
+body {
+    background-image: url(@AppSettings.Get("background","/img/bg.jpg")) 
+}
 </style>
 ```
 

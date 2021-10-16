@@ -46,12 +46,14 @@ ready for pasting it in your web page.
 
 The most user-friendly way to load custom SVG images is to load them from a custom directory, e.g:
 
-    /svg
-        /svg-icons
-            vue.svg
-            spirals.html
-        /my-icons
-            myicon.svg
+```
+/svg
+    /svg-icons
+        vue.svg
+        spirals.html
+    /my-icons
+        myicon.svg
+```
 
 Then in your `AppHost` you can register all SVG images using `Svg.Load()`:
 
@@ -62,8 +64,10 @@ public override void Configure(Container container)
 }
 ```
 
-> `VirtualFiles` is configured to your projects **ContentRoot**, use `VirtualFileSources` to use your **WebRoot**, 
-> `RootDirectory` uses the FileSystem VFS in `VirtualFileSources` whereas `ContentRootDirectory` looks in `VirtualFiles`
+::: info
+`VirtualFiles` is configured to your projects **ContentRoot**, use `VirtualFileSources` to use your **WebRoot**, 
+`RootDirectory` uses the FileSystem VFS in `VirtualFileSources` whereas `ContentRootDirectory` looks in `VirtualFiles`
+:::
 
 This will load all the SVG images in the `/svg` directory with the **sub directory** used for the **cssfile** (aka image-set) 
 you want to add them to and the **file name** (without extension) used as the SVG identifier.
@@ -71,14 +75,14 @@ you want to add them to and the **file name** (without extension) used as the SV
 It will also evaluate any `.html` files in the directory with [#Script](https://sharpscript.net) and add the rendered SVG output,
 e.g. we can load the generated SVG from the [Spirals Sharp App](https://github.com/mythz/spirals):
 
-##### /svg/svg-icons/spirals.html
+#### /svg/svg-icons/spirals.html
 
 ::: v-pre
 ```hbs
 <svg height="640" width="240">
 {{#each range(180) }}
-    {{ 120 + 100 * cos((5)  * it * 0.02827) | to => x }}
-    {{ 320 + 300 * sin((1)  * it * 0.02827) | to => y }}
+    {{ 120 + 100 * cos((5)  * it * 0.02827) |> to => x }}
+    {{ 320 + 300 * sin((1)  * it * 0.02827) |> to => y }}
     <circle cx="{{x}}" cy="{{y}}" r="{{it*0.1}}" fill="#556080" stroke="black" stroke-width="1"></circle>
 {{/each}}
 </svg>
@@ -93,7 +97,7 @@ An alternative way of registering SVG's is to register them in #Script Pages `_i
 which will let you register multiple SVG images within 1 file using the `#svg` Script Block using the format `#svg <name> <image-set>`, e.g:
 
 ::: v-pre
-```hbs
+```html
 {{#svg vue app}}
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
     <g>
@@ -107,12 +111,12 @@ which will let you register multiple SVG images within 1 file using the `#svg` S
 Which also supports using `#Script` to create and register dynamically rendered SVG images:
 
 ::: v-pre
-```hbs
+```html
 {{#svg spirals svg-icons}}
 <svg height="640" width="240">
 {{#each range(180) }}
-    {{ 120 + 100 * cos((5)  * it * 0.02827) | to => x }}
-    {{ 320 + 300 * sin((1)  * it * 0.02827) | to => y }}
+    {{ 120 + 100 * cos((5)  * it * 0.02827) |> to => x }}
+    {{ 320 + 300 * sin((1)  * it * 0.02827) |> to => y }}
     <circle cx="{{x}}" cy="{{y}}" r="{{it*0.1}}" fill="#556080" stroke="black" stroke-width="1"></circle>
 {{/each}}
 </svg>
@@ -242,7 +246,7 @@ You can use `cssIncludes` to embed the contents of multiple css files in `#Scrip
 
 ::: v-pre
 ```hbs
-{{ 'buttons,svg-icons' | cssIncludes }}
+{{ 'buttons,svg-icons' |> cssIncludes }}
 ```
 :::
 
@@ -258,7 +262,7 @@ In [#Script Pages](https://sharpscript.net/docs/sharp-pages) you can embed SVG x
 
 ::: v-pre
 ```hbs
-{{ 'myicon' | svgImage }}
+{{ 'myicon' |> svgImage }}
 {{ 'myicon'.svgImage('#e33') }}
 ```
 :::
@@ -368,7 +372,9 @@ as opposed to being forced to choose from a limited library in a fixed bundle.
 As creating svg bundles just involves dropping SVG images inside your `/svg/{group}/` folder, we're also able take advantage of `mix`
 to import SVG image-sets into your App with a single command. You can view the current list of all SVG image-sets on `mix` with:
 
-    $ x mix [svg]
+```bash
+$ x mix [svg]
+```
 
 Currently all [Material Design Icons](https://material.io/resources/icons/?style=baseline) are available separately by their logical group names:
 

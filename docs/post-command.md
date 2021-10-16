@@ -386,7 +386,9 @@ Whilst the syntax for invoking APIs from the command line should be fairly intui
 
 This is quick way for using a UI to bootstrap the initial post command that you can continue iterating on and invoking locally.
 
-> Note: [apps.servicestack.net](https://apps.servicestack.net) requires your remote ServiceStack App is accessible from the Internet
+::: info
+[apps.servicestack.net](https://apps.servicestack.net) requires your remote ServiceStack App is accessible from the Internet
+:::
 
 ### Invoking APIs without arguments
 

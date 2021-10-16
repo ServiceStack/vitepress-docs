@@ -51,7 +51,9 @@ To enlist Auto CRUD behavior your Request DTOs need to implement one of the foll
 
 All Request DTOs also require either an `IReturn<T>` or `IReturnVoid` marker interface to specify the return type of the Service. 
 
-> Can use built-in `IReturn<EmptyResponse>` for an "empty" response where as `IReturnVoid` returns "no" response.
+::: info
+Can use built-in `IReturn<EmptyResponse>` for an "empty" response where as `IReturnVoid` returns "no" response.
+:::
 
 Let's go through a simple example, starting with a simple POCO OrmLite data model we want to add to our RDBMS:
 
@@ -315,7 +317,9 @@ public class UpdateRockstarAuditTenant
 }
 ```
 
-> Note the `[AutoPopulate]` properties only appear on the Data Model, not the external Request DTO since we don't want external API consumers to populate them.
+::: info
+the `[AutoPopulate]` properties only appear on the Data Model, not the external Request DTO since we don't want external API consumers to populate them.
+:::
 
 For Apps that prefer to never delete rows and instead mark records as deleted so an audit trail is retained, we can implement "Soft Deletes" using an UPDATE to populate the `SoftDelete*` fields behind-the-scenes:
 
@@ -626,7 +630,9 @@ Plugins.Add(new AutoQueryFeature {
 });
 ```
 
-> Note: AutoQuery generates **async** Services by default which will invoke the `*Async` events, but if you implement a [sync Custom AutoQuery CRUD Service](/autoquery-crud#custom-autoquery-crud-services) it executes the **sync** events instead so you'd need to implement the `OnBeforeDelete` custom hook instead.
+::: info
+AutoQuery generates **async** Services by default which will invoke the `*Async` events, but if you implement a [sync Custom AutoQuery CRUD Service](/autoquery-crud#custom-autoquery-crud-services) it executes the **sync** events instead so you'd need to implement the `OnBeforeDelete` custom hook instead.
+:::
 
 ### Custom Complex Mapping
 
@@ -650,7 +656,9 @@ In addition to supporting `[AutoIncrement]` to insert records with Auto Incremen
 [RDBMS generated UUIDs](https://github.com/ServiceStack/ServiceStack.OrmLite#auto-populated-guid-ids) where they're supported otherwise
 OrmLite populates them with `Guid.NewGuid()`.
 
-> Note: usage of inheritance isn't required & has the same behavior as using explicit properties
+::: info
+usage of inheritance isn't required & has the same behavior as using explicit properties
+:::
 
 ```csharp
 public abstract class RockstarBase

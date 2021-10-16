@@ -4,7 +4,7 @@ title: SOAP support
 ---
 If you want to support SOAP, you have to ensure you adhere to some additional constraints where each method needs to be defined with the `Any()` endpoint and each DTO needs to be decorated with `[DataContract]` and `[DataMember]` attributes so their metadata is generated in your Services XSD and WSDL metadata.
 
-## Configure
+### Configure
 
 Register the `SoapFormat` Plugin to enable SOAP Support in ServiceStack (Requires ASP.NET Framework):
 
@@ -89,11 +89,14 @@ One way around it is to share your services DTO's and use any of the typed [Gene
 
 The Custom `[Route]` definitions are used to control how you want services exposed in REST APIs which all logically appear to exposed them under a single REST-ful resource, i.e:
 
-    GET /customers    - Get All Customers
-    GET /customers/1  - Get Customer #1
-    POST /customers   - Add New Customer
-    PUT /customers/1  - Update Customer #1 
-    DELETE /customers - Delete Customer #1
+| Request | Description |
+|:-|:-|
+| **GET /customers**    | Get All Customers  |
+| **GET /customers/1**  | Get Customer #1    |
+| **POST /customers**   | Add New Customer   |
+| **PUT /customers/1**  | Update Customer #1 |
+| **DELETE /customers** | Delete Customer #1 |
+
 
 This Web Service now supports both **REST and SOAP** with REST API's using the above custom routes and SOAP requests posting WSDL Requests to their fixed `/soap11` or `/soap12` endpoints.
 
@@ -103,11 +106,11 @@ SOAP expects that each request always returns the same response DTO. So you need
 
 ### DTO Naming Conventions
 
-> **Naming convention:**
-{Request DTO Name} + Response
+**Naming convention:** `{Request DTO Name} + Response`
 
-> **Example:**
-Request DTO: `DeleteCustomer` --> Response DTO: `DeleteCustomerResponse`.
+#### Example:
+
+**Request DTO** `DeleteCustomer` => **Response DTO** `DeleteCustomerResponse`
 
 If you would leave the services as they are, the REST endpoint wouldn't exist. So you need to hook them all up on the same URL like that:
 
@@ -241,4 +244,6 @@ public override WriteSoapMessage(Message message, Stream outputStream)
 }
 ```
 
-> The default [WriteSoapMessage](https://github.com/ServiceStack/ServiceStack/blob/fb08f5cb408ece66f203f677a4ec14ee9aad78ae/src/ServiceStack/ServiceStackHost.Runtime.cs#L484) implementation also raises a ServiceException and writes any returned response to a buffered Response Stream (if configured).
+::: info
+The default [WriteSoapMessage](https://github.com/ServiceStack/ServiceStack/blob/fb08f5cb408ece66f203f677a4ec14ee9aad78ae/src/ServiceStack/ServiceStackHost.Runtime.cs#L484) implementation also raises a ServiceException and writes any returned response to a buffered Response Stream (if configured)
+:::

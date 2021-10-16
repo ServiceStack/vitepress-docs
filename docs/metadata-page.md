@@ -94,9 +94,11 @@ The HTML templates for the metadata pages are maintained as [embedded html templ
 
 The VFS lets you replace built-in ServiceStack templates with your own by simply copying the metadata or [HtmlFormat Template files](http://bit.ly/164YbrQ) you want to customize and placing them in your Website Directory at:
 
-    /Templates/HtmlFormat.html        // The auto HtmlFormat template
-    /Templates/IndexOperations.html   // The /metadata template
-    /Templates/OperationControl.html  // Individual operation template
+```
+/Templates/HtmlFormat.html        // The auto HtmlFormat template
+/Templates/IndexOperations.html   // The /metadata template
+/Templates/OperationControl.html  // Individual operation template
+```
 
 Which you can customize locally that ServiceStack will pick up and use instead.
 
@@ -150,7 +152,9 @@ GreetingResponse = client.Get<GreetingResponse>(new Hello { ... });
 
 An alternative way to specify the Response Type is to use the built-in naming convention:
 
-    {Request DTO Name} + Response
+```
+{Request DTO Name} + Response
+```
 
 Where the Response DTO adds a `Response` suffix to the Request DTO, e.g:
 

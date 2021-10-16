@@ -579,7 +579,9 @@ But when preferred `JsonServiceClient` can also be used to call Services using C
 var response:GetTechnologyResponse? = client.get("/technology/servicestack")
 ```
 
-> Note the explicit type definition on the return type is required here as Swift uses it as part of the generic method invocation.
+::: info
+the explicit type definition on the return type is required here as Swift uses it as part of the generic method invocation.
+:::
 
 ### JsonServiceClient Options
 

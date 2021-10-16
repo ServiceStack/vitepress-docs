@@ -147,7 +147,9 @@ A concrete example for calling the above API would be:
 
 Which will bind `this` to the `#btnSubmit` HTML Element, retaining the same behavior as if it were called with `data-click="paintGreen"`.
 
-> Note: Spaces in jQuery selectors need to be encoded with `%20`
+::: info
+Spaces in jQuery selectors need to be encoded with `%20`
+:::
 
 ### Modifying CSS via jQuery
 

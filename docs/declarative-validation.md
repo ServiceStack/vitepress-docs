@@ -460,8 +460,10 @@ public class ExampleValidators : ICreateDb<Rockstar>, IReturn<RockstarWithIdResp
 }
 ```
 
-> Note the condition needs to return a **truthy** value so you'd need to use the sync DB Script APIs to return
+::: info
+the condition needs to return a **truthy** value so you'd need to use the sync DB Script APIs to return
 a boolean instead of an async Task.
+:::
 
 Type Validators can also specify custom Error Codes and Error Messages, they can also specify a custom HTTP 
 Error StatusCode that failed requests should return.

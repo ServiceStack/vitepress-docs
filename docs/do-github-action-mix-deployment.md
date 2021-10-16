@@ -69,7 +69,10 @@ Now that our Droplet is running and has a public IP address, we'll want to insta
 SSH into your Droplet using the appropriate SSH key and your preferred SSH client (straight `ssh`, Putty for Windows, etc).
 
 Eg, with a Linux `ssh` client, the command would be `ssh root@<your_IP_or_domain>` as `root` is the default user setup when creating an Ubuntu droplet.
-> Note the user may change depending on how your server is setup. See `man ssh` for more details/options.
+
+::: info
+the user may change depending on how your server is setup. See `man ssh` for more details/options.
+:::
 
 ### Install docker and docker-compose
 Installing Docker for Ubuntu 20.04 can be done via the repository with some setup or via Docker provided convenience scripts. For a more detailed walk through, [DigitalOcean have a good write up here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04). Scripted included below for ease of use.

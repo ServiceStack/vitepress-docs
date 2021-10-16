@@ -5,10 +5,10 @@ title: Advantages of message-based WebServices
 
 ### This is in response to a recent question from [mailing group](https://groups.google.com/forum/?fromgroups#!topic/servicestack/qkV5fzdnzt8):
 
-    It seems like ServiceStack is designed for use primarily in a greenfield 
-    SOA implementation where the technology environment is quite homogeneous, 
-    and more or less the same people have ownership of the servers and all the clients.  
-    Is that correct?
+> It seems like ServiceStack is designed for use primarily in a greenfield 
+SOA implementation where the technology environment is quite homogeneous, 
+and more or less the same people have ownership of the servers and all the clients.  
+Is that correct?
 
 ServiceStack's message-based design is optimal for the design of **any remote service**. We believe .NET has never gotten web services right, which was the inspiration for starting ServiceStack. If .NET was lucky enough to have had someone like Martin Fowler (or just someone following his decade-old guidance) at the helm of the Microsoft Patterns & Practices and VS.NET tools teams from the start we would've likely been able to avoid the multiple replacement web service frameworks from Microsoft that .NET web service developers have endured over the years - and still haven't got right. This is unfortunate considering remote services are the most important APIs developers can create as they ultimately offer the highest-level of software re-use possible whilst remaining programatically composable.
 
@@ -23,11 +23,13 @@ If you look at an [example of Amazons EC2 Web Service APIs](http://docs.amazonwe
 
 ### Example Request
 
-    https://ec2.amazonaws.com/?Action=AttachVolume
-    &VolumeId=vol-4d826724
-    &InstanceId=i-6058a509
-    &Device=/dev/sdh
-    &AUTHPARAMS
+```
+https://ec2.amazonaws.com/?Action=AttachVolume
+&VolumeId=vol-4d826724
+&InstanceId=i-6058a509
+&Device=/dev/sdh
+&AUTHPARAMS
+```
  
 ### Example Response
 
@@ -44,8 +46,10 @@ If you look at an [example of Amazons EC2 Web Service APIs](http://docs.amazonwe
 
 From this we can attest Amazon maintains a Request [DTO](http://en.wikipedia.org/wiki/Data_Transfer_Object) named `AttachVolume` and a Response DTO named `AttachVolumeResponse`. This is the same design ServiceStack encourages and with some minor customisations the Request can be easily made to be more REST-ful with:
 
-    POST https://ec2.amazonaws.com/volumes/vol-4d826724/attach 
-    FormData: InstanceId=i-6058a509&Device=/dev/sdh&AUTHPARAMS
+```
+POST https://ec2.amazonaws.com/volumes/vol-4d826724/attach 
+FormData: InstanceId=i-6058a509&Device=/dev/sdh&AUTHPARAMS
+```
 
 In-terms of accessibility and interoperability, ServiceStack 1-ups Amazon here since the same Request DTO can be populated with any combination of a [Custom Route, QueryString, FormData or a POST'ed XML, JSON, JSV, SOAP 1.1/1.2 or ProtoBuf Request DTO payload](/architecture-overview). Although this is really inconsequential since both Amazon and ServiceStack also provide **typed service clients** so you're never required to manually construct the request by hand. 
 
@@ -53,7 +57,9 @@ In-terms of accessibility and interoperability, ServiceStack 1-ups Amazon here s
 
 Although Amazon holds the SOA edge, Google, like Amazon also benefits from message-based design for nearly all their internal communications using their own Data Interchange Format - [Protocol Buffers](http://code.google.com/p/protobuf/), which like JSON is both fast, compact and tolerant:
 
-> Protocol Buffers are a way of encoding structured data in an efficient yet extensible format. Google uses Protocol Buffers for almost all of its internal RPC protocols and file formats.
+::: info
+Protocol Buffers are a way of encoding structured data in an efficient yet extensible format. Google uses Protocol Buffers for almost all of its internal RPC protocols and file formats
+:::
 
 A simple DSL is used to define their Protocol Buffer message DTOs:
 
@@ -136,7 +142,9 @@ It encourages developers to treat web services as just another method call even 
 
 But the main disadvantage of method signature service APIs is that they mandate the use of code-gen in order to provide a typed client API. Using messages allows you to re-use generic service clients for all your service communications. This is how, even up to this day ServiceStack remains the only .NET framework to maintain a terse, (both sync and async), typed, end-to-end client libraries without any code-gen, e.g:
 
-    Todo createdTodo = client.Post(new Todo { Content = "New Todo", Order = 1 });
+```cs
+Todo createdTodo = client.Post(new Todo { Content = "New Todo", Order = 1 });
+```
 
 ### Code-gen'ing service clients is evil
 
@@ -193,7 +201,9 @@ Support is included for registering raw custom IHttpHandler's, [Request / Respon
 
 ServiceStack's JSON & JSV serializers are **case-insensitive** (i.e. supports both camelCase and PascalCase properties) and the 1-line below (already included in most Example templates) emits idiomatic camelCase JSON output:
 
-    JsConfig.Init(Config { TextCase = TextCase.CamelCase });
+```cs
+JsConfig.Init(Config { TextCase = TextCase.CamelCase });
+```
 
 They're both [very resilient and can withstand extreme versioning without error](https://github.com/ServiceStack/ServiceStack.Redis/wiki/MigrationsUsingSchemalessNoSql) making it easy to consume [3rd party APIs](https://github.com/ServiceStack/ServiceStack.Text/tree/master/tests/ServiceStack.Text.Tests/UseCases)
 
@@ -226,7 +236,7 @@ Todo createdTodo = client.Post(new Todo { Content = "New Todo", Order = 1 });
 
 Is like this in [TypeScript](/typescript-add-servicestack-reference):
 
-```typescript
+```ts
 var client = new JsonServiceClient(baseUrl);
 var request = Todo();
 request.Content = "New Todo";
@@ -246,8 +256,8 @@ client.todos({'content':'New Todo', 'order':1})
 Or in jQuery:
 
 ```js
-    $.post(baseUrl + '/todos', {content:'New Todo', order:1}, 
-         function(createdTodo) { ... }, 'json');
+$.post(baseUrl + '/todos', {content:'New Todo', order:1}, 
+       function(createdTodo) { ... }, 'json');
 ```
 
 And you still have the option to consume all services in other Content-Types. Some languages may prefer to deal with XML - which can easily be accessed by adding the appropriate `Accept` and `Content-Type` headers.

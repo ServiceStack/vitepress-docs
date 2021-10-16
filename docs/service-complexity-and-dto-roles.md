@@ -118,8 +118,10 @@ You can then effortlessly convert between them using
 var dto = dbPoco.ConvertTo<Poco>();
 ```
 
-> The built-in Auto Mapping is also very tolerant and can co-erce properties with different types,
- e.g. to/from strings, different collection types, etc.
+::: info
+The built-in Auto Mapping is also very tolerant and can co-erce properties with different types,
+ e.g. to/from strings, different collection types, etc
+:::
 
 ## Data Transfer Objects - DTOs
 

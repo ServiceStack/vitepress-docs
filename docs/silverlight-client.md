@@ -11,7 +11,9 @@ These binaries are custom builds of the full ServiceStack Service Clients provid
 
 #### Requires PCL support in v4.x [ServiceStack.Client](https://nuget.org/packages/ServiceStack.Client) NuGet package.
 
-> Note: Due to restrictions in Silverlight only the Async operations are supported.
+::: info
+Due to restrictions in Silverlight only the Async operations are supported.
+:::
 
 ## [HelloMobile](https://github.com/ServiceStackApps/HelloMobile)
 

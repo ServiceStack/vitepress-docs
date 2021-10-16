@@ -46,7 +46,9 @@ public class FindMovies : QueryDb<Movie>
 
 That's all the code needed! Which we can now call using the ideal route:
 
-    /movies?ratings=G,PG-13
+```
+/movies?ratings=G,PG-13
+```
 
 ### Clients continue to benefit from a typed API
 
@@ -315,7 +317,9 @@ We'll go through each of the examples to give a better idea of the customization
 
 ServiceStack properties are case-insensitive and allows populating a collection with comma-delimited syntax, so this query:
 
-    /rockstars?firstNames=A,B,C
+```
+/rockstars?firstNames=A,B,C
+```
 
 Will populate the string array:
 
@@ -505,7 +509,9 @@ The string key in the above dictionaries describe what property each rule maps t
 
 The request below works as you would expect in returning all Rockstars older than 42 years of age.
 
-    /rockstars?AgeOlderThan=42
+```
+/rockstars?AgeOlderThan=42
+```
 
 It works by matching on the rule since `AgeOlderThan` does indeed ends with `OlderThan`:
 
@@ -517,7 +523,9 @@ The `%` wildcard is a placeholder for the field name which resolves to `Age`. No
 
 If you instead wanted to use the inclusive `>=` operand, we can just use a rule with the `>=` template:
 
-    /rockstars?AgeGreaterThanOrEqualTo=42
+```
+/rockstars?AgeGreaterThanOrEqualTo=42
+```
 
 Which matches the rule:
 
@@ -533,22 +541,28 @@ And when the wildcard is on both ends of the pattern:
 
 So to can the field name, which matches both these rules:
 
-    /rockstars?AgeGreaterThan=42
-    /rockstars?GreaterThanAge=42
+```
+/rockstars?AgeGreaterThan=42
+/rockstars?GreaterThanAge=42
+```
 
 An alternative to using wordy suffixes are the built-in short-hand syntax:
 
- - **>Age**  `Age >= {Value}`
- - **Age>**  `Age >  {Value}`
- - **<Age**  `Age <  {Value}`
- - **Age<**  `Age <= {Value}`
+|||
+|-|-|
+|**>Age**|`Age >= {Value}`|
+|**Age>**|`Age  > {Value}`|
+|**<Age**|`Age  < {Value}`|
+|**Age<**|`Age <= {Value}`|
 
 Which uses the appropriate operand based on whether the `<` `>` operators come before or after the field name:
 
-    /rockstars?>Age=42
-    /rockstars?Age>=42
-    /rockstars?<Age=42
-    /rockstars?Age<=42
+```
+/rockstars?>Age=42
+/rockstars?Age>=42
+/rockstars?<Age=42
+/rockstars?Age<=42
+```
 
 The use of `{Values}` or the `Value{N}` formats specifies the query should be treated as a collection, e.g:
 
@@ -560,9 +574,11 @@ The use of `{Values}` or the `Value{N}` formats specifies the query should be tr
 
 Which allows multiple values to be specified on the QueryString:
 
-    /rockstars?Ids=1,2,3
-    /rockstars?FirstNamesIn=Jim,Kurt
-    /rockstars?FirstNameBetween=A,F
+```
+/rockstars?Ids=1,2,3
+/rockstars?FirstNamesIn=Jim,Kurt
+/rockstars?FirstNameBetween=A,F
+```
 
 ### Advanced Conventions
 
@@ -585,9 +601,11 @@ EndsWithConventions = new Dictionary<string, QueryDbFieldAttribute>
 
 that can be called as normal:
 
-    /rockstars?FirstNameStartsWith=Jim
-    /rockstars?LastNameEndsWith=son
-    /rockstars?RockstarAlbumNameContains=e
+```
+/rockstars?FirstNameStartsWith=Jim
+/rockstars?LastNameEndsWith=son
+/rockstars?RockstarAlbumNameContains=e
+```
 
 This also shows that Implicit Conventions can also apply to joined table fields like `RockstarAlbumNameContains` using the fully qualified `{Table}{Field}` reference convention.
 
@@ -655,16 +673,20 @@ Plugins.Add(new AutoQueryFeature {
 
 Once enabled you can use the `_select`, `_from`, `_where` modifiers to append custom SQL Fragments, e.g:
 
-    /rockstars?_select=FirstName,LastName
+```
+/rockstars?_select=FirstName,LastName
 
-    /rockstars?_where=Age > 42
-    /rockstars?_where=FirstName LIKE 'Jim%'
+/rockstars?_where=Age > 42
+/rockstars?_where=FirstName LIKE 'Jim%'
 
-    /rockstars?_select=FirstName&_where=LastName = 'Cobain'
+/rockstars?_select=FirstName&_where=LastName = 'Cobain'
 
-    /rockstars?_from=Rockstar r INNER JOIN RockstarAlbum a ON r.Id = a.RockstarId
+/rockstars?_from=Rockstar r INNER JOIN RockstarAlbum a ON r.Id = a.RockstarId
+```
 
-> Note: url encoding in the above examples are omitted for readability
+::: info
+url encoding in the above examples are omitted for readability
+:::
 
 Whilst Raw SqlFilters affect the query executed, they don't change what Response DTO is returned.
 
@@ -672,7 +694,9 @@ Whilst Raw SqlFilters affect the query executed, they don't change what Response
 
 You can also customize which fields you want returned using the `Fields` property available on all AutoQuery Services, e.g:
 
-    ?Fields=Id,Name,Description,JoinTableId
+```
+?Fields=Id,Name,Description,JoinTableId
+```
 
 The Fields still need to be defined on the Response DTO as this feature doesn't change the Response
 DTO Schema, only which fields are populated. This does change the underlying RDBMS SELECT that's executed, 
@@ -681,7 +705,9 @@ also benefiting from reduced bandwidth between your RDBMS and App Server.
 A useful [JSON customization](/customize-json-responses) 
 that you can add when specifying custom fields is `ExcludeDefaultValues`, e.g:
 
-    /query?Fields=Id,Name,Description,JoinTableId&jsconfig=ExcludeDefaultValues
+```
+/query?Fields=Id,Name,Description,JoinTableId&jsconfig=ExcludeDefaultValues
+```
 
 Which will remove any value type fields with a **default value** from the JSON response, e.g:
     
@@ -692,7 +718,9 @@ Which will remove any value type fields with a **default value** from the JSON r
 
 You can use **wildcards** to quickly reference all fields on a table using the `table.*` format, e.g:
 
-    ?fields=id,departmentid,department,employee.*
+```
+?fields=id,departmentid,department,employee.*
+```
 
 Which is a shorthand that expands to manually listing each field in the `Employee` table, useful for queries 
 which joins multiple tables, e.g:
@@ -714,7 +742,9 @@ To query only results with distinct fields you can prefix the custom fields list
 
 Using QueryString:
 
-    ?Fields=DISTINCT City,Country
+```
+?Fields=DISTINCT City,Country
+```
 
 Using C# Client:
 
@@ -755,7 +785,9 @@ public interface IQuery
 
 This works as you would expect where you can modify the returned result set with:
 
-    /rockstars?skip=10&take=20&orderBy=Id
+```
+/rockstars?skip=10&take=20&orderBy=Id
+```
 
 Or when accessing via a ServiceClient:
 
@@ -781,7 +813,9 @@ Plugins.Add(new AutoQueryFeature {
 
 AutoQuery also supports specifying multiple OrderBy's with a comma-delimited list of field names, e.g:
 
-    /rockstars?orderBy=Id,Age,FirstName
+```
+/rockstars?orderBy=Id,Age,FirstName
+```
 
 Same request via Service Client:
 
@@ -793,14 +827,18 @@ client.Get(new QueryRockstars { OrderBy = "Id,Age,FirstName" });
 
 When specifying multiple order by's you can sort specific fields in reverse order by prepending a `-` before the field name, e.g:
 
-    ?orderBy=Id,-Age,FirstName
-    ?orderByDesc=-Id,Age,-FirstName
+```
+?orderBy=Id,-Age,FirstName
+?orderByDesc=-Id,Age,-FirstName
+```
 
 ### OrderBy Random
 
 `OrderBy` includes special support for returning results in Random order using `Random`, e.g:
 
-    /rockstars?OrderBy=Random
+```
+/rockstars?OrderBy=Random
+```
 
 Using Service Client:
 
@@ -840,8 +878,10 @@ The [CSV Format](/csv-format) especially shines here given queries return a sing
 
 ServiceStack provides a number of ways to [request your preferred content-type](/routing#content-negotiation), the easiest of which is to just use the `.{format}` extension at the end of the `/pathinfo` e.g:
 
-    /rockstars.csv
-    /movies.csv?ratings=G,PG-13
+```
+/rockstars.csv
+/movies.csv?ratings=G,PG-13
+```
 
 [CSV Format](/csv-format) responses can use the same [scoped custom responses as JSON](/customize-json-responses) to allow
 Typed Results to exclude default values columns when returning limited [custom fields with `?fields`](/autoquery-rdbms#custom-fields):
@@ -886,70 +926,98 @@ public class QuerySales : QueryDb<Sales> {}
 
 AutoQuery supports running additional Aggregate queries on the queried result-set. To include aggregates in your Query's response specify them in the `Include` property of your AutoQuery Request DTO, e.g:
 
-    var response = client.Get(new QueryRockstars { Include = "COUNT(*)" })
+```cs
+var response = client.Get(new QueryRockstars { Include = "COUNT(*)" })
+```
 
 Or in the `Include` QueryString param if you're calling AutoQuery Services from a browser, e.g:
 
-    /rockstars?include=COUNT(*)
+```
+/rockstars?include=COUNT(*)
+```
 
 The result is then published in the `QueryResponse<T>.Meta` String Dictionary and is accessible with:
 
-    response.Meta["COUNT(*)"] //= 7
+```
+response.Meta["COUNT(*)"] //= 7
+```
 
 By default any of the functions in the SQL Aggregate whitelist can be referenced: 
 
-    AVG, COUNT, FIRST, LAST, MAX, MIN, SUM
+```
+AVG, COUNT, FIRST, LAST, MAX, MIN, SUM
+```
 
 Which can be added to or removed from by modifying `SqlAggregateFunctions` collection, e.g, you can allow usage of a `CustomAggregate` SQL Function with:
 
-    Plugins.Add(new AutoQueryFeature { 
-        SqlAggregateFunctions = { "CustomAggregate" }
-    })
+```cs
+Plugins.Add(new AutoQueryFeature { 
+    SqlAggregateFunctions = { "CustomAggregate" }
+})
+```
 
 ### Aggregate Query Usage
 
 The syntax for aggregate functions is modelled after their usage in SQL so they're instantly familiar. At its most basic usage you can just specify the name of the aggregate function which will use `*` as a default argument so you can also query `COUNT(*)` with: 
 
-    ?include=COUNT
+```
+?include=COUNT
+```
 
 It also supports SQL aliases:
 
-    COUNT(*) Total
-    COUNT(*) as Total
+```
+COUNT(*) Total
+COUNT(*) as Total
+```
 
 Which is used to change what key the result is saved into:
 
-    response.Meta["Total"]
+```cs
+response.Meta["Total"]
+```
 
 Columns can be referenced by name:
 
-    COUNT(LivingStatus)
+```
+COUNT(LivingStatus)
+```
 
 If an argument matches a column in the primary table the literal reference is used as-is, if it matches a column in a joined table it's replaced with its fully-qualified reference and when it doesn't match any column, Numbers are passed as-is otherwise its automatically escaped and quoted and passed in as a string literal.
 
 The `DISTINCT` modifier can also be used, so a complex example looks like:
 
-    COUNT(DISTINCT LivingStatus) as UniqueStatus
+```
+COUNT(DISTINCT LivingStatus) as UniqueStatus
+```
 
 Which saves the result of the above function in:
 
-    response.Meta["UniqueStatus"]
+```cs
+response.Meta["UniqueStatus"]
+```
 
 Any number of aggregate functions can be combined in a comma-delimited list:
 
-    Count(*) Total, Min(Age), AVG(Age) AverageAge
+```
+Count(*) Total, Min(Age), AVG(Age) AverageAge
+```
 
 Which returns results in:
 
-    response.Meta["Total"]
-    response.Meta["Min(Age)"]
-    response.Meta["AverageAge"]
+```cs
+response.Meta["Total"]
+response.Meta["Min(Age)"]
+response.Meta["AverageAge"]
+```
 
 ### Include Total
 
 The total records available for a query can be included in the Response by adding it on the QueryString, e.g:
 
-    /query?Include=Total
+```
+/query?Include=Total
+```
 
 Or on the Request DTO:
 
@@ -1209,7 +1277,9 @@ IUntypedSqlExpression q = ctx.SqlExpression.GetUntypedSqlExpression()
     .Clone();
 ```
 
-> Cloning the SqlExpression allows you to modify a copy that won't affect any other Response Filter.
+::: info
+Cloning the SqlExpression allows you to modify a copy that won't affect any other Response Filter.
+:::
 
 ### AutoQuery Property Mapping
 
@@ -1232,7 +1302,9 @@ public class Person
 
 Which can be queried with:
 
-    ?first_name=Jimi
+```
+?first_name=Jimi
+```
 
 or by setting the global `JsConfig.Init(Config { TextCase = TextCase.SnakeCase })` convention:
 
@@ -1245,7 +1317,9 @@ public class QueryPerson : QueryDb<Person>
 
 Where it's also queryable with:
 
-    ?last_name=Hendrix
+```
+?last_name=Hendrix
+```
 
 ## Extensibility with QueryFilters
 
@@ -1382,7 +1456,9 @@ AutoQuery Viewer provides an instant UI for constructing and browsing your
 
 [![](https://raw.githubusercontent.com/ServiceStack/Admin/master/img/query-default-values.png)](http://github.servicestack.net/ss_admin/autoquery)
 
-> [YouTube Demo](https://youtu.be/YejYkCvKsuQ)
+::: info YouTube
+[youtu.be/YejYkCvKsuQ](https://youtu.be/YejYkCvKsuQ)
+:::
 
 ### Live AutoQuery Viewer Examples
 
@@ -1392,7 +1468,9 @@ AutoQuery Viewer provides an instant UI for constructing and browsing your
 
 ## [Northwind](https://github.com/ServiceStackApps/Northwind)
 
-> Northwind database viewer, showing how to easily expose read and cached view services of an internal dataset with ServiceStack + OrmLite
+::: info DEMO
+Northwind database viewer, showing how to easily expose read and cached view services of an internal dataset with OrmLite
+:::
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/livedemos/northwind.png)](http://northwind.netcore.io)
 
@@ -1404,7 +1482,9 @@ AutoQuery Viewer provides an instant UI for constructing and browsing your
 
 ## [StackApis](https://github.com/ServiceStackApps/StackApis)
 
-> AngularJS Single Page App leveraging AutoQuery in <50 lines of JavaScript + 1 AutoQuery DTO 
+::: info DEMO
+AngularJS Single Page App leveraging AutoQuery in <50 lines of JavaScript + 1 AutoQuery DTO
+:::
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/livedemos/stackapis.png)](http://stackapis.netcore.io)
 

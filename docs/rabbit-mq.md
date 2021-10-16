@@ -112,7 +112,9 @@ mqServer.Start();
 
 Starting the MQ Server spawns 2 threads for each handler, one to listen to the Message Inbox `mq:Hello.inq` and another to listen on the Priority Queue located at `mq:Hello.priorityq`. 
 
-> Note: You can white-list which messages to enable Priority Queue's for with `mqServer.PriorityQueuesWhitelist` or disable them all by setting `mqServer.DisablePriorityQueues = true`.
+::: info
+You can white-list which messages to enable Priority Queue's for with `mqServer.PriorityQueuesWhitelist` or disable them all by setting `mqServer.DisablePriorityQueues = true`.
+:::
 
 ### Allocating multiple threads for specific operations
 
@@ -175,7 +177,9 @@ mqClient.Ack(responseMsg);
 responseMsg.GetBody().Result //= Hello, World!
 ```
 
-> Note: this behavior can be limited to only publish responses for types in the `mqServer.PublishResponsesWhitelist`, otherwise all response messages can be disabled entirely by setting `mqServer.DisablePublishingResponses = true`.
+::: info
+this behavior can be limited to only publish responses for types in the `mqServer.PublishResponsesWhitelist`, otherwise all response messages can be disabled entirely by setting `mqServer.DisablePublishingResponses = true`.
+:::
 
 ### Responses from Messages with ReplyTo are published to that address
 

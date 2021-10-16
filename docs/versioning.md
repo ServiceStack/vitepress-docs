@@ -30,4 +30,6 @@ client.Get(new Hello { Name = "World" });  // Hello.Version=2
 
 A popular convention for specifying versions in API requests is with the `?v=1` QueryString which ServiceStack now uses as a fallback for populating any Request DTO's that implement `IHasVersion` (as above).
 
-> Note: as ServiceStack's message-based design promotes forward and backwards-compatible Service API designs, our recommendation is to only consider implementing versioning when necessary, at which point check out our [recommended versioning strategy](http://stackoverflow.com/a/12413091/85785).
+::: info
+as ServiceStack's message-based design promotes forward and backwards-compatible Service API designs, our recommendation is to only consider implementing versioning when necessary, at which point check out our [recommended versioning strategy](http://stackoverflow.com/a/12413091/85785)
+:::

@@ -34,7 +34,9 @@ Currently there are 5 different .NET logging providers available on NuGet:
 
     PM> Install-Package ServiceStack.Logging.Serilog
 
-> Note: The `ConsoleLogFactory` and `DebugLogFactory` and are already built-in and bind to .NET Framework's Console and Debug loggers.
+::: info
+The `ConsoleLogFactory` and `DebugLogFactory` and are already built-in and bind to .NET Framework's Console and Debug loggers.
+:::
 
 ### Why a Logging Interface?
 

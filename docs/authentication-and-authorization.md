@@ -226,7 +226,9 @@ Plugins.Add(new AuthFeature(() => new AuthUserSession(), new IAuthProvider[] {
 }));
 ```
 
-> Note: The Callback URL in each Application should match the CallbackUrl for your application which is typically: http://yourhostname.com/auth/{Provider}, e.g. http://yourhostname.com/auth/twitter for Twitter.
+::: info
+The Callback URL in each Application should match the CallbackUrl for your application which is typically: http://yourhostname.com/auth/{Provider}, e.g. http://yourhostname.com/auth/twitter for Twitter.
+:::
 
 ### Auth Repository
 
@@ -253,7 +255,9 @@ Plugins.Add(new AuthFeature(() => new CustomUserSession(),
 ));
 ```
 
-> Note: If you're using Custom Sessions and have `JsConfig.ExcludeTypeInfo=true`, you need to [explicitly enable it](http://stackoverflow.com/q/18842685/85785) with `JsConfig<TCustomSession>.IncludeTypeInfo=true`.
+::: info
+If you're using Custom Sessions and have `JsConfig.ExcludeTypeInfo=true`, you need to [explicitly enable it](http://stackoverflow.com/q/18842685/85785) with `JsConfig<TCustomSession>.IncludeTypeInfo=true`.
+:::
 
 After authentication the client will receive a cookie with a session id, which is used to fetch the correct session from the `ICacheClient` internally by ServiceStack. Thus, you can access the current session in a service:
 

@@ -13,13 +13,11 @@ As a bonus the most appropriate HTTP Status code is returned based upon the C# E
 The error handling support works end-to-end where all errors get auto-serialized into your Response DTO and re-hydrated into a C# Exception on ServiceStack's generic Service Clients. This allows you to idiomatically treat errors like normal C# Exceptions - providing easy access to rich, structured error messages in your clients. 
 
 ### JavaScript support included
-To make it trivial to consume errors in JavaScript, you can use the lightweight [ss-utils.js](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack/js/ss-utils.js) JavaScript library to trivially bind your response errors to your **HTML form fields** with a **single line of code**.
+To make it trivial to consume errors in JavaScript, you can use the lightweight and embedded dep-free [@servicestack/client form binding](/servicestack-client-umd#binding-html-forms) library or the [ss-utils.js](/ss-utils-js#bootstrap-forms) jQuery library to trivially bind your response errors to your **HTML form fields** with a **single line of code**.
 
-***
+## How it works
 
 All Error handling and validation options described below are treated in the same way - serialized into the `ResponseStatus` property of your Response DTO making it possible for your clients applications to generically treat all Web Service Errors in the same way.
-
-> **Note:** The response DTO must follow the **`{Request DTO}Response` naming convention** and has to be in the **same namespace** as the Request DTO
 
 ```csharp
 public class Hello : IReturn<HelloResponse> {}
@@ -36,7 +34,7 @@ If now an exception occurs in the service implementation, the exception is seria
 
 **Example JSON output:**
 
-```
+```json
 {
     "ResponseStatus": {
          "ErrorCode": "NotSupportedException",
@@ -91,7 +89,9 @@ catch (WebServiceException webEx)
 
 By default display StackTraces in your Response DTOs are disabled, but they're a good to have for development, which you can enable with:
 
-    SetConfig(new HostConfig { DebugMode = true });
+```cs
+SetConfig(new HostConfig { DebugMode = true });
+```
 
 ## Customized Error Messages
 
@@ -175,15 +175,21 @@ public class UserValidator : AbstractValidator<User>
 }
 ```
 
-> **Info:** ServiceStack adds another extension method named `RuleSet` which can handle `ApplyTo` enum flags. This method doesn't exist in the core FluentValidation framework.
+::: info
+ServiceStack adds another extension method named `RuleSet` which can handle `ApplyTo` enum flags. This method doesn't exist in the core FluentValidation framework
+:::
 
-> **Warning:** If a validator for a request dto is created, all rules which aren't in any rule set are executed **+ the rules in the matching rule set**. 
-> Normally FluentValidation only executes the matching rule set and **ignores** all other rules (whether they're in a rule set or not) and the rules which don't belong 
-> to any rule set are normally only executed, if no rule set-name was given to the validate method of the validator. 
+::: warning
+If a validator for a request dto is created, all rules which aren't in any rule set are executed **+ the rules in the matching rule set**. 
+Normally FluentValidation only executes the matching rule set and **ignores** all other rules (whether they're in a rule set or not) and the rules which don't belong 
+to any rule set are normally only executed, if no rule set-name was given to the validate method of the validator. 
+:::
 
 Like services registered in the IoC container, validators are also auto-wired, so if there's a public property which can be resolved by the IoC container, the IoC container will inject it. In this case, the IoC container will resolve the property `AddressValidator`, if an object of the type `IAddressValidator` was registered.
 
-> **Tip:** You can access the current `IRequest` in your Custom Validator from `base.Request`
+::: info Tip
+You can access the current `IRequest` in your Custom Validator from `base.Request`
+:::
 
 ### Async Validators
 
@@ -246,29 +252,33 @@ Now the service etc can be created and the validation rules are checked every ti
 
 If you try now for example to send this request:
 
-    POST localhost:50386/validated
-    {
-        "Name": "Max"
-    } 
+```
+POST localhost:50386/validated
+{
+    "Name": "Max"
+} 
+```
 
 You'll get this JSON response:
 
-    {
-        "ErrorCode": "GreaterThan",
-        "Message": "'Age' must be greater than '0'.",
-        "Errors": [
-            {
-                "ErrorCode": "GreaterThan",
-                "FieldName": "Age",
-                "Message": "'Age' must be greater than '0'."
-            },
-            {
-                "ErrorCode": "NotEmpty",
-                "FieldName": "Company",
-                "Message": "'Company' should not be empty."
-            }
-        ]
-    }
+```json
+{
+    "ErrorCode": "GreaterThan",
+    "Message": "'Age' must be greater than '0'.",
+    "Errors": [
+        {
+            "ErrorCode": "GreaterThan",
+            "FieldName": "Age",
+            "Message": "'Age' must be greater than '0'."
+        },
+        {
+            "ErrorCode": "NotEmpty",
+            "FieldName": "Company",
+            "Message": "'Company' should not be empty."
+        }
+    ]
+}
+```
 
 As you can see, the `ErrorCode` and the `FieldName` provide an easy way to handle the validation error at the client side. 
 If you want, you can also configure a custom `ErrorCode` for a validation rule:
@@ -278,12 +288,14 @@ RuleFor(x => x.Name).NotEmpty().WithErrorCode("ShouldNotBeEmpty");
 ```
 
 If the rule fails, the JSON response will look like that:
-       
-    {
-        "ErrorCode": "ShouldNotBeEmpty",
-        "FieldName": "Name",
-        "Message": "'Name' should not be empty."
-    }
+
+```json
+{
+    "ErrorCode": "ShouldNotBeEmpty",
+    "FieldName": "Name",
+    "Message": "'Name' should not be empty."
+}
+```
 
 ### Custom Validation
 
@@ -309,7 +321,7 @@ public class CustomValidationValidator : AbstractValidator<CustomValidation>
 }
 ```
 
-## Use FluentValidation everywhere!
+## Use FluentValidation Everywhere
 
 Of course FluentValidation can be used for any other classes (not only request DTOs), too:
 
@@ -334,7 +346,9 @@ public class TestClassValidator : AbstractValidator<TestClass>
 }
 ```
 
-> Info: If FluentValidation isn't used for request DTOs, it behaves the same as documented in the [Fluent Validation documentation](https://github.com/JeremySkinner/FluentValidation/wiki).
+::: info
+If FluentValidation isn't used for request DTOs, it behaves the same as documented in the [Fluent Validation documentation](https://github.com/JeremySkinner/FluentValidation/wiki)
+:::
 
 Inside some service code you can validate an instance of this class:
 

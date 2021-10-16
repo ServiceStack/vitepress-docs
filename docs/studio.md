@@ -9,7 +9,8 @@ The richer metadata in ServiceStack Services allows Studio to logically group Se
 
 Install the [app dotnet tool](/netcore-windows-desktop) then launch with:
 
-<h4 id="app-studio" tabindex="-1"><a href="app://studio">app://studio</a> <a class="header-anchor" href="#app-studio" aria-hidden="true">#</a></h4>
+<h3 id="app-studio" class="my-4" tabindex="-1"><a href="app://studio">app://studio</a> 
+<a class="header-anchor" href="#app-studio" aria-hidden="true">#</a></h3>
 
 <iframe width="896" height="525" src="https://www.youtube.com/embed/kN7371bqUII" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -21,11 +22,15 @@ Install the [app dotnet tool](/netcore-windows-desktop) then launch with:
 
 You'll need the latest [app dotnet tool](/netcore-windows-desktop) which is bundled with the latest Chromium which provides the Desktop UI:
 
-    $ dotnet tool update -g app
+```bash
+$ dotnet tool update -g app
+```
 
 Which you'll need to run once to register the `app://` url scheme, e.g:
 
-    $ app -version
+```bash
+$ app -version
+```
 
 ### Starting ServiceStack Studio
 
@@ -33,9 +38,11 @@ This initial release of ServiceStack Studio primarily provides a UI around AutoQ
 
 If you don't have a project using the **v5.9+** features on hand you can launch a copy of [NetCoreApps/NorthwindCrud](https://github.com/NetCoreApps/NorthwindCrud) which uses the new AutoCrud features to generate AutoQuery Services around all its RDBMS tables, that can be run locally with:
 
-    $ x download NetCoreApps/NorthwindCrud
-    $ cd NorthwindCrud
-    $ dotnet run
+```bash
+$ x download NetCoreApps/NorthwindCrud
+$ cd NorthwindCrud
+$ dotnet run
+```
 
 Where you can use `app` URL scheme support to launch **Studio** & automatically register the **NorthwindCrud** instance with:
 
@@ -43,7 +50,9 @@ Where you can use `app` URL scheme support to launch **Studio** & automatically 
 
 This URL scheme gets translated & is equivalent to running **Studio** on the command-line with:
 
-    $ app open studio -connect https://localhost:5001
+```bash
+$ app open studio -connect https://localhost:5001
+```
 
 Which downloads the [Studio Gist Desktop App](https://gist.github.com/gistlyn/d8e7a56027ed6ec3060d9a9896931909), loads it as a [Gist VFS](/virtual-file-system#gistvirtualfiles) whose static assets are then served by the .NET Core Server and loaded in the CEF Chromium browser.
 
@@ -55,9 +64,11 @@ The `connect` param is used by **Studio** to auto register the remote **Northwin
 
 Whilst not optimized for it, **Studio** can also be launched headless in your default Browser using the `x` x-plat tool:
 
-<p><a href="xapp://studio?connect=https://localhost:5001">xapp://studio?connect=https://localhost:5001</a></p>
+<h3 class="my-4"><a href="xapp://studio?connect=https://localhost:5001">xapp://studio?connect=https://localhost:5001</a></h3>
 
-    $ x open studio -connect https://localhost:5001
+```bash
+$ x open studio -connect https://localhost:5001
+```
 
 Where you'll then be able to view it by going to `https://localhost:5002`. Note if not launched in a browser **Studio** will have limited capacity and features, but will eventually be a supported mode for accessing **Studio** from macOS or Linux.
 

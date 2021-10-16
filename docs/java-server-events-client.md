@@ -189,7 +189,9 @@ A concrete example for calling the above API would be:
 
     cmd.paint$#town red
 
-> Note: Spaces in CSS selectors need to be encoded with `%20`
+::: info
+Spaces in CSS selectors need to be encoded with `%20`
+:::
 
 #### Handling Messages with the Default Selector
 

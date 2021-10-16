@@ -50,8 +50,10 @@ new `?jsconfig` QueryString param which lets your Service consumers customize th
 their preference. This works similar to having wrapped your Service response in a `HttpResult` with a Custom 
 `ResultScope` in the Service implementation to enable non-default customization of a Services response, e.g:
 
-    /service?jsconfig=EmitLowercaseUnderscoreNames,ExcludeDefaultValues
-    
+```
+/service?jsconfig=EmitLowercaseUnderscoreNames,ExcludeDefaultValues
+```
+
 Works similarly to:
 
 ```csharp
@@ -63,7 +65,9 @@ return new HttpResult(new { TheKey = "value", Foo=0 }) {
 
 Which results in **lowercase_underscore** key names with any properties with **default values removed**:
 
-    {"the_key":"value"}
+```json
+{"the_key":"value"}
+```
 
 It also supports cascading server and client ResultScopes, with the client `?jsconfig` taking precedence.
 
@@ -75,12 +79,16 @@ JsConfig also supports Camel Humps notation letting you target a configuration b
 **Uppercase Letters** in the property name which is also case-insensitive so an equivalent shorter version 
 of the above config can be:
 
-    ?jsconfig=ELUN,edv
-    
+```
+?jsconfig=ELUN,edv
+```
+
 Camel Humps also works with Enum Values so both these two configurations are the same:
 
-    ?jsconfig=DateHandler:UnixTime
-    ?jsconfig=dh:ut
+```
+?jsconfig=DateHandler:UnixTime
+?jsconfig=dh:ut
+```
 
 ### Custom JSON Live Example
 
@@ -97,7 +105,9 @@ Here's a live example of this comparing the default Response with the customized
 The presence of a **bool** configuration property will be set to `true` unless they have a `false` or `0` 
 value in which case they will be set to `false`, e.g:
 
-    ?jsconfig=ExcludeDefaultValues:false
+```
+?jsconfig=ExcludeDefaultValues:false
+```
 
 For a quick reference the following **bool** customizations are supported:
 

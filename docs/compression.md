@@ -46,9 +46,11 @@ public class CompressedServices : Service
 }
 ```
 
-> Note using `[CompressResponse]` is unnecessary when returning [cached responses](/http-caching) as ServiceStack 
+::: info
+using `[CompressResponse]` is unnecessary when returning [cached responses](/http-caching) as ServiceStack 
 automatically caches and returns the most optimal Response - typically compressed bytes for clients that 
 supports compression
+:::
 
 ## Static File Compression
 

@@ -215,9 +215,11 @@ mqClient.Ack(responseMsg);
 responseMsg.GetBody().Result //= Hello, World!
 ```
 
-> Note: this behavior can be limited to only publish responses for types in the 
+::: info
+this behavior can be limited to only publish responses for types in the 
 `mqServer.PublishResponsesWhitelist`, otherwise all response messages can be disabled 
 entirely by setting `mqServer.DisablePublishingResponses = true`.
+:::
 
 ### Responses from Messages with ReplyTo are published to that address
 

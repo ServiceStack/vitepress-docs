@@ -96,7 +96,10 @@ Using the AMI ID (starts with `ami-`) at the bottom, search in the 'Community AM
 ### Choose Instance Type
 
 A t3.micro or larger will work fine, this pattern can be used to host multiple applications on the 1 server so if the number of applications gets larger, you might need a larger instance type.
-> Note this pattern is suitable for testing prototypes or low traffic applications as it is cost effective and makes it easy to bundle multiple apps onto 1 EC2 instance.
+
+::: info
+this pattern is suitable for testing prototypes or low traffic applications as it is cost effective and makes it easy to bundle multiple apps onto 1 EC2 instance.
+:::
 
 ### Configure Instance
 
@@ -129,7 +132,10 @@ You'll want to expose at least ports 80, 443 and 22 for remote SSH access. We'll
 ### Setup Docker-compose and nginx-proxy
 
 To route traffic to your ServiceStack applications and automate the generation and management of TLS certificates, an additional docker-compose file is provided via the `x mix` template, `nginx-proxy-compose.yml` under the `deploy` directory of your repository. This docker-compose file is ready to run and can be copied to the deployment server.
-> This is done via docker-compose rather than via ECS itself for simplicity as ECS is really not designed to make it easy to handle routing on the EC2 instance itself.
+
+::: info
+This is done via docker-compose rather than via ECS itself for simplicity as ECS is really not designed to make it easy to handle routing on the EC2 instance itself
+:::
 
 First you'll need to install `docker-compose`.
 
@@ -138,7 +144,10 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 Run `docker-compose --version` to confirm.
-> Check [docker-compose documentation](https://docs.docker.com/compose/install/) for changes or new versions
+
+::: info
+Check [docker-compose documentation](https://docs.docker.com/compose/install/) for changes or new versions
+:::
 
 To copy you can use scp or create a new file via server text editor to copy the short YML file over. For this example, we are going to copy it straight to the ~/ (home) directory.
 
@@ -153,7 +162,10 @@ docker-compose -f ~/nginx-proxy-compose.yml up -d
 ```
 
 This will run an nginx reverse proxy along with a companion container that will watch for additional containers in the same docker bridge network and attempt to initialize them with valid TLS certificates. This includes containers created and managed by the ECS agent.
-> If the container doesn't have the environment variable `VIRTUAL_HOST` set, it will be ignored. See the `task-definition-template.json` environment for more details.
+
+::: info
+If the container doesn't have the environment variable `VIRTUAL_HOST` set, it will be ignored. See the `task-definition-template.json` environment for more details
+:::
 
 ### IAM Deploy User
 For GitHub Actions to authenticate with AWS, you'll need a user with programmatic access and sufficient permissions to initialize the ECS + ECR resources. Once the initial deployment is complete, reduced access can be used for just uploading to ECR and promoting new releases to ECS. See the README in the Mix template for example of reduced access IAM policy for deployments.

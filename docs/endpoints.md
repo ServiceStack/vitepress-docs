@@ -26,13 +26,13 @@ public class Hello
 }
 ```
 
-***
-
 ## Option 1
 
 ### SOAP endpoint
 
-`POST` example.org/soap11
+```
+POST example.org/soap11
+```
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -48,34 +48,44 @@ public class Hello
 ```
 
 ### Rest endpoint:
-`POST` example.org/hello
+
+```
+POST example.org/hello
+```
 
 ```js
 {"Name":"World"}
 ```
 
 ### Default endpoint:
-`POST` example.org/json/reply/Hello
 
-```js
+```
+POST example.org/json/reply/Hello
+```
+
+```json
 {"Name":"World"}
 ```
 
-***
 
 ## Option 2
 
 But you don't need to pass the `Name` of the request DTO in the request body. There's also the possibility to set the value of `Name` with URL parameters (works only with REST and default endpoint of course).
 
 ### REST endpoint:
-`POST` example.org/hello?Name=World
+
+```
+POST example.org/hello?Name=World
+```
 
 ### Default endpoint:
-`POST` example.org/json/reply/Hello?Name=World
+
+```
+POST example.org/json/reply/Hello?Name=World
+```
 
 You can also combine the two approaches. 
 
-***
 
 ## Option 3
 
@@ -89,10 +99,17 @@ If you add the following mapping to the request DTO above:
 ...you will be able to set the name in the URL itself, without any URL parameters:
 
 ### Rest endpoint:
-`GET` example.org/hello/World
+
+```
+GET example.org/hello/World
+```
 
 As you can see `{Name}` (in the mapping) is the placeholder for the value of the property `Name`.
 
-> **Tip:** The last two approaches are mostly used for GET and DELETE requests, because often clients don't support to attach a request body for these HTTP methods.
+::: info Tip
+The last two approaches are mostly used for GET and DELETE requests, because often clients don't support to attach a request body for these HTTP methods
+:::
 
-> **Tip:** As you may have noticed, ServiceStack is also capable to support different formats (JSON, XML, etc). There exists another separate tutorial about formats.
+::: info Tip
+As you may have noticed, ServiceStack is also capable to support different formats (JSON, XML, etc). There exists another separate tutorial about formats
+:::

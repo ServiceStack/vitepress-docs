@@ -13,15 +13,21 @@ Without any configuration required, ServiceStack already includes [pre-defined r
 
 e.g. the pre-defined url to call a JSON 'Hello' Service is:
 
-    /json/reply/hello
+```
+/json/reply/hello
+```
 
 #### [Auto Batched Requests](/auto-batched-requests)
 
-    /json/reply/Hello[]
+```
+/json/reply/Hello[]
+```
 
 ### SOAP Web Service urls
 
-    /api?/[soap11|soap12]
+```
+/api?/[soap11|soap12]
+```
 
 ## Custom Routes
 
@@ -34,8 +40,10 @@ public class Hello { ... }
 
 which matches: 
 
-    /hello
-    /hello?Name=XXX
+```
+/hello
+/hello?Name=XXX
+```
 
 ### Variable place-holders
 
@@ -47,11 +55,15 @@ Routes can also have variable place-holders:
 
 matches:
 
-    /hello/foo
+```
+/hello/foo
+```
 
 And will populate the public property **Name** on the Request DTO with **foo**.
 
-> Note: The QueryString, FormData and HTTP Request Body isn't apart of the Route (i.e. only the /path/info is) but they can all be used in addition to every web service call to further populate the Request DTO.
+::: info
+The QueryString, FormData and HTTP Request Body isn't apart of the Route (i.e. only the /path/info is) but they can all be used in addition to every web service call to further populate the Request DTO.
+:::
 
 ### Wildcard paths
 
@@ -63,9 +75,11 @@ Using a route with a wild card path like:
 
 matches any number of variable paths:
 
-    /hello
-    /hello/name
-    /hello/my/name/is/ServiceStack    //Name = my/name/is/ServiceStack
+```
+/hello
+/hello/name
+/hello/my/name/is/ServiceStack    //Name = my/name/is/ServiceStack
+```
 
 [Another good use-case for when to use wildcard routes](http://stackoverflow.com/questions/7780157/multiple-optional-parameters-with-servicestack-net).
 
@@ -191,14 +205,20 @@ Or by appending the format **.ext** to the end of the route, e.g:
   - [/rockstars.html?id=1](http://razor.servicestack.net/rockstars.html?id=1)
 
 This is enabled on all custom routes and works for all built-in and user-registered formats. 
-It can be disabled by setting `Config.AllowRouteContentTypeExtensions = false`.
+It can be disabled by setting: 
+
+```cs
+Config.AllowRouteContentTypeExtensions = false
+```
 
 ### Simulate alternative HTTP Methods
 
 Some environments prohibit or inhibit sending alternative HTTP Methods like HTML Forms which only allow **GET** or **POST**
 but you can simulate an alternative HTTP Method with the `X-Http-Method-Override`, e.g. we can simulate a **PATCH** request with:
 
-    X-Http-Method-Override: PATCH
+```
+X-Http-Method-Override: PATCH
+```
 
 Or in a HTML Form with a hidden input, e.g:
 
@@ -317,7 +337,9 @@ public class DesktopSearch { ... }
 
 Instead of matching on a pre-configured RequestRule you can instead specify a Regular Expression using the format:
 
-    {Property} =~ {RegEx}
+```
+{Property} =~ {RegEx}
+```
 
 Where `{Property}` is an `IHttpRequest` property, e.g:
 
@@ -328,7 +350,9 @@ public class GetUser { ... }
 
 An exact match takes the format:
 
-    {Property} = {Value}
+```
+{Property} = {Value}
+```
 
 Which you could use to provide a tailored feed for specific clients:
 
@@ -362,7 +386,9 @@ Interface markers is supported in all .NET Service Clients, they're also include
 
 Also related to this is registering Auto routes via the [Routes.AddFromAssembly](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack/ServiceRoutesExtensions.cs#L23) extension method, where this single call:
 
-    Routes.AddFromAssembly(typeof(FooService).Assembly)
+```cs
+Routes.AddFromAssembly(typeof(FooService).Assembly)
+```
 
 Goes through and scans all your services (in the Assemblies specified) and registers convention-based routes based on all the HTTP methods you have implemented. 
 
@@ -400,10 +426,12 @@ class MyRequest2
 
 Generate the following routes:
 
-    /myrequest1
-    /myrequest1/{UniqueId}
-    /myrequest2
-    /myrequest2/{CustomId}
+```
+/myrequest1
+/myrequest1/{UniqueId}
+/myrequest2
+/myrequest2/{CustomId}
+```
 
 See the implementation of [RouteNamingConvention](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack/Host/RouteNamingConvention.cs) for examples of how to add your own auto-generated route conventions.
 
@@ -522,7 +550,9 @@ This is described in more detail on the [New API Design wiki](/api-design) but t
 
 The following HTTP Request:
 
-    GET /content/v1/literal/slug
+```
+GET /content/v1/literal/slug
+```
 
 Will match the following Route definitions in order from highest precedence to lowest:
 
@@ -625,10 +655,12 @@ ServiceStack uses the [JSV-Format](/jsv-format) (JSON without quotes) to parse Q
 
 JSV lets you embed deep object graphs in QueryString as seen [this example url](http://test.servicestack.net/json/reply/StoreLogs?Loggers=%5B%7BId:786,Devices:%5B%7BId:5955,Type:Panel,TimeStamp:1199303309,Channels:%5B%7BName:Temperature,Value:58%7D,%7BName:Status,Value:On%7D%5D%7D,%7BId:5956,Type:Tank,TimeStamp:1199303309,Channels:%5B%7BName:Volume,Value:10035%7D,%7BName:Status,Value:Full%7D%5D%7D%5D%7D%5D):
 
-    http://test.servicestack.net/json/reply/StoreLogs?Loggers=[{Id:786,Devices:[{Id:5955,Type:Panel,
-      Channels:[{Name:Temperature,Value:58},{Name:Status,Value:On}]},
-      {Id:5956,Type:Tank,TimeStamp:1199303309,
-      Channels:[{Name:Volume,Value:10035},{Name:Status,Value:Full}]}]}]
+```
+http://test.servicestack.net/json/reply/StoreLogs?Loggers=[{Id:786,Devices:[{Id:5955,Type:Panel,
+Channels:[{Name:Temperature,Value:58},{Name:Status,Value:On}]},
+{Id:5956,Type:Tank,TimeStamp:1199303309,
+Channels:[{Name:Volume,Value:10035},{Name:Status,Value:Full}]}]}]
+```
 
 ### Customize urls used with `IUrlFilter`
 
@@ -674,7 +706,9 @@ var response = client.Get(new GetStripeCustomers());
 
 Generates and sends the relative url:
 
-    /customers?include[]=total_count
+```
+/customers?include[]=total_count
+```
 
 Which has the effect of populating the `TotalCount` property in the typed `StripeCollection<StripeCustomer>` response.
 

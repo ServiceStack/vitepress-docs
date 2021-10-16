@@ -310,7 +310,9 @@ using Stream stream = await client.GetAsync(new Streams {
 var guid = new Guid(response.ReadFully());
 ```
 
-> Note: You must explicitly dispose all APIs returning either `HttpWebResponse` or `Stream` as seen in the above examples.
+::: warning
+You must explicitly dispose all APIs returning either `HttpWebResponse` or `Stream` as seen in the above examples.
+:::
 
 They all behave the same as the sync versions except for `HttpWebResponse` which gets returned just after
 the request is sent (asynchronously) and before any response is read so you can still access the HTTP Headers e.g:
@@ -501,7 +503,9 @@ client.OnDownloadProgress = (done, total) =>
 var response = await client.GetAsync(new Request());
 ```
 
-> Note: total = -1 when 'Transfer-Encoding: chunked'
+::: info
+total = -1 when 'Transfer-Encoding: chunked'
+:::
 
 Whilst the `OnUploadProgress` callback gets fired when uploading files, e.g:
 
@@ -809,7 +813,9 @@ IServiceClient client = new JsonHttpClient("https://techstacks.io");
 var response = await client.GetAsync(new GetTechnology { Slug = "servicestack" })
 ```
 
-> Note: As .NET's HttpClient only supports async APIs it needs to use "sync over async" to implement sync APIs which should be avoided. If your API needs to make sync API calls it should use the `JsonServiceClient` instead.
+::: warning
+As .NET's HttpClient only supports async APIs it needs to use "sync over async" to implement sync APIs **which should be avoided**. If your API needs to make sync API calls it should use the `JsonServiceClient` instead.
+:::
 
 #### Install
 
