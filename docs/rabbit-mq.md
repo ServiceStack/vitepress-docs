@@ -48,7 +48,9 @@ var mqServer = new RabbitMqServer("amqp://localhost:5672");
 
 More connection strings examples are available on [Rabbit MQ's URI Specification](http://www.rabbitmq.com/uri-spec.html) page.
 
-> Run-able examples of these code-samples are available in the [RabbitMqServerIntroTests](https://github.com/ServiceStack/ServiceStack/blob/master/tests/ServiceStack.Server.Tests/Messaging/MqServerIntroTests.cs).
+::: info
+Run-able examples of these code-samples are available in the [RabbitMqServerIntroTests](https://github.com/ServiceStack/ServiceStack/blob/master/tests/ServiceStack.Server.Tests/Messaging/MqServerIntroTests.cs)
+:::
 
 #### Message Filters
 

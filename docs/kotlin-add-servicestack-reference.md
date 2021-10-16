@@ -26,7 +26,7 @@ support for Kotlin with IDE integration in
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) where App Devlopers can create and update an end-to-end typed 
 API with just a Menu Item click - enabling a highly-productive workflow for consuming ServiceStack Services.
 
-> Kotlin Android Example using Android Studio
+## Kotlin Android Example using Android Studio
 
 <iframe width="896" height="525" src="https://www.youtube.com/embed/nmB0NaI9-3k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -143,7 +143,9 @@ ServiceClients which is used together with the remote Servers DTO's to enable it
 for some reason you wish to instead add Java DTO's to your project instead of Kotlin, just rename the `dtos.kt` 
 file extension to `dtos.java` and it will import Java classes instead.
 
-> As the Module's **build.gradle** file was modified you'll need to click on the **Sync Now** link in the top yellow banner to sync the **build.gradle** changes which will install or remove any modified dependencies.
+::: info
+As the Module's **build.gradle** file was modified you'll need to click on the **Sync Now** link in the top yellow banner to sync the **build.gradle** changes which will install or remove any modified dependencies
+:::
 
 ### Update ServiceStack Reference
 
@@ -245,7 +247,9 @@ remote ServiceStack instance you want to access, e.g:
 val client = JsonServiceClient("https://techstacks.io")
 ```
 
-> The JsonServiceClient is made available after the [net.servicestack:android](https://bintray.com/servicestack/maven/ServiceStack.Android/view) package is automatically added to your **build.gradle** when adding a ServiceStack reference.
+::: info
+The JsonServiceClient is made available after the [net.servicestack:android](https://bintray.com/servicestack/maven/ServiceStack.Android/view) package is automatically added to your **build.gradle** when adding a ServiceStack reference
+:::
 
 Typical usage of the Service Client is the same in .NET where you just need to send a populated Request DTO 
 and the Service Client will return a populated Response DTO, e.g:
@@ -256,7 +260,9 @@ val allTiers: ArrayList<Option> = response.AllTiers
 val topTech: ArrayList<TechnologyInfo> = response.TopTechnologies
 ```
 
-> Explicit type annotations are unnecessary in Kotlin, added above to show the types returned
+::: info Tip
+Explicit type annotations are unnecessary in Kotlin, added above to show the types returned
+:::
 
 Another example using a populated Request DTO:
 
@@ -337,8 +343,10 @@ To enable a simpler Async API decoupled from Android, we've introduced a higher-
 abstract class which allows capturing of Async callbacks using an idiomatic anonymous Java class to provide an 
 optimal dev experience for Java 7 on Android.
 
-> `AsyncResult` is modelled after [jQuery.ajax](http://api.jquery.com/jquery.ajax/) and allows specifying 
-**success()**, **error()** and **complete()** callbacks as needed. 
+::: info
+`AsyncResult` is modelled after [jQuery.ajax](http://api.jquery.com/jquery.ajax/) and allows specifying 
+**success()**, **error()** and **complete()** callbacks as needed
+:::
 
 To provide an optimal experience for Kotlin and Java 8, we've added 
 [SAM overloads](https://kotlinlang.org/docs/reference/java-interop.html#sam-conversions) 

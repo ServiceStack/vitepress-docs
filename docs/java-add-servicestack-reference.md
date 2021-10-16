@@ -9,11 +9,11 @@ Like the existing IDE integrations before it, the ServiceStack IDEA plugin provi
 
 The **ServiceStackIDEA** plugin also includes support for **IntelliJ Maven projects** giving Java devs a productive and familiar development experience whether they're creating Android Apps or pure cross-platform Java clients.
 
-> Java Android Example using Android Studio
+Java Android Example using Android Studio
 
 <iframe width="896" height="525" src="https://www.youtube.com/embed/xg677weFef4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-#### Install ServiceStack IDEA from the Plugin repository
+### Install ServiceStack IDEA from the Plugin repository
 
 The ServiceStack IDEA is now available to install directly from within IntelliJ or Android Studio IDE Plugins Repository, to Install Go to: 
 
@@ -165,7 +165,9 @@ To get started you'll just need an instance of `JsonServiceClient` initialized w
 JsonServiceClient client = new JsonServiceClient("https://techstacks.io");
 ```
 
-> The JsonServiceClient is made available after the [net.servicestack:android](https://bintray.com/servicestack/maven/ServiceStack.Android/view) package is automatically added to your **build.gradle** when adding a ServiceStack reference.
+::: info
+The JsonServiceClient is made available after the [net.servicestack:android](https://bintray.com/servicestack/maven/ServiceStack.Android/view) package is automatically added to your **build.gradle** when adding a ServiceStack reference.
+:::
 
 Typical usage of the Service Client is the same in .NET where you just need to send a populated Request DTO and the Service Client will return a populated Response DTO, e.g:
 

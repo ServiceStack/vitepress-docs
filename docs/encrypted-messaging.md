@@ -59,7 +59,9 @@ string publicKeyXml = client.Get<string>("/my-publickey"); //or with HttpUtils
 string publicKeyXml = BaseUrl.CombineWith("/my-publickey").GetStringFromUrl();
 ```
 
-> To help with verification the SHA256 Hash of the PublicKey is returned in `X-PublicKey-Hash` HTTP Header
+::: info
+To help with verification the SHA256 Hash of the PublicKey is returned in `X-PublicKey-Hash` HTTP Header
+:::
 
 ### Encrypted Service Client
 
@@ -148,7 +150,9 @@ var response = encryptedClient.Send(new HelloAuthenticated {
 });
 ```
 
-> Incidentally this feature is now supported in **all Service Clients**
+::: info
+This feature is now supported in **all Service Clients**
+:::
 
 ### Combined Authentication Strategy
 

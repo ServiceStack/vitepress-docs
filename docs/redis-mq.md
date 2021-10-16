@@ -122,7 +122,9 @@ mqClient.Publish(new Hello { Name = "ServiceStack" });
 
 ## Redis
 
-> **Note:** This is a quote of a [google group topic](https://groups.google.com/d/msg/servicestack/Jl1xjlLH-4E/kz8mL_bq9zMJ) to provide more information about ServiceStack and Redis until more documentation/examples are added.
+::: info
+This is a quote of a [google group topic](https://groups.google.com/d/msg/servicestack/Jl1xjlLH-4E/kz8mL_bq9zMJ) to provide more information about ServiceStack and Redis until more documentation/examples are added
+:::
 
 Redis is a  NoSQL datastore that runs as a network server. To start it you need to run an instance of redis-server either locally or remotely accessible.
 

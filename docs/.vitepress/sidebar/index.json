@@ -419,10 +419,6 @@
       {
         "text": "Overview",
         "link": "/encrypted-messaging"
-      },
-      {
-        "text": "Encrypted Service Client",
-        "link": "/encrypted-messaging#encrypted-service-client"
       }
     ]
   },

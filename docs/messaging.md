@@ -25,7 +25,9 @@ Like other ServiceStack providers, all MQ Servers are interchangeable, visible i
 In ASP.NET Core Apps we recommend using [mix](/mix-tool) to configure your preferred MQ Service, other than being quicker to add,
 it proposes adopting a naming convention in app settings and file names that other `mix` features can also make use of:
 
-    $ x mix [mq]
+```bash
+$ x mix [mq]
+```
 
 Currently available list of MQ Services:
 
@@ -56,7 +58,9 @@ or configure your App to use the In Memory `BackgroundMqService` implementation.
 
 Add `feature-mq` to your project with:
 
-    $ x mix feature-mq
+```bash
+$ x mix feature-mq
+```
 
 ![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/nav/feature-mq.png)
 
@@ -314,7 +318,9 @@ MQ Servers spawns 2 threads for each handler, one to listen to the Message Inbox
 
 You can white-list which messages to enable Priority Queue's for with `mqServer.PriorityQueuesWhitelist` or disable them all by setting:
 
-    mqServer.DisablePriorityQueues = true;
+```cs
+mqServer.DisablePriorityQueues = true;
+```
 
 ### OneWay HTTP Requests are published to MQ then executed
 

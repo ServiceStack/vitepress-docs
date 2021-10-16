@@ -7,7 +7,7 @@ title: Dart Add ServiceStack Reference
 
 ServiceStack's **Add ServiceStack Reference** feature allows clients to generate Native Types from a simple [@servicestack/cli command-line utility](https://github.com/ServiceStack/servicestack-cli#servicestackcli) - providing a simple way to give clients typed access to your ServiceStack Services.
 
-### Dart Android Example using Android Studio
+## Dart Android Example using Android Studio
 
 <iframe width="896" height="525" src="https://www.youtube.com/embed/ocH5L-CikQ0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 <iframe width="896" height="525" src="https://www.youtube.com/embed/EwOwbZ9mUZk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -25,23 +25,31 @@ You can use the same [x dotnet tool](https://docs.servicestack.net/dotnet-tool) 
 
 Install [.NET Core](https://dotnet.microsoft.com/download) then install the `x` dotnet tool:
 
-    $ dotnet tool install --global x
+```bash
+$ dotnet tool install --global x
+```
 
 You can then execute `x dart` with the URL of the remote ServiceStack Instance you want to generated DTOs for, e.g:
 
-    $ x dart https://techstacks.io
+```bash
+$ x dart https://techstacks.io
+```
 
 This will generate Dart DTOs for the [entire TechStacks API](https://techstacks.io/metadata):
 
-    Saved to: dtos.dart
+```
+Saved to: dtos.dart
+```
 
-> If no name is specified in the 2nd argument, it uses `dtos` if it doesn't exist, otherwise falls back to infer it from the URL.
+::: info
+If no name is specified in the 2nd argument, it uses `dtos` if it doesn't exist, otherwise falls back to infer it from the URL
+:::
 
 To make API calls we need to use the `JsonServiceClient`, installed by adding the [servicestack](https://pub.dartlang.org/packages/servicestack#-installing-tab-) package to our Dart projects `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  servicestack: ^1.0.31
+  servicestack: ^2.0.1
 ```
 
 Saving `pubspec.yaml` in VS Code with the [Dart Code Extension](https://dartcode.org) automatically calls `pub get` or `flutter packages get` (in Flutter projects) to add any new dependencies to your project.
@@ -95,7 +103,9 @@ main() async {
 }
 ```
 
-> Tip: if you add a `127.0.0.1 dev.servicestack.com` mapping in your OS's `hosts` file you'll also be able to use `dev.servicestack.com` to access your local dev server in your Host OS. 
+::: info Tip
+If you add a `127.0.0.1 dev.servicestack.com` mapping in your OS's `hosts` file you'll also be able to use `dev.servicestack.com` to access your local dev server in your Host OS
+:::
 
 ### Shared Initialization Configuration
 
@@ -308,29 +318,37 @@ This creates a basic Flutter App which you can run in your Android Device or And
 Then to use `JsonServiceClient` add the `servicestack` dependency to your apps [pubspec.yaml](https://github.com/ServiceStackApps/HelloFlutter/blob/master/pubspec.yaml):
 
   dependencies:
-    servicestack: ^1.0.31
+    servicestack: ^2.0.1
 
 Saving `pubspec.yaml` automatically runs [flutter packages get](https://flutter.io/using-packages/) to install any new dependencies in your App. 
 
 Our App will be making API calls to 2 different ServiceStack instances which we'll need to get typed DTOs for using the `x` command-line utility:
 
-    $ cd lib
-    $ x dart https://techstacks.io
-    $ x dart http://test.servicestack.net test
+```bash
+$ cd lib
+$ x dart https://techstacks.io
+$ x dart http://test.servicestack.net test
+```
 
 Which will save the DTOs for each endpoint in different files:
 
-    Saved to: dtos.dart
-    Saved to: test.dtos.dart
+```
+Saved to: dtos.dart
+Saved to: test.dtos.dart
+```
 
 Incidentally you can get the latest version for all Dart Service References by running `x dart` without arguments:
 
-    $ x dart
+```bash
+$ x dart
+```
 
 Which updates all Dart references in the current directory, including any customization options available in the header of each file:
 
-    Updated: test.dtos.dart
-    Updated: dtos.dart
+```
+Updated: test.dtos.dart
+Updated: dtos.dart
+```
 
 This gives us everything we need to call Web Services in our Flutter App, by importing `package:servicestack/client.dart` containing `JsonServiceClient` as well as any generated DTOs.
 
@@ -355,7 +373,9 @@ Flutter works similarly to React and React Native where you need to return the e
 
 Our widget requires some state to render its UI so our widget needs to inherit `StatefulWidget`. Stateful widgets require an additional supporting class for reasons [explained in this Thread](https://github.com/flutter/flutter/issues/8794):
 
-> With a stateful widget, it's common to make closures whose life cycle are tied to the state's life cycle, which lasts through multiple widgets. With a stateless widget, it's common to make closures whose life cycle are tied to the widget's life cycle, which doesn't cause a problem.
+::: info 
+With a stateful widget, it's common to make closures whose life cycle are tied to the state's life cycle, which lasts through multiple widgets. With a stateless widget, it's common to make closures whose life cycle are tied to the widget's life cycle, which doesn't cause a problem
+:::
 
 Ultimately this results in following the same dual class pattern below where the `HelloFlutterState` defines the state it needs as instance fields, this state is preserved across Hot Module reloads which is how Dart can update a live running App despite the implementation of the class changing.
 

@@ -115,7 +115,9 @@ type GetAnswers() =
     member val QuestionId:Int32 = new Int32() with get,set
 ``` 
 
-> Original DTO doesn't require a return marker as response type can be inferred from Services return type or when using the `%Response` DTO Naming convention
+::: info 
+Original DTO doesn't require a return marker as response type can be inferred from Services return type or when using the `%Response` DTO Naming convention
+:::
 
 ### AddDescriptionAsComments
 

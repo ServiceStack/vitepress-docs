@@ -15,7 +15,9 @@ The [x dotnet tool](https://docs.servicestack.net/dotnet-tool) provides a simple
 
 Prerequisites: Install [.NET Core](https://dotnet.microsoft.com/download).
 
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 This will make the `x` dotnet tool available in your `$PATH` which can now be used from within a **Terminal window** at your Xcode project folder.
 
@@ -31,7 +33,7 @@ Go to **File** > **Swift Packages** > **Add Package Dependency**:
 
 Add a reference to the ServiceStack.Swift GitHub repo:
 
-    https://github.com/ServiceStack/ServiceStack.Swift
+https://github.com/ServiceStack/ServiceStack.Swift
 
 ![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/dev/xcode-add-servicestack-swift.png)
 
@@ -92,18 +94,24 @@ let response = client.get(AppOverview())
 
 To Add a new ServiceStack Reference, call `x swift` with the Base URL to a remote ServiceStack instance:
 
-    x swift {BaseUrl}
-    x swift {BaseUrl} {FileName}
+```bash
+$ x swift {BaseUrl}
+$ x swift {BaseUrl} {FileName}
+```
 
 Where if no FileName is provided, it's inferred from the host name of the remote URL, e.g:
 
-    x swift https://techstacks.io
+```bash
+$ x swift https://techstacks.io
+```
 
 Downloads the Typed Swift DTOs for [techstacks.io](https://techstacks.io) and saves them to `dtos.swift`. 
 
 Alternatively you can have it saved to a different FileName with:
 
-    x swift https://techstacks.io TechStacks
+```bash
+$ x swift https://techstacks.io TechStacks
+```
 
 Which instead saves the DTOs to `dtos.swift`.
 
@@ -115,17 +123,23 @@ required to consume Typed Web Services in Swift.
 
 The easiest way to update all your Swift Server DTOs is to just call `x swift` without any arguments:
 
-    x swift
+```bash
+$ x swift
+```
 
 This will go through and update all your `*.dtos.swift` Service References.
 
 To Update a specific ServiceStack Reference, call `x swift` with the Filename:
 
-    x swift {FileName.dtos.swift}
+```bash
+$ x swift {FileName.dtos.swift}
+```
 
 As an example, you can Update the Server DTOs added in the previous command with:
 
-    x swift dtos.swift
+```bash
+$ x swift dtos.swift
+```
 
 Which also includes any 
 [Customization Options](https://docs.servicestack.net/swift-add-servicestack-reference#swift-configuration) 
@@ -427,7 +441,9 @@ The minor differences are primarily due to differences in Swift which instead of
 
 If you've ever had to make HTTP requests using Objective-C's `NSURLConnection` or `NSURLSession` static classes in iOS or macOS, you'll appreciate the typing benefits and productivity offered by the higher-level API's in `JsonServiceClient` - which enable the same ideal client API's we've enjoyed in ServiceStack's .NET Clients, in Swift Apps! 
 
-> A nice benefit of using JsonServiceClient over static classes is that Service calls can be easily substituted and mocked with the above `ServiceClient` protocol, making it easy to test or stub out the external Gateway calls whilst the back-end is under development.
+::: info Tip
+A nice benefit of using JsonServiceClient over static classes is that Service calls can be easily substituted and mocked with the above `ServiceClient` protocol, making it easy to test or stub out the external Gateway calls whilst the back-end is under development.
+:::
 
 To illustrate its usage we'll go through some client code to consume [TechStacks](https://github.com/ServiceStackApps/TechStacks) Services after adding a **ServiceStack Reference** to `http://techstaks.io`:
 
@@ -462,7 +478,9 @@ client.getAsync(AppOverview())
 
 Which is very similar to how we'd make async `Task<T>` calls in C# when not using its async/await language syntax sugar. 
 
-> Async callbacks are called back on the main thread, ideal for use in iOS Apps. This behavior is also configurable in the Promise's callback API.
+::: info
+Async callbacks are called back on the main thread, ideal for use in iOS Apps. This behavior is also configurable in the Promise's callback API.
+:::
 
 ### Typed Error Handling
 
