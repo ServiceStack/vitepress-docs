@@ -9,7 +9,9 @@ This is a quick walkthrough of getting your first web service up and running whi
 
 First we want to install the [x dotnet tool](/dotnet-tool):
 
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 The [dotnet tools](/dotnet-tool) are ServiceStack's versatile companion giving you quick access to a lot of its high-level features including 
 generating mobile, web & desktop DTOs with [Add ServiceStack Reference](/add-servicestack-reference) generating [gRPC Clients and proto messages](/grpc),
@@ -22,7 +24,9 @@ Importantly, the dotnet tools lets you create [.NET Core, .NET Framework](/dotne
 Unless you're restricted to working with .NET Framework you'll want to start with a [.NET Core project template](/dotnet-new#usage), for this example
 we'll start with the Empty [web](https://github.com/NetCoreTemplates/web) template which implicitly uses the folder name for the Project Name:
 
-    $ x new web WebApp
+```bash
+$ x new web WebApp
+```
 
 ## Step 3: Run your project
 
@@ -34,7 +38,9 @@ Press `Ctrl+F5` to run your project!
 
 An alternative to running your project in your IDE is to run a watched build using the `dotnet` tool on the command-line:
 
-    $ dotnet watch run
+```bash
+$ dotnet watch run
+```
 
 Where it will automatically rebuild & restart your App when it detects any changes to your App's source files.
 
@@ -192,13 +198,17 @@ experience without any additional build time or tooling complexity.
 As this requires no external deps or prescribed JS frameworks, it's used in the [init and init-lts](/mix-tool#mix-usage) mix scripts which you can 
 quickly add & run using the [x dotnet tool](/dotnet-tool):
 
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 Which can be used to quickly create & run a new .NET Core App in an empty directory:
 
-    $ mkdir ProjectName && cd ProjectName
-    $ x mix init
-    $ dotnet run
+```
+$ mkdir ProjectName && cd ProjectName
+$ x mix init
+$ dotnet run
+```
 
 Which will install the [init Gist](https://gist.github.com/gistlyn/58030e271595520d87873c5df5e4c2eb) to your local directory using the `ProjectName` 
 directory name for the new Project name.
@@ -207,9 +217,11 @@ directory name for the new Project name.
 
 Use `init-vb` to create a VB .NET Core App:
 
-    $ mkdir ProjectName && cd ProjectName
-    $ x mix init-vb
-    $ dotnet run
+```
+$ mkdir ProjectName && cd ProjectName
+$ x mix init-vb
+$ dotnet run
+```
 
 Which will install the [init-vb Gist](https://gist.github.com/gistlyn/88f2792fc4820de7dc4e68c0c5d76126).
 
@@ -217,9 +229,11 @@ Which will install the [init-vb Gist](https://gist.github.com/gistlyn/88f2792fc4
 
 Use `init-fsharp` to create a F# .NET Core App:
 
-    $ mkdir ProjectName && cd ProjectName
-    $ x mix init-fsharp
-    $ dotnet run
+```
+$ mkdir ProjectName && cd ProjectName
+$ x mix init-fsharp
+$ dotnet run
+```
 
 Which will install the [init-fsharp Gist](https://gist.github.com/gistlyn/4802ba22b665e68c7257aef9f57c1934).
 
