@@ -8,17 +8,23 @@ title: .NET Core Windows Desktop Apps
 The [app](https://www.nuget.org/packages/app) dotnet build tool contains features for "Chromitizing" any 
 .NET Core Web App into a **.NET Core Windows Desktop App** by just installing the `app` dotnet tool:
 
-    $ dotnet tool install -g app
+```bash
+$ dotnet tool install -g app
+```
 
 If you already have `app` tool installed make sure you're running the latest version with:
 
-    $ dotnet tool update -g app
+```bash
+$ dotnet tool update -g app
+```
 
 ### Launch .NET Core App inside a Windows Chromium Desktop App
 
 Then run your .NET Core Web App with:
 
-    $ app MyApp.dll
+```bash
+$ app MyApp.dll
+```
 
 Where it will run your .NET Core App and host it inside an Chromium Embedded Framework (CEF) browser.
 
@@ -33,25 +39,35 @@ any of [ServiceStack's .NET Core Templates](https://github.com/NetCoreTemplates)
 
 Where we can create a new [NetCoreTemplates/mvc](https://github.com/NetCoreTemplates/mvc) project with:
 
-    $ app new mvc Acme --source NetCoreTemplates
+```bash
+$ app new mvc Acme --source NetCoreTemplates
+```
 
 Which will download and unzip either the Project's **latest release**, or an archive of **master** if none exists. 
 
 Then publish the .NET Core App as normal by going into the Host project folder using the **project name** you specified above, eg:
 
-    $ cd Acme\Acme
+```bash
+$ cd Acme\Acme
+```
     
 Create a published version of the App:
 
-    $ dotnet publish -c Release
+```bash
+$ dotnet publish -c Release
+```
 
 Then in the `/publish` folder:
 
-    $ cd bin\Release\netcoreapp3.1\publish
+```bash
+$ cd bin\Release\netcoreapp3.1\publish
+```
 
 You can use `app` to run the .NET Core binary:
 
-    $ app Acme.dll
+```bash
+$ app Acme.dll
+```
 
 Where it will run the .NET Core App and launch it within a CEF Windows Application:
 
@@ -61,7 +77,9 @@ Where it will run the .NET Core App and launch it within a CEF Windows Applicati
 
 To make the experience of running .NET Core Desktop Apps even nicer you can use the `shortcut` command to create a Windows Shortcut for your App:
 
-    $ app shortcut Acme.dll
+```bash
+$ app shortcut Acme.dll
+```
 
 Which you can either double-click to run or copy to a more accessible location like the Users Desktop:
 
@@ -69,7 +87,9 @@ Which you can either double-click to run or copy to a more accessible location l
 
 If you wanted to use your own icon instead, copy it as `favicon.ico` in your `/publish` folder and rerun the command:
 
-    $ app shortcut Acme.dll
+```bash
+$ app shortcut Acme.dll
+```
 
 Where it will be used in both Shortcut Icon and Windows Desktop icon:
 
@@ -79,7 +99,9 @@ Where it will be used in both Shortcut Icon and Windows Desktop icon:
 
 See [x new](/web-new) for available Project Templates you can create with:
 
-    $ app new
+```bash
+$ app new
+```
 
 ### Mix Features into existing ASP.NET Core Apps
 
@@ -97,8 +119,9 @@ app gist <gist-id>          Write all Gist text files to current directory
 
 View available gists with:
 
-    $ app mix
-
+```bash
+$ app mix
+```
 
 Where you can use `app mix nginx` to generate a common nginx template configuration for reverse proxying .NET Core Apps, making configuring 
 [Linux deployment servers for your .NET Core Apps](/netcore-deploy-rsync) less tedious. 
@@ -106,14 +129,18 @@ Where you can use `app mix nginx` to generate a common nginx template configurat
 In addition to the pre-set templates, you can create your own [public GitHub gist](https://gist.github.com) with any number of different files customized 
 for your Environment that anyone can write to their current directory with **the gist id** or **gist URL**:
 
-    $ app gist <gist-id>
+```bash
+$ app gist <gist-id>
+```
 
 ### Installing Sharp Apps
 
 The app tool also makes it easy to install .NET Core [Sharp Apps](https://sharpscript.net/docs/sharp-apps) where you can `open` apps that are available 
 to **open** or **install** with:
 
-    $ app open
+```bash
+$ app open
+```
 
 By default this will list all [Gist Desktop Apps](https://sharpscript.net/docs/gist-desktop-apps) and 
 [GitHub Sharp Apps](https://sharpscript.net/docs/gist-desktop-apps#github-sharp-apps) and available:
@@ -208,11 +235,12 @@ and whether to enable or disable the `ALT+LEFT/RIGHT` Navigation Keys, `F5` Refr
 
 A nice benefit from delivering `app` as a dotnet tool is that updates are effortless as running:
 
-    $ dotnet tool update -g app 
+```bash
+$ dotnet tool update -g app
+```
 
 Which will upgrade to a newer CEF and `app` versions as they're released. `app` also lets you know if there's a newer version available
 after running the `list`, `gallery` and `-v` commands.
-
 
 ## Chromium Desktop Apps
 
@@ -255,7 +283,9 @@ contains the shared binaries that all Sharp Apps use - making them easier to dep
 
 As [sharp-apps](https://github.com/sharp-apps) is the default `APP_SOURCE`, running:
 
-    $ app list
+```bash
+$ app list
+```
 
 Will return the list of publicly available Sharp Apps:
 
@@ -278,7 +308,9 @@ Usage: app install <name>
 
 We've also made it easy to list your App in the App gallery, by running:
 
-    $ app gallery
+```bash
+$ app gallery
+```
 
 Which opens the [Sharp App Gallery Gist](https://gist.github.com/gistlyn/f555677c98fb235dccadcf6d87b9d098) where you can request for your Web App
 to be listed in the gallery by commenting on the gist with a link to your project. We'll review it and if it's acceptable we'll fork it in 
@@ -291,7 +323,9 @@ hasn't published any releases.
 
 Installing an App is then just selecting the **name** of the app to install:
 
-    $ app install blog
+```bash
+$ app install blog
+```
 
 Where it will download the latest `.zip` release (**36kb**) and extracts it into a folder named after the project:
 
@@ -300,14 +334,18 @@ Installing blog...
 
 Installation successful, run with:
 
-  cd blog && app
+```bash
+cd blog && app
+```
 
 Shortcut: blog\Blog Web App
 ```
 
 Which can either be run on the command-line with:
 
-    $ cd blog && app
+```bash
+$ cd blog && app
+```
 
 Or by double-clicking the **Blog Web App** Desktop shortcut.
 
@@ -330,16 +368,20 @@ At the bottom of each individual post shows the content used to create it, e.g. 
 
 From SQLite powered blog, lets install something entirely different - a Redis Admin UI!
 
-    $ app install redis
+```bash
+$ app install redis
+```
 
 The `redis` app includes some additional customizations which controls how the App looks and behaves when run as a Desktop App in its 
 [app.settings](https://github.com/sharp-apps/redis/blob/master/app.settings):
 
-    debug true
-    name Redis Web App
-    redis.connection localhost:6379
-    icon assets/img/redis.ico
-    CefConfig { Width:1200, Height:1200 }
+```
+debug true
+name Redis Web App
+redis.connection localhost:6379
+icon assets/img/redis.ico
+CefConfig { Width:1200, Height:1200 }
+```
 
 Where `icon` is used to point to the App Icon and `CefConfig` is used to configure the CEF browser, allowing any 
 [CefConfig.cs](https://github.com/ServiceStack/ServiceStack.CefGlue/blob/master/src/ServiceStack.CefGlue/CefConfig.cs) 
@@ -356,8 +398,10 @@ Where it will open a [Redis Admin UI](http://redis.web-app.io) connected to your
 Likewise we can also configure any nested `CefConfig.CefSettings` using an object literal. We can use this to view verbose logging messages by
 telling `app` not to hide the Console Window and changing CEF's LogSeverity to Verbose:
 
-    CefConfig { Width:1200, Height:1200, HideConsoleWindow:false }
-    CefConfig.CefSettings { LogSeverity:'Verbose' }
+```
+CefConfig { Width:1200, Height:1200, HideConsoleWindow:false }
+CefConfig.CefSettings { LogSeverity:'Verbose' }
+```
 
 Now when running the App we can see the CEF's verbose logging messages mixed in with request logs from .NET Core:
 
@@ -366,7 +410,9 @@ Now when running the App we can see the CEF's verbose logging messages mixed in 
 Which in this case shows messages written to Chrome's `console.log()` which is from Vue.js telling us we're running a development build of Vue.js. 
 To run the production version of our app we can either set `debug false` in the `app.settings` or by running `app --release` which takes precedence:
 
-    $ app -r
+```bash
+$ app -r
+```
 
 This flag changes whether to use `vue.js` or `vue.min.js` in the [_layout.html](https://github.com/sharp-apps/redis/blob/master/_layout.html) page:
 
@@ -401,7 +447,9 @@ in real-time. Its simpler implementation makes contributions easier as they only
 
 Thanks to the easy distribution all users can update to the latest version of any installed App by re-running:
 
-    $ app install redis
+```bash
+$ app install redis
+```
  
 Which will replace their existing version with the latest release. 
 
@@ -414,15 +462,19 @@ lets walk through how easy it to create one of our own.
 
 For this example we'll create a small App that leverages one of the advanced Web technologies in SVG that would be cumbersome to create using a native GUI toolkit. To start let's create a folder for our app called `spirals` and initialize and empty Sharp App with `app init`:
 
-    $ mkdir spirals
-    $ cd spirals && app init
+```bash
+$ mkdir spirals
+$ cd spirals && app init
+```
 
 We could have started from one of the [more complete Sharp App Templates](https://sharpscript.net/docs/sharp-apps#getting-started) but this gives
 us a minimal App generated from [this gist](https://gist.github.com/gistlyn/5c9ee9031e53cd8f85bd0e14881ddaa8).
 
 Now let's open the folder up for editing in our preferred text editor, VS Code:
 
-    $ code .
+```bash
+$ code .
+```
 
 ![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/app/app-init-code.png)
 
@@ -479,8 +531,10 @@ If pages include any `scripts` they'll be rendered in the bottom of the page.
 The other 2 files included is [app.settings](https://gist.github.com/gistlyn/5c9ee9031e53cd8f85bd0e14881ddaa8#file-app-settings) containing the 
 name of our App and `debug true` setting to run our App in Debug mode:
 
-    debug true
-    name My App
+```bash
+debug true
+name My App
+```
 
 The template only has one page [index.html](https://gist.github.com/gistlyn/5c9ee9031e53cd8f85bd0e14881ddaa8#file-index-html) containing the `title` 
 of the page in a page argument which the `_layout.html` has access to without evaluating the page, anything after is the page contents:
@@ -765,7 +819,9 @@ and my top picks for the `multi.html` and `animated.html` pages:
 
 Now it's just a matter of signing off our digital piece by giving it a name in your `app.settings`:
 
-    name Spirals
+```
+name Spirals
+```
 
 Which replaces the name in the `menu` and used in any shortcuts that are created, and with those finishing touches our App's journey
 into the rich colorful world of SVG is complete:
@@ -779,11 +835,15 @@ To share our digital masterpiece with the world we just need to publish it in a 
 
 Anyone will then be able to install your App by first downloading the `app` tool themselves ([.NET 5.0 Required](https://www.microsoft.com/net/download/)):
 
-    $ dotnet tool install -g app
+```bash
+$ dotnet tool install -g app
+```
 
 Then running `install` with the name of the **repo** and your GitHub **User** or **Organization** name in the `--source` argument:
 
-    $ app install spirals --source mythz
+```bash
+$ app install spirals --source mythz
+```
 
 Which installs instantly thanks to the `7kb` .zip download that can then be opened by double-clicking on the generated **Spirals** Desktop Shortcut:
 
@@ -797,62 +857,93 @@ To create gists you'll need to generate a [GitHub Access Token](https://github.c
 
 Before publishing our App, our **app.settings** looks something like:
 
-    debug true
-    name Spirals
-    CefConfig { width:1100, height:900 }
+```
+debug true
+name Spirals
+CefConfig { width:1100, height:900 }
+```
 
 To make your App listed in our Global App Directory, include the following metadata about your App:
 
-    appName     <app alias>    # required: alpha-numeric snake-case characters only, 30 chars max
-    description <app summary>  # required: 20-150 chars
-    tags        <app tags>     # optional: space delimited, alpha-numeric snake-case, 3 tags max
+```
+appName     <app alias>    # required: alpha-numeric snake-case characters only, 30 chars max
+description <app summary>  # required: 20-150 chars
+tags        <app tags>     # optional: space delimited, alpha-numeric snake-case, 3 tags max
+```
 
 The `appName` is the globally unique short alias you want your App to be launched as, e.g:
 
-    app://my-alias
-    $ app open my-alias
+```
+app://my-alias
+```
+
+```bash
+$ app open my-alias
+```
 
 If your app.settings contains the app metadata above, publishing the app will publish your App to a Gist & register your App's alias to the Global App Directory.
 
 Then to publish your App to a new Gist, run:
 
-    $ app publish
+```bash
+$ app publish
+```
 
 Which will publish your app to a new gist:
 
-    published to: https://gist.github.com/gistlyn/4e06df1f1b9099526a7c97721aa7f69c
+```bash
+published to: https://gist.github.com/gistlyn/4e06df1f1b9099526a7c97721aa7f69c
 
-    Run published App:
+Run published App:
 
-        app open spirals
+    app open spirals
+```
 
 To update your Gist run publish again:
 
-    $ app publish
+```bash
+$ app publish
+```
 
 When your App is published the first time, the created gist URL will be saved in a local `.publish` text file & used for subsequent App publishes.
 
 After it's published anyone will now be able to run your App locally with the global alias (if specified):
 
-    app://spirals
-    $ app open spirals
+```
+app://spirals
+```
+
+```bash
+$ app open spirals
+```
 
 The Gist Id:
 
-    app://4e06df1f1b9099526a7c97721aa7f69c
-    $ app open 4e06df1f1b9099526a7c97721aa7f69c
+```
+app://4e06df1f1b9099526a7c97721aa7f69c
+```
+
+```bash
+$ app open 4e06df1f1b9099526a7c97721aa7f69c
+```
 
 Or Gist URL:
 
-    $ app open https://gist.github.com/gistlyn/4e06df1f1b9099526a7c97721aa7f69c
+```bash
+$ app open https://gist.github.com/gistlyn/4e06df1f1b9099526a7c97721aa7f69c
+```
 
 Users that are not on Windows can use the `x` dotnet tool instead to launch your App in their preferred browser:
 
-    $ x open spirals
+```bash
+$ x open spirals
+```
 
 If preferred, Windows users can also launch your Gist Desktop App in their preferred browser (i.e. instead of a Chromium Desktop Shell) with the `xapp://` URL Scheme:
 
-    xapp://spirals
+```
+xapp://spirals
+```
 
 ### Vue Desktop Template
 
@@ -871,37 +962,51 @@ The Vue Desktop Template allows for multiple deployment options, including:
 
 Our recommendation is to publish Sharp Desktop Apps to Gists (as done with [ServiceStack Studio](https://docs.servicestack.net/studio)) so they can be launched with the Custom URL Scheme:
 
-    app://vuedesktop
+```
+app://vuedesktop
+```
 
 Where it can be launched from a HTML `<a/>` link in a web page, directly in any **browsers URL bar** or **File Explorer**.
 
 Desktop Apps published to GitHub repos can be opened using `<user>/<repo>`, e.g:
 
-    app://mythz/vuedesktop
+```
+app://mythz/vuedesktop
+```
 
 Where it downloads & extracts the latest Release `.zip` archive (or master if none), before running the app, so can take a little longer to launch for small Apps.
 
 All apps run the latest version by default so it's always up-to-date, but you can speed up App launch times by running the last installed app using the `app:` Custom URL Scheme:
 
-    app:vuedesktop
+```bash
+app:vuedesktop
+```
 
 For Gist deployed Apps, it will run the last downloaded app or download & run the latest App gist if it's the first time it's run.
 
 For GitHub repo Apps, you can download and install them locally with:
 
-    $ app install mythz/vuedesktop
+```bash
+$ app install mythz/vuedesktop
+```
 
 Where the downloaded version can be **run** using its `<repo>` name, e.g:
 
-    app:vuedesktop
+```
+app:vuedesktop
+```
 
 Both Gist and Desktop Apps can be uninstalled using `app uninstall`, e.g:
 
-    $ app uninstall vuedesktop
+```bash
+$ app uninstall vuedesktop
+```
 
 To view all installed Sharp Apps, run:
 
-    $ app uninstall
+```bash
+$ app uninstall
+```
 
 #### Creating Windows Shortcuts
 
@@ -909,8 +1014,10 @@ The `app:` URL Scheme is a convenient way to launch Apps if you already have a *
 
 Although many users will prefer the familiar Windows Shortcut which they can create by going to the App's folder and running `app shortcut`
 
-    $ cd %USERPROFILE%\.sharp-apps\vuedesktop
-    $ app shortcut
+```bash
+$ cd %USERPROFILE%\.sharp-apps\vuedesktop
+$ app shortcut
+```
 
 This will create a Windows Shortcut for the App which can be copied to the Desktop or pinned to the Taskbar for easy access.
 
@@ -922,32 +1029,45 @@ To create gists you'll need to generate a [GitHub Access Token](https://github.c
 
 Before publishing your App, its **app.settings** looks something like:
 
-    debug true
-    name vuedesktop
-    CefConfig { width:1100, height:900 }
+```
+debug true
+name vuedesktop
+CefConfig { width:1100, height:900 }
+```
 
 #### Publish to the Global App Registry
 
 To maximize reach and accessibility of your App you can publish it to our [Global App Registry](https://gist.github.com/gistlyn/802daba52b6fe6e2ed1430348dc596cb) by including the following metadata about your App:
 
-    appName     <app alias>    # required: alpha-numeric snake-case characters only, 30 chars max
-    description <app summary>  # required: 20-150 chars
-    tags        <app tags>     # optional: space delimited, alpha-numeric snake-case, 3 tags max
+```
+appName     <app alias>    # required: alpha-numeric snake-case characters only, 30 chars max
+description <app summary>  # required: 20-150 chars
+tags        <app tags>     # optional: space delimited, alpha-numeric snake-case, 3 tags max
+```
 
 The `appName` is the globally unique short alias you want your App to be launched as, e.g:
 
-    app://my-alias
-    $ app open my-alias
+```
+app://my-alias
+```
+
+```bash
+$ app open my-alias
+```
 
 If your app.settings contains the app metadata above, publishing the app will publish your App to a Gist & register your App's alias to the Global App Directory.
 
 Now you can build, bundle and publish your App to a gist with its `publish-app` npm script:
 
-    $ npm run publish-app
+```bash
+$ npm run publish-app
+```
 
 That returns the gist URL your app was published to:
 
-    published to: https://gist.github.com/gistlyn/48b2dcf9bccacab62ec9d8a073d5edb8
+```
+published to: https://gist.github.com/gistlyn/48b2dcf9bccacab62ec9d8a073d5edb8
+```
 
 Which can now be opened via an [URL scheme](https://sharpscript.net/sharp-apps/app-index#app-url-schemes): 
 
@@ -955,7 +1075,9 @@ Which can now be opened via an [URL scheme](https://sharpscript.net/sharp-apps/a
 
 Or via the command line:
 
-    $ app open 48b2dcf9bccacab62ec9d8a073d5edb8
+```bash
+$ app open 48b2dcf9bccacab62ec9d8a073d5edb8
+```
 
 When your App is published the first time, the created gist URL will be saved in a local `.publish` text file & used for subsequent App publishes.
 
@@ -963,12 +1085,19 @@ When your App is published the first time, the created gist URL will be saved in
 
 If the Gist App isn't published to the Global Registry, users can create their own UX-friendly local alias with:
 
-    $ app alias my-alias 48b2dcf9bccacab62ec9d8a073d5edb8
+```bash
+$ app alias my-alias 48b2dcf9bccacab62ec9d8a073d5edb8
+```
 
 Where they'll be able to use their alias instead of the Gist Id:
 
-    app://my-alias
-    $ app open my-alias
+```
+app://my-alias
+```
+
+```bash
+$ app open my-alias
+```
 
 ### Publishing to a GitHub Repo
 
@@ -980,11 +1109,15 @@ The same `/dist` folder that's published to Gists can also be published to a Git
 
 Or launched from the command-line:
 
-    $ app open mythz/vuedesktop
+```bash
+$ app open mythz/vuedesktop
+```
 
 Users can also download and run a local copy launched with a Windows Shortcut with this 1-liner:
 
-    $ app download mythz/vuedesktop && cd vuedesktop && app shortcut
+```bash
+$ app download mythz/vuedesktop && cd vuedesktop && app shortcut
+```
 
 This will download this repo and create a **Vue Desktop** Windows Shortcut you can use to launch this App:
 
@@ -994,16 +1127,22 @@ This will download this repo and create a **Vue Desktop** Windows Shortcut you c
 
 The `/dist` folder can also be zipped and distributed that way, by running:
 
-    $ npm run publish-zip
+```bash
+$ npm run publish-zip
+```
 
 In which case it can be extracted and launched by running the `app` command in the App's folder:
 
-    $ cd AppDir
-    $ app
+```bash
+$ cd AppDir
+$ app
+```
 
 But if you're going to run from a local folder (where `app://` isn't available), you'll likely want to create a Windows Shortcut:
 
-    $ app shortcut
+```bash
+$ app shortcut
+```
 
 That Users can copy to their Desktop or pin to their Taskbar for easy access.
 
@@ -1011,13 +1150,17 @@ That Users can copy to their Desktop or pin to their Taskbar for easy access.
 
 By having the `app` tool installed, users benefit from ultra small (e.g. **15kb**) downloads whose tiny footprints allows for auto-updating with each App launch so they have access to new features as soon as they're available. Users will also be able to update to the Chromium version used to run all their Sharp Desktop Apps by updating the `app` tool:
 
-    $ dotnet tool update -g app
+```bash
+$ dotnet tool update -g app
+```
 
 But if preferred, App's can also bundled and distributed with the `app` tool so they can be run without needing the `app` tool installed and distributed Apps are pinned to a specific Chromium version.
 
 You can create self-encapsulated bundles with the `publish-exe` script:
 
-    $ npm run publish-exe
+```bash
+$ npm run publish-exe
+```
 
 This will generate 2 files:
 
@@ -1025,14 +1168,16 @@ This will generate 2 files:
 
 The `*.zip` contains both the `/dist` of your App and the `app` Chromium runtime as well as a convenience [install.ps1](https://github.com/NetCoreTemplates/vue-desktop/blob/master/scripts/install.ps1) script that users can use to effortlessly install the App with the `Win+R` shortcut to bring up Windows **Run** dialog then pasting this powershell cmd-let with the URL of your `install.ps1` script:
 
-    powershell Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://org.example/install.ps1'))
+```bash
+powershell Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://org.example/install.ps1'))
+```
 
 ![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/app/vue-desktop/vuedesktop-run-install.png)
 
 Here's a copy of `install.ps1` which downloads and extracts the App to the Users LocalApp Data and copies the Shortcut to the Desktop.
 Before publishing you'll need to update `$zipUrl` to point to the URL with your `*.zip`:
 
-```
+```bash
 $zipUrl  = "https://org.example/MyApp.zip"
 $appName = "MyApp"
 
@@ -1060,5 +1205,6 @@ Remove-Item $(Join-Path $TempFile.Directory.FullName $TempFile.BaseName) -Recurs
 
 Here's an example of an app we have published to our servers:
 
-    powershell Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://files.sharpscript.net/VueDesktop/install.ps1'))
-
+```bash
+powershell Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://files.sharpscript.net/VueDesktop/install.ps1'))
+```

@@ -12,16 +12,20 @@ exposed under any custom Route.
 We recommend adopting a logical hierarchically structured URL that represents the identifier of a resource, i.e. 
 the parent path categorizes your resource and gives it meaningful context. So if you needed to design an API for  System that maintained **Events** and their **Reviews** it could adopt the following url structure:
 
-    /events             # all events
-    /events/1           # event #1
-    /events/1/reviews   # event #1 reviews
+```
+/events             # all events
+/events/1           # event #1
+/events/1/reviews   # event #1 reviews
+```
 
 Where each of the above resource identifiers can be invoked using any HTTP **Verb** which represents the action to take on them, e.g:
 
-    GET    /events        # View all Events
-    POST   /events        # Create a new Event
-    PUT    /events/{Id}   # Update an existing Event
-    DELETE /events/{Id}   # Delete an existing Event
+```
+GET    /events        # View all Events
+POST   /events        # Create a new Event
+PUT    /events/{Id}   # Update an existing Event
+DELETE /events/{Id}   # Delete an existing Event
+```
 
 ### Implementing RESTful Routes
 
@@ -142,6 +146,7 @@ For medium-to-large projects we recommend the physical structure below which for
 
 The order of the projects also show its dependencies, e.g. the top-level `Events` project references **all** sub projects whilst the last `Events.ServiceModel` project references **none**:
 
+```
     /Events
         AppHost.cs              // ServiceStack Web or Self Host Project
 
@@ -158,6 +163,7 @@ The order of the projects also show its dependencies, e.g. the top-level `Events
         Types/
           Event.cs              // Event type
           EventReview.cs        // EventReview type
+```
 
 With the `Events.ServiceModel` DTO's kept in their own separate implementation and dependency-free dll, you're freely able to share this dll in any .NET client project as-is - which you can use with any of the generic [C# Service Clients](/csharp-server-events-client) to provide an end-to-end typed API without any code-gen.
 

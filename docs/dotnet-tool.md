@@ -2,8 +2,8 @@
 slug: dotnet-tool
 title: ServiceStack's .NET Core Utility Belt
 ---
-<script setup>
 
+<script setup>
 import webTrouble from './.vitepress/includes/web-trouble.md';
 </script>
 
@@ -20,11 +20,15 @@ or generate typed endpoints for consuming ServiceStack Services by either
 
 To access available features, install with:
 
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 Or if you had a previous version installed, update with:
 
-    $ dotnet tool update -g x
+```bash
+$ dotnet tool update -g x
+```
 
 > Both `x` and `app` have equivalent base functionality, whilst `app` has superset features for richer [Windows-only integration](/netcore-windows-desktop)
 
@@ -32,7 +36,9 @@ Or if you had a previous version installed, update with:
 
 Then run `x` without any arguments to view Usage:
 
-    $ x
+```bash
+$ x
+```
 
 ```
 Usage:
@@ -129,21 +135,27 @@ Options:
 This shows us we can Add a ServiceStack Reference with `x <lang> <baseurl>` which will let us create a TypeScript Reference 
 to the new [World Validation](/world-validation) App using its `ts` file extension alias:
 
-    $ x ts http://validation.web-app.io
+```bash
+$ x ts http://validation.web-app.io
 
-    Saved to: dtos.ts
+Saved to: dtos.ts
+```
 
 Or create a C# ServiceStack Reference with:
 
-    $ x cs http://validation.web-app.io
+```bash
+$ x cs http://validation.web-app.io
 
-    Saved to: dtos.cs
+Saved to: dtos.cs
+```
 
 To update run `x <lang>` which will recursively update all existing ServiceStack References:
 
-    $ x ts
+```bash
+$ x ts
 
-    Updated: dtos.ts
+Updated: dtos.ts
+```
 
 ### Integrate with Visual Studio
 
@@ -203,7 +215,9 @@ If you're updating references frequently you can save time by [assigning it a ke
 
 See [x new](/web-new) for available Project Templates you can create with:
 
-    $ x new
+```bash
+$ x new
+```
 
 ### Mix Features into existing ASP.NET Core Apps
 
@@ -221,7 +235,9 @@ x gist <gist-id>          Write all Gist text files to current directory
 
 View available gists with:
 
-    $ x mix
+```bash
+$ x mix
+```
 
 Where you can use `x mix nginx` to generate a common nginx template configuration for reverse proxying .NET Core Apps, making configuring 
 [Linux deployment servers for your .NET Core Apps](/netcore-deploy-rsync) less tedious. 
@@ -229,7 +245,9 @@ Where you can use `x mix nginx` to generate a common nginx template configuratio
 In addition to the pre-set templates, you can create your own [public GitHub gist](https://gist.github.com) with any number of different files customized 
 for your Environment that anyone can write to their current directory with **the gist id** or **gist URL**:
 
-    $ x gist <gist-id>
+```bash
+$ x gist <gist-id>
+```
 
 ### Lisp REPL
 
@@ -374,12 +392,14 @@ features and resources you want the Lisp REPL to have access to, e.g. this [Pure
 allows the Lisp REPL to use [Database Scripts](https://sharpscript.net/docs/db-scripts) against a AWS PostgreSQL RDS server and query remote 
 [S3 Virtual Files](/virtual-file-system) using [Virtual File System APIs](https://sharpscript.net/docs/protected-scripts#virtual-file-system-apis):
 
-    # Note: values prefixed with '$' are resolved from Environment Variables
-    name AWS S3 PostgreSQL Web App
-    db postgres
-    db.connection $AWS_RDS_POSTGRES
-    files s3
-    files.config {AccessKey:$AWS_S3_ACCESS_KEY,SecretKey:$AWS_S3_SECRET_KEY,Region:us-east-1,Bucket:rockwind}
+```
+# Note: values prefixed with '$' are resolved from Environment Variables
+name AWS S3 PostgreSQL Web App
+db postgres
+db.connection $AWS_RDS_POSTGRES
+files s3
+files.config {AccessKey:$AWS_S3_ACCESS_KEY,SecretKey:$AWS_S3_SECRET_KEY,Region:us-east-1,Bucket:rockwind}
+```
 
 See the [plugins app.settings](https://sharpscript.net/docs/sharp-apps#registering-servicestack-plugins) for examples of how to load and configure 
 [ServiceStack Plugins](/plugins).

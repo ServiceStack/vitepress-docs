@@ -112,7 +112,9 @@ When the route includes a variable, e.g:
 
 It only matches:
 
-    /hello/name
+```
+/hello/name
+```
 
 Whereas using a wildcard:
 
@@ -122,8 +124,10 @@ Whereas using a wildcard:
 
 Matches all routes:
 
-    /hello
-    /hello/name
-    /hello/my/name/is/ServiceStack 
+```
+/hello
+/hello/name
+/hello/my/name/is/ServiceStack 
+```
 
 More details about Routing is available on the [Routing page](/routing).

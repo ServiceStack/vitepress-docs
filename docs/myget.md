@@ -1,5 +1,4 @@
 ---
-slug: myget
 title: MyGet
 ---
 
@@ -39,7 +38,9 @@ If you're not using or don't have VS.NET installed, you can add the MyGet feed t
 
 Download `NuGet.Config` for usage in local project using [mix tool](/mix-tool):
 
-    $ web mix myget
+```bash
+$ web mix myget
+```
 
 ## Redownloading MyGet packages
 
@@ -50,11 +51,15 @@ need to manually delete the NuGet `/packages` folder for NuGet to pull down the 
 
 You can clear your local NuGet packages cache in any OS by running the command-line below in your favorite Terminal:
 
-    $ nuget locals all -clear
+```bash
+$ nuget locals all -clear
+```
 
 If `nuget` is not in your Systems `PATH`, it can also be invoked from the `dotnet` tool:
 
-    $ dotnet nuget locals all -clear
+```bash
+$ dotnet nuget locals all -clear
+```
 
 If you're using VS.NET you can also clear them from `Tools -> Options -> NuGet Package Manager` and click **Clear All NuGet Cache(s)**:
 
@@ -62,14 +67,18 @@ If you're using VS.NET you can also clear them from `Tools -> Options -> NuGet P
 
 Alternatively on Windows you can delete the Cached NuGet packages manually with:
 
-    $ del %LOCALAPPDATA%\NuGet\Cache\*.nupkg /q
+```bash
+$ del %LOCALAPPDATA%\NuGet\Cache\*.nupkg /q
+```
 
 ### Full Package Clean
 
 In most cases clearing the NuGet packages cache will suffice, sometimes you'll also need to manually delete the other local packages cache
 
-    $ rd /q /s packages  # delete all NuGet packages in `/packages` folder
-    $ rd /q /s bin obj   # delete `/bin` and `/obj` folders in host project
+```bash
+$ rd /q /s packages  # delete all NuGet packages in `/packages` folder
+$ rd /q /s bin obj   # delete `/bin` and `/obj` folders in host project
+```
 
 ## Versioning Scheme
 
@@ -77,7 +86,9 @@ All ServiceStack packages are published together in "lockstep" with the same ver
 
 ServiceStack Versions adopt the following 3-part versioning scheme:
 
-    {MAJOR}.{MINOR}.{PATCH}
+```
+{MAJOR}.{MINOR}.{PATCH}
+```
 
 ### Major versions 
 

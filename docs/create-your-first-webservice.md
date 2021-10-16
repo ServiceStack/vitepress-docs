@@ -169,7 +169,9 @@ client.get(new Hello({ name: val }))
 
 Where you can update your App's server DTOs by transpiling them to JavaScript & moving to `/wwwroot`:
 
-    $ npm run dtos
+```bash
+$ npm run dtos
+```
 
 ![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/mix/init.png)
 

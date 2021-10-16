@@ -403,12 +403,10 @@ Which if you now make an OPTIONS request to the above service, will emit the def
 ```csharp
 var webReq = (HttpWebRequest)WebRequest.Create(Host + "/contacts");
 webReq.Method = "OPTIONS";
-using (var webRes = webReq.GetResponse())
-{
-    webRes.Headers["Access-Control-Allow-Origin"]     // *
-    webRes.Headers["Access-Control-Allow-Methods"]    // GET, POST, PUT, DELETE, OPTIONS
-    webRes.Headers["Access-Control-Allow-Headers"]    // Content-Type
-}
+using var webRes = webReq.GetResponse();
+webRes.Headers["Access-Control-Allow-Origin"]     // *
+webRes.Headers["Access-Control-Allow-Methods"]    // GET, POST, PUT, DELETE, OPTIONS
+webRes.Headers["Access-Control-Allow-Headers"]    // Content-Type
 ```
 
 ### PATCH request example
@@ -544,15 +542,17 @@ public class SearchContacts {}
 
 These are results for these HTTP Requests
 
-	GET   /contacts           =>	GetContacts
-	POST  /contacts           =>	Contact
-	GET   /contacts/search    =>	SearchContacts
-	GET   /contacts/reset     =>	ResetContact
-	PATCH /contacts/reset     =>	ResetContact
-	PATCH /contacts/1         =>	UpdateContact
-	GET   /contacts/1         =>	GetContact
-	GET   /contacts/1/delete  =>	DeleteContact
-	GET   /contacts/1/foo     =>	ViewContact
+```
+GET   /contacts           =>	GetContacts
+POST  /contacts           =>	Contact
+GET   /contacts/search    =>	SearchContacts
+GET   /contacts/reset     =>	ResetContact
+PATCH /contacts/reset     =>	ResetContact
+PATCH /contacts/1         =>	UpdateContact
+GET   /contacts/1         =>	GetContact
+GET   /contacts/1/delete  =>	DeleteContact
+GET   /contacts/1/foo     =>	ViewContact
+```
 
 And if there were multiple of the exact same routes declared like:
 
@@ -571,8 +571,9 @@ public class MyService : Service {
 
 The Route on the Action that was declared first gets selected, i.e:
 
-    GET /req/1              => Req1
-
+```
+GET /req/1              => Req1
+```
 
 ### Populating Complex Type Properties on QueryString
 
@@ -580,11 +581,12 @@ ServiceStack uses the [JSV-Format](/jsv-format) (JSON without quotes) to parse Q
 
 JSV lets you embed deep object graphs in QueryString as seen [this example url](http://test.servicestack.net/json/reply/StoreLogs?Loggers=%5B%7BId:786,Devices:%5B%7BId:5955,Type:Panel,TimeStamp:1199303309,Channels:%5B%7BName:Temperature,Value:58%7D,%7BName:Status,Value:On%7D%5D%7D,%7BId:5956,Type:Tank,TimeStamp:1199303309,Channels:%5B%7BName:Volume,Value:10035%7D,%7BName:Status,Value:Full%7D%5D%7D%5D%7D%5D):
 
-    http://test.servicestack.net/json/reply/StoreLogs?Loggers=[{Id:786,Devices:[{Id:5955,Type:Panel,
-      Channels:[{Name:Temperature,Value:58},{Name:Status,Value:On}]},
-      {Id:5956,Type:Tank,TimeStamp:1199303309,
-      Channels:[{Name:Volume,Value:10035},{Name:Status,Value:Full}]}]}]
-
+```
+http://test.servicestack.net/json/reply/StoreLogs?Loggers=[{Id:786,Devices:[{Id:5955,Type:Panel,
+    Channels:[{Name:Temperature,Value:58},{Name:Status,Value:On}]},
+    {Id:5956,Type:Tank,TimeStamp:1199303309,
+    Channels:[{Name:Volume,Value:10035},{Name:Status,Value:Full}]}]}]
+```
 
 ## Advanced Usages
 
