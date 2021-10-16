@@ -44,22 +44,30 @@ There are 2 variants of Nuxt templates available for both .NET Core and .NET Fra
 
 To experience App development with Nuxt.js, create a new Nuxt Project using [x new](/web-new):
 
-    $ x new vue-nuxt ProjectName
+```bash
+$ x new vue-nuxt ProjectName
+```
 
 Download npm and .NET Core dependencies:
 
-    $ npm install
-    $ dotnet restore
+```bash
+$ npm install
+$ dotnet restore
+```
 
 ### Dev Workflow
 
 Start a [watched .NET Core build](/templates-websites#watched-net-core-builds) in the background from the command-line with:
 
-    $ dotnet watch run
+```bash
+$ dotnet watch run
+```
 
 In a new terminal window start a watched Nuxt dev server build with:
 
-    $ npm run dev
+```bash
+$ npm run dev
+```
 
 Then open `http://localhost:3000` in your browser to view your App served directly from Nuxt's dev server which will proxy all Server requests to ServiceStack Server running on `http://localhost:5000`. Any changes you make to your front-end will be automatically re-compiled and reloaded by the watched `Nuxt` build whilst any changes to your Server app will be automatically be rebuilt and restarted by the watched `dotnet` process.
 
@@ -67,7 +75,9 @@ Then open `http://localhost:3000` in your browser to view your App served direct
 
 Whilst Nuxt is a JavaScript (ES 6/7) App it still benefits from ServiceStack's [TypeScript Add Reference feature](/typescript-add-servicestack-reference) where you can generate typed DTOs with the `dtos` npm script:
 
-    $ npm run dtos
+```bash
+$ npm run dtos
+```
 
 This will update the Servers `dtos.ts` and generate its corresponding `dtos.js` which can be natively imported as seen in 
 [gateway.js](https://github.com/NetCoreTemplates/vue-nuxt/blob/master/MyApp/src/shared/gateway.js#L3). Despite the App not being built with TypeScript, developing using a "TypeScript-aware" IDE like VS Code will still be able to utilize the generated `dtos.ts` to provide a rich intelli-sense experience.
@@ -76,7 +86,9 @@ This will update the Servers `dtos.ts` and generate its corresponding `dtos.js` 
 
 Most of the time during development you'll be viewing your App through Nuxt's dev server to take advantage of it's instant UI updates. At any time you can also view a production build of your App with:
 
-    $ npm run build
+```bash
+$ npm run build
+```
 
 This will generate a static encapsulated production build of your App in .NET Core's `/wwwroot` which you can view served from your ServiceStack Server App directly at:
 
@@ -87,7 +99,9 @@ This will generate a static encapsulated production build of your App in .NET Co
 
 To create a complete client and server build of your App run:
 
-    $ npm run publish
+```bash
+$ npm run publish
+```
 
 This publishes your App to `bin/Release/netcoreapp3.1/publish` that can then be deployed like any normal .NET Core App.
 

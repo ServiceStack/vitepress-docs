@@ -5,9 +5,13 @@ slug: templates-websites
 
 There are 3 templates for each of the different technologies that can be used with ServiceStack to develop Server HTML Generated Websites and HTTP APIs which can be installed with [dotnet-new](/dotnet-new): 
 
-    $ npm install -g @servicestack/cli
+```bash
+$ dotnet tool install --global x 
+```
 
-    $ dotnet-new mvc AcmeMvc
+```bash
+$ x new mvc AcmeMvc
+```
 
 Which will create a new .NET 5.0 MVC Project called **AcmeMvc**. The Template Names, Source Code and Live Demos for each Website Template is available below:
 
@@ -75,7 +79,9 @@ Both `razor` and `script` project enjoy Hot Reloading where in development a lon
 
 .NET Core projects can also benefit from [Live Coding using dotnet watch](https://dotnetcoretutorials.com/2017/01/31/live-coding-net-core-using-dotnet-watch/) which performs a "watched build" where it automatically stops, recompiles and restarts your .NET Core App when it detects source file changes. You can start a watched build from the command-line with:
 
-    $ dotnet watch run
+```bash
+$ dotnet watch run
+```
 
 ### .NET 5.0 ServiceStack WebApp Template
 

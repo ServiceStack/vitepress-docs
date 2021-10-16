@@ -21,4 +21,6 @@ To Install, just build your project in **RELEASE** mode then run the `install.ba
 After it's installed you can run `start.bat` to start your Windows Service which will launch your ServiceStack Project's Home Page 
 in your default browser:
 
-> The batch files will automatically prompt for admin access if required
+::: info
+The batch files will automatically prompt for admin access if required
+:::

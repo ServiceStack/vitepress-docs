@@ -51,9 +51,11 @@ which by convention all have the `-corefx` suffix:
 
 This will let you create an ASP.NET Core App running on the .NET Framework v4.7 using [web new](/web-new) with:
 
-    $ dotnet tool install --global web 
+```bash
+$ dotnet tool install --global web 
 
-    $ x new web-corefx AcmeNetFx
+$ x new web-corefx AcmeNetFx
+```
 
 Which can then be opened in your preferred VS.NET or Project Rider C# IDE.
 
@@ -91,7 +93,9 @@ In order to run ASP.NET Core Apps on the .NET Framework it needs to only referen
  - ServiceStack.Logging.NLog.Core
  - ServiceStack.Kestrel.Core
 
-> Ultimately support for whether a **.NET Standard 2.0** library will run on the .NET Framework depends on whether external dependencies also support this scenario which as it's a more niche use-case, will be a less tested scenario. 
+::: warning
+Ultimately support for whether a **.NET Standard 2.0** library will run on the .NET Framework depends on whether external dependencies also support this scenario which as it's a more niche use-case, will be a less tested scenario
+:::
 
 ## Troubleshooting
 

@@ -9,18 +9,22 @@ slug: templates-blazor
 
 A New ServiceStack + Blazor WASM templates can be created with:
 
-    $ x new nukedbit/blazor-wasm-servicestack ProjectName
+```bash
+$ x new nukedbit/blazor-wasm-servicestack ProjectName
+```
 
 ### Executing in a Standalone Desktop app
 
 For an even better integrated Desktop App Experience you can also use ServiceStack's [app dotnet tool](https://docs.servicestack.net/netcore-windows-desktop) to run your Blazor Desktop Apps as a Chromium Desktop App:
 
-    $ dotnet tool update -g app
-    $ x new nukedbit/blazor-wasm-servicestack Acme
-    $ cd Acme\Acme
-    $ dotnet public -c Release
-    $ cd bin\Release\net5.0\publish
-    $ app Acme.dll
+```bash
+$ dotnet tool update -g app
+$ x new nukedbit/blazor-wasm-servicestack Acme
+$ cd Acme\Acme
+$ dotnet public -c Release
+$ cd bin\Release\net5.0\publish
+$ app Acme.dll
+```
 
 ![](https://raw.githubusercontent.com/nukedbit/blazor-wasm-servicestack/master/blazor-wasm-servicestack.png)
 

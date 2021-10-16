@@ -15,8 +15,10 @@ This project lets you create a .NET 5 empty ServiceStack web project ready for d
 
 Create new project with [x dotnet tool](https://docs.servicestack.net/dotnet-new):
 
-    $ dotnet tool install -g x
-    $ x new aws-lambda ProjectName
+```bash
+$ dotnet tool install -g x
+$ x new aws-lambda ProjectName
+```
 
 ### Prerequisites
 

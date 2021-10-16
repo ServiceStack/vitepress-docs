@@ -40,11 +40,15 @@ npm webpack build system, should you wish to upgrade to one in future.
 
 All ServiceStack Project Templates can now be created with our [x](/web-new) .NET Core tool:
 
-    $ dotnet tool install -g x
+```bash
+$ dotnet tool install -g x
+```
 
 If you previously had an existing `x` tool installed, update it to the latest version with:
 
-    $ dotnet tool update -g x
+```bash
+$ dotnet tool update -g x
+```
 
 ### vue-lite
 
@@ -52,11 +56,15 @@ If you previously had an existing `x` tool installed, update it to the latest ve
 
 Browse [source code](https://github.com/NetCoreTemplates/vue-lite), view [vue-lite.web-templates.io](http://vue-lite.web-templates.io) live demo and install for **.NET Core** with:
 
-    $ x new vue-lite ProjectName
+```bash
+$ x new vue-lite ProjectName
+```
 
 Alternatively you can create an ASP.NET Core LTS project on **.NET Framework** with:
 
-    $ x new vue-lite-corefx ProjectName
+```bash
+$ x new vue-lite-corefx ProjectName
+```
 
 ### react-lite
 
@@ -64,17 +72,23 @@ Alternatively you can create an ASP.NET Core LTS project on **.NET Framework** w
 
 Browse [source code](https://github.com/NetCoreTemplates/react-lite), view [react-lite.web-templates.io](http://react-lite.web-templates.io) live demo and install for **.NET Core** with:
 
-    $ x new react-lite ProjectName
+```bash
+$ x new react-lite ProjectName
+```
 
 Alternatively you can create an ASP.NET Core LTS project on **.NET Framework** with:
 
-    $ x new react-lite-corefx ProjectName
+```bash
+$ x new react-lite-corefx ProjectName
+```
 
 ### Development workflow
 
 All that's needed for client development is to run TypeScript in "watch" mode:
 
-    $ tsc -w
+```bash
+$ tsc -w
+```
 
 Which monitors any changes to any `.ts` files and incrementally compiles their `.js` files on save. ServiceStack's built-in 
 [static files](/templates-single-page-apps#optimal-dev-workflow-with-hot-reloading) hot-reloading detects 
@@ -82,15 +96,21 @@ changes to any `.js` files and automatically reloads the page.
 
 The for Server C# development, start your .NET Web App in a new Terminal window with:
 
-    $ dotnet watch run
+```bash
+$ dotnet watch run
+```
 
-> Using `watch run` will monitor changes to `C#` source files and automatically re-builds and restarts the Server.
+::: info
+Using `watch run` will monitor changes to `C#` source files and automatically re-builds and restarts the Server
+:::
 
 ### Update TypeScript DTOs
 
 After changing your ServiceStack Services, you can re-generate their [Typed TypeScript DTOs](/typescript-add-servicestack-reference) with:
 
-    $ x ts
+```bash
+$ x ts
+```
 
 Which will recursively update and re-generate all `*dto.ts` in the current and sub directories.
 
@@ -404,7 +424,9 @@ advanced compression.
 
 The standard .NET Core tools can be used to publish:
 
-    $ dotnet publish -c Release
+```bash
+$ dotnet publish -c Release
+```
 
 Then deploy as normal, e.g. via [rsync deployments to Linux](https://docs.servicestack.net/netcore-deploy-rsync) or to an 
 [AWS EC2 container using Docker](https://docs.servicestack.net/deploy-netcore-docker-aws-ecs).
@@ -413,7 +435,9 @@ Then deploy as normal, e.g. via [rsync deployments to Linux](https://docs.servic
 
 You can configure your ServiceStack App to use Nuglify's Advanced HTML, CSS, JS Minifiers using [mix](/mix-tool) with:
 
-    $ x mix nuglify 
+```bash
+$ x mix nuglify 
+```
 
 Which will write [Configure.Nuglify.cs](https://gist.github.com/gistlyn/4bdb79d21f199c22b8a86f032c186e2d) to your **HOST** project.
 

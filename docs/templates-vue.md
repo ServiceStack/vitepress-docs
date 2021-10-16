@@ -29,11 +29,15 @@ Bootstrapped with [Vue CLI 3](https://cli.vuejs.org/).
 
 Create new Vue 2.5 Project for .NET 5.0:
 
-    $ x new vue-spa ProjectName
+```bash
+$ x new vue-spa ProjectName
+```
 
 Create new Vue 2.5 Project for .NET Framework:
 
-    $ x new vue-spa-netfx ProjectName
+```bash
+$ x new vue-spa-netfx ProjectName
+```
 
 ### [Vuetify SPA Template](https://github.com/NetCoreTemplates/vuetify-spa)
 
@@ -45,11 +49,15 @@ Bootstrapped with [Vue CLI 3](https://cli.vuejs.org/) and the [vuetify cli plugi
 
 Create new Vuetify Project for .NET 5.0:
 
-    $ x new vuetify-spa ProjectName
+```bash
+$ x new vuetify-spa ProjectName
+```
 
 Create new Vuetify Project for .NET Framework:
 
-    $ x new vuetify-spa-netfx ProjectName
+```bash
+$ x new vuetify-spa-netfx ProjectName
+```
 
 ### [Nuxt SPA Template](https://github.com/NetCoreTemplates/vue-nuxt)
 
@@ -61,11 +69,15 @@ Bootstrapped with [Nuxt.js starter template](https://nuxtjs.org/guide/installati
 
 Create new Nuxt.js v1.4.2 Project for .NET 5.0:
 
-    $ x new vue-nuxt ProjectName
+```bash
+$ x new vue-nuxt ProjectName
+```
 
 Create new Nuxt.js v1.4.2 Project for .NET Framework:
 
-    $ x new vue-nuxt-netfx ProjectName
+```bash
+$ x new vue-nuxt-netfx ProjectName
+```
 
 ### [Nuxt and Vuetify SPA Template](https://github.com/NetCoreTemplates/vuetify-nuxt)
 
@@ -77,13 +89,15 @@ Bootstrapped with [Nuxt.js + Vuetify.js starter template](https://github.com/vue
 
 Create new Nuxt Vuetify Project for .NET 5.0:
 
-    $ x new vuetify-nuxt ProjectName
+```bash
+$ x new vuetify-nuxt ProjectName
+```
 
 Create new Nuxt Vuetify Project for .NET Framework:
 
-    $ x new vuetify-nuxt-netfx ProjectName
-
----
+```bash
+$ x new vuetify-nuxt-netfx ProjectName
+```
 
 # Vue Examples
 

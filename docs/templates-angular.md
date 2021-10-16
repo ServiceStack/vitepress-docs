@@ -23,11 +23,15 @@ See the documentation in each project for more info on features of each template
 
 Create new Angular Project for .NET 5.0:
 
-    $ x new angular-spa ProjectName
+```bash
+$ x new angular-spa ProjectName
+```
 
 Create new Angular Project for .NET Framework:
 
-    $ x new angular-spa-netfx ProjectName
+```bash
+$ x new angular-spa-netfx ProjectName
+```
 
 #### Angular HTTP Client
 
@@ -54,14 +58,15 @@ this.http.get<HelloResponse>(createUrl('/hello/{Name}', { name })).subscribe(r =
 
 Create new Angular 4 Project for .NET 5.0:
 
-    $ x new angular-lite-spa ProjectName
+```bash
+$ x new angular-lite-spa ProjectName
+```
 
 Create new Angular 4 Project for .NET Framework:
 
-    $ x new angular-lite-spa-netfx ProjectName
-
-
----
+```bash
+$ x new angular-lite-spa-netfx ProjectName
+```
 
 # Angular Examples
 

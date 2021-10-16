@@ -345,7 +345,9 @@ By importing all your WebApp resources into Webpack it's able to maintain a know
  
 You'll use development builds when developing your app locally which you can run with either the `webpack-build` Gulp task in VS.NET's Task Runner Explorer GUI or by running the `build` npm script on the command-line:
  
-    $ npm run build
+```bash
+$ npm run build
+```
  
 This will generate your App in the `/wwwroot/dist` folder similar to:
  
@@ -370,28 +372,32 @@ After the Webpack development build has completed you can just run or refresh yo
  
 When your App is ready to deploy you can run a production build using the `webpack-build-prod` Gulp task or the `build-prod` npm script:
  
-    $ npm run build-prod
+```bash
+$ npm run build-prod
+```
  
 This will bundle and generate your WebApp in the **/wwwroot/dist** folder with css and source maps extracted and written into separate files, css and js minified and all assets emitted with cache-breaking hashes, similar to:
  
-    /wwwroot
-        /dist
-            /img
-                logo.36166adfacf0c8cc11d493f2161164fd.png
-            674f50d287a8c48dc19ba404d20fe713.eot
-            912ec66d7572ff821749319396470bde.svg
-            b06871f281fee6b241d60582ae9369b9.ttf
-            app.3728b4547755ace1f489.bundle.js
-            app.3728b4547755ace1f489.bundle.js.map
-            app.3728b4547755ace1f489.css
-            app.3728b4547755ace1f489.css.map
-            vendor.dll.css
-            vendor.dll.css.map
-            vendor.dll.js
-            vendor.dll.js.map
-            vendor-manifest.json
-        index.html
- 
+ ```
+/wwwroot
+    /dist
+        /img
+            logo.36166adfacf0c8cc11d493f2161164fd.png
+        674f50d287a8c48dc19ba404d20fe713.eot
+        912ec66d7572ff821749319396470bde.svg
+        b06871f281fee6b241d60582ae9369b9.ttf
+        app.3728b4547755ace1f489.bundle.js
+        app.3728b4547755ace1f489.bundle.js.map
+        app.3728b4547755ace1f489.css
+        app.3728b4547755ace1f489.css.map
+        vendor.dll.css
+        vendor.dll.css.map
+        vendor.dll.js
+        vendor.dll.js.map
+        vendor-manifest.json
+    index.html
+```
+
 ## Development workflow
  
 Executing a development build of Webpack is all that's required to be able to see our changes but it can take a while to run a full dev build which negatively impacts our fast iterative dev workflow. It's instead recommended to leave webpack running in the background and have it watch for changes so it only needs to rebuild assets that have changed, which it's able to do very quickly. 
@@ -416,7 +422,9 @@ Whilst we recommend running the `dev` Gulp or npm script during development to r
  
 Our recommendation during development is to run the `dev` Gulp task and leave it running in the background, or if preferred, run the **dev** npm script on the command-line with:
  
-    $ npm run dev
+```bash
+$ npm run dev
+```
  
 Webpack **dev**  initially generates a full development build of your Web App then stays running in the background to process files as they're changed. This enables the normal dev workflow of running your ASP.NET Web App from VS.NET, saving changes locally which are then reloaded using ServiceStack's built-in hot reloading. Alternatively hitting **F5** will refresh the page and view the latest changes.
  
@@ -426,7 +434,9 @@ Each change updates the output dev resources so even if you stop the **dev** tas
  
 The alternative dev workflow is to run the `dev-server` npm script to run the [Webpack dev server](https://webpack.js.org/configuration/dev-server/#devserver):
  
-    $ npm run dev-server
+```bash
+$ npm run dev-server
+```
  
 This launches the Webpack dev server listening at `http://localhost:3000/` and configured to proxy all non-Webpack HTTP requests to the ASP.NET Web App where it handles all Server API requests. The benefit of viewing your App through the Webpack dev server is its built-in Live Reload feature where it will automatically reload the page as resources are updated. We've found the Webpack dev server ideal when developing UI's where your Web App is running side-by-side VS.NET, where every change saved triggers the dev server to reload the current page so changes are visible immediately. 
  

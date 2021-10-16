@@ -9,15 +9,21 @@ ServiceStack has its strong foundations as a Web and MQ Services framework whose
 
 All ServiceStack Project Templates can be found and installed using the [x new](/web-new) .NET Core tool that can be installed with:
 
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 Then run `x new` to view the list of available project templates:
 
-    $ x new
+```bash
+$ x new
+```
 
 To upgrade to the latest version, run:
 
-    $ dotnet tool update -g x
+```bash
+$ dotnet tool update -g x
+```
 
 ## VS.NET Templates
 

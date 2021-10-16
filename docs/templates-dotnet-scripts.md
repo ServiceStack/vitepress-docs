@@ -22,7 +22,9 @@ As this use-case is [well covered in npm](https://css-tricks.com/why-npm-scripts
 
 Thanks to Node.js's popularity this convention available in all node installations is both ubiquitous & UX friendly as every developer knows where to look to find tasks available for each project, how each script is implemented, sorted in the order in which they're generally run and all executed the same way with `npm run`, e.g:
 
-    $ npm run dtos
+```bash
+$ npm run dtos
+```
 
 As this default convention is so prevalent it has the advantage that modern IDEs like [Rider](https://www.jetbrains.com/rider/) includes UI support where each task can be directly in the UI.
 
@@ -40,12 +42,16 @@ Whilst we can assume **node** to be a ubiquitous dependency installed on most De
 
 So if we're going to standardize on **package.json** scripts for encapsulating a project template's functionality we thought it also prudent to offer a .NET only solution to support environments where an npm dependency is not desirable, so we've added support for executing npm package.json scripts in our [x](/dotnet-tool) and [app](/netcore-windows-desktop) dotnet tools using `x script`, e.g:
 
-    $ x scripts dtos
+```bash
+$ x scripts dtos
+```
 
 That's also available from the more wrist-friendly alias `x s`, e.g:
 
-    $ x s dtos
-    $ app s dtos
+```bash
+$ x s dtos
+$ app s dtos
+```
 
 Which can be used interchangeably with `npm run` to execute command scripts on Windows and `bash` scripts on macOS and Linux or WSL.
 
@@ -90,9 +96,11 @@ In a similar vein we can also evaluate a [#Script Expression](https://sharpscrip
 
 Which our latest templates have adopted, that can be run with either `npm run`, `x scripts` or its `x s` alias:
 
-    $ npm run dtos
-    $ x scripts dtos
-    $ x s dtos
+```bash
+$ npm run dtos
+$ x scripts dtos
+$ x s dtos
+```
 
 ### Shell Script Methods
 

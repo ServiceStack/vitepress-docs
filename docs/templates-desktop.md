@@ -12,8 +12,10 @@ Chromium Web Vue UI within minutes!
 
 Create new project with [app dotnet tool](https://docs.servicestack.net/netcore-windows-desktop):
 
-    $ dotnet tool install -g app
-    $ app new vue-desktop ProjectName
+```bash
+$ dotnet tool install -g app
+$ app new vue-desktop ProjectName
+```
 
 > YouTube: [youtu.be/kRnQSWdqH6U](https://youtu.be/kRnQSWdqH6U)
 
@@ -125,7 +127,9 @@ requires much more effort & time to implement when you're reliant on a complex a
 The only build tool required to enable Live Reload in Vue Desktop Apps is TypeScript's watch feature which monitors and automatically 
 transpiles all `*.ts` file changes: 
 
-    $ tsc -w
+```bash
+$ tsc -w
+```
 
 #### Reload Time
 
@@ -150,7 +154,9 @@ It's opinionated in the shared libraries it includes, namely:
  - Material Design & Fontawesome SVG icons
  - [ServiceStack .NET Packages](https://www.nuget.org/profiles/servicestack) & Dependencies
 
-> You can use your own client/server libraries but they'd need to be distributed with the App  
+::: info
+You can use your own client/server libraries but they'd need to be distributed with the App  
+:::
 
 Intended for developing small/medium Desktop Apps that can be published to a GitHub Gist (or repo) & opened over a URL, e,g:
 [Redis Admin UI](https://sharpscript.net/sharp-apps/redis), generic [DB Viewer](https://sharpscript.net/sharp-apps/sharpdata)
@@ -189,7 +195,9 @@ Whilst on the face of it [Gist Desktop Apps](https://sharpscript.net/sharp-apps/
 Electron Apps that utilizes a .NET Core backend instead of Node.js, it employs a shared architecture where
 all Apps are run with the same [app dotnet tool](https://docs.servicestack.net/netcore-windows-desktop) installable with:
 
-    $ dotnet tool install -g app
+```bash
+$ dotnet tool install -g app
+```
 
 Where it enables a number of unique features: 
 
@@ -217,7 +225,7 @@ It's also possible to pass additional params to enable deep links into Apps
 [ServiceStack Studio utilizes](https://docs.servicestack.net/studio#starting-servicestack-studio)
 to be able download, run & immediately invoke App specific functionality like connecting to a remote site, e.g:
 
-    app://studio?connect=https://localhost:5001
+<h3><a href="app://studio?connect=https://localhost:5001">app://studio?connect=https://localhost:5001</a></h3>
 
 ### Create customized Apps by mixing in Gists
 
@@ -252,30 +260,40 @@ Apps can also be launched from private Gists and Repos by either having end user
 with access to the private gist or repo in the `GITHUB_TOKEN` Environment variable or can be specified in the URL
 or command-line with: 
 
-    app://user/repo?token={GITHUB_TOKEN}
-    $ app open user/repo -token {GITHUB_TOKEN}
+```bash
+app://user/repo?token={GITHUB_TOKEN}
+$ app open user/repo -token {GITHUB_TOKEN}
+```
 
 ### Copy Directory
 
 Another way to distribute & run Apps is to **XCOPY** the `/dist` folder which users can launch by running `app` command in 
 the App's folder or by specifying the path to the app's `app.settings`, e.g: 
 
-    $ app C:\path\to\app\app.settings
+```bash
+$ app C:\path\to\app\app.settings
+```
 
 Where you can also [create a Windows Shortcut](https://docs.servicestack.net/netcore-windows-desktop#create-windows-desktop-shortcuts) 
 for a more integrated Desktop App: 
 
-    $ cd C:\path\to\app
-    $ app shortcut
+```bash
+$ cd C:\path\to\app
+$ app shortcut
+```
 
-> Tip: Add `favicon.ico` to use your own icon in the shortcut 
+::: info Tip
+Add `favicon.ico` to use your own icon in the shortcut
+:::
 
 ### Cross Platform Support
 
 Whilst the `app` dotnet tool is Windows-only, all Sharp Apps can also be run cross-platform on macOS/Linux with the 
 [x dotnet tool](https://docs.servicestack.net/dotnet-tool) where it will open in the users preferred browser, e.g:
 
-    $ x open vuedesktop 
+```bash
+$ x open vuedesktop 
+```
 
 ### Always uses latest version
 
@@ -285,8 +303,11 @@ published to a Gist or Repo which automatically happens when launching Apps usin
 If preferred you can save 1-3 seconds on an App's launch time by using the `app:` URL scheme or `app run` command where
 it will instead load the previously downloaded version, e.g:
 
-    app:vuedesktop
-    $ app run vuedesktop
+<h3><a href="app:vuedesktop">app:vuedesktop</a></h3>
+
+```bash
+$ app run vuedesktop
+```
 
 ### Native Win32 API Interop
 
@@ -341,7 +362,9 @@ Whilst this project template is intended for creating Desktop Apps, it's essenti
 in a shared Chromium Desktop Shell which means it can also be deployed the same as any other .NET Core Web App by
 generating a published build:
 
-    $ dotnet publish -c Release
+```bash
+$ dotnet publish -c Release
+```
 
 Then [copying the published release builds for Server deployments](https://docs.servicestack.net/netcore-deploy-rsync).
 
@@ -391,7 +414,9 @@ export class Counter extends Vue {
 }
 ```
 
-> Vue's integration with TypeScript is set to improve in Vue 3 which will be written in TypeScript  
+::: info
+Vue's integration with TypeScript is set to improve in Vue 3 which will be written in TypeScript
+:::
 
 ### Typed DTOs
 
@@ -477,7 +502,9 @@ public class WeatherForecast
 Which is all that's required for ServiceStack to automatically implement the Service where it has access to all standard Typed API metadata services 
 like being included in the generated TypeScript client DTOs: 
 
-    $ npm run dtos 
+```bash
+$ npm run dtos 
+```
 
 Which [FetchData.ts](https://github.com/NetCoreTemplates/vue-desktop/blob/master/src/components/FetchData.ts) uses to power its 
 dynamic Queryable UI by sending a populated `QueryWeatherForecasts` Request DTO configured with any filters and re-executed 

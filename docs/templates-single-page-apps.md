@@ -9,9 +9,13 @@ The [ServiceStackVS VS.NET extension](https://github.com/ServiceStack/ServiceSta
 
 The Single Page App (SPA) project templates can also be created using the [dotnet-new](/dotnet-new) command line tool:
 
-    $ npm install -g @servicestack/cli
+```bash
+$ npm install -g @servicestack/cli
+```
 
-    $ dotnet-new <template-name> ProjectName
+```bash
+$ dotnet-new <template-name> ProjectName
+```
 
 Click on the template name below to view a Live Demo and contents of each project template:
 
@@ -63,7 +67,9 @@ packaging and bundling requirements. Gulp is primarily used to provide a GUI to 
 in VS.NET's Task Runner Explorer so all templates features can be accessed without leaving VS.NET, or if preferred each npm script can also be run 
 on the command-line with:
  
-    $ npm run {script name}
+```bash
+$ npm run {script name}
+```
 
 All templates also follow our [Recommended Physical Project Structure](/physical-project-structure) ensuring ServiceStack projects starts off from 
 an optimal logical project layout, laying the foundation for growing into a more maintainable, cohesive and reusable code-base.
@@ -148,7 +154,9 @@ Although optional, `#Script` is useful whenever you need to render any server lo
 
 Will be evaluated on the server and render the expected:
  
-    Copyright © 2018
+```
+Copyright © 2022
+```
 
 ### [Quick tour of Webpack](/templates-webpack)
 
@@ -158,7 +166,9 @@ Most SPA projects are pre-configured with tooling to manage their own Webpack ap
 
 .NET Core projects can also benefit from [Live Coding using dotnet watch](https://dotnetcoretutorials.com/2017/01/31/live-coding-net-core-using-dotnet-watch/) which performs a "watched build" where it automatically stops, recompiles and restarts your .NET Core App when it detects source file changes. You can start a watched build from the command-line with:
 
-    $ dotnet watch run
+```bash
+$ dotnet watch run
+```
 
 ## Single Page App Features
  
@@ -180,7 +190,9 @@ To get the latest Server DTOs, build the ASP.NET Web App then either right-click
  
 Or alternatively you can run the `dtos` Gulp task in Task Runner Explorer GUI, or if preferred, run the script on the command-line with:
  
-    $ npm run dtos
+```bash
+$ npm run dtos
+```
  
 ### Routing Enabled, Multi-page Layout
   
@@ -200,14 +212,18 @@ Angular and Vue are configured to use the [Karma test runner](https://karma-runn
  
 Tests can be run with the `tests-run` gulp task, or on the command-line using any of npm's testing conventions:
  
-    $ npm test
-    $ npm t
+```bash
+$ npm test
+$ npm t
+```
  
 #### Live Testing
  
 Each template also includes support for Live Testing which can be run in the background by clicking the `tests-watch` Gulp task or on the command-line with:
  
-    $ npm run test-watch
+```bash
+$ npm run test-watch
+```
  
 Live testing automatically re-runs JavaScript tests after each change to provide instant feedback to detect when changes causes existing tests to fail.
  
@@ -231,7 +247,9 @@ to be replaced with a [Webpack generated html template](https://github.com/NetCo
  
 Unfortunately VS.NET 2017 ships with an outdated version of **node.exe** which can be problematic when trying to run scripts from the command-line with a locally installed version of node as native module packages like **node-sass** are coupled to the specific node version and platform they were installed with. This can easily be resolved by configuring VS.NET to use your Desktop version of node instead by adding its the **C:\Program Files\nodejs** folder as the first path in: 
  
-> Tools > Options > Projects and Solutions > External Web Tools
+```
+Tools > Options > Projects and Solutions > External Web Tools
+```
  
 ![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/ssvs/node-external-tools.png)
  
@@ -239,7 +257,9 @@ Unfortunately VS.NET 2017 ships with an outdated version of **node.exe** which c
 
 All templates can be installed using our [dotnet-new](/dotnet-new) tool, which if not already can be installed with:
 
-    $ npm install -g @servicestack/cli
+```bash
+$ dotnet tool install --global x 
+```
 
 The SPA Project Templates below have been bootstrapped with the latest CLI tools from their respective JS Frameworks:
 
@@ -253,11 +273,15 @@ Bootstrapped with [Vue CLI 3](https://cli.vuejs.org/).
 
 Create new Vue 2.5 Project for .NET 5.0:
 
-    $ dotnet-new vue-spa ProjectName
+```bash
+$ x new vue-spa ProjectName
+```
 
 Create new Vue 2.5 Project for .NET Framework:
 
-    $ dotnet-new vue-spa-netfx ProjectName
+```bash
+$ x new vue-spa-netfx ProjectName
+```
 
 ### [react-spa](https://github.com/NetCoreTemplates/react-spa)
 
@@ -269,11 +293,15 @@ Bootstrapped with [create-react-app](https://github.com/facebook/create-react-ap
 
 Create new React 16 Project for .NET 5.0:
 
-    $ dotnet-new react-spa ProjectName
+```bash
+$ x new react-spa ProjectName
+```
 
 Create new React 16 Project for .NET Framework:
 
-    $ dotnet-new react-spa-netfx ProjectName
+```bash
+$ x new react-spa-netfx ProjectName
+```
 
 ### [angular-spa](https://github.com/NetCoreTemplates/angular-spa)
 
@@ -285,11 +313,15 @@ Bootstrapped with [Angular CLI](https://cli.angular.io).
 
 Create new Angular Project for .NET 5.0:
 
-    $ dotnet-new angular-spa ProjectName
+```bash
+$ x new angular-spa ProjectName
+```
 
 Create new Angular Project for .NET Framework:
 
-    $ dotnet-new angular-spa-netfx ProjectName
+```bash
+$ x new angular-spa-netfx ProjectName
+```
 
 ### [aurelia-spa](https://github.com/NetCoreTemplates/aurelia-spa)
 
@@ -301,11 +333,15 @@ Bootstrapped with [Aurelia CLI](https://aurelia.io/docs/build-systems/aurelia-cl
 
 Create new Aurelia Project for .NET 5.0:
 
-    $ dotnet-new aurelia-spa ProjectName
+```bash
+$ x new aurelia-spa ProjectName
+```
 
 Create new Aurelia Project for .NET Framework:
 
-    $ dotnet-new aurelia-spa-netfx ProjectName
+```bash
+$ x new aurelia-spa-netfx ProjectName
+```
 
 ### [vuetify-spa](https://github.com/NetCoreTemplates/vuetify-spa)
 
@@ -317,11 +353,15 @@ Bootstrapped with [Vue CLI 3](https://cli.vuejs.org/) and the [vuetify cli plugi
 
 Create new Vuetify Project for .NET 5.0:
 
-    $ dotnet-new vuetify-spa ProjectName
+```bash
+$ x new vuetify-spa ProjectName
+```
 
 Create new Vuetify Project for .NET Framework:
 
-    $ dotnet-new vuetify-spa-netfx ProjectName
+```bash
+$ x new vuetify-spa-netfx ProjectName
+```
 
 ### [vue-nuxt](https://github.com/NetCoreTemplates/vue-nuxt)
 
@@ -333,11 +373,15 @@ Bootstrapped with [Nuxt.js starter template](https://nuxtjs.org/guide/installati
 
 Create new Nuxt.js v1.4.2 Project for .NET 5.0:
 
-    $ dotnet-new vue-nuxt ProjectName
+```bash
+$ x new vue-nuxt ProjectName
+```
 
 Create new Nuxt.js v1.4.2 Project for .NET Framework:
 
-    $ dotnet-new vue-nuxt-netfx ProjectName
+```bash
+$ x new vue-nuxt-netfx ProjectName
+```
 
 ### [vuetify-nuxt](https://github.com/NetCoreTemplates/vuetify-nuxt)
 
@@ -349,11 +393,15 @@ Bootstrapped with [Nuxt.js + Vuetify.js starter template](https://github.com/vue
 
 Create new Nuxt Vuetify Project for .NET 5.0:
 
-    $ dotnet-new vuetify-nuxt ProjectName
+```bash
+$ x new vuetify-nuxt ProjectName
+```
 
 Create new Nuxt Vuetify Project for .NET Framework:
 
-    $ dotnet-new vuetify-nuxt-netfx ProjectName
+```bash
+$ x new vuetify-nuxt-netfx ProjectName
+```
 
 ### SPA Project Templates Dev Workflow 
 
@@ -364,21 +412,29 @@ the functionality available, but they all typically share the same functionality
 
 Start a watched client build which will recompile and reload web assets on save:
 
-    $ npm run dev
+```bash
+$ npm run dev
+```
 
 Start a watched .NET Core build which will recompile C# `.cs` source files on save and restart the ServiceStack .NET Core App:
 
-    $ dotnet watch run
+```bash
+$ dotnet watch run
+```
 
 Leaving the above 2 commands running takes care of most of the development workflow which handles recompilation of both modified client and server source code.
 
 Regenerate your client TypeScript DTOs after making a change to any Services:
 
-    $ npm run dtos
+```bash
+$ npm run dtos
+```
 
 Create an optimized client and package a Release build of your App:
 
-    $ npm run publish
+```bash
+$ npm run publish
+```
 
 Which will publish your App to `bin/Release/netcoreapp3.1/publish` ready for deployment.
 
@@ -386,11 +442,15 @@ Which will publish your App to `bin/Release/netcoreapp3.1/publish` ready for dep
 
 The major JS Framework Templates are also pre-configured with their preferred unit testing solution which are run with npm's `test` command:
 
-    $ npm test
+```bash
+$ npm test
+```
 
 Whilst Vue and Angular also include support for running end-to-end integration tests in a browser:
 
-    $ npm run e2e
+```bash
+$ npm run e2e
+```
 
 This also highlights one of the benefits of utilizing npm's vibrant ecosystem where it benefits from significant investments like [cypress.io](https://www.cypress.io) which provides a complete solution for running integration tests:
 
@@ -402,20 +462,26 @@ This also highlights one of the benefits of utilizing npm's vibrant ecosystem wh
 
 Create new Parcel Template:
 
-    $ dotnet-new parcel ProjectName
+```bash
+$ x new parcel ProjectName
+```
 
 [Parcel](https://parceljs.org) aims to provide the simplest out-of-the-box development experience for creating modern npm-powered 
 Web Apps by getting out of your way and letting you develop Websites without regard for a bundling solution or JS Framework. 
 
 To enlist its functionality you just point `parcel` to your home page:
 
-    $ parcel index.html
+```bash
+$ parcel index.html
+```
 
 This starts a Live Hot Reload Server which inspects all linked `*.html`, script and stylesheet resources to find all dependencies which it automatically 
 monitors for changes where it will automatically rebuild and reload your webpage. Then when it's time for deployment you can perform a production build
 for your website with the `build` command:
 
-    $ parcel build index.html
+```bash
+$ parcel build index.html
+```
 
 Where it creates an optimized bundle using advanced minification, compilation and bundling techniques. Despite its instant utility and zero configuration,
 it comes pre-configured with [popular auto transforms](https://parceljs.org/transforms.html) for developing modern Web Apps which lets you utilize 
