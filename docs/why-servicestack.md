@@ -130,6 +130,12 @@ enabling Java Developers to effortlessly Add and Update the references of their 
 
 In addition to our growing list of supported IDE's, the [x dotnet tool](https://docs.servicestack.net/dotnet-tool) allows VS Code and other cross-platform IDEs, build servers, shell scripts and other automated tasks to easily Add and Update ServiceStack References with a single command.
 
+#### [Invoke ServiceStack APIs from the command-line](/post-command)
+
+Easily inspect and invoke C# .NET Web APIs from the command-line with Post Command which allows you to both inspect and
+call any ServiceStack API with just its name and a JS Object literal. API Responses returned in human-friendly markdown tables by default or 
+optionally as JSON & raw HTTP.
+
 ## Simple Customer Database REST Services Example
 
 This example is also available as a [stand-alone integration test](https://github.com/ServiceStack/ServiceStack/blob/master/tests/ServiceStack.WebHost.Endpoints.Tests/CustomerRestExample.cs):
@@ -365,12 +371,14 @@ artifacts or markup.
 
 Our generic Service clients covers the most popular Mobile, Desktop and Server platforms with first-class implementations for Xamarin, Android, Java and TypeScript which now includes:
 
- - [C#/.NET Service Clients](/csharp-client)
+ - [.NET Service Clients](/csharp-client)
+    - C# / VB.NET / F#
+    - .NET Core 2.1+
+    - .NET Framework 4.5+
+    - Blazor WASM
     - Xamarin.iOS
     - Xamarin.Android
     - UWP
-    - .NET Framework 4.5+
-    - .NET Core
     - Silverlight
  - [TypeScript Service Client](/typescript-add-servicestack-reference#typescript-serviceclient)
     - Web
@@ -378,22 +386,24 @@ Our generic Service clients covers the most popular Mobile, Desktop and Server p
     - React Native
         - iOS
         - Android
+ - [Python Service Client](/python-add-servicestack-reference)
+ - [Dart](/dart-add-servicestack-reference)
+   - Flutter
+        - iOS
+        - Android
+   - Web / Angular.dart
  - [Java Service Client](/java-add-servicestack-reference#jsonserviceclient-api)
     - Android
     - JVM 1.7+ (Java, Kotlin, Scala, etc)
         - Java Clients
         - Java Servers
+ - [Kotlin Service Client](/kotlin-add-servicestack-reference)
  - [Swift Service Client](/swift-add-servicestack-reference#swift-client-usage)
     - iOS
     - OSX
     - [Swift Package Manager Apps](https://github.com/ServiceStackApps/swift-techstacks-console)
  - [JavaScript (jQuery)](/ss-utils-js)
    - Web
- - [Dart](/dart-add-servicestack-reference)
-   - Flutter
-        - iOS
-        - Android
-   - Web / Angular.dart
  - [MQ Clients](/messaging#mq-client-architecture)
    - Background MQ
    - Rabbit MQ
@@ -413,6 +423,7 @@ of different formats, including:
  - [CSV](/csv-format)
  - [MsgPack](/messagepack-format)
  - [ProtoBuf](/protobuf-format)
+ - [gRPC](/grpc)
  - [Wire](/wire-format)
  - [SOAP 1.1/1.2](/soap-support)
  - HTML
@@ -423,7 +434,7 @@ of different formats, including:
 
 ### Multiple Endpoints
 
-Whilst ServiceStack is fundamentally a premier HTTP Framework, its Services can also be consumed from [SOAP 1.1 and 1.2](/soap-support) endpoints as well as a number of [MQ Servers](/messaging):
+Whilst ServiceStack is fundamentally a premier HTTP Framework, its Services can also be consumed from new [gRPC](/grpc) as well as legacy [SOAP 1.1 and 1.2](/soap-support) endpoints as well as a number of [MQ Servers](/messaging):
 
   - [Background MQ Service](/background-mq)
   - [Rabbit MQ Server](/rabbit-mq)
@@ -436,17 +447,18 @@ Whilst ServiceStack is fundamentally a premier HTTP Framework, its Services can 
 In addition to supporting multiple formats and endpoints, ServiceStack can also be hosted within a multitude of different hosting options:
 
 #### Windows, OSX or Linux
- - **.NET Core**
+ - **.NET Core 2.1+**
    - [Web App or SelfHost](https://github.com/NetCoreApps/LiveDemos#servicestack-net-core-live-demos)
- - **.NET Framework or Mono**
-   - [Any ASP.NET host](https://github.com/ServiceStackApps/LiveDemos#live-servicestack-demos)
-   - [Stand-alone, Self-Hosted HttpListener](/self-hosting)
-   - [Entire App ILMerged into a single cross-platform App.exe](https://github.com/ServiceStack/ServiceStack.Gap#self-hosting-console-app)
+   - [Worker Service](/messaging#worker-service-templates)
 
 #### Windows
- - [Stand-alone Windows Service](/templates-windows-service)
- - [Hosted inside WinForms with Chromium Embedded Framework](https://github.com/ServiceStack/ServiceStack.Gap#winforms-with-chromium-embedded-framework)
- - [Windows and Azure Service Fabric](https://github.com/ServiceStackApps/HelloServiceFabric)
+ - **.NET Framework 4.5+**
+   - [ASP.NET Core 2.1 LTS](/templates-corefx)
+   - [Classic ASP.NET System.Web](https://github.com/ServiceStackApps/LiveDemos#live-servicestack-demos)
+   - [Stand-alone, Self-Hosted HttpListener](/self-hosting)
+   - [Stand-alone Windows Service](/templates-windows-service)
+   - [Hosted inside WinForms with Chromium Embedded Framework](https://github.com/ServiceStack/ServiceStack.Gap#winforms-with-chromium-embedded-framework)
+   - [Windows and Azure Service Fabric](https://github.com/ServiceStackApps/HelloServiceFabric)
 
 #### OSX
  - [Hosted inside Mac OSX Cocoa App with Xamarin.Mac](https://github.com/ServiceStack/ServiceStack.Gap#mac-osx-cocoa-app-with-xmarainmac)

@@ -368,6 +368,28 @@ Lets you easily parse the raw text of a Ajax Error Response into a responseStatu
 let status = parseResponseStatus(json, defaultErrorMessage);
 ```
 
+### combinePaths and createUrl
+
+The `combinePaths` and `createUrl` API's help with constructing urls, e.g:
+
+```js
+combinePaths("path","to","..","join")   //= path/join
+createPath("path/{foo}", {foo:1,bar:2}) //= path/1
+createUrl("http://host/path/{foo}",{foo:1,bar:2}) //= http://host/path/1?bar=2
+```
+
+#### Angular HTTP Client
+
+You can use `createUrl()` to utilize Angular's built-in Rx-enabled HTTP Client with ServiceStack’s ambient TypeScript declarations when utilizing Angular's built-in dependencies is preferable, e.g:
+
+```ts
+import { createUrl } from '@servicestack/client';
+...
+this.http.get<HelloResponse>(createUrl('/hello/{Name}', { name })).subscribe(r => {
+    this.result = r.result;
+});
+```
+
 ## TypeScript Definition
 
 The TypeScript definitions for `@servicestack/client` is available at [/dist/index.d.ts](https://github.com/ServiceStack/servicestack-client/blob/master/dist/index.d.ts) lets you view all available utility functions in TypeScript method signatures, the full implementation of which is available from [/src/index.ts](https://github.com/ServiceStack/servicestack-client/blob/master/src/index.ts):

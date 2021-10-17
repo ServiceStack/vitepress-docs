@@ -9,7 +9,7 @@ The primary and most popular [Add ServiceStack Reference](/add-servicestack-refe
 
 Our goal with Native Types is to provide an alternative for sharing DTO dlls, that can enable a better dev workflow for external clients who are now able to generate (and update) Typed APIs for your Services from a remote url - reducing the burden and effort required to consume ServiceStack Services whilst benefiting from clients native language strong-typing feedback.
 
-> C# Xamarin.Android Example in VS.NET
+C# Xamarin.Android Example in VS.NET
 
 <iframe width="896" height="525" src="https://www.youtube.com/embed/cbYuem1b2tg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 

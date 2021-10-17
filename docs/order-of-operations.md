@@ -19,7 +19,7 @@ executes the next middleware in-line in **.NET Core** Apps.
 Requests handled by ServiceStack execute the custom hooks and filters in the following order:
 
   1. The `IAppHost.PreRequestFilters` gets executed before the Request DTO is deserialized
-  2. Default Request DTO Binding or [Custom Request Binding][4] _(if registered)_
+  2. Default Request DTO Binding or [Custom Request Binding](/serialization-deserialization#create-a-custom-request-dto-binder) _(if registered)_
   3. Any [Request Converters](/customize-http-responses#request-converters) are executed
   4. [Request Filter Attributes][3] with **Priority < 0** gets executed
   5. Then any [Global Request Filters][1] get executed
@@ -103,4 +103,3 @@ The implementation of [RestHandler](https://github.com/ServiceStack/ServiceStack
   [1]: /request-and-response-filters
   [2]: /architecture-overview
   [3]: /filter-attributes
-  [4]: /serialization-deserialization

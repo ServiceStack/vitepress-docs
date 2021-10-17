@@ -9,11 +9,11 @@ Initially forged from the [Interactive Python](https://ipython.org) project, [Ju
 
 However its popularity, thriving ecosystem and rich tooling has seen it grow to encompass a wide range of interactive computing use-cases including data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more which now sees it support **over 40 programming languages**.
 
-### Jupyter Notebooks
+## Jupyter Notebooks
 
 At the core of Jupyter is the "Notebook" (Nb) - an open JSON document format that contains a complete record of user's sessions including code, narrative text, equations, visualizations and rich output. The culmination of which facilitates the creation and sharing of Live Executable Documents encapsulating an Interactive computing session that provides an ideal visual REPL environment for exploratory programming whose results and findings can be further annotated with Markdown documentation and exported in a number of formats to facilitate knowledge sharing including: HTML, PDF, Markdown, Latex, ReStructured Text, Asciidoc, Reveal.js.
 
-### Create Python, C# and F# Jupyter Notebooks for any ServiceStack API
+## Create Python, C# and F# Jupyter Notebooks for any ServiceStack API
 
 <iframe width="896" height="525" src="https://www.youtube.com/embed/h6UwDuXt8MA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -41,11 +41,15 @@ JupyterLab is Jupyter's next-gen web-based development environment designed arou
 
 An easy way to install JupyterLab is to use the pip package manager installed with Python:
 
-    $ pip install jupyterlab
+```bash
+$ pip install jupyterlab
+```
 
 Once installed you can launch JupyterLab's UI from a directory containing your Notebooks where they'll be accessible from its built-in File Explorer UI:
 
-    $ jupyter-lab
+```bash
+$ jupyter-lab
+```
 
 ### Jupyter Notebook
 
@@ -55,11 +59,15 @@ The original Jupyter Notebook Web Application offering a simplified single docum
 
 Install with Python's pip package manager:
 
-    $ pip install notebook
+```bash
+$ pip install notebook
+```
 
 Then launch from any directory containing Notebooks to open them from the Jupyter Notebook App:
 
-    $ jupyter notebook
+```bash
+$ jupyter notebook
+```
 
 ### PyCharm
 

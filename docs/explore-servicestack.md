@@ -24,12 +24,10 @@ ServiceStack is a single code-base implementation that supports [.NET's most pop
 near perfect source-code [compatibility with .NET Core](/netcore) so all .NET Frameworks Apps are still relevant in .NET Core, e.g. 
 the [EmailContacts guidance](https://github.com/ServiceStackApps/EmailContacts) walks through the recommended setup and physical layout structure of typical medium-sized ServiceStack projects, including complete documentation of how to create the solution from scratch, whilst explaining all the ServiceStack features it makes use of along the way.
 
-### Sharp Apps
+## Starting Project Templates
 
-[Sharp Apps](https://sharpscript.net/docs/sharp-apps) are a revolutionary new approach to dramatically simplify .NET Web App development with the 
-ultimate simplicity of being able to develop Apps in real-time while it's running & never needing to build or re-compile Apps. Their inherent simplicity
-makes it possible to build [Gist Desktop Apps](https://sharpscript.net/docs/gist-desktop-apps) they can be **run on-the-fly without installation** 
-and can be [deployed without CI or published assets](https://sharpscript.net/docs/deploying-sharp-apps) and updated 
-[with a single command](https://sharpscript.net/docs/deploying-sharp-apps).
+Once you've familiarized yourself with ServiceStack and are ready to use it in action, get started with a customized starting project template from our online template builder at:
 
-<iframe width="896" height="525" src="https://www.youtube.com/embed/FlKeaav0gt8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+## [servicestack.net/start](https://servicestack.net/start)
+
+[![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/overview/servicestack-start.png)](https://servicestack.net/start)

@@ -143,6 +143,10 @@ let main args =
 
 When any of these are running, you can call your hello service at `http://localhost:1337/hello/World!`
 
+### Windows Service Template
+
+You can use [winservice-netfx](https://github.com/NetFrameworkTemplates/winservice-netfx) to create a Windows Service but as this requires Visual Studio it's faster to continue creating new Windows Service projects within VS.NET using the **ServiceStack Windows Service Empty** Project Template.
+
 ### Serving Razor Views or Static Files from HttpListener
 
 The PhysicalPath for self-hosted HttpListener hosts is at the same directory where the `.exe` is run (e.g. in `/bin`). To serve any static files or execute any Razor Views you need to set the **Copy Output Directory** of all static assets you want available to `Copy if newer`. The [ServiceStack.Gap](https://github.com/ServiceStack/ServiceStack.Gap) feature provides an alternative packaging approach that can embed static resources and pre-compile razor views into a single `.exe` for the most optimal deployment.

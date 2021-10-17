@@ -62,20 +62,27 @@ We've created a `mix` template to setup this workflow more straight forward.
 
 All command line utils used are available in the latest [dotnet tool](/dotnet-tool) which can be installed from:
 
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 Or if you had a previous version installed, update with:
 
-    $ dotnet tool update -g x
+```bash
+$ dotnet tool update -g x
+```
 
 ### Create a new GitHub repository
 To work with MyBinder.org service, you will need to create a *public* GitHub repository so the service can build and host your notebook environment.
-> For private repositories to work, you will need to host and run your own infrastructure for your BinderHub environment. More information can be found on the steps required for this on the BinderHub docs "[Zero to BinderHub](https://binderhub.readthedocs.io/en/latest/zero-to-binderhub/index.html)".
+
+::: info
+For private repositories to work, you will need to host and run your own infrastructure for your BinderHub environment. More information can be found on the steps required for this on the BinderHub docs "[Zero to BinderHub](https://binderhub.readthedocs.io/en/latest/zero-to-binderhub/index.html)"
+:::
 
 Clone your newly created *public* GitHub repository locally and run the following command in the root directory of the repository.
 
-```shell
-x mix docker-jupyter-reports
+```bash
+$ x mix docker-jupyter-reports
 ```
 
 Commit the generated `Dockerfile` and push your changes to GitHub.
@@ -86,10 +93,13 @@ Since we want to be able to work on notebook reports both locally and on MyBinde
 
 From the root of your local git repository, run the following command where `jupyter-reports` can be replaced with your preferred tag.
 
-```shell
-docker build . -t jupyter-reports
+```bash
+$ docker build . -t jupyter-reports
 ```
-> This will likely take a few minutes locally due to all the required packages and size of the numerous dependencies.
+
+::: info
+This will likely take a few minutes locally due to all the required packages and size of the numerous dependencies
+:::
 
 ![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/jupyter/reports-and-testing/docker-build.png)
 
@@ -98,7 +108,10 @@ To run your newly built Docker image, use the following command where `<absolute
 ```shell
 docker run -it --rm -p 8888:8888 -v <absolute-path-of-git-repo>:/home/jovyan/Notebooks -e CHOWN_HOME=yes jupyter-reports
 ```
-> Jupyter will generate working directory called `.ipynb_checkpoints` which you can add to your .gitignore. 
+
+::: info
+Jupyter will generate working directory called `.ipynb_checkpoints` which you can add to your .gitignore
+:::
 
 Running this will output a local `127.0.0.1` address to use in your browser with an authentication toke you will need to copy and paste to your preferred browser.
 
@@ -186,7 +199,10 @@ Now we have given the context for a visual, lets generate the visual itself by u
 ```python
 df.groupby('year')['total'].sum().astype(float).plot.bar();
 ```
-> For statements generating plots, remember to end the statement with a semicolon as to avoid unwanted metadata about the statement return type.
+
+::: info
+For statements generating plots, remember to end the statement with a semicolon as to avoid unwanted metadata about the statement return type
+:::
 
 ![Sales by year example](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/jupyter/reports-and-testing/sales-by-year.png)
 

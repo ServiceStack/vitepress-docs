@@ -100,7 +100,8 @@ There are 2 ways to deserialize your own custom format, via attaching a custom r
 You can register custom binders in your AppHost by using the example below:
 
 ```cs
-base.RequestBinders.Add(typeof(MyRequest), httpReq => ... requestDto);
+appHost.RegisterRequestBinder<MyRequest>(httpReq => ... requestDto);      // or:
+appHost.RequestBinders.Add(typeof(MyRequest), httpReq => ... requestDto);
 ```
 
 This gives you access to the IHttpRequest object letting you parse it manually so you can construct and return the strong-typed request DTO manually which will be passed to the service instead.
@@ -157,9 +158,9 @@ public class RawBytes : IRequiresRequestStream
 Which tells ServiceStack to skip trying to deserialize the request so you can read in the raw HTTP Request body yourself, e.g:
 
 ```csharp
-public object Post(RawBytes request)
+public async Task<object> PostAsync(RawBytes request)
 {
-    byte[] bytes = request.RequestStream.ReadFully();
+    byte[] bytes = await request.RequestStream.ReadFullyAsync();
     string text = bytes.FromUtf8Bytes(); //if text was sent
 }
 ```

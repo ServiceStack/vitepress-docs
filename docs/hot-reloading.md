@@ -61,3 +61,6 @@ Which starts a long poll that calls the smart `HotReloadFilesService` which recu
 
 Sharp Page's Hot Reload feature now also monitors **Paged Based Routing Pages** and **View Pages**.
 
+If enabled and working correctly hot reloading should allow you to view instant UI changes on save:
+
+[![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/app/vue-desktop/vuedesktop-livereload.gif)](https://www.vuedesktop.com)

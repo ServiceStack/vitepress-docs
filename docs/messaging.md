@@ -42,6 +42,17 @@ Results matching tag [mq]:
    6. feature-mq    Simple MQ Feature to test sending Messages  to: $HOST  by @ServiceStack  [feature,mq,sharp]
 ```
 
+## Worker Service Templates
+
+If you'd instead prefer to develop stand-alone MQ Servers (i.e. without HTTP access) then it can be beneficial to run the MQ Server in an ASP.NET Core Worker Service by starting from a pre-configured project template:
+
+|| .NET Core C# Worker Service Templates |
+|-|-|
+| [worker-rabbitmq](https://github.com/NetCoreTemplates/worker-rabbitmq)        | .NET 5.0 Rabbit MQ Worker Service |
+| [worker-redismq](https://github.com/NetCoreTemplates/worker-redismq)        | .NET 5.0 Redis MQ Worker Service |
+| [worker-servicebus](https://github.com/NetCoreTemplates/worker-servicebus)        | .NET 5.0 Azure Service Bus MQ Worker Service |
+| [worker-sqs](https://github.com/NetCoreTemplates/worker-sqs)        | .NET 5.0 AWS SQS MQ Worker Service |
+
 ### feature-mq
 
 The `feature-mq` adds MQ support to your App, complete with UI and includes 2 different ways of calling MQ Services in ServiceStack, just like 

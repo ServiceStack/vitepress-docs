@@ -18,10 +18,8 @@ public class AppHost : AppSelfHostBase
         container.Register<IDbConnectionFactory>(c => 
             new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider));
 
-        using (var db = container.Resolve<IDbConnectionFactory>().Open())
-        {
-            db.CreateTableIfNotExists<Customer>();
-        }
+        using var db = container.Resolve<IDbConnectionFactory>().Open();
+        db.CreateTableIfNotExists<Customer>();
     }
 }
 
@@ -107,15 +105,12 @@ public class CustomerService : Service
 }
 
 //Write your Integration tests
-[TestFixture]
 public class CustomerRestExample
 {
     const string BaseUri = "http://localhost:2000/";
-
     ServiceStackHost appHost;
 
-    [TestFixtureSetUp]
-    public void TestFixtureSetUp()
+    public void CustomerRestExample()
     {
         //Start your AppHost on TestFixture SetUp
         appHost = new AppHost()
@@ -123,12 +118,8 @@ public class CustomerRestExample
             .Start(BaseUri);
     }
 
-    [TestFixtureTearDown]
-    public void TestFixtureTearDown()
-    {
-        //Dispose it on TearDown
-        appHost.Dispose();
-    }
+    [OneTimeTearDown]
+    public void OneTimeTearDown() => appHost.Dispose();
 
     /* Write your Integration Tests against the self-host instance */
 
@@ -162,7 +153,5 @@ public class CustomerRestExample
         all = client.Get(new GetCustomers());
         Assert.That(all.Results.Count, Is.EqualTo(0));
     }
-
 }
-
 ```

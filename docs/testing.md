@@ -27,10 +27,8 @@ public class AppHost : AppSelfHostBase
         container.Register<IDbConnectionFactory>(c => 
             new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider));
 
-        using (var db = container.Resolve<IDbConnectionFactory>().Open())
-        {
-            db.CreateTableIfNotExists<Customer>();
-        }
+        using var db = container.Resolve<IDbConnectionFactory>().Open();
+        db.CreateTableIfNotExists<Customer>();
     }
 }
 
@@ -81,7 +79,7 @@ public class CustomerRestExample
 
     public CustomerRestExample()
     {
-        //Start your AppHost on TestFixtureSetUp
+        //Start your AppHost on OneTimeSetUp
         appHost = new AppHost() 
             .Init()
             .Start(BaseUri);
@@ -178,7 +176,7 @@ This Service provides 2 operations, `FindRockstars` which makes db queries direc
 
 ### Using an in-memory database
 
-If you're accessing `Db` from directly within your service implementation you're going to want to make use of a real DB given the [ADO.NET IDbConnection](http://msdn.microsoft.com/en-us/library/system.data.idbconnection.aspx) requires a lot of effort to mock. You can do this in the same way you would register your dependencies in ServiceStack itself, by using the built-in IOC. For a unit test we can do this without an AppHost by just use a new `Container` in your `TestFixtureSetup`, e.g:
+If you're accessing `Db` from directly within your service implementation you're going to want to make use of a real DB given the [ADO.NET IDbConnection](http://msdn.microsoft.com/en-us/library/system.data.idbconnection.aspx) requires a lot of effort to mock. You can do this in the same way you would register your dependencies in ServiceStack itself, by using the built-in IOC. For a unit test we can do this without an AppHost by just use a new `Container` in your `OneTimeSetUp`, e.g:
 
 ### Test Setup
 

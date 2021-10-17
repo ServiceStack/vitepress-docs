@@ -11,11 +11,15 @@ Jupyter Commands lets you generate C# Jupyter Notebooks for calling ServiceStack
 
 All command line utils used are available in the latest [dotnet tool](/dotnet-tool) which can be installed from:
 
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x
+```
 
 Or if you had a previous version installed, update with:
 
-    $ dotnet tool update -g x
+```bash
+$ dotnet tool update -g x
+```
 
 ### Generate C# Jupyter Notebooks
 
@@ -34,7 +38,9 @@ Options:
 
 The same syntax for invoking APIs with the [Post Command HTTP Utils](/post-command) can also be used to generate C# Jupyter Notebooks, e.g:
 
-    $ x jupyter-csharp https://techstacks.io FindTechStacks "{Ids:[1,2,3],VendorName:'Google',Take:5}"
+```bash
+$ x jupyter-csharp https://techstacks.io FindTechStacks "{Ids:[1,2,3],VendorName:'Google',Take:5}"
+```
 
 Output:
 
@@ -42,7 +48,9 @@ Output:
 Saved to: techstacks.io-FindTechStacks.ipynb
 ```
 
-> Jupyter Notebooks can also be created with the API Explorer UI at [apps.servicestack.net](https://apps.servicestack.net).
+::: info
+Jupyter Notebooks can also be created with the API Explorer UI at [apps.servicestack.net](https://apps.servicestack.net)
+:::
 
 ## Setup Jupyter for C# locally
 
@@ -65,7 +73,7 @@ dotnet interactive jupyter install
 To verify these have been installed successfully, you can list the currently registered kernels using the command.
 
 ```bash
-jupyter kernelspec list
+$ jupyter kernelspec list
 ```
 
 This should list `.net-csharp` as one of the kernels which is what the C# notebooks will use.
@@ -75,7 +83,7 @@ This should list `.net-csharp` as one of the kernels which is what the C# notebo
 With everything setup, navigate to a local directory with your notebooks and run:
 
 ```bash
-jupyter-lab
+$ jupyter-lab
 ```
 
 The context of where this command is run from matter as JupyterLab will mount list files in the same directory is was run, so make sure your running the `jupyter-lab` command from where your notebooks are located or where you new notebooks to be saved.
@@ -85,7 +93,7 @@ The context of where this command is run from matter as JupyterLab will mount li
 From your notebook directory that JupyterLab is using, open a new command prompt/terminal and run:
 
 ```bash
-x jupyter-csharp https://covid-vac-watch.netcore.io QueryVaccinationRates
+$ x jupyter-csharp https://covid-vac-watch.netcore.io QueryVaccinationRates
 ```
 
 This will generate the file `covid_vac_watch.netcore.io-QueryVaccinationRates.ipynb` in that directory. This file has everything that is needed to call the `QueryVaccinationRates` service and display data in the response.

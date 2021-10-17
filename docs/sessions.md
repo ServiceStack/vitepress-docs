@@ -24,15 +24,11 @@ If you're interested in the implementation, all the source code for ServiceStack
 
 ## Can be used with any ICacheClient
 
-ServiceStack's implementation of Sessions are clean, in that they work with all of [ServiceStack's Caching Providers](/caching) and are simply pointers to POCOs in your Cache. An example of getting ServiceStack to use an in-memory cache:
-
-```cs
-container.Register<ICacheClient>(new MemoryCacheClient());
-```
+ServiceStack's implementation of Sessions are clean, in that they work with all of [ServiceStack's Caching Providers](/caching) and are simply pointers to POCOs in your Cache.
 
 ### Formatting of Keys used in Cache Providers
 
-For typed or Custom AuthSession the [key is](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.ServiceInterface/SessionFeature.cs#L64): 
+For typed or Custom AuthSession the key is: 
 
 ```
 urn:iauthsession:{sessionId}
@@ -45,6 +41,13 @@ sess:{sessionId}:{key}
 ```
 
 The general recommendation is to use typed sessions, which will give you type-safety benefits as well as being able to fetch your entire users session with a single cache call. If you use the dynamic/session bag then it will be a network call for each key accessed - although as caches are designed for fast-access, this isn't too much of a concern.
+
+In code `IRequest.GetSessionId()` returns the right `ss-id/ss-pid` for that request so you can programatically access the session key and session for a request directly from the registered cache with:
+
+```csharp
+var sessionKey = SessionFeature.GetSessionKey(httpReq.GetSessionId());
+var session = await httpReq.GetCacheClientAsync().GetAsync<IAuthSession>(sessionKey);
+```
 
 ### Auth with Request AuthProviders
 
