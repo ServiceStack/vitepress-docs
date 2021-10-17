@@ -17,7 +17,7 @@ can be beneficial to maintain a change history of when items were created, modif
 when using a VCS for our source code. Typically this means also employing "non destructive" approaches to system design like "Soft Deletes" 
 which you can declaratively implement with Auto CRUD.
 
-### Executable Crud Audit Events
+## Executable Crud Audit Events
 
 This feature tries to obtain some of the nice features of Event Sourcing but without the additional complexity by allowing you to 
 capture all CRUD operations in an executable log whilst still retaining your RDBMS as your master authority. 

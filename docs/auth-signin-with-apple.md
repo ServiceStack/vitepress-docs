@@ -36,8 +36,10 @@ As the elliptic curve algorithms required to integrate with Sign In with Apple r
 
 A quick way to can create a working project from scratch with your preferred configuration using the [mix tool](/mix-tool), e.g: 
 
-    $ mkdir web && cd web
-    $ x mix init auth-ext auth-db sqlite
+```bash
+$ mkdir web && cd web
+$ x mix init auth-ext auth-db sqlite
+```
 
 This creates an empty project, with Auth Enabled, adds the **ServiceStack.Extensions** NuGet package, registers OrmLite, SQLite and the `OrmLiteAuthRepository`.
 
@@ -56,7 +58,9 @@ Copy your Apple **Private Key** to your Apps **Content Folder** then configure y
 }
 ```
 
-> See JWT docs for how to [Generate a new Auth Key](/jwt-authprovider#generate-new-auth-key)
+::: info
+See JWT docs for how to [Generate a new Auth Key](/jwt-authprovider#generate-new-auth-key)
+:::
 
 When needing to support Mobile or Desktop Apps using OAuth Providers like Sign In with Apple, we recommend using it in combination with the [JWT Auth Provider](/jwt-authprovider) with `UseTokenCookie` enabled so the Authorization is returned in a stateless JWT Token that can be persisted for optimal Authentication across App restarts, e.g:
 
@@ -75,24 +79,30 @@ Plugins.Add(new AuthFeature(() => new CustomUserSession(),
 
 For a working example you can **clone** or **fork** the [/NetCoreApps/AppleSignIn](https://github.com/NetCoreApps/AppleSignIn) repo or alternatively download the latest master `.zip` with:
 
-    $ x download NetCoreApps/AppleSignIn
+```bash
+$ x download NetCoreApps/AppleSignIn
+```
 
 Then after updating **appsettings.json** with your iOS App's configuration, copying your Private Key into the `web` Content Folder you're all set to run your App:
 
-    $ dotnet run
+```bash
+$ dotnet run
+```
 
 #### Android Support
 
 To support Android we recommend using `dev.servicestack.com` which resolves to the `10.0.2.2` special IP in the Android Emulator that maps to `127.0.0.1` on your Host OS. To also be able to use it during development you'll need to add an entry in your OS's `hosts` file
 (e.g. `%SystemRoot%\System32\drivers\etc\hosts` for Windows or `/system/etc/hosts` on macOS/Linux):
 
-    127.0.0.1       dev.servicestack.com
+```
+127.0.0.1       dev.servicestack.com
+```
 
 If you don't need to support android you can use `local.servicestack.com` instead which resolves to `127.0.0.1`, please see [configuring localhost development dev certificate](/netcore-localhost-cert) for more info.
 
 Then you can view your App using the non-localhost domain name:
 
-    https://dev.servicestack.com:5001/
+ - https://dev.servicestack.com:5001/
 
 You can then use the [Embedded Login Page](/authentication-and-authorization#embedded-login-page-fallback) which renders the Sign In button for each of the registered OAuth providers in your `AuthFeature`:
 

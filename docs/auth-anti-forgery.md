@@ -32,4 +32,6 @@ public class AntiForgeryService : Service
 }
 ```
 
-> ASP.NET MVC's AntiForgery API is only available in the .NET Framework
+::: info
+ASP.NET MVC's AntiForgery API is only available in the .NET Framework
+:::

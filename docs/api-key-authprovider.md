@@ -55,11 +55,15 @@ to determine which API Key, Type and Environment was used.
 
 Using existing HTTP Functionality makes it simple and interoperable to use with any HTTP Client even command-line clients like curl where API Keys can be specified in the **Username** of HTTP Basic Auth:
 
-> curl https://api.stripe.com/v1/charges -u yDOr26HsxyhpuRB3qbG07qfCmDhqutnA:
+```bash
+$ curl https://api.stripe.com/v1/charges -u yDOr26HsxyhpuRB3qbG07qfCmDhqutnA:
+```
 
 Or as a HTTP Bearer Token in the **Authorization** HTTP Request Header:
 
-> curl https://api.stripe.com/v1/charges -H "Authorization: Bearer yDOr26HsxyhpuRB3qbG07qfCmDhqutnA"
+```bash
+$ curl https://api.stripe.com/v1/charges -H "Authorization: Bearer yDOr26HsxyhpuRB3qbG07qfCmDhqutnA"
+```
  
 Both of these methods are built into most HTTP Clients. Here are a few different ways which you can send them using ServiceStack's [.NET Service Clients](/csharp-client):
 
@@ -262,7 +266,9 @@ public interface IManageApiKeys
 }
 ```
 
-> This interface also defines what's required in order to implement API Keys support on a Custom AuthRepository.
+::: info
+This interface also defines what's required in order to implement API Keys support on a Custom AuthRepository
+:::
 
 For Auth Repositories which implement it, you can access the interface by resolving `IAuthRepository` from the IOC and casting it to the above interface, e.g:
 

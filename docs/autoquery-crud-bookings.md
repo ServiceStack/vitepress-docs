@@ -11,9 +11,11 @@ To see the rapid development of AutoQuery in action we've created a quick demo s
 
 All declarative functionality is accessible in ServiceStack Studio which is used to create new Employee & Manager Users, before signing in with each to hit the ground running and start entering new bookings using Studio's capability-based UI, with each change visible in its full **Audit History**.
 
-> YouTube: [youtu.be/XpHAaCTV7jE](https://youtu.be/XpHAaCTV7jE)
-
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/studio/bookings-splash.png)](https://youtu.be/XpHAaCTV7jE)
+
+::: info YouTube
+[youtu.be/XpHAaCTV7jE](https://youtu.be/XpHAaCTV7jE)
+:::
 
 ### New features in Studio
 
@@ -38,28 +40,38 @@ Using `IPatchDb<T>` Partial Updates are also beneficial in [crud audit logs](/au
 
 The quickest way to run the [Bookings AutoQuery Example](https://github.com/NetCoreApps/BookingsCrud) is to install the [app tool](/netcore-windows-desktop), download & run the repo:
 
-    $ app download NetCoreApps/BookingsCrud
-    $ cd BookingsCrud\Acme
-    $ dotnet run
+```bash
+$ app download NetCoreApps/BookingsCrud
+$ cd BookingsCrud\Acme
+$ dotnet run
+```
 
 ### Custom project from Scratch
 
 If you have different App requirements you can instead create a project from scratch that integrates with your existing preferred infrastructure - the [mix tool](/mix-tool) and ServiceStack's layered [Modular Startup](/modular-startup) configurations makes this a cinch, start with an empty `web` project:
 
-    $ app new web ProjectName
+```bash
+$ app new web ProjectName
+```
 
 Then mix in your desired features. E.g. In order for this project to be self-hosting it utilizes the embedded SQLite database, which we can configure along with configuration to enable popular Authentication providers and an RDBMS SQLite Auth Repository with:
 
-    $ app mix auth auth-db sqlite
+```bash
+$ app mix auth auth-db sqlite
+```
 
 But if you also wanted to enable the new [Sign in with Apple](/auth-signin-with-apple) and use SQL Server you'll instead run:
 
-    $ app mix auth-ext auth-db sqlserver
+```bash
+$ app mix auth-ext auth-db sqlserver
+```
 
 You can view all DB and Auth options available by searching for available layered gist configurations by tag:
 
-    $ app mix [db]
-    $ app mix [auth]
+```bash
+$ app mix [db]
+$ app mix [auth]
+```
 
 Typically the only configuration that needs updating is your DB connection string in [Configure.Db.cs](https://github.com/NetCoreApps/BookingsCrud/blob/main/Acme/Configure.Db.cs), in this case it's changed to use a persistent SQLite DB:
 
@@ -172,8 +184,8 @@ public class DeleteBooking : IDeleteDb<Booking>, IReturnVoid
 
 After defining your AutoQuery APIs, start your App then you can use [ServiceStack Studio](/studio) UI to manage Bookings and Users which can be launched from a URL:
 
-### app://studio
+<h3><a href="app://studio">app://studio</a></h3>
 
-> If your browser is open, the quickest way to launch it is just to type `app://studio` in your URL bar
+If your browser is open, the quickest way to launch it is just to type `app://studio` in your URL bar
 
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/release-notes/v5.9/studio-home.png)](https://youtu.be/2FFRLxs7orU)

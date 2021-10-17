@@ -26,17 +26,23 @@ If you're interested in the implementation, all the source code for ServiceStack
 
 ServiceStack's implementation of Sessions are clean, in that they work with all of [ServiceStack's Caching Providers](/caching) and are simply pointers to POCOs in your Cache. An example of getting ServiceStack to use an in-memory cache:
 
-    container.Register<ICacheClient>(new MemoryCacheClient());
+```cs
+container.Register<ICacheClient>(new MemoryCacheClient());
+```
 
 ### Formatting of Keys used in Cache Providers
 
 For typed or Custom AuthSession the [key is](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.ServiceInterface/SessionFeature.cs#L64): 
 
-    urn:iauthsession:{sessionId}
+```
+urn:iauthsession:{sessionId}
+```
 
 When using un-typed **Session Bag** the key is:
 
-    sess:{sessionId}:{key}
+```
+sess:{sessionId}:{key}
+```
 
 The general recommendation is to use typed sessions, which will give you type-safety benefits as well as being able to fetch your entire users session with a single cache call. If you use the dynamic/session bag then it will be a network call for each key accessed - although as caches are designed for fast-access, this isn't too much of a concern.
 
@@ -68,9 +74,13 @@ public class CustomUserSession : AuthUserSession
 
 By inheriting [AuthUserSession](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack/AuthUserSession.cs) you're able to keep all the users session together in 1 POCO, which allows you to access everything in 1 cache read or write.
 
-> When inheriting from `AuthUserSession` you will need to annotate your properties with `[DataMember]` as AuthUserSession is a DataContract class.
+::: info
+When inheriting from `AuthUserSession` you will need to annotate your properties with `[DataMember]` as AuthUserSession is a DataContract class
+:::
 
-> When using JWT and `UseTokenCookie`, sessions are not saved in cache, instead they are encaptulated in the stateless `ss-tok` cookie. JWT only keeps data essential to authenication, any additional data should be resolved only as needed. Custom claims can be added using `PopulateSessionFilter`/`CreatePayloadFilter`. See [JWT docs](https://docs.servicestack.net/jwt-authprovider#limit-to-essential-info) for more info.
+::: info
+When using JWT and `UseTokenCookie`, sessions are not saved in cache, instead they are encapsulated in the stateless `ss-tok` cookie. JWT only keeps data essential to authentication, any additional data should be resolved only as needed. Custom claims can be added using `PopulateSessionFilter`/`CreatePayloadFilter`. See [JWT docs](https://docs.servicestack.net/jwt-authprovider#limit-to-essential-info) for more info
+:::
 
 To tell ServiceStack to use your Custom Typed Session instead, register it in the `AuthFeature` plugin:
 
@@ -444,7 +454,9 @@ You can now make a Session-enabled request with HTTP Headers instead of Cookies.
 
 ServiceStack Sessions are just serialized POCO's stored in the Registered `ICacheClient` at the following key:
 
-    urn:iauthsession:{SessionId}
+```
+urn:iauthsession:{SessionId}
+```
 
 Where `{SessionId}` is either the users `ss-id` or `ss-pid` cookie depending on whether the user was authenticated with `RememberMe=true` which instructs ServiceStack to save the session against the `ss-pid` permanent cookie - this preference is stored in the `ss-opt=perm` cookie.
 

@@ -49,11 +49,15 @@ If you're interested in implementing a User Management feature in your own Apps 
 The easiest way to configure a User Auth Repository in your [Modular Startup](/modular-startup) App that new ASP.NET Core templates support
 is to [mix them in](/mix-tool#composable-features), e.g. you can configure to use an OrmLiteAuthRepository using SQL Server with:
 
-    $ x mix auth-db sqlserver
+```bash
+$ x mix auth-db sqlserver
+```
 
 You can view other Auth Repository "mix ins" available with:
 
-    $ x mix [auth]
+```bash
+$ x mix [auth]
+```
 
 Which displays the current list of available Auth Repositories:
 
@@ -73,7 +77,9 @@ Results matching tag [auth]:
 
 and search the available RDBMS's and NoSQL Data Stores:
 
-    $ x mix [db]
+```bash
+$ x mix [db]
+```
 
 That can be easily configured by a mix in:
 

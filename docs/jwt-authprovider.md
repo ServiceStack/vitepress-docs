@@ -368,11 +368,13 @@ When turning on encryption, tokens are instead created following the
 [JSON Web Encryption (JWE)](https://tools.ietf.org/html/rfc7516#section-3) standard where they'll be
 encoded in the 5-part [JWE Compact Serialization](https://tools.ietf.org/html/rfc7516#section-3.1) format:
 
-    BASE64URL(UTF8(JWE Protected Header)) || '.' ||
-    BASE64URL(JWE Encrypted Key)          || '.' ||
-    BASE64URL(JWE Initialization Vector)  || '.' ||
-    BASE64URL(JWE Ciphertext)             || '.' ||
-    BASE64URL(JWE Authentication Tag)
+```
+BASE64URL(UTF8(JWE Protected Header)) || '.' ||
+BASE64URL(JWE Encrypted Key)          || '.' ||
+BASE64URL(JWE Initialization Vector)  || '.' ||
+BASE64URL(JWE Ciphertext)             || '.' ||
+BASE64URL(JWE Authentication Tag)
+```
 
 JwtAuthProvider's JWE implementation uses RSAES OAEP for Key Encryption and AES/128/CBC HMAC SHA256 for
 Content Encryption, closely following 
@@ -968,9 +970,11 @@ This will include both audiences in new JWT's as a JSON Array (if only 1 audienc
 
 When validating a JWT with multiple audiences it only needs to match a single Audience configured with the `JwtAuthProvider`, e.g given the above configuration users that authenticate with a JWT containing:
 
-    JWT[aud] = null           //= Valid: No Audience specified
-    JWT[aud] = admin          //= NOT Valid: Wrong Audience specified
-    JWT[aud] = [search,admin] //= Valid: Partial Audience match
+```
+JWT[aud] = null           //= Valid: No Audience specified
+JWT[aud] = admin          //= NOT Valid: Wrong Audience specified
+JWT[aud] = [search,admin] //= Valid: Partial Audience match
+```
 
 ## Adhoc JWT APIs
 

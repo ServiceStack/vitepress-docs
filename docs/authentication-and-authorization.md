@@ -316,11 +316,15 @@ Authentication, Registration and protected Services.
 Most of [ServiceStack's Project Templates](/dotnet-new) are configured with Auth out-of-the-box or can be easily added to an empty [web](https://github.com/NetCoreTemplates/web)
 project template:
 
-    $ x new web ProjectName
+```bash
+$ x new web ProjectName
+```
 
 By [mixing in your desired auth](/mix-tool#mix-in-auth-repository) features, e.g. to configure your App to enable auth & maintain in SQL Server run:
 
-    $ x mix auth auth-db sqlserver
+```bash
+$ x mix auth auth-db sqlserver
+```
 
 Checkout the [Bookings CRUD YouTube demo](https://youtu.be/XpHAaCTV7jE) for a quick preview of this in action.
 
@@ -588,7 +592,9 @@ var response = client.Post(new Authenticate {
 });
 ```
 
-> Most OAuth Providers only require sending an `AccessToken` with Twitter being the exception which also requires sending an `AccessTokenSecret`.
+::: info
+Most OAuth Providers only require sending an `AccessToken` with Twitter being the exception which also requires sending an `AccessTokenSecret`
+:::
 
 ### User Sessions Cache
 
@@ -603,13 +609,15 @@ container.Register<ICacheClient>(new MemoryCacheClient());
 //    new RedisManagerPool("localhost:6379"));
 ```
 
-> Tip: If you've got multiple servers which run the same ServiceStack service, you can use Redis to share the sessions between these servers.
-
-***
+::: info Tip
+If you've got multiple servers which run the same ServiceStack service, you can use Redis to share the sessions between these servers
+:::
 
 Please look at [SocialBootstrapApi](https://github.com/ServiceStack/SocialBootstrapApi/tree/master/src/SocialBootstrapApi) to get a full example.
 
-> Of course you can also implement your own - custom - authentication mechanism. You aren't forced to use the built-in ServiceStack auth mechanism.
+::: info 
+Of course you can also implement your own - custom - authentication mechanism. You aren't forced to use the built-in ServiceStack auth mechanism
+:::
 
 ## The `Authenticate` attribute
 
@@ -687,7 +695,9 @@ public class Secured
 
 Normally ServiceStack calls the method `bool HasPermission(string permission)` in [IAuthSession](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.ServiceInterface/Auth/IAuthSession.cs). This method checks if the list `List<string> Permissions` in [IAuthSession](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.ServiceInterface/Auth/IAuthSession.cs) contains the required permission.
 
-> [IAuthSession](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.ServiceInterface/Auth/IAuthSession.cs) is stored in a cache client as explained above
+::: info
+[IAuthSession](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.ServiceInterface/Auth/IAuthSession.cs) is stored in a cache client as explained above
+:::
 
 You can fill this list in the method `OnAuthenticated` you've overridden in the first part of this tutorial.
 
@@ -993,7 +1003,9 @@ public class MyAdminServices : Service
 }
 ```
 
-> Your Services can use the new `Request.IsInProcessRequest()` to identify Services that were executed in-process.
+::: info
+Your Services can use the new `Request.IsInProcessRequest()` to identify Services that were executed in-process
+:::
 
 ### Custom User Sessions using JWT Tokens
 
@@ -1014,8 +1026,9 @@ public interface IAuthMetadataProvider
 }
 ```
 
-> To override with a custom implementation, register `IAuthMetadataProvider` in the IOC
-
+::: info
+To override with a custom implementation, register `IAuthMetadataProvider` in the IOC
+:::
 
 ### Generate New Session Cookies on Authentication 
 

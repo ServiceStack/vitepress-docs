@@ -5,7 +5,7 @@ title: OpenId 2.0 Auth Providers
 
 Contained in the [ServiceStack.Authentication.OpenId](http://nuget.org/packages/ServiceStack.Authentication.OpenId) NuGet package is ServiceStack's support of OpenId 2.0 Authentication. This allows ServiceStack-enabled ASP.NET / MVC sites and web services to authenticate and accept registration from any OpenId 2.0 Authentication provider. Like most .NET OpenId libraries, we leverage the de-facto and excellent [DotNetOpenAuth](http://www.dotnetopenauth.net/) library to enable our OpenId and OAuth2 support. 
 
-### Install via NuGet
+## Install via NuGet
 
 ::: nuget
 `<PackageReference Include="ServiceStack.Authentication.OpenId" Version="5.*" />`

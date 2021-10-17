@@ -41,9 +41,11 @@ AutoQuery Data's Open Provider model supports multiple back-end data sources. Th
 
 If you're just getting started AutoQuery we also recommend using [ServiceStack Studio](/studio) Desktop App which provides an instant UI to quickly browse and query all your AutoQuery Services that provides a fast way to explore AutoQuery features and construct AutoQuery requests through a Simple UI.
 
-> YouTube: [youtu.be/2FFRLxs7orU](https://youtu.be/2FFRLxs7orU)
-
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/release-notes/v5.9/studio-home.png)](https://youtu.be/2FFRLxs7orU)
+
+::: info YouTube 
+[youtu.be/2FFRLxs7orU](https://youtu.be/2FFRLxs7orU)
+:::
 
 # AutoQuery Examples
 
@@ -55,7 +57,7 @@ If you're just getting started AutoQuery we also recommend using [ServiceStack S
 
 ## [Northwind](https://github.com/ServiceStackApps/Northwind)
 
-> Northwind database viewer, showing how to easily expose read and cached view services of an internal dataset with ServiceStack + OrmLite
+Northwind database viewer, showing how to easily expose read and cached view services of an internal dataset with ServiceStack + OrmLite
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/livedemos/northwind.png)](http://northwind.netcore.io)
 
@@ -67,7 +69,7 @@ If you're just getting started AutoQuery we also recommend using [ServiceStack S
 
 ## [StackApis](https://github.com/ServiceStackApps/StackApis)
 
-> AngularJS Single Page App leveraging AutoQuery in <50 lines of JavaScript + 1 AutoQuery DTO 
+AngularJS Single Page App leveraging AutoQuery in <50 lines of JavaScript + 1 AutoQuery DTO 
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/livedemos/stackapis.png)](http://stackapis.netcore.io)
 

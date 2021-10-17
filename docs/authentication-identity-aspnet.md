@@ -9,7 +9,9 @@ title: Using ASP.NET Identity Auth in ServiceStack
 
 Create new `mvcidentity` project with:
 
-    $ x new mvcidentity ProjectName
+```bash
+$ x new mvcidentity ProjectName
+```
 
 [mvcidentity](https://github.com/NetCoreTemplates/mvcidentity) is essentially the same App with the same functionality as [mvcauth](https://github.com/NetCoreTemplates/mvcauth)
 but rewritten to use ASP.NET Identity Auth instead of ServiceStack Auth, including the registration options which are handled implemented
@@ -160,7 +162,9 @@ new NetCoreIdentityAuthProvider(AppSettings)
 },
 ```
 
-> Alternatively use `req.GetCacheClient()` if you want to use your registered `ICacheClient` provider instead.
+::: info
+Alternatively use `req.GetCacheClient()` if you want to use your registered `ICacheClient` provider instead
+:::
 
 ### Propagating Extended User Info
 

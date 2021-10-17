@@ -46,8 +46,10 @@ create, change and delete DynamoDB Services without regard for Indexes where it 
 ready to deploy to production, go back and analyze all remaining queries your System relies on at the end 
 then re-create tables with the appropriate indexes so that all App queries are efficiently querying an index.
 
-> When needed you can specify `.DynamoDbSource<T>(allowScans:false)` to disable anyone from executing SCAN 
-requests when deployed to production.
+::: info
+When needed you can specify `.DynamoDbSource<T>(allowScans:false)` to disable anyone from executing SCAN 
+requests when deployed to production
+:::
 
 ### Download
 
