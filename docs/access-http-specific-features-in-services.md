@@ -88,6 +88,10 @@ Although working in a clean-room can be ideal from re-usability and testability 
 
 Just like using built-in Funq IOC container, the way to tell ServiceStack to inject the request context is by implementing the [IRequiresRequest](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/Web/IRequiresRequest.cs) interface which will get the [IRequest](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/Web/IRequest.cs) injected before each request.
 
-> **Note:** ServiceStack's Convenient `Service` base class already implements `IRequiresRequest` which allows you to access the `IRequest` with `base.Request` and the HTTP Response with `base.Response`.
+::: info
+ServiceStack's Convenient `Service` base class already implements `IRequiresRequest` which allows you to access the `IRequest` with `base.Request` and the HTTP Response with `base.Response`
+:::
 
-> **Note:** To return a customized HTTP Response, e.g. set Response Cookies or Headers, return the [HttpResult](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack/HttpResult.cs) object.
+::: info
+To return a customized HTTP Response, e.g. set Response Cookies or Headers, return the [HttpResult](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack/HttpResult.cs) object
+:::

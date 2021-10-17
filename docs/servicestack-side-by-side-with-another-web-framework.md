@@ -52,7 +52,9 @@ Configuration for also running on Mono / IIS 6:
 </configuration>
 ```
 
-> **Note:** Due to limitations in IIS 6 - the `/custompath` must end with `.ashx`, e.g: `path="api.ashx"`
+::: info
+Due to limitations in IIS 6 - the `/custompath` must end with `.ashx`, e.g: `path="api.ashx"`
+:::
 
 You also need to configure the root path in your AppHost.
 
@@ -77,7 +79,7 @@ See [mvc-netfx](https://github.com/NetFrameworkTemplates/mvc-netfx) for a workin
 //WebApiConfig.Register(GlobalConfiguration.Configuration);
 ```
 
-> **Note:** If you used Nuget to install the bits, remove the original handler from the web.config system.webserver node e.g: 
+If you used Nuget to install the bits, remove the original handler from the web.config system.webserver node e.g: 
 
 ```xml
 <add path="*" name="ServiceStack.Factory"

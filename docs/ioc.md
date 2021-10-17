@@ -88,13 +88,10 @@ can return an instance:
 container.Register(new MyType(c.Resolve<IDependency>(), connectionString));
 ```
 
-> **Note:** When using the methods above, the properties and the constructor of the registered type aren't 
-auto-wired (ie **the properties and the constructor are not injected**). You would need to do that manually 
-like that:
-
-```csharp
-container.Register<T>(c => new Foo(c.Resolve<Some>(), c.Resolve<Other>(), c.Resolve<Dependencies>());
-```
+::: info
+When using the methods above, the properties and the constructor of the registered type aren't 
+auto-wired (ie **the properties and the constructor are not injected**)
+:::
 
 ## Object lifetime
 
@@ -289,8 +286,9 @@ container.Adapter = new StructureMapContainerAdapter();
 ObjectFactory.Inject(typeof(IFoo), new Foo());
 ```
 
-> **Note:** Due to a behavior of StructureMap, you need your `AppHost` declare as `internal`, eg: 
-`internal class AppHost : AppHostBase`
+::: info
+Due to a behavior of StructureMap, you need your `AppHost` declare as `internal`, eg: `internal class AppHost : AppHostBase`
+:::
 
 ### Use Windsor
 

@@ -3,10 +3,6 @@ slug: create-webservice-from-scratch
 title: Creating a WebService from scratch
 ---
 
-> Fastest way to get started is to [create a project with ServiceStack's VS.NET Templates](/create-your-first-webservice).
-In addition to this, there are a number of great walk-thru's into ServiceStack in the 
-[Community Resources](/create-your-first-webservice#community-resources) section below. Like this [detailed walk-thru with Screenshots](http://nilsnaegele.com/codeedge/servicestack.html) by [@nilsnagele](https://twitter.com/nilsnagele).
-
 ## Step 1: Create an application
 
 ServiceStack can be hosted in a few ways: console application, windows service, ASP.NET Web Form or MVC in IIS, etc.
@@ -14,13 +10,16 @@ ServiceStack can be hosted in a few ways: console application, windows service, 
 For this tutorial, an empty ASP.NET Web Application (non MVC) is assumed.
 
 ## Step 2: Install ServiceStack
+
 To install ServiceStack into your application, you have two options to get the binaries:
 
-### NuGet
-![Install-Pacakage ServiceStack](http://servicestack.net/img/nuget-servicestack.png)
+::: nuget
+`<PackageReference Include="ServiceStack" Version="5.12.0" />`
+:::
 
-> **Tip:** You can find an explanation about all NuGet packages which ServiceStack offers [here](/nuget). The package above only adds the binaries, but there also exist some packages which add the required configurations etc.
-
+::: info Tip
+You can find an explanation about all NuGet packages which ServiceStack offers [here](/nuget). The package above only adds the binaries, but there also exist some packages which add the required configurations etc
+:::
 
 ### Register ServiceStack Handler
 
@@ -47,10 +46,13 @@ If you want to host ServiceStack at root path (`/`), you should use this configu
 </system.webServer>
 ```
 
-> **Tip:** If you want to host your webservice on a custom path to avoid conflicts with another web framework (eg ASP.Net MVC), see [Run ServiceStack side-by-side with another web framework](/servicestack-side-by-side-with-another-web-framework).
+::: info Tip
+If you want to host your webservice on a custom path to avoid conflicts with another web framework (eg ASP.Net MVC), see [Run ServiceStack side-by-side with another web framework](/servicestack-side-by-side-with-another-web-framework)
+:::
 
-> **Note:** Due to limitations in IIS 6 - host [ServiceStack at a /custompath](/mvc-integration#enabling-servicestack-in-webconfig) which must end with `.ashx`, e.g: `path="api.ashx"`
-
+::: warning
+Due to limitations in IIS 6 - host [ServiceStack at a /custompath](/mvc-integration#enabling-servicestack-in-webconfig) which must end with `.ashx`, e.g: `path="api.ashx"`
+:::
 
 ## Step 3: Create your first webservice
 
@@ -132,7 +134,9 @@ As you can see, you have created an `AppHost`. Mainly all configuration related 
 
 If you are using MVC4 then you need to comment line in global.asax.cs to disable WebApi 
 
-    //WebApiConfig.Register(GlobalConfiguration.Configuration);
+```cs
+//WebApiConfig.Register(GlobalConfiguration.Configuration);
+```
 
 ## ServiceStack is now Ready!
 
@@ -142,7 +146,9 @@ If everything is configured correctly you can go to `http://<root_path>/metadata
 
 ![Metadata page](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/wikis/metadata-chat.png)
 
-> **Tip:** In the screenshot the root path is `http://localhost/ServiceStack.Hello/servicestack`. On your development box the root path might be something like `http://localhost:60335` (ie the URL on which your webservice is hosted).
+::: info Tip
+In the screenshot the root path is `http://localhost/ServiceStack.Hello/servicestack`. On your development box the root path might be something like `http://localhost:60335` (ie the URL on which your webservice is hosted).
+:::
 
 Let's access the HelloWorld service you created in your browser, so write the following URL in your address bar:
 
