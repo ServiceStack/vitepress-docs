@@ -5,21 +5,29 @@ title: gRPC protoc Dart Client
 
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/grpc/dart.png)](https://youtu.be/fDARSMNlt50)
 
-> YouTube: [youtu.be/fDARSMNlt50](https://youtu.be/fDARSMNlt50)
+::: info YouTube
+[youtu.be/fDARSMNlt50](https://youtu.be/fDARSMNlt50)
+:::
 
 ## Dart protoc generated GrpcServiceClient TodoWorld Example
 
 Install [x dotnet tool](https://docs.servicestack.net/dotnet-tool):
     
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
     
 Install [stagehand](https://pub.dev/packages/stagehand):
 
-    $ pub global activate stagehand
+```bash
+$ pub global activate stagehand
+```
 
 Create a new Dart Console App:
 
-    $ stagehand console-full
+```bash
+$ stagehand console-full
+```
 
 Add required dependencies to **pubspec.yaml**:
 
@@ -33,13 +41,17 @@ dependencies:
 
 Install dependencies:
 
-    $ pub get
+```bash
+$ pub get
+```
     
 ### Generate protoc Dart gRPC Client
 
 Add protoc generated TodoWorld DTOs and gRPC GrpcServiceClient to `lib/` folder:
 
-    $ x proto-dart https://todoworld.servicestack.net -out lib
+```bash
+$ x proto-dart https://todoworld.servicestack.net -out lib
+```
 
 ### Dart protoc gRPC insecure Example
 
@@ -65,17 +77,23 @@ void main(List<String> args) async {
 
 Override `bin/main.dart` with the above Dart Example: 
 
-    $ x mix todoworld-dart -out bin
+```bash
+$ x mix todoworld-dart -out bin
+```
 
 Run example:
 
-    $ dart run
+```bash
+$ dart run
+```
 
 ### Dart protoc gRPC SSL Example
 
 Download TodoWorld SSL Certificate used for its gRPC HTTP/2 Services:
 
-    $ x get https://todoworld.servicestack.net/grpc.crt 
+```bash
+$ x get https://todoworld.servicestack.net/grpc.crt
+```
 
 Use certificate when initializing `GrpcServicesClient`:
 
@@ -101,11 +119,15 @@ void main(List<String> args) async {
 
 Override `bin/main.dart` with the above Dart Example: 
 
-    $ x mix todoworld-dart-ssl -out bin
+```bash
+$ x mix todoworld-dart-ssl -out bin
+```
 
 Run example:
 
-    $ dart run
+```bash
+$ dart run
+```
 
 ### Dart Local Development gRPC SSL CRUD Example
 
@@ -216,18 +238,6 @@ var authClient = createClient(options:CallOptions(metadata:{ 'Authorization': 'B
 var response = await authClient.getHelloSecure(HelloSecure()..name = 'Authenticated gRPC Dart!');
 print(response.result);
 ```
-
-### Downloading and generating protobuf-net/bcl.proto
-
-Depending on what Types are used in Server DTOs will determine whether its generated proto will include a reference to 
-[protobuf-net/bcl.proto](https://github.com/protobuf-net/protobuf-net/blob/master/src/Tools/bcl.proto). 
-
-If it is you can download and generate the protoc Types using the same dotnet tools, e.g:
-
-    $ x mix bcl.proto -out lib
-    $ x proto-dart lib\protobuf-net -out lib\protobuf-net
-
-> Ideally this will no longer be needed in a [future version of protobuf-net.Grpc](https://github.com/protobuf-net/protobuf-net.Grpc/pull/41#issuecomment-560279357)
 
 Refer to [/src/clients/dart](https://github.com/NetCoreApps/todo-world/tree/master/src/clients/dart)
 for a complete example project.

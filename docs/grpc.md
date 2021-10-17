@@ -17,7 +17,9 @@ in developing gRPC Services on the Server, ServiceStack also offers a
 The easiest way to get started is to start from a new [grpc](https://github.com/NetCoreTemplates/grpc) template that's a copy of the 
 empty [web](https://github.com/NetCoreTemplates/web) project template pre-configured with gRPC support:
 
-    $ x new grpc MyGrpcProject
+```bash
+$ x new grpc MyGrpcProject
+```
 
 ### ServiceStack Services are gRPC Services
 
@@ -68,7 +70,9 @@ public class TodoServices : Service
 As gRPC mandates a static service contract (i.e. only returns the same Response DTO Type) Request DTOs are required to 
 adhere to ServiceStack best practices and be annotated with either `IReturn<TResponse>` or `IReturnVoid` interfaces. 
 
-> Only services annotated with `IReturn*` interfaces and member indexes (as above) will be registered as gRPC Services.
+::: info
+Only services annotated with `IReturn*` interfaces and member indexes (as above) will be registered as gRPC Services
+:::
 
 Trying to call a Service without these annotations will result in an error that the Service you're trying to call doesn't exist.
 
@@ -77,13 +81,17 @@ Trying to call a Service without these annotations will result in an error that 
 By default this Service is available in [all of ServiceStack's supported formats](/formats), to also make it available via ASP.NET Core's
 gRPC Endpoints you can [mix it](/mix-tool) into [Modular Startup](/modular-startup) projects with:
 
-    $ x mix grpc
+```bash
+$ x mix grpc
+```
 
 Which applies this [modular ConfigureGrpc configuration](https://gist.github.com/gistlyn/656c29a7257dc374d22d4aa709ba7244) to your project.
 
 Or to manually configure gRPC support, add a reference to the .NET Core 3 **ServiceStack.Extensions** NuGet package:
 
-    $ dotnet add package ServiceStack.Extensions
+```bash
+$ dotnet add package ServiceStack.Extensions
+```
 
 Add the necessary dependencies:
 
@@ -132,9 +140,7 @@ via ASP.NET's gRPC Endpoints and ServiceStack's HTTP and MQ Endpoints alleviatin
 across multiple implementations, or worse, taking the leap to develop gRPC-only services and shutting out clients and environments that
 can't make use of gRPC HTTP/2 endpoints.
 
-ServiceStack enables the best of both worlds, you can take the risk-free step of making your Services available via highly efficient and performant
-gRPC HTTP/2 Services for clients and environments that can take advantage of it whilst (in the same App) continuing to make them available via the 
-ubiquitous JSON HTTP/1.1 APIs or in any of their [preferred formats](/formats).
+ServiceStack enables the best of both worlds, you can take the risk-free step of making your Services available via highly efficient and performant gRPC HTTP/2 Services for clients and environments that can take advantage of it whilst (in the same App) continuing to make them available via the ubiquitous JSON HTTP/1.1 APIs or in any of their [preferred formats](/formats).
 
 ## gRPC code-first Development
 
@@ -250,7 +256,9 @@ additional annotations or interfaces that can allow for a richer client developm
 An alternative to sharing your **ServiceModel.dll** with .NET clients is for them to use [Add ServiceStack Reference](/add-servicestack-reference)
 to generate .NET DTOs locally which they can easily do using the [x dotnet tool](/dotnet-tool), e.g:
 
-    $ x csharp https://todoworld.servicestack.net
+```bash
+$ x csharp https://todoworld.servicestack.net
+```
 
 This offers the same behavior as sharing **ServiceModel.dll** binary where they can be used in any 
 [.NET Generic Service Client](/csharp-client#built-in-clients), but also allows for clients to 
@@ -264,7 +272,9 @@ for whom previously there was no planned gRPC support.
 
 The new `GrpcServiceClient` can be used in **.NET Standard 2.1** and **.NET Core 3** .NET Clients by adding a reference to:
 
-    $ dotnet add package ServiceStack.GrpcClient
+```bash
+$ dotnet add package ServiceStack.GrpcClient
+```
 
 This is a full-featured generic Service Client that provides a nicer and cleaner API than what's possible with `protoc` generated clients
 and contains most of the built-in functionality of other [C#/.NET Typed Generic Clients](/csharp-client), namely:
@@ -337,7 +347,9 @@ By continuing to develop your ServiceStack Services as a good HTTP First citizen
 oriented around resources, a lot of the rich HTTP semantics is preserved where each Verb remains accessible where its prefixed at the start 
 of the rpc Method name:
 
-    rpc [Verb][RequestType](RequestType) returns (ResponseType) {}
+```proto
+rpc [Verb][RequestType](RequestType) returns (ResponseType) {}
+```
 
 The original HTTP Status Code remains accessible from the **httpstatus** gRPC Metadata Response Header that continues to be populated
 in the `WebServiceException.StatusCode` thrown in `GrpcServiceClient` or `protoc` clients configured with the ServiceStack Interceptor.
@@ -449,9 +461,7 @@ Sub Type properties, e.g:
 var response = await client.GetAsync(new QueryRockstars { Age = 27, Include = "Total" });
 ```
 
-Unfortunately usage of inheritance is [currently not compatible with protoc clients](https://github.com/protobuf-net/protobuf-net.Grpc/issues/50) 
-so in order to call AutoQuery Services from protoc generated clients you can utilize **Dynamic gRPC Requests** to execute any Service from an 
-loosely-typed string dictionary.
+Unfortunately usage of inheritance is [currently not compatible with protoc clients](https://github.com/protobuf-net/protobuf-net.Grpc/issues/50) so in order to call AutoQuery Services from protoc generated clients you can utilize **Dynamic gRPC Requests** to execute any Service from an loosely-typed string dictionary.
 
 ### Dynamic gRPC Requests
 
@@ -483,11 +493,15 @@ public class QueryRockstars : QueryDb<Rockstar>
 
 This generates an additional Service that uses a `DynamicRequest` DTO input, in the format:
 
-    rpc [Verb]Dynamic[RequestType](DynamicRequest) returns (ResponseType) {}
+```
+rpc [Verb]Dynamic[RequestType](DynamicRequest) returns (ResponseType) {}
+```
 
 For the `QueryRockstars` above, it generates:
 
-    rpc GetDynamicQueryRockstars(DynamicRequest) returns (QueryResponse_Rockstar) {}
+```proto
+rpc GetDynamicQueryRockstars(DynamicRequest) returns (QueryResponse_Rockstar) {}
+```
 
 Dynamic Requests are useful when you'd prefer to be able to populate Requests from an untyped string Dictionary such as implementing
 a [dynamic Query Builder UI](https://github.com/ServiceStack/Admin) which would require significantly less effort and boilerplate 
@@ -586,7 +600,9 @@ interrupted service.
 As a first class supported communication channel clients can instead leverage gRPC's library infrastructure which is perfectly suited for
 streaming real-time Server Events over an efficient persistent HTTP/2 channel that's available from the `StreamServerEvents` gRPC Service:
 
-    rpc ServerStreamServerEvents(StreamServerEvents) returns (stream StreamServerEventsResponse) {}
+```proto
+rpc ServerStreamServerEvents(StreamServerEvents) returns (stream StreamServerEventsResponse) {}
+```
 
 Which gives all `protoc` supported languages a Typed Client for consuming your [Server Events](/server-events).
 
@@ -594,8 +610,7 @@ Which gives all `protoc` supported languages a Typed Client for consuming your [
 
 When using the generic `GrpcServiceClient` you're able to take advantage of C#'s 8 new `await foreach` syntax sugar for consuming gRPC Server Streams.
 
-Its usage is analogous to all Server Events clients where your initial connection contains the channels you want to subscribe to receive notifications
-from, e.g:
+Its usage is analogous to all Server Events clients where your initial connection contains the channels you want to subscribe to receive notifications from, e.g:
 
 ```csharp
 var stream = client.StreamAsync(new StreamServerEvents {
@@ -636,11 +651,13 @@ await foreach (var msg in stream)
 If connected whilst running the [TodoWorld CRUD Example](https://todoworld.servicestack.net/#user-content-c-local-development-grpc-ssl-crud-example)
 this stream will output something similar to:
 
-    EVENT cmd.onConnect []: #-1 user1
-    EVENT cmd.onJoin [todos]: #-1 user1
-    EVENT todos.create [todos]: #1 ServiceStack
-    EVENT todos.update [todos]: #1 gRPC
-    EVENT todos.delete [todos]: 1
+```
+EVENT cmd.onConnect []: #-1 user1
+EVENT cmd.onJoin [todos]: #-1 user1
+EVENT todos.create [todos]: #1 ServiceStack
+EVENT todos.update [todos]: #1 gRPC
+EVENT todos.delete [todos]: 1
+```
 
 #### protoc Dart Streams
 
@@ -717,7 +734,9 @@ Plugins.Add(new GrpcFeature(App) {
 });
 ```
 
-> Or remove the pre-registered `StreamFileService` and `SubscribeServerEventsService` services to disable them
+::: info
+Or remove the pre-registered `StreamFileService` and `SubscribeServerEventsService` services to disable them
+:::
 
 Clients can use `StreamFiles` to efficiently download multiple files over a single gRPC HTTP/2 Server Stream connection in their preferred order:
 
@@ -818,10 +837,12 @@ clients may provide a more appealing option although it won't have a clean, vers
 If wanting to evaluate using a gRPC Web Proxy you can use generate different TypeScript and JavaScript clients
 using the commands below:
 
-    $ x proto-ts <url>             # TypeScript + gRPC Web Text
-    $ x proto-ts-binary <url>      # TypeScript + gRPC Web Binary
-    $ x proto-js-closure <url>     # Google Closure + gRPC Web Text
-    $ x proto-js-commonjs <url>    # Common JS + gRPC Web Text
+```bash
+$ x proto-ts <url>             # TypeScript + gRPC Web Text
+$ x proto-ts-binary <url>      # TypeScript + gRPC Web Binary
+$ x proto-js-closure <url>     # Google Closure + gRPC Web Text
+$ x proto-js-commonjs <url>    # Common JS + gRPC Web Text
+```
 
 Or if preferred you can use the online UI or HTTP API for generating Protocol Buffers and gRPC client proxies at 
 [grpc.servicestack.net](https://grpc.servicestack.net).
@@ -932,7 +953,7 @@ public static class ProtoOption
 
 ## Public gRPC protoc Service and UI
 
-> [grpc.servicestack.net](https://grpc.servicestack.net)
+### [grpc.servicestack.net](https://grpc.servicestack.net)
 
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/grpc/protoc-api.png)](https://grpc.servicestack.net)
 
@@ -945,27 +966,37 @@ client configure and maintain their build system to use protoc tooling.
 
 Local **.proto** files aren't necessary for ServiceStack gRPC Services with gRPC clients only needing a URL, e.g:
 
-    $ x proto-<lang> https://todoworld.servicestack.net
+```bash
+$ x proto-<lang> https://todoworld.servicestack.net
+```
 
 ### From .proto descriptors
 
 Other clients can generate protoc clients from either a single **.proto** services description:
 
-    $ x proto-<lang> services.proto
+```bash
+$ x proto-<lang> services.proto
+```
 
 Or upload multiple **.proto** files by specifying a directory instead:
 
-    $ x proto-<lang> /path/to/grpc/protos
+```bash
+$ x proto-<lang> /path/to/grpc/protos
+```
 
 Use **-out** to specify a different directory to save the protoc generated classes to, e.g:
 
-    $ x proto-<lang> services.proto -out /path/to/dir
+```bash
+$ x proto-<lang> services.proto -out /path/to/dir
+```
 
 ### Using curl
 
 Alternatively you can use curl command-line HTTP Client to download protoc generated classes in a **.zip** archive:
 
-    $ curl -F 'file1=@services.proto' https://grpc.servicestack.net/protoc/[lang]?zip -L -o grpc.zip
+```bash
+$ curl -F 'file1=@services.proto' https://grpc.servicestack.net/protoc/[lang]?zip -L -o grpc.zip
+```
 
 Below is a complete list of different languages supported by this public gRPC Service:
 
@@ -988,15 +1019,3 @@ Below is a complete list of different languages supported by this public gRPC Se
 | js-commonjs  | JavaScript (CommonJS) | 
 | ts           | TypeScript | 
 | ts-binary    | TypeScript (Binary) | 
-
-### Downloading and generating protobuf-net/bcl.proto
-
-Depending on what Types are used in Server DTOs will determine whether its generated proto will include a reference to 
-[protobuf-net/bcl.proto](https://github.com/protobuf-net/protobuf-net/blob/master/src/Tools/bcl.proto). 
-
-If it is you can download and generate the protoc Types using the same dotnet tools, [e.g for Dart](/grpc-dart):
-
-    $ x mix bcl.proto -out lib
-    $ x proto-dart lib\protobuf-net -out lib\protobuf-net
-
-> Ideally this will no longer be needed in a [future version of protobuf-net.Grpc](https://github.com/protobuf-net/protobuf-net.Grpc/pull/41#issuecomment-560279357)

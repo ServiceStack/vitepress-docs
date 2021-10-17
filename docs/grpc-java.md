@@ -5,13 +5,17 @@ title: gRPC protoc Java Client
 
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/grpc/java.png)](https://youtu.be/pe7oKApToDA)
 
-> YouTube: [youtu.be/pe7oKApToDA](https://youtu.be/pe7oKApToDA)
+::: info YouTube
+[youtu.be/pe7oKApToDA](https://youtu.be/pe7oKApToDA)
+:::
 
 ## Java protoc generated GrpcServiceClient TodoWorld Example
 
 Install [x dotnet tool](https://docs.servicestack.net/dotnet-tool):
-    
-    $ dotnet tool install --global x 
+
+```bash
+$ dotnet tool install --global x 
+```
 
 Create a new **Gradle** Java Console App (example uses [IntelliJ IDEA Community](https://www.jetbrains.com/idea/download/)):
 
@@ -19,7 +23,7 @@ Create a new **Gradle** Java Console App (example uses [IntelliJ IDEA Community]
 
 Update **build.gradle** with required dependencies:
 
-```
+```groovy
 plugins {
     id 'java'
     id 'com.google.protobuf' version '0.8.8'
@@ -61,8 +65,10 @@ dependencies {
 
 Add protoc generated TodoWorld DTOs and gRPC GrpcServicesBlockingStub:
 
-    $ cd src\main\java
-    $ x proto-java https://todoworld.servicestack.net
+```bash
+$ cd src\main\java
+$ x proto-java https://todoworld.servicestack.net
+```
     
 Use protoc generated DTOs and `GrpcServiceClient` to call TodoWorld gRPC Service:
 
@@ -89,7 +95,9 @@ public class Program {
 
 Create `Program.java` from the above Java Example: 
 
-    $ x mix todoworld-java
+```bash
+$ x mix todoworld-java
+```
 
 Run example with `Shift+F10`:
 
@@ -99,7 +107,9 @@ Run example with `Shift+F10`:
 
 Download TodoWorld SSL Certificate used for its gRPC HTTP/2 Services into **resources** folder:
 
-    $ x get https://todoworld.servicestack.net/grpc.crt -out ../resources 
+```bash
+$ x get https://todoworld.servicestack.net/grpc.crt -out ../resources 
+```
 
 Use certificate when initializing gRPC Channel:
 
@@ -129,7 +139,9 @@ public class Program {
 
 Override `Program.java` with the above Java Example: 
 
-    $ x mix todoworld-java-ssl
+```bash
+$ x mix todoworld-java-ssl
+```
 
 Run example with `Shift+F10`:
 

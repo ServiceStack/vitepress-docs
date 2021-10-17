@@ -5,21 +5,29 @@ title: gRPC protoc Python Client
 
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/grpc/python.png)](https://youtu.be/rcDdabAELnA)
 
-> YouTube: [youtu.be/rcDdabAELnA](https://youtu.be/rcDdabAELnA)
+::: info YouTube
+[youtu.be/rcDdabAELnA](https://youtu.be/rcDdabAELnA)
+:::
 
 ## Python protoc generated GrpcServicesStub Client TodoWorld Example
 
 Install [x dotnet tool](https://docs.servicestack.net/dotnet-tool):
     
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 Install [grpcio-tools](https://pypi.org/project/grpcio-tools/):
 
-    $ pip install grpcio-tools
+```bash
+$ pip install grpcio-tools
+```
 
 Add protoc generated TodoWorld DTOs and gRPC Service Client:
 
-    $ x proto-python https://todoworld.servicestack.net
+```bash
+$ x proto-python https://todoworld.servicestack.net
+```
 
 ### Python protoc gRPC insecure Example
 
@@ -43,17 +51,22 @@ if __name__ == '__main__':
 
 Create `main.py` with the above Python Example: 
 
-    $ x mix todoworld-python
-
+```bash
+$ x mix todoworld-python
+```
 Run example:
 
-    $ python main.py
+```bash
+$ python main.py
+```
 
 ### Python protoc gRPC SSL Example
 
 Download TodoWorld SSL Certificate used for its gRPC HTTP/2 Services:
 
-    $ x get https://todoworld.servicestack.net/grpc.crt 
+```bash
+$ x get https://todoworld.servicestack.net/grpc.crt 
+```
 
 Use certificate when initializing `GrpcServicesStub`:
 
@@ -77,11 +90,15 @@ if __name__ == '__main__':
 
 Override `main.py` with the above Python Example: 
 
-    $ x mix todoworld-python-ssl
+```bash
+$ x mix todoworld-python-ssl
+```
 
 Run example:
 
-    $ python main.py
+```bash
+$ python main.py
+```
 
 ### Python Local Development gRPC SSL CRUD Example
 

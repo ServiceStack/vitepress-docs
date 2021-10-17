@@ -5,17 +5,23 @@ title: gRPC protoc Ruby Client
 
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/grpc/ruby.png)](https://youtu.be/yvLnqgXKYTI)
 
-> YouTube: [youtu.be/yvLnqgXKYTI](https://youtu.be/yvLnqgXKYTI)
+::: info YouTube
+[youtu.be/yvLnqgXKYTI](https://youtu.be/yvLnqgXKYTI)
+:::
 
 ## Ruby protoc generated GrpcServicesStub Client TodoWorld Example
 
 Install [x dotnet tool](https://docs.servicestack.net/dotnet-tool):
     
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 Install required gems:
 
-    $ gem install grpc bundler 
+```bash
+$ gem install grpc bundler 
+```
 
 Create **todoworld.gemspec**:
 
@@ -44,13 +50,17 @@ end
 
 Generate `Gemfile` and install dependencies:
 
-    $ bundle init
-    $ bundle install
+```bash
+$ bundle init
+$ bundle install
+```
 
 Add protoc generated TodoWorld DTOs and gRPC Service Client:
 
-    $ mkdir lib
-    $ x proto-ruby https://todoworld.servicestack.net -out lib
+```bash
+$ mkdir lib
+$ x proto-ruby https://todoworld.servicestack.net -out lib
+```
 
 ### Ruby protoc gRPC insecure Example
 
@@ -80,17 +90,23 @@ main
 
 Create `main.rb` with the above Ruby Example: 
 
-    $ x mix todoworld-ruby
+```bash
+$ x mix todoworld-ruby
+```
 
 Run example:
 
-    $ main.rb
+```bash
+$ main.rb
+```
 
 ### Ruby protoc gRPC SSL Example
 
 Download TodoWorld SSL Certificate used for its gRPC HTTP/2 Services:
 
-    $ x get https://todoworld.servicestack.net/grpc.crt
+```bash
+$ x get https://todoworld.servicestack.net/grpc.crt
+```
 
 Use certificate when initializing `GrpcServicesStub`:
 
@@ -118,11 +134,15 @@ main
 
 Override `main.rb` with the above Ruby Example: 
 
-    $ x mix todoworld-ruby-ssl
+```bash
+$ x mix todoworld-ruby-ssl
+```
 
 Run example:
 
-    $ ruby main.rb
+```bash
+$ ruby main.rb
+```
 
 ### Ruby Local Development gRPC SSL CRUD Example
 

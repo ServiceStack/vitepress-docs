@@ -237,7 +237,9 @@ class MyServices : Service
 }
 ```
 
-> Return `null` to continue with default error handling.
+::: info
+Return `null` to continue with default error handling
+:::
 
 ### Custom HTTP Errors
 
@@ -269,8 +271,9 @@ GlobalRequestFilters.Add((req,res,dto) => {
 });
 ```
 
-
-> To end the Request in a  Custom HttpHandler use `res.EndHttpHandlerRequest()`
+::: info
+To end the Request in a  Custom HttpHandler use `res.EndHttpHandlerRequest()`
+:::
 
 ### Fallback Error Pages
 

@@ -11,11 +11,15 @@ title: gRPC protoc Swift Client
 
 Install [x dotnet tool](https://docs.servicestack.net/dotnet-tool):
     
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 Create a new Swift Console App:
 
-    $ swift package init --type executable
+```bash
+$ swift package init --type executable
+```
 
 Add `grpc-swift` Swift Package in `Package.swift` and **"GRPC"** dependency to each target:
 
@@ -44,8 +48,10 @@ let package = Package(
     
 Add protoc generated TodoWorld DTOs and gRPC GrpcServiceClient:
 
-    $ cd Sources/TodoWorld
-    $ x proto-swift https://todoworld.servicestack.net
+```bash
+$ cd Sources/TodoWorld
+$ x proto-swift https://todoworld.servicestack.net
+```
     
 Use protoc generated DTOs and `GrpcServiceClient` to call TodoWorld gRPC Service:
 
@@ -78,17 +84,23 @@ do {
 
 Override `main.swift` with the above Swift Example: 
 
-    $ x mix todoworld-swift
+```bash
+$ x mix todoworld-swift
+```
 
 Run example:
 
-    $ swift run
+```bash
+$ swift run
+```
 
 ### Swift protoc gRPC SSL Example
 
 Download TodoWorld SSL Certificate used for its gRPC HTTP/2 Services:
 
-    $ x get https://todoworld.servicestack.net/grpc.crt 
+```bash
+$ x get https://todoworld.servicestack.net/grpc.crt 
+```
 
 Use certificate when initializing ClientConnection.Configuration:
 
@@ -121,11 +133,15 @@ do {
 
 Override `main.swift` with the above Swift Example: 
 
-    $ x mix todoworld-swift-ssl
+```bash
+$ x mix todoworld-swift-ssl
+```
 
 Run example:
 
-    $ swift run
+```bash
+$ swift run
+```
 
 ### Swift Local Development gRPC SSL CRUD Example
 

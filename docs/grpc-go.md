@@ -11,16 +11,22 @@ title: gRPC protoc GO Client
 
 Install [x dotnet tool](https://docs.servicestack.net/dotnet-tool):
     
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 Create new **TodoWorld** Go module:
 
-    $ go mod init TodoWorld
+```bash
+$ go mod init TodoWorld
+```
 
 Add protoc generated TodoWorld DTOs and gRPC GrpcServiceClient to `services/` folder:
 
-    $ mkdir services
-    $ x proto-go https://todoworld.servicestack.net -out services
+```bash
+$ mkdir services
+$ x proto-go https://todoworld.servicestack.net -out services
+```
 
 ### Go protoc gRPC insecure Example
 
@@ -61,23 +67,28 @@ func main() {
 
 Alternatively above Go example can be created with:
 
-    $ mkdir client
-    $ x mix todoworld-go -out client
+```bash
+$ mkdir client
+$ x mix todoworld-go -out client
+```
 
 Run example:
 
-    $ go run client\main.go
+```bash
+$ go run client\main.go
+```
 
 ### Go protoc gRPC SSL Example
 
 Download TodoWorld SSL Certificate used for its gRPC HTTP/2 Services:
 
-    $ x get https://todoworld.servicestack.net/grpc.crt 
+```bash
+$ x get https://todoworld.servicestack.net/grpc.crt 
+```
 
 Use certificate when initializing `NewGrpcServicesClient`:
 
 ```go
-
 package main
 
 import (
@@ -118,11 +129,15 @@ func main() {
 
 Override `client/main.go` with the above Go Example: 
 
-    $ x mix todoworld-go-ssl -out client
+```bash
+$ x mix todoworld-go-ssl -out client
+```
 
 Run example:
 
-    $ go run client\main.go
+```bash
+$ go run client\main.go
+```
 
 ### Go Local Development gRPC SSL CRUD Example
 

@@ -5,7 +5,9 @@ title: gRPC protoc Android Java Client
 
 [![](https://raw.githubusercontent.com/NetCoreApps/todo-world/master/src/TodoWorld/wwwroot/assets/img/android/android-grpc-ssl.png)](https://youtu.be/nag0hr5THug)
 
-> YouTube: [youtu.be/nag0hr5THug](https://youtu.be/nag0hr5THug)
+::: info YouTube
+[youtu.be/nag0hr5THug](https://youtu.be/nag0hr5THug)
+:::
 
 ## Android Java-Lite protoc generated GrpcServiceClient Example
 
@@ -18,7 +20,9 @@ custom `services.proto` allow us to specify the Java **package** we want the gen
 
 Install [x dotnet tool](https://docs.servicestack.net/dotnet-tool):
     
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 Create a new Android App with [Android Studio](https://developer.android.com/studio):
 
@@ -26,8 +30,10 @@ Create a new Android App with [Android Studio](https://developer.android.com/stu
 
 Add protoc generated TodoWorld DTOs and gRPC `GrpcServicesStub`:
 
-    $ cd app\src\main\java
-    $ x proto-java https://todoworld.servicestack.net
+```bash
+$ cd app\src\main\java
+$ x proto-java https://todoworld.servicestack.net
+```
 
 Modify the downloaded `services.proto` to use the **package** name of your App, e.g:
 
@@ -37,11 +43,13 @@ option java_package = "net.servicestack.androidapp";
 
 Generate a **java-lite** protoc gRPC client from your modified `services.proto`:
 
-    $ x proto-java-lite services.proto
+```bash
+$ x proto-java-lite services.proto
+```
 
 Update **build.gradle** with required gRPC, protobuf and OK HTTP plugins and dependencies:
 
-```
+```groovy
 plugins {
     id 'com.google.protobuf' version '0.8.8'
     id 'idea'
@@ -108,14 +116,18 @@ Now run your App and click the Action button to make a plain-text gRPC Request:
 To use gRPC SSL we'll need a copy of our gRPC's Service SSL Certificate which we can make available to our
 Android App by saving it to our App's `assets` directory:
 
-    $ mkdir ..\assets
-    $ x get https://todoworld.servicestack.net/grpc.crt -out ../assets
+```bash
+$ mkdir ..\assets
+$ x get https://todoworld.servicestack.net/grpc.crt -out ../assets
+```
 
 Building an TLS Channel configured with a self-signed SSL Certificate requires a bit of effort with OK HTTP
 so we'll include a [ChannelBuilder.java](https://gist.github.com/gistlyn/0a3311c1b72b136bdfae616507cc38af)
 to wrap up the boiler plate:
 
-    $ x mix grpc-android
+```bash
+$ x mix grpc-android
+```
 
 This simplifies the configuration required down to just the `grpc.crt` certificate loaded from the 
 App's Asset Manager, the host and port name of the gRPC SSL Channel: 

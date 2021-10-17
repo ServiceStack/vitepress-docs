@@ -5,17 +5,23 @@ title: gRPC protoc Node.js Client
 
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/grpc/nodejs.png)](https://youtu.be/QL56lOHiXVM)
 
-> YouTube: [youtu.be/QL56lOHiXVM](https://youtu.be/QL56lOHiXVM)
+::: info YouTube
+[youtu.be/QL56lOHiXVM](https://youtu.be/QL56lOHiXVM)
+:::
 
 ## Node.js protoc generated GrpcServicesStub Client TodoWorld Example
 
 Install [x dotnet tool](https://docs.servicestack.net/dotnet-tool):
     
-    $ dotnet tool install --global x 
-    
+```bash
+$ dotnet tool install --global x 
+```
+
 Create npm **package.json**:
 
-    $ npm init
+```bash
+$ npm init
+```
     
 Add dependencies:
 
@@ -36,11 +42,15 @@ Add dependencies:
 
 Install dependencies:
 
-    $ npm install
+```bash
+$ npm install
+```
 
 Add protoc generated TodoWorld DTOs and gRPC Service Client:
 
-    $ x proto-js-node https://todoworld.servicestack.net
+```bash
+$ x proto-js-node https://todoworld.servicestack.net
+```
 
 ### Node.js protoc gRPC insecure Example
 
@@ -80,17 +90,23 @@ main();
 
 Create `index.js` with the above Node.js Example: 
 
-    $ x mix todoworld-node
+```bash
+$ x mix todoworld-node
+```
 
 Run example:
 
-    $ node --no-deprecation index.js
+```bash
+$ node --no-deprecation index.js
+```
 
 ### Node.js protoc gRPC SSL Example
 
 Download TodoWorld SSL Certificate used for its gRPC HTTP/2 Services:
 
-    $ x get https://todoworld.servicestack.net/grpc.crt 
+```bash
+$ x get https://todoworld.servicestack.net/grpc.crt 
+```
 
 Use certificate when initializing `GrpcServicesClient`:
 
@@ -129,11 +145,15 @@ main();
 
 Override `index.js` with the above Node.js Example: 
 
-    $ x mix todoworld-node-ssl
+```bash
+$ x mix todoworld-node-ssl
+```
 
 Run example:
 
-    $ node --no-deprecation index.js
+```bash
+$ node --no-deprecation index.js
+```
 
 ### Node.js Local Development gRPC SSL CRUD Example
 

@@ -8,11 +8,13 @@ Declarative validation facilitate greater declarative functionality around Servi
 attributes which are decoupled from their Validator implementation so they're suitable to be annotated on impl-free Service Model DTOs and exported in 
 [Add ServiceStack Reference](/add-servicestack-reference) Types.
 
-> As they're decoupled the same rules could enable instant validation feedback on clients without server round trips
+::: info Tip
+As they're decoupled the same rules could enable instant validation feedback on clients without server round trips
+:::
 
 The validators are incorporated into ServiceStack's existing Fluent Validation model so it [works with existing UI form binding](/world-validation). 
 
-### Validation Feature
+## Validation Feature
 
 All of ServiceStack's Fluent Validation features is encapsulated in the `ValidationFeature` plugin which can be registered in your AppHost with:
 
@@ -20,7 +22,7 @@ All of ServiceStack's Fluent Validation features is encapsulated in the `Validat
 Plugins.Add(new ValidationFeature());
 ```
 
-### Property Validators
+## Property Validators
 
 The Property Validator attributes provide an alternative way to apply Request DTO validation rules, the best way to demonstrate them 
 is showing the same example below implemented using Fluent Validation APIs:
@@ -351,7 +353,7 @@ Plugins.Add(new ValidationFeature {
 });
 ```
 
-### Type Validators
+## Type Validators
 
 In addition to Property Validators there's also new support for **Type Validators** which can be declaratively added to perform top-level 
 validation on Request DTOs.
@@ -474,7 +476,7 @@ Error StatusCode that failed requests should return.
 public class ExampleValidators : ICreateDb<ExampleValidator>, IReturn<EmptyResponse> { }
 ```
 
-### DB Validation Rules
+## DB Validation Rules
 
 Both Property and Type Validators can also be sourced from a **dynamic source** with both **Memory** and **RDBMS** implementations included 
 along with a Management HTTP API to be able to manage them remotely. Dynamic Validation Rules are cacheable locally giving them the same 

@@ -5,23 +5,31 @@ title: gRPC SSL Configuration
 
 By default gRPC projects uses ASP.NET Core's trusted Development certificate (typically created on install), or can be configured with:
 
-    $ dotnet dev-certs https --trust
+```bash
+$ dotnet dev-certs https --trust
+```
 
 Many other languages requires this development certificate in order to establish a secure SSL connection, which can be exported with:
 
-### Exporting your Development Certificate
+## Exporting your Development Certificate
 
 Export your localhost self-signed .NET Core development certificate with:
 
-    $ dotnet dev-certs https --export-path .
+```bash
+$ dotnet dev-certs https --export-path .
+```
 
 If that fails see if you can diagnose and resolve the issue from the verbose output:
 
-    $ dotnet dev-certs https --export-path . --verbose
+```bash
+$ dotnet dev-certs https --export-path . --verbose
+```
 
 If you can't keep copy of the certificates **thumbprint**, then export it via Windows Certificate Manager:
 
-    $ certmgr
+```bash
+$ certmgr
+```
 
 1. Go to `Personal > Certificates`
 2. Select certificate **Issued To** `localhost`
@@ -37,7 +45,9 @@ Should you prefer, you can create and use your own self-signed certificate using
 
 A quick way to download them is using the [mix tool](/mix-tool):
 
-    $ x mix -name ProjectName gen.https.sh
+```bash
+$ x mix -name ProjectName gen.https.sh
+```
 
 Otherwise you can create local text files and manually copy them with the contents below:
 
@@ -100,25 +110,35 @@ rm dev.config dev.csr.pem
 
 Linux or WSL Bash:
 
-    $ ./gen-dev.https.sh
+```bash
+$ ./gen-dev.https.sh
+```
 
 Windows:
 
-    C:\> bash gen-dev.https.sh
+```bash
+C:\> bash gen-dev.https.sh
+```
 
 Options:
 
-    $ gen-dev.https.sh <PASSWORD>
+```bash
+$ gen-dev.https.sh <PASSWORD>
+```
 
 ### Trust Certificate on Windows
 
 Import the pfx certificate:
 
-    $ powershell Import-PfxCertificate -FilePath dev.pfx Cert:\LocalMachine\My -Password (ConvertTo-SecureString grpc -asplaintext -force) -Exportable
+```bash
+$ powershell Import-PfxCertificate -FilePath dev.pfx Cert:\LocalMachine\My -Password (ConvertTo-SecureString grpc -asplaintext -force) -Exportable
+```
 
 Trust the certificate by importing the pfx certificate into your trusted root:
 
-    $ powershell Import-Certificate -FilePath dev.crt -CertStoreLocation Cert:\CurrentUser\Root
+```bash
+$ powershell Import-Certificate -FilePath dev.crt -CertStoreLocation Cert:\CurrentUser\Root
+```
 
 ### Trust Certificate on Linux or macOS
 
@@ -127,7 +147,7 @@ See [Configuring HTTPS in ASP.NET Core across different platforms](https://devbl
 Although recommended it's not necessary to trust self-signed certificates to enable secure gRPC SSL endpoints as servers and clients 
 can be configured to use these OpenSSL generated self-signed certificates without out-of-band certificate registration.
 
-### Generating a new Production Certificate
+## Generating a new Production Certificate
 
 #### [gen-prod.https.sh](https://github.com/NetCoreTemplates/grpc/blob/master/scripts/gen-prod.https.sh)
 
@@ -192,11 +212,15 @@ Either replace `DOMAIN=...` and `PASSWORD=...` with your domain and password or 
 
 Linux or WSL Bash:
 
-    $ ./gen-prod.https.sh <DOMAIN> <PASSWORD>
+```bash
+$ ./gen-prod.https.sh <DOMAIN> <PASSWORD>
+```
 
 Windows:
 
-    C:\> bash gen-prod.https.sh <DOMAIN> <PASSWORD>
+```bash
+C:\> bash gen-prod.https.sh <DOMAIN> <PASSWORD>
+```
 
 ### .NET Core Configuration
 
@@ -282,7 +306,9 @@ server {
 
 You can quickly test each of these gRPC Endpoints by downloading the [C# Add ServiceStack Reference](/csharp-add-servicestack-reference) DTOs with:
 
-    $ x csharp https://todoworld.servicestack.net
+```bash
+$ x csharp https://todoworld.servicestack.net
+```
 
 Which can be used to test gRPC Services on each of the different gRPC endpoints below:
 
@@ -323,7 +349,9 @@ var client = InsecureProdClient(5054);
 If you're experiencing network connection issues trying to connect with your own gRPC hosted service, make sure you've opened
 access to each of the non-standard ports used. Example using Ubuntu's UFW firewall:
 
-    $ ufw allow 50051
+```bash
+$ ufw allow 50051
+```
 
 ### Lets Encrypt
 
@@ -351,5 +379,4 @@ server {
 }
 ```
 
-They could also be used to secure the gRPC endpoint on your .NET Core App as well but that would require coordinating the re-creation of a **.pfx**
-certificate after Lets Encrypt certificates are renewed.
+They could also be used to secure the gRPC endpoint on your .NET Core App as well but that would require coordinating the re-creation of a **.pfx** certificate after Lets Encrypt certificates are renewed.

@@ -5,13 +5,17 @@ title: gRPC protoc Flutter Dart Client
 
 [![](https://raw.githubusercontent.com/NetCoreApps/todo-world/master/src/TodoWorld/wwwroot/assets/img/flutter/flutter-grpc-ssl.png)](https://youtu.be/t83gDzEGpac)
 
-> YouTube: [youtu.be/t83gDzEGpac](https://youtu.be/t83gDzEGpac)
+::: info YouTube
+[youtu.be/t83gDzEGpac](https://youtu.be/t83gDzEGpac)
+:::
 
 ## Flutter protoc generated GrpcServiceClient Example
 
 Install [x dotnet tool](https://docs.servicestack.net/dotnet-tool):
     
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
 
 Create a new Flutter project with [Android Studio](https://developer.android.com/studio):
 
@@ -19,7 +23,9 @@ Create a new Flutter project with [Android Studio](https://developer.android.com
 
 Add protoc generated TodoWorld DTOs and gRPC GrpcServiceClient to `lib/` folder:
 
-    $ x proto-dart https://todoworld.servicestack.net -out lib
+```bash
+$ x proto-dart https://todoworld.servicestack.net -out lib
+```
 
 Add required dependencies to **pubspec.yaml**:
 
@@ -108,8 +114,10 @@ where clicking the icon should display the result of your plain-text gRPC Servic
 To use gRPC SSL we'll need a copy of our gRPC's Service SSL Certificate which we can make available to our
 Flutter App by saving it to our App's `assets` directory:
 
-    $ mkdir assets
-    $ x get https://todoworld.servicestack.net/grpc.crt -out assets
+```bash
+$ mkdir assets
+$ x get https://todoworld.servicestack.net/grpc.crt -out assets
+```
 
 As loading assets is an asynchronous operation we'll need to preload it either by loading it in `main()` and
 passing it as an attribute down to all our components or we can load it in our State widget's `initState()`
