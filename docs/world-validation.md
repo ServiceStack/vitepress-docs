@@ -15,7 +15,7 @@ As of this writing there **4 different server HTML** generated strategies that u
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/apps/Validation/home.png)](https://github.com/NetCoreApps/Validation)
 
-<h4 align="center" class="mt-8">
+<h4 class="mt-8 text-center">
   View Source on GitHub <a href="https://github.com/NetCoreApps/Validation">NetCoreApps/Validation</a> - 
   Live Demo <a href="http://validation.web-app.io">validation.web-app.io</a>
 </h4>
