@@ -75,6 +75,10 @@
             "link": "/templates-webpack"
           },
           {
+            "text": "Install ServiceStackVS",
+            "link": "/templates-install-servicestackvs"
+          },
+         {
             "text": "Cross platform dotnet scripts",
             "link": "/templates-dotnet-scripts"
           }

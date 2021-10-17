@@ -1,6 +1,7 @@
 ---
-slug: real-world-performance
+title: Real World Performance
 ---
+
 We maintain a list of external benchmark results here people have been experiencing to provide an idea of the relative performance you can expect from real-world usage:
 
 #### [Get 25k rows from MS SQL Express and convert to JSON](https://twitter.com/lukaszgasior/status/331704240085028864)
@@ -44,5 +45,3 @@ Redis (Cygwin)                254ms
 Redis (Cygwin + fsync)        543ms
 Raven DB                     2983ms
 ```
-
-#### [MyMediaLite + ServiceStack](http://www.marrk.nl/post/mymedialite-servicestack/) 

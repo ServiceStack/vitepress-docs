@@ -1,5 +1,8 @@
 ---
 title: Roadmap
+editLink: false
+lastUpdated: false
 ---
 
-Feature requests and future roadmap are maintained on [servicestack.uservoice.com](https://servicestack.uservoice.com/forums/176786-feature-requests).
+
+Our future Roadmap is driven by Customer Feature requests which are maintained on [servicestack.uservoice.com](https://servicestack.uservoice.com/forums/176786-feature-requests).

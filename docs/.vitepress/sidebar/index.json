@@ -524,7 +524,7 @@
       },
       {
         "text": "JSON Format",
-        "link": "https://github.com/ServiceStack/ServiceStack.Text/"
+        "link": "/json-format"
       },
       {
         "text": "JSV Format",
@@ -739,43 +739,6 @@
     ]
   },
   {
-    "text": "#Script",
-    "children": [
-      {
-        "text": "Overview",
-        "link": "https://sharpscript.net"
-      },
-      {
-        "text": "#Script Pages",
-        "link": "https://sharpscript.net/docs/sharp-pages"
-      },
-      {
-        "text": "Sharp Apps",
-        "link": "https://sharpscript.net/docs/sharp-apps"
-      },
-      {
-        "text": "Gist Desktop Apps",
-        "link": "https://sharpscript.net/docs/gist-desktop-apps"
-      },
-      {
-        "text": "Sharp APIs",
-        "link": "https://sharpscript.net/docs/sharp-apis"
-      },
-      {
-        "text": "ServiceStack Scripts",
-        "link": "https://sharpscript.net/docs/servicestack-scripts"
-      },
-      {
-        "text": "#Script Code",
-        "link": "https://sharpscript.net/scode/"
-      },
-      {
-        "text": "#Script Lisp",
-        "link": "https://sharpscript.net/lisp/"
-      }
-    ]
-  },
-  {
     "text": "Hosts",
     "children": [
       {
@@ -802,35 +765,6 @@
     ]
   },
   {
-    "text": "ServiceStackVS",
-    "children": [
-      {
-        "text": "Install ServiceStackVS",
-        "link": "/install-servicestackvs"
-      },
-      {
-        "text": "TypeScript React Template",
-        "link": "https://github.com/ServiceStackApps/typescript-react-template/"
-      },
-      {
-        "text": "React, Redux Chat App",
-        "link": "https://github.com/ServiceStackApps/ReactChat"
-      },
-      {
-        "text": "AngularJS App Template",
-        "link": "https://github.com/ServiceStack/ServiceStackVS/blob/master/docs/angular-spa.md"
-      },
-      {
-        "text": "React Desktop Apps",
-        "link": "https://github.com/ServiceStackApps/ReactDesktopApps"
-      },
-      {
-        "text": "Embedded Native Desktop Apps",
-        "link": "https://github.com/ServiceStack/ServiceStack.Gap"
-      }
-    ]
-  },
-  {
     "text": "Java",
     "children": [
       {
@@ -840,10 +774,6 @@
       {
         "text": "Android Studio & IntelliJ",
         "link": "/java-add-servicestack-reference#servicestack-idea-android-studio-plugin"
-      },
-      {
-        "text": "Eclipse Integration",
-        "link": "https://github.com/ServiceStack/ServiceStack.Java/tree/master/src/ServiceStackEclipse#eclipse-integration-with-servicestack"
       }
     ]
   },
@@ -865,23 +795,19 @@
     ]
   },
   {
-    "text": "Mono",
+    "text": "Deployment",
     "children": [
       {
-        "text": "Overview",
-        "link": "/mono"
+        "text": "Deploy Multiple Sites to single AWS",
+        "link": "/deploy-multiple-sites-to-aws"
       },
       {
-        "text": "Run ServiceStack as a daemon on Linux",
-        "link": "/servicestack-as-daemon-on-linux"
+        "text": "Simple Deployments with WebDeploy",
+        "link": "/simple-deployments-to-aws"
       },
       {
-        "text": "Run ServiceStack in Fastcgi on nginx",
-        "link": "/servicestack-in-fastcgi-hosted-on-nginx"
-      },
-      {
-        "text": "Linux-Hosting-Options",
-        "link": "/linux-hosting-options"
+        "text": "Deployments with OctopusDeploy",
+        "link": "/advanced-deployment-octopus-deploy"
       }
     ]
   },
@@ -907,58 +833,11 @@
     ]
   },
   {
-    "text": "Deployment",
-    "children": [
-      {
-        "text": "Deploy Multiple Sites to single AWS",
-        "link": "/deploy-multiple-sites-to-aws"
-      },
-      {
-        "text": "Simple Deployments with WebDeploy",
-        "link": "/simple-deployments-to-aws"
-      },
-      {
-        "text": "Deployments with OctopusDeploy",
-        "link": "/advanced-deployment-octopus-deploy"
-      }
-    ]
-  },
-  {
-    "text": "Install 3rd Party Products",
-    "children": [
-      {
-        "text": "Redis on Windows",
-        "link": "https://github.com/ServiceStack/redis-windows"
-      },
-      {
-        "text": "RabbitMQ on Windows",
-        "link": "https://github.com/ServiceStack/rabbitmq-windows"
-      },
-      {
-        "text": "Redis SSL on Azure",
-        "link": "/ssl-redis-azure"
-      }
-    ]
-  },
-  {
     "text": "Use Cases",
     "children": [
       {
         "text": "Azure",
         "link": "/azure"
-      },
-      {
-        "text": "NHibernate",
-        "link": "/nhibernate"
-      }
-    ]
-  },
-  {
-    "text": "Performance",
-    "children": [
-      {
-        "text": "Real world performance",
-        "link": "/real-world-performance"
       }
     ]
   },
@@ -982,12 +861,42 @@
         "link": "https://github.com/ServiceStack/ServiceStack.Aws"
       },
       {
-        "text": "Stripe",
+        "text": "ServiceStack.Stripe",
         "link": "https://github.com/ServiceStack/Stripe"
+      },
+      {
+        "text": "sharpscript.net",
+        "link": "https://sharpscript.net"
       },
       {
         "text": "vuedesktop.com",
         "link": "https://www.vuedesktop.com"
+      }
+    ]
+  },
+  {
+    "text": "Install 3rd Party Products",
+    "children": [
+      {
+        "text": "Redis on Windows",
+        "link": "https://github.com/ServiceStack/redis-windows"
+      },
+      {
+        "text": "RabbitMQ on Windows",
+        "link": "https://github.com/ServiceStack/rabbitmq-windows"
+      },
+      {
+        "text": "Redis SSL on Azure",
+        "link": "/ssl-redis-azure"
+      }
+    ]
+  },
+  {
+    "text": "Performance",
+    "children": [
+      {
+        "text": "Real world performance",
+        "link": "/real-world-performance"
       }
     ]
   },

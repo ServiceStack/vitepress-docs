@@ -15,7 +15,7 @@ Our goal with Native Types is to provide an alternative for sharing DTO dlls, th
 
 ## Add ServiceStack Reference
 
-The easiest way to [Add a ServiceStack reference](/add-servicestack-reference) to your project is to right-click on your project to bring up [ServiceStackVS's](/install-servicestackvs) `Add ServiceStack Reference` context-menu item. This opens a dialog where you can add the url of the ServiceStack instance you want to typed DTO's for, as well as the name of the DTO source file that's added to your project.
+The easiest way to [Add a ServiceStack reference](/add-servicestack-reference) to your project is to right-click on your project to bring up [ServiceStackVS's](/templates-install-servicestackvs) `Add ServiceStack Reference` context-menu item. This opens a dialog where you can add the url of the ServiceStack instance you want to typed DTO's for, as well as the name of the DTO source file that's added to your project.
 
 [![Add ServiceStack Reference](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/apps/StackApis/add-service-ref-flow.png)](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/apps/StackApis/add-service-ref-flow.png)
 

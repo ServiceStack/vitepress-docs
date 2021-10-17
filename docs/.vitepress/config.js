@@ -15,6 +15,7 @@ module.exports = {
         editLinks: true,
         editLinkText: 'Edit this page on GitHub',
         lastUpdated: 'Last Updated',
+        //lastUpdated: false,
         nav: [
             { text: "What's New", link: 'https://servicestack.net/whatsnew' },
             { text: 'Project Templates', link: '/templates-overview', activeMatch: '^/(templates|dotnet-new)'},
