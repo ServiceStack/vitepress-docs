@@ -241,7 +241,7 @@ public class CustomerService : Service
 
 ### [Calling the above REST Service from any C#/.NET Client](/csharp-add-servicestack-reference.html)
 
-> No code-gen required, can re-use above Server DTOs:
+No code-gen required, can re-use above Server DTOs:
 
 ```csharp
 var client = new JsonServiceClient(BaseUri);
@@ -271,9 +271,11 @@ all = client.Get(new GetCustomers());                             // Count = 0
 
 Same code also works with [Android, iOS, Xamarin.Forms, UWP and WPF clients](https://github.com/ServiceStackApps/HelloMobile).
 
-> [F#](/fsharp-add-servicestack-reference.html) and 
+::: info
+[F#](/fsharp-add-servicestack-reference.html) and 
 [VB.NET](/vbnet-add-servicestack-reference.html) can re-use same 
 [.NET Service Clients](/csharp-client.html) and DTOs
+:::
 
 ### [Calling from TypeScript](/typescript-add-servicestack-reference.html#ideal-typed-message-based-api)
 
