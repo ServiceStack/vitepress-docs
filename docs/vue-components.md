@@ -19,7 +19,9 @@ For wrist-friendly productivity the Editor supports many of the popular Keyboard
 
 It's ideal for use in Apps that need to accept rich Content and can be installed with:
 
-    $ npm install @servicestack/editor
+```bash
+$ npm install @servicestack/editor
+```
 
 Where it's used like a regular Vue or Vuetify component:
 
@@ -60,7 +62,7 @@ heroes.images            // the array of hero image names
 heroes.baseUrl           //= https://servicestack.github.io/images/ 
 ```
 
-> Live Example: [/heroes](https://servicestack.github.io/images/heroes)
+Live Example: [/heroes](https://servicestack.github.io/images/heroes)
 
 It's used in all TechStacks pages containing background hero images where it's embedded inside a [Vuetify Parallax Component](https://vuetifyjs.com/en/components/parallax) where it provides a subtle parallax effect. This example shows the same hero image for each Technology based on its `slug`:
 

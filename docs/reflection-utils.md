@@ -28,7 +28,9 @@ public class AppHost : AppHostBase
 }
 ```
 
-> Most Configuration in ServiceStack should be maintained in `Configure()` but as Services are auto-registered before `AppHost.Configure()` is called, Route attributes need to be added before this happens like in the AppHost Constructor or before `new AppHost().Init()`.
+::: info
+Most Configuration in ServiceStack should be maintained in `Configure()` but as Services are auto-registered before `AppHost.Configure()` is called, Route attributes need to be added before this happens like in the AppHost Constructor or before `new AppHost().Init()`
+:::
 
 ### Convert into different Types
 

@@ -71,23 +71,27 @@ As it stands the project produces a console application that responds to unix si
 
 Create the following at /etc/init/example.conf
 
-	# ServiceStack Example Application
+```ini
+# ServiceStack Example Application
 
-	description "ServiceStack Example"
-	author      "ServiceStack"
+description "ServiceStack Example"
+author      "ServiceStack"
 
-	start on started rc
-	stop on stopping rc
+start on started rc
+stop on stopping rc
 
-	respawn
+respawn
 
-	exec start-stop-daemon --start -c username --exec mono /path/to/application.exe
+exec start-stop-daemon --start -c username --exec mono /path/to/application.exe
+```
 
 Ideally we would start the service when apache is ready but apache does not yet emit upstart events. Additional conditions could include a database dependency if required, for example "start on started mysql". Replace "username" with that of an unprivileged user on the system; this avoids the dangers of running the application as root.
 
 You should now be able to start your application with
 
-	$ sudo start example
+```bash
+$ sudo start example
+```
 
 and access the default service information by visiting [http://127.0.0.1:8080](http://127.0.0.1:8080) in your browser of choice.
 
@@ -95,31 +99,36 @@ and access the default service information by visiting [http://127.0.0.1:8080](h
 
 The following example configuration uses proxying to expose the REST service through apache, so you must ensure that mod_proxy has been enabled first:
 
-	$ sudo a2enmod proxy
+```bash
+$ sudo a2enmod proxy
+```
 
 Next create a file at /etc/apache2/sites-available/example
 
-	ProxyPass /api http://127.0.0.1:8080/ retry=0 max=50
-	ProxyPassReverse /api http://127.0.0.1:8080/
+```apache
+ProxyPass /api http://127.0.0.1:8080/ retry=0 max=50
+ProxyPassReverse /api http://127.0.0.1:8080/
 
-	<VirtualHost *:80>
-		DocumentRoot /path/to/static/content/
+<VirtualHost *:80>
+	DocumentRoot /path/to/static/content/
 
-		<Directory />
-		</Directory>
+	<Directory />
+	</Directory>
 
-		<Directory /path/to/static/content/>
-			Options Indexes MultiViews
-			AllowOverride None
-			Order allow,deny
-			allow from all
-		</Directory>
-	</VirtualHost>
-
+	<Directory /path/to/static/content/>
+		Options Indexes MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+</VirtualHost>
+```
 
 Your site can then be enabled with
 
-	$ sudo a2ensite example
+```bash
+$ sudo a2ensite example
+```
 
 although you will need to disable the default sites if they are enabled. After restarting/reloading apache you should find your static content at [http://127.0.0.1](http://127.0.0.1) and the REST service at [http://127.0.0.1/api](http://127.0.0.1/api).
 
@@ -128,15 +137,17 @@ although you will need to disable the default sites if they are enabled. After r
 
 Create a file at /etc/nginx/sites-available/example
 
-	server {
-		listen 80;
-		root /path/to/static/content;
-		index index.html;
+```nginx
+server {
+	listen 80;
+	root /path/to/static/content;
+	index index.html;
 
-		location /api/ {
-			proxy_pass http://127.0.0.1:8080/;
-		}
+	location /api/ {
+		proxy_pass http://127.0.0.1:8080/;
 	}
+}
+```
 
 To enable the site simply symlink from sites-available to sites-enabled (nginx does not have an equivalent a2ensite tool) and then restart/reload nginx. (N.B. The trailing forward slash on the proxy pass URL is important).
 

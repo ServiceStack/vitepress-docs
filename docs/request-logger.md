@@ -3,7 +3,9 @@ slug: request-logger
 ---
 Add an In-Memory `IRequestLogger` and service with the default route at `/requestlogs` which maintains a live log of the most recent requests (and their responses). Supports multiple config options incl. Rolling-size capacity, error and session tracking, hidden request bodies for sensitive services, etc.
 
-    Plugins.Add(new RequestLogsFeature());
+```cs
+Plugins.Add(new RequestLogsFeature());
+```
 
 ### CSV Request Logger
 
@@ -84,8 +86,9 @@ Plugins.Add(new RequestLogsFeature {
 });
 ```
 
-> The optional `capacity` configures the Redis Request Logger to work as a rolling log where it will only keep the most recent 1000 entries.
-
+::: info Tip
+The optional `capacity` configures Redis Request Logger as a rolling log where it will only keep the most recent 1000 entries
+:::
 
 ### Configuration
 

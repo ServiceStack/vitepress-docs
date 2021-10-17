@@ -110,11 +110,11 @@ Using either normal lambda expression syntax:
 
 ::: v-pre
 ```hbs
-{{ customers | zip(x => x.Orders)
-   | let(x => { c: x[0], o: x[1] })
-   | where(_ => o.Total < 500)
-   | map(_ => o)
-   | htmlDump }}
+{{ customers |> zip(x => x.Orders)
+   |> let(x => { c: x[0], o: x[1] })
+   |> where(_ => o.Total < 500)
+   |> map(_ => o)
+   |> htmlDump }}
 ```
 :::
 
@@ -123,11 +123,11 @@ be implicitly assigned to the `it` binding:
 
 ::: v-pre
 ```hbs
-{{ customers | zip => it.Orders
-   | let => { c: it[0], o: it[1] }
-   | where => o.Total < 500
-   | map => o
-   | htmlDump }}
+{{ customers |> zip => it.Orders
+   |> let => { c: it[0], o: it[1] }
+   |> where => o.Total < 500
+   |> map => o
+   |> htmlDump }}
 ```
 :::
 
@@ -145,7 +145,7 @@ Other language enhancements include support for [JavaScript's shorthand property
 But like C# also lets you use member property names:
 
 ```hbs
-{{ people | let => { it.Name, it.Age } | select: {Name},{Age} }}
+{{ people |> let => { it.Name, it.Age } |> select: {Name},{Age} }}
 ```
 :::
 
@@ -155,8 +155,10 @@ Many of ES6/7 features are also implemented like Template Literals:
 
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/sharpscript/syntax/template-literals.png)](https://sharpscript.net/docs/expression-viewer#expression=%60Hello%2C%20%24%7Bname%7D!%20%24%7Ba%20%3F%20pow(1%2B2%2Ca)%20%3A%20''%7D%60&name='World'&a=3)
 
-> Backtick quoted strings also adopt the same [escaping behavior of JavaScript strings](https://sharpscript.net/docs/syntax#template-literals) 
-whilst all other quoted strings preserve unescaped string values.
+::: info
+Backtick quoted strings also adopt the same [escaping behavior of JavaScript strings](https://sharpscript.net/docs/syntax#template-literals) 
+whilst all other quoted strings preserve unescaped string values
+:::
 
 #### Spread Operators
 

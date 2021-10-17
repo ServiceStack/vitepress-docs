@@ -9,10 +9,12 @@ There are some nostalgic developers who prefer not to leave their VB.NET days be
 
 You can create a new VB .NET Core project in a new empty directory using the [x dotnet tool](https://docs.servicestack.net/dotnet-tool) with:
 
-    $ dotnet tool install --global x 
-    $ mkdir ProjectName && cd ProjectName
-    $ x mix init-vb
-    $ dotnet run
+```bash
+$ dotnet tool install --global x 
+$ mkdir ProjectName && cd ProjectName
+$ x mix init-vb
+$ dotnet run
+```
 
 Which will download the [init-vb Gist](https://gist.github.com/gistlyn/88f2792fc4820de7dc4e68c0c5d76126) to your local directory 
 where you can use its dep-free [/index.html](https://gist.github.com/gistlyn/88f2792fc4820de7dc4e68c0c5d76126#file-wwwroot-index-html) and its
@@ -24,8 +26,10 @@ where you can use its dep-free [/index.html](https://gist.github.com/gistlyn/88f
 
 The [vb-auth](https://github.com/NetCoreApps/vb-auth) VB.NET .NET Core project created with [x dotnet tool](https://docs.servicestack.net/dotnet-tool):
 
-    $ mkdir ProjectName && cd ProjectName
-    $ x mix init-vb
+```bash
+$ mkdir ProjectName && cd ProjectName
+$ x mix init-vb
+```
 
 Configured with [OrmLite + SQL Server](https://github.com/ServiceStack/ServiceStack.OrmLite), 
 [ServiceStack Auth](https://docs.servicestack.net/authentication-and-authorization) including Login & Registration UIs
@@ -60,9 +64,10 @@ the `UseTokenCookie` parameter directs ServiceStack to capture the Authenticated
 [TypeScript Add ServiceStack Reference](https://docs.servicestack.net/typescript-add-servicestack-reference) were used to generate the 
 Typed DTOs which can be re-generated with:
 
-    $ cd wwwroot
-    $ x ts && tsc dtos.ts
-
+```bash
+$ cd wwwroot
+$ x ts && tsc dtos.ts
+```
 
 # Community Resources
 

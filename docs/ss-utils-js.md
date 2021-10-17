@@ -17,11 +17,15 @@ To make it easier to develop with **ss-utils** in any of the npm-based Single Pa
 maintaining a copy of [ss-utils in npm](https://www.npmjs.com/package/ss-utils) and have also added it to JSPM 
 and DefinitelyTyped registry so you can now add it to your project like any other external dependency using JSPM:
 
-    C:\> jspm install ss-utils
+```bash
+C:\> jspm install ss-utils
+```
 
 If you're using TypeScript, you can also download the accompanying TypeScript definition from:
 
-    C:\>typings install ss-utils --ambient --save
+```bash
+C:\>typings install ss-utils --ambient --save
+```
     
 Or if you're using the older tsd package manager: `tsd install ss-utils --save`.
 

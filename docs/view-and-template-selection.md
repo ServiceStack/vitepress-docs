@@ -25,18 +25,20 @@ public class RockstarsService : Service
 
 The above service selects views that are mapped to the below Razor views. The folder structure is inconsequential so Views can be organized and nested in any number of folders, e.g:
 
-    /Views
-        /Any            
-            /Nested
-                /Deep
-                    DevSpecified1.cshtml       // #1
-                    DevSpecified2.cshtml       // #2
-                    DevSpecified3.cshtml       // #3
-                    UserSpecified4.cshtml      // #4
-                    Rockstars5.cshtml          // #5
-                    RockstarsResponse6.cshtml  // #6
-        /Shared
-            _Layout.cshtml
+```
+/Views
+    /Any
+        /Nested
+            /Deep
+                DevSpecified1.cshtml       // #1
+                DevSpecified2.cshtml       // #2
+                DevSpecified3.cshtml       // #3
+                UserSpecified4.cshtml      // #4
+                Rockstars5.cshtml          // #5
+                RockstarsResponse6.cshtml  // #6
+    /Shared
+        _Layout.cshtml
+```
 
 The `DevSpecified1.cshtml` would be selected first because it is last to set the `IHttpRequest.Items["View"]` property that the Razor Format uses to select the view. You're also not limited to these options as you can easily set the same property in any of your own custom filters. 
 

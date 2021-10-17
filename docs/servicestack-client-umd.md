@@ -17,9 +17,11 @@ without any external file references with the single `<script/>` reference:
 
 This is used by the updated [mix init](/mix-tool#mix-usage) gists when generating its empty Web Apps:
 
-    $ mkdir web && cd web
-    $ x mix init
-    $ dotnet run
+```bash
+$ mkdir web && cd web
+$ x mix init
+$ dotnet run
+```
 
 Where its dep-free [/index.html](https://gist.github.com/gistlyn/58030e271595520d87873c5df5e4c2eb#file-wwwroot-index-html) use its
 `JsonServiceClient` to call its **/hello** API:
@@ -29,7 +31,9 @@ Where its dep-free [/index.html](https://gist.github.com/gistlyn/58030e271595520
 To call APIs you'll need to include the JS transpiled DTOs of your Services [TypeScript DTOs](/typescript-add-servicestack-reference)
 which most [.NET Project Templates](/dotnet-new) allow you to update with:
 
-    $ npm run dtos
+```bash
+$ npm run dtos
+```
 
 Then just import the built-in `@servicestack/client` library and transpiled TypeScript DTOs to enable productive typed API requests:
 

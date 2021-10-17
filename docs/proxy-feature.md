@@ -31,8 +31,10 @@ One potential use-case is to enable smart load balancing which lets you use C# t
 Thanks to ServiceStack's clean Service Gateway design you can use the clean POCO DTOs from any server instance, which you can get using the 
 [x dotnet tool](https://docs.servicestack.net/dotnet-tool) or [npm servicestack-cli](https://github.com/ServiceStack/servicestack-cli) utils from either the public url or proxy endpoint url, e.g:
  
-    $ x csharp https://techstacks.io
-    $ x csharp https://external.domain.com/techstacks
+```bash
+$ x csharp https://techstacks.io
+$ x csharp https://external.domain.com/techstacks
+```
  
 The resulting DTOs can be used with any [.NET Service Client](/csharp-client#built-in-clients), configured with the proxy endpoint as the **BaseUrl**:
  

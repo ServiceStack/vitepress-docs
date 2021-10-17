@@ -156,7 +156,9 @@ AutoQuery enables instant querying support on RDBMS tables behind clean self-des
 Plugins.Add(new AutoQueryFeature { MaxLimit = 100 });
 ```
 
-> Requires ServiceStack.Server
+::: info
+Requires ServiceStack.Server
+:::
 
 ## [Server Events](https://github.com/ServiceStackApps/Chat#server-sent-events)
 

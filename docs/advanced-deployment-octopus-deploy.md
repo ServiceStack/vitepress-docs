@@ -67,7 +67,10 @@ Once we have created a valid .nuspec file, we can get TeamCity to create a NuGet
 If you are hosting your own TeamCity instance, this is just a local directory. However, if you are hosting a TeamCity instance separately, eg on a dedicated build server, you will need to copy these files local to the build server to package them or use another VCS that is secure for application settings.
 
 In this example, we will be packing the files from a known path on build server.
->If you are having issues with this step, check the file/folder permissions to the .nuspec and included files.
+
+::: info
+If you are having issues with this step, check the file/folder permissions to the .nuspec and included files
+:::
 
 ![](https://github.com/ServiceStack/Assets/raw/master/img/wikis/octopus-deploy-ssl/tc-nuget-pack.png)
 

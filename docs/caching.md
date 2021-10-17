@@ -183,7 +183,9 @@ So there are two options:
 - Use **time based** caching (and expire cache earlier)
 - Cache on **validity** 
 
-> When the cache is based on **validity** the caches are invalidated manually (e.g. when a user modified his profile, > clear his cache) which means you always get the latest version and you never need to hit the database again to rehydrate the cache if it hasn't changed, which will save resources.
+::: info
+When the cache is based on **validity** the caches are invalidated manually (e.g. when a user modified his profile, > clear his cache) which means you always get the latest version and you never need to hit the database again to rehydrate the cache if it hasn't changed, which will save resources
+:::
 
 So if the order gets updated, you should delete the cache manually:
 
@@ -228,8 +230,10 @@ Or if you're using the [CacheResponse](/cacheresponse-attribute) attribute you c
 public object Any(MyRequest request) { ... }
 ```
 
-> If you don't register a `ICacheClient` ServiceStack automatically registers a `MemoryCacheClient` for you 
-which will also refer to the same instance registered for `LocalCache`.
+::: info
+If you don't register a `ICacheClient` ServiceStack automatically registers a `MemoryCacheClient` for you 
+which will also refer to the same instance registered for `LocalCache`
+:::
 
 ## [ICacheClientExtended](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/Caching/ICacheClientExtended.cs)
 

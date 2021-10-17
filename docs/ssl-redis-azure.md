@@ -86,7 +86,7 @@ We have all the require information and our Redis Cache instance is running, we 
 
 To make it simple to use the [IRedisClient](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/Redis/IRedisClient.cs) from our web service methods, we can register an `IRedisClientsManager` to handle the clients for us. This way, we can use the `base.Redis` property from our services to access the Redis server instance. 
 
-```
+```cs
 public override void Configure(Container container)
 {
     var connString = AppSettings.GetString("RedisConnectionString");
@@ -97,13 +97,15 @@ public override void Configure(Container container)
 
 We are getting our Redis connection string from our Web.Config `<appSettings/>`. The Redis connection string is made up of the domain name of the instance parsing query string parameters to specify other configuration options. In our example the format of the connection string looks like:
 
-    {AzureRedisKey}@servicestackdemo.redis.cache.windows.net?ssl=true 
+```
+{AzureRedisKey}@servicestackdemo.redis.cache.windows.net?ssl=true 
+```
 
 ## Accessing Redis from a Web Service
 
 We can now try a simple example to test that our instance is working. Here's an example of a simple "Todo" service that persists items to our Redis instance:
 
-```
+```cs
 // Create your ServiceStack Web Service
 public class TodoService : Service
 {
@@ -159,7 +161,7 @@ You can try a redis-powered TODO's web app like this in our [todos.netcore.io](h
 
 Another property automatically injected when registering our `RedisManagerPool` is `base.Cache` which provides a substitutable [Caching abstraction](/caching) our Services can use to cache results. E.g. we can make use of ServiceStack's high-level Caching API in [Request.ToOptimizedResultUsingCache](/caching#cache-a-response-of-a-service) to enable maximum performance of your Services:
 
-```
+```cs
 public object Get(CachedCustomers request)
 {
     return base.Request.ToOptimizedResultUsingCache(this.Cache, 
@@ -177,7 +179,9 @@ This snippet is from the [Northwind example](https://github.com/ServiceStackApps
 
 Connecting to Azure Redis Cache via SSL requires Microsoft SSL Certificates. The required certificates can be imported and registered with Mono by running the commands below:
 
-    $ sudo mozroots --import --machine --sync
-    $ sudo certmgr -ssl -m https://go.microsoft.com
-    $ sudo certmgr -ssl -m https://nugetgallery.blob.core.windows.net
-    $ sudo certmgr -ssl -m https://nuget.org
+```bash
+$ sudo mozroots --import --machine --sync
+$ sudo certmgr -ssl -m https://go.microsoft.com
+$ sudo certmgr -ssl -m https://nugetgallery.blob.core.windows.net
+$ sudo certmgr -ssl -m https://nuget.org
+```

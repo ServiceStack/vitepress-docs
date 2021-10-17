@@ -162,7 +162,9 @@ SetConfig(new HostConfig {
 });
 ```
 
-> You will still need to "Copy to Output Directory" in RELEASE builds if you're not using [Embedded Resources](/virtual-file-system#embedded-resources) so the Console App can locate the Razor Views and Static files at runtime.
+::: info
+You will still need to "Copy to Output Directory" in RELEASE builds if you're not using [Embedded Resources](/virtual-file-system#embedded-resources) so the Console App can locate the Razor Views and Static files at runtime
+:::
 
 ### Host as a Windows or Linux Console Host, Windows Service or Linux Daemon
 

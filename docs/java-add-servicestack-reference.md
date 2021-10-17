@@ -75,7 +75,9 @@ Clicking **OK** will add the `dto.java` file to your project and modifies the cu
 
 ![](https://github.com/ServiceStack/Assets/raw/master/img/servicestackidea/android-dialog-example.gif)
 
-> As the Module's **build.gradle** file was modified you'll need to click on the **Sync Now** link in the top yellow banner to sync the **build.gradle** changes which will install or remove any modified dependencies.
+::: info
+As the Module's **build.gradle** file was modified you'll need to click on the **Sync Now** link in the top yellow banner to sync the **build.gradle** changes which will install or remove any modified dependencies
+:::
 
 ### Update ServiceStack Reference
 

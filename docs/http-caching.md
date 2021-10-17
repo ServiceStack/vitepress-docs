@@ -78,7 +78,9 @@ client is the
 which instructs the client what caching behavior to apply to the server response. As we want the new behavior 
 to work transparently without introducing caching issues to existing Services, we've opted for a conservative:
 
-    Cache-Control: max-age=0
+```ini
+Cache-Control: max-age=0
+```
     
 Which tells the client to treat the server response as immediately stale and that it should send another
 request to the Server for identical requests, but this time the client will append a 
@@ -165,14 +167,18 @@ this.GetPlugin<HttpCacheFeature>().DefaultMaxAge = TimeSpan.FromHours(1);
 
 So the HTTP Response Headers the client receives when calling this Service for the first time is something similar to:
 
-    ETag: "42"
-    Cache-Control: max-age=600
+```ini
+ETag: "42"
+Cache-Control: max-age=600
+```
 
 Which tells the client that they can use their local cache for identical requests issued within the next
 10 minutes. After 10 minutes the cache is considered stale and the client will issue a new request to the 
 server but this time it will include the **ETag** it has associated with the Response, i.e:
 
-    If-None-Match: "42"
+```ini
+If-None-Match: "42"
+```
 
 When this happens the Service is still executed as normal and if the Customer hasn't changed, the 
 `HttpCacheFeature` will compare the `HttpResult.ETag` response with the clients **ETag** above and if they 
@@ -219,13 +225,17 @@ public object Any(GetCustomerOrders request)
 Which returns the Last Modified Date of the `Customer` record or any of their `Orders` as well as the 
 customized **Cache-Control** Header which together returns Response Headers similar to:
 
-    Last-Modified: Fri, 19 April 2016 05:00:00 GMT
-    Cache-Control: max-age=60, public, must-revalidate
+```ini
+Last-Modified: Fri, 19 April 2016 05:00:00 GMT
+Cache-Control: max-age=60, public, must-revalidate
+```
 
 Then after **60 seconds** have elapsed the client will re-issue a request but instead of sending a 
 `If-None-Match` Request Header and **ETag**, instead sends `If-Modified-Since` and the **Last-Modified** date:
 
-    If-Modified-Since: Fri, 19 April 2016 05:00:00 GMT
+```ini
+If-Modified-Since: Fri, 19 April 2016 05:00:00 GMT
+```
 
 The resulting behavior is identical to that of the **ETag** above but instead compares the LastModified dates
 instead of ETag strings for validity.

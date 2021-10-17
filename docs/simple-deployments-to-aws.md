@@ -1,8 +1,6 @@
 ---
-slug: simple-deployments-to-aws
+title: Deploy multiple ASP.NET Websites to AWS with WebDeploy
 ---
-
-### Deploying multiple ASP.NET Websites to AWS with WebDeploy
 
 We've [previously discussed](/deploy-multiple-sites-to-aws#why-deploy-multiple-sites-to-a-single-aws-instance) the cost and automation benefits of **deploying multiple websites to a single AWS instance** using [TeamCity and Octopus Deploy](/deploy-multiple-sites-to-aws) which is a great combination for managing production website deployments, taking advantage of the automation capabilities of TeamCity and the release management features of Octopus Deploy.
 
@@ -28,7 +26,9 @@ While here, you will also need to add a new security rule for Web Deploy to work
 
 ![WebDeploy and HTTP/S ports](https://github.com/ServiceStack/Assets/raw/master/img/wikis/web-deploy/open-aws-ports-2.png)
 
-> It is good practice to restrict inbound ports to RDP and other ports related to administrative tasks to a subnet or even specific IP address to improve security. See AWS's "[Recommended Network ACL Rules for Your VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_NACLs.html)"
+::: info
+It is good practice to restrict inbound ports to RDP and other ports related to administrative tasks to a subnet or even specific IP address to improve security. See AWS's "[Recommended Network ACL Rules for Your VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_NACLs.html)"
+:::
 
 If you are missing HTTP and HTTPS, ensure these have been added as well.
 
@@ -78,27 +78,34 @@ The first deployment might take some time due to having to copy all files requir
 
 Although the Publish wizard is a great tool, by default, it doesn't work well with single page applications like AngularJS where the client side of the application that requires pre/post processing of client side scripts and assets. Another way to publish still using Web Deploy (msdeploy) is by using a Gulp task. The Gulp task simply wraps msdeploy using the [gulp-msdeploy Gulp package](https://github.com/ServiceStack/gulp-msdeploy) ([base on grunt-msdeploy written by Jack Davis](https://www.npmjs.org/~mrjackdavis)). If we create a new project using the **AngularJS App** template from ServiceStackVS, we can modify what is already there very quickly to get our application to deploy to our AWS instance.
  
-Once the prject is created, we will fill out the same details given to the Publish wizard, but in a configuration file located at `/wwwroot_build/publish/config.json`. By default, it has placeholder values shown below:
+Once the project is created, we will fill out the same details given to the Publish wizard, but in a configuration file located at `/wwwroot_build/publish/config.json`. By default, it has placeholder values shown below:
 
-    {
-        "iisApp": "ExampleAngularJSApp1",
-        "serverAddress": "deploy-server.example.com",
-        "userName": "{WebDeployUserName}",
-        "password" : "{WebDeployPassword}"
-    }
+```json
+{
+    "iisApp": "ExampleAngularJSApp1",
+    "serverAddress": "deploy-server.example.com",
+    "userName": "{WebDeployUserName}",
+    "password" : "{WebDeployPassword}"
+}
+```
 
 Where the `iisApp` value is the name of your project. Below is the filled in example details as shown in the publish wizard:
 
-    {
-        "iisApp": "ExampleApplication",
-        "serverAddress": "ec2-XXX-XXX-XXX-XXX.ap-southeast-2.compute.amazonaws.com",
-        "userName": "Administrator",
-        "password" : "MyPassword123"
-    }
+```json
+{
+    "iisApp": "ExampleApplication",
+    "serverAddress": "ec2-XXX-XXX-XXX-XXX.ap-southeast-2.compute.amazonaws.com",
+    "userName": "Administrator",
+    "password" : "MyPassword123"
+}
+```
 
 Once filled in, we can run the provided tasks 2 and 3 to package our application and task 4 to deploy it. If you are running Visual Studio 2015 (or 2013 with extension), these Gulp tasks can be very simply from Task Runner Explorer UI.
 
-> Even though by using GitHub's default Visual Studio .gitignore the config will not turn up in source control, the password is still **stored in plain text**. This should be taken into account when deciding if this method of deployment is suitable for your development/deployment environment.
+::: info
+Even though by using GitHub's default Visual Studio .gitignore the config will not turn up in source control, the password is still **stored in plain text**. This should be taken into account when deciding if this method of deployment is suitable for your development/deployment environment
+:::
 
 ### Bundling ###
+
 This template is also taking care of optimizations like CSS and JS minification in the packaging steps. Package of the server files and client files separately enable us to update and deploy an optimized client side version of our application quickly as only our client side resources will have to be updated.

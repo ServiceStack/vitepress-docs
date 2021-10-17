@@ -199,22 +199,26 @@ The docs on the Virtual File System shows how to override embedded resources:
 
 ServiceStack's [Virtual File System](/virtual-file-system) supports multiple file source locations where you can override OpenAPI's embedded files by including your own custom files in the same location as the existing embedded files. This lets you replace built-in ServiceStack embedded resources with your own by simply copying the [/swagger-ui](https://github.com/ServiceStack/ServiceStack/tree/master/src/ServiceStack.Api.OpenApi/swagger-ui) files you want to customize and placing them in your Website Directory at:
 
-    /swagger-ui
-      /css
-      /fonts
-      /images
-      /lang
-      /lib
-      index.html
-      swagger-ui.js
+```
+/swagger-ui
+    /css
+    /fonts
+    /images
+    /lang
+    /lib
+    index.html
+    swagger-ui.js
+```
 
 #### Injecting custom JavaScript
 
 As part of the customization you can add custom `patch.js` and `patch-preload.js`:
 
-    /swagger-ui
-      patch.js
-      patch-preload.js
+```
+/swagger-ui
+    patch.js
+    patch-preload.js
+```
 
 which will be injected in the `/swagger-ui` index page, `patch-preload.js` is embedded before `swaggerUi.load()` is called:
 
@@ -291,19 +295,27 @@ call protected Services in `/swagger-ui`.
 You can use OpenAPI plugin to automatically generate client using [Autorest](https://github.com/Azure/Autorest). 
 To use AutoRest first install it from npm:
 
-    npm install -g autorest
+```bash
+$ npm install -g autorest
+```
 
 Then you need to download the Open API specification for your Services using a tool like curl:
 
-    curl http://your.domain/openapi > openapi.json
+```bash
+$ curl http://your.domain/openapi > openapi.json
+```
 
 Or using `iwr` if you have PowerShell installed:
 
-    iwr http://your.domain/openapi -o openapi.json
+```bash
+$ iwr http://your.domain/openapi -o openapi.json
+```
 
 You can then use the `openapi.json` with autorest to generate a client for your API in your preferred language, e.g:
 
-    autorest --latest-release -Input openapi.json -CodeGenerator CSharp -OutputDirectory AutoRestClient -Namespace AutoRestClient
+```bash
+$ autorest --latest-release -Input openapi.json -CodeGenerator CSharp -OutputDirectory AutoRestClient -Namespace AutoRestClient
+```
 
 This will generate directory containing your model types and REST operations that you can use with the 
 generated client, e.g:

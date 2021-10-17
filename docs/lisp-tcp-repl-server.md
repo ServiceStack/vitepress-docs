@@ -31,17 +31,22 @@ if (Config.DebugMode)
 }
 ```
 
-> [ScriptNamespaces](https://sharpscript.net/docs/script-net#type-resolution) behaves like C#'s `using Namespace;` statement letting you reference Types 
-by `Name` instead of its fully-qualified Namespace.
+::: info
+[ScriptNamespaces](https://sharpscript.net/docs/script-net#type-resolution) behaves like C#'s `using Namespace;` statement letting you reference Types by `Name` instead of its fully-qualified Namespace
+:::
 
 Whilst you can now connect to it with basic `telnet`, it's a much nicer experience to use it with the [rlwrap](https://linux.die.net/man/1/rlwrap)
 readline wrap utility which provides an enhanced experience with line editing, persistent history and completion.
 
-    $ sudo apt-get install rlwrap
+```bash
+$ sudo apt-get install rlwrap
+```
 
 Then you can open a TCP Connection to connect to a new Lisp REPL with:
 
-    $ rlwrap telnet localhost 5005
+```bash
+$ rlwrap telnet localhost 5005
+```
 
 Where you now have full scriptability of the running server as allowed by [#Script Pages](https://sharpscript.net/docs/sharp-pages) `SharpPagesFeature` which
 allows [scripting of all .NET Types](https://sharpscript.net/docs/script-net#allowscriptingofalltypes) by default. 
@@ -60,9 +65,11 @@ publishing **5x** `SendEmail` Request DTOs using the [publishMessage](https://sh
 they're processed in the background by its configured [MQ Server](/messaging) that uses it to execute the 
 `SendEmail` ServiceStack Service where it uses its configured AWS SES SMTP Server to finally send out the Emails:
 
-> YouTube: [youtu.be/HO523cFkDfk](https://youtu.be/HO523cFkDfk)
-
 [![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/sharpscript/lisp-tcp-repl.gif)](https://youtu.be/HO523cFkDfk)
+
+::: info YouTube
+[youtu.be/HO523cFkDfk](https://youtu.be/HO523cFkDfk)
+:::
 
 ### Password Protection 
 
