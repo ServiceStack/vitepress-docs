@@ -5,9 +5,11 @@ title: Access HTTP-specific Features in Services
 
 ServiceStack is based on [http handlers](http://msdn.microsoft.com/en-us/library/system.web.ihttphandler.aspx), but ServiceStack provides a clean, dependency-free [IService](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/IService.cs) to implement your Web Services logic in. The philosophy behind this approach is that the less dependencies you have on your environment and its request context, the more testable and re-usable your services become. 
 
-### Accessing [IRequest](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/Web/IRequest.cs) and [IResponse](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/Web/IResponse.cs) in filters and Services
+::: info
+The core [IRequest](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/Web/IRequest.cs) and [IResponse](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/Web/IResponse.cs) interfaces used in filters and Services
+:::
 
-#### Request Filters
+### Request Filters
 
 The Request Filters are applied before the service gets called and accepts: (IRequest, IResponse, RequestDto) e.g:
 

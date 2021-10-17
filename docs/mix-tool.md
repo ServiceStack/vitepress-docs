@@ -225,7 +225,9 @@ All DB servers are just as easily configurable, which we can quickly find using 
 $ x mix [db]
 ```
 
-> Tip: search term needs to be quoted in unix shells, e.g: '[db]'
+::: info Tip
+search term needs to be quoted in unix shells, e.g: '[db]'
+:::
 
 Which will list all available `[db]` providers:
 

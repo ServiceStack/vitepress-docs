@@ -180,7 +180,9 @@ public class StatisticFilterAttribute : RequestFilterAttribute
 }
 ```
 
-> The `ResponseFilterAttribute` base class can be used for Response Filter Attributes which works the same as `RequestFilterAttribute` above.
+::: info
+The `ResponseFilterAttribute` base class can be used for Response Filter Attributes which works the same as `RequestFilterAttribute` above
+:::
 
 ### Conditionally Apply Filter Attributes
 

@@ -13,11 +13,15 @@ These examples are simply links to existing ServiceStack web services, which bas
 
 To see it in action, **view the source** in your browser. Webkit and Firefox users can simply go to the url below:
 
-    view-source:http://northwind.netcore.io/customers/ALFKI
+```
+view-source:http://northwind.netcore.io/customers/ALFKI
+```
 
 Note: To view the web services in a different format simply append **?format={ext}** to the query string, e.g:
 
-    ?format=[json|xml|html|csv|jsv]
+```
+?format=[json|xml|html|csv|jsv]
+```
 
 ### Lightweight Customizable HTML Templates
 

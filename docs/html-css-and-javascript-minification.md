@@ -14,7 +14,9 @@ var minifiedHtml = Minifiers.Html.Compress(html);
 var advancedMinifiedHtml = Minifiers.HtmlAdvanced.Compress(html);
 ```
 
-> Each minifier implements the lightweight [ICompressor](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/ICompressor.cs) interface making it trivial to mock or subtitute with a custom implementation.
+::: info
+Each minifier implements the lightweight [ICompressor](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Interfaces/ICompressor.cs) interface making it trivial to substitute with a custom implementation
+:::
 
 #### JS Minifier
 For the JavaScript minifier we're using [Ext.Net's C# port](https://github.com/extnet/Ext.NET.Utilities/blob/master/Ext.Net.Utilities/JavaScript/JSMin.cs) of Douglas Crockford's venerable [JSMin](http://crockford.com/javascript/jsmin). 
@@ -149,7 +151,9 @@ of all SVG images in the SVG CSS bundle as seen above.
 
 You can configure your ServiceStack App to use Nuglify's Advanced HTML, CSS, JS Minifiers using [mix](/mix-tool) with:
 
-    $ x mix nuglify 
+```bash
+$ x mix nuglify 
+```
 
 Which will write [Configure.Nuglify.cs](https://gist.github.com/gistlyn/4bdb79d21f199c22b8a86f032c186e2d) to your **HOST** project.
 

@@ -121,8 +121,10 @@ deserialize a tabular flat file of scalar values at high-speed, it also supports
 which are encoded in JSV and escaped in a CSV field as normal. An example of this can be seen in a HTTP 
 sample log fragment below where the HTTP Request Headers are a serialized from a `Dictionary<string,string>`:
 
-    Id,HttpMethod,AbsoluteUri,Headers
-    1,GET,http://localhost:55799,"{Connection:keep-alive,Accept:""text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"",Accept-Encoding:""gzip, deflate, sdch"",Accept-Language:""en-US,en;q=0.8"",Host:""localhost:55799"",User-Agent:""Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36"",Upgrade-Insecure-Requests:1}"
+```csv
+Id,HttpMethod,AbsoluteUri,Headers
+1,GET,http://localhost:55799,"{Connection:keep-alive,Accept:""text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"",Accept-Encoding:""gzip, deflate, sdch"",Accept-Language:""en-US,en;q=0.8"",Host:""localhost:55799"",User-Agent:""Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36"",Upgrade-Insecure-Requests:1}"
+```
 
 Being such a versatile file format opens up a lot of new possibilities, e.g. instead of capturing seed data
 in code you could maintain them in plain-text .csv files and effortlessly load them on App Startup, e.g:

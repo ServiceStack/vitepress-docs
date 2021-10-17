@@ -39,7 +39,9 @@ Typically when hosting ServiceStack with MVC you'd want to host it at the `/api`
 </location>
 ```
 
-> See [Run Side-by-Side with another web framework](/servicestack-side-by-side-with-another-web-framework) for other web.config examples of hosting ServiceStack, e.g with IIS6/Mono.
+::: info
+See [Run Side-by-Side with another web framework](/servicestack-side-by-side-with-another-web-framework) for other web.config examples of hosting ServiceStack, e.g with IIS6/Mono
+:::
 
 ### Add your ServiceStack AppHost
 

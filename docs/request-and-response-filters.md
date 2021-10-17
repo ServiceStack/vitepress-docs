@@ -47,7 +47,9 @@ this.GlobalRequestFiltersAsync.Add(async (req, res, requestDto) =>
 });
 ```
 
-> Tip: If you're writing your own response to the response stream inside the response filter, add `res.EndRequest();` to signal to ServiceStack not to do anymore processing for this request.
+::: info Tip
+If you're writing your own response to the response stream inside the response filter, add `res.EndRequest();` to signal to ServiceStack not to do anymore processing for this request
+:::
 
 Simple Rate-limiting example:
 

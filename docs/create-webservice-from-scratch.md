@@ -152,8 +152,11 @@ In the screenshot the root path is `http://localhost/ServiceStack.Hello/services
 
 Let's access the HelloWorld service you created in your browser, so write the following URL in your address bar:
 
-`GET http://<root_path>/hello/YourName`
-eg http://example.org/hello/Max. 
+```
+GET http://<root_path>/hello/YourName
+```
+
+> E.g. http://example.org/hello/Max
     
 As you can see after clicking on this link, ServiceStack also contains a HTML response format, which makes the XML/Json (...) output human-readable. To change the return format to Json, simply add `?format=json` to the end of the URL. You'll learn more about formats, endpoints (URLs, etc) when you continue reading the documentation.
 
@@ -189,7 +192,7 @@ Rebuild and regenerate the request from the updated wsdl. You should get a corre
 </soap:Envelope>
 ```
 
-## Explore more ServiceStack features
+## Explore ServiceStack Documented Demo
 
 The [EmailContacts solution](https://github.com/ServiceStackApps/EmailContacts/) is a new guidance available that walks through the recommended setup and physical layout structure of typical medium-sized ServiceStack projects, including complete documentation of how to create the solution from scratch, whilst explaining all the ServiceStack features it makes use of along the way.
 

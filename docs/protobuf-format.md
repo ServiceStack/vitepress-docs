@@ -9,8 +9,6 @@ For .NET [@marcgravell](http://twitter.com/marcgravell) has developed **[protobu
 
 ProtoBuf is a great addition to your ServiceStack's web services as it provides the **fastest binary serializer** to go along with the **2 fastest text serializers** for .NET in [JSON](http://www.servicestack.net/mythz_blog/?p=344) and [JSV](http://www.servicestack.net/mythz_blog/?p=176) formats (already included by default). 
 
-_Note: Until we can get marcgravell to succumb to internal pressure and add support for attribute-less POCOs you will need to add unique custom indexes for each property on your DTOs e.g: `[DataMember(Order=N)]`._
-
 Otherwise another fast binary serializer that supports attribute-less POCOs is the new [MessagePack Format](/messagepack-format).
 
 ## Installing via NuGet

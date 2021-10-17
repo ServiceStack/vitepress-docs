@@ -9,10 +9,12 @@ ServiceStack uses the [JSV-Format](/jsv-format) (JSON without quotes) to parse Q
 
 JSV lets you embed deep object graphs in QueryString as seen [this example url](http://test.servicestack.net/json/reply/StoreLogs?Loggers=%5B%7BId:786,Devices:%5B%7BId:5955,Type:Panel,TimeStamp:1199303309,Channels:%5B%7BName:Temperature,Value:58%7D,%7BName:Status,Value:On%7D%5D%7D,%7BId:5956,Type:Tank,TimeStamp:1199303309,Channels:%5B%7BName:Volume,Value:10035%7D,%7BName:Status,Value:Full%7D%5D%7D%5D%7D%5D):
 
-    http://test.servicestack.net/json/reply/StoreLogs?Loggers=[{Id:786,Devices:[{Id:5955,Type:Panel,
-      Channels:[{Name:Temperature,Value:58},{Name:Status,Value:On}]},
-      {Id:5956,Type:Tank,TimeStamp:1199303309,
-      Channels:[{Name:Volume,Value:10035},{Name:Status,Value:Full}]}]}]
+```
+http://test.servicestack.net/json/reply/StoreLogs?Loggers=[{Id:786,Devices:[{Id:5955,Type:Panel,
+Channels:[{Name:Temperature,Value:58},{Name:Status,Value:On}]},
+{Id:5956,Type:Tank,TimeStamp:1199303309,
+Channels:[{Name:Volume,Value:10035},{Name:Status,Value:Full}]}]}]
+```
 
 If you want to change the default binding ServiceStack uses, you can register your own **Custom Request Binder**.
 
@@ -97,7 +99,9 @@ There are 2 ways to deserialize your own custom format, via attaching a custom r
 
 You can register custom binders in your AppHost by using the example below:
 
-    base.RequestBinders.Add(typeof(MyRequest), httpReq => ... requestDto);
+```cs
+base.RequestBinders.Add(typeof(MyRequest), httpReq => ... requestDto);
+```
 
 This gives you access to the IHttpRequest object letting you parse it manually so you can construct and return the strong-typed request DTO manually which will be passed to the service instead.
 

@@ -160,7 +160,9 @@ public class OrdersService : Service
 }
 ```
 
-> Tip: There exists a class named [UrnId](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Common/UrnId.cs) which provides helper methods to create unique keys for an object.
+::: info Tip
+There exists a class named [UrnId](https://github.com/ServiceStack/ServiceStack/blob/master/src/ServiceStack.Common/UrnId.cs) which provides helper methods to create unique keys for an object
+:::
 
 `ToOptimizedResultUsingCache` also has an overload which provides a parameter to set the timespan when the cache should be deleted (marked as expired). If now a client calls the same service method a second time and the cache expired, the provided delegate, which returns the response DTO, will be executed a second time.
 

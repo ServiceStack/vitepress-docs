@@ -83,8 +83,10 @@ public override void Configure(Container container)
 
 Where your AppHost will serve static files from your plugin's registered path mappings, e.g:
 
-    /disk1/file.html -> /path/to/project/App_Data/mount/hdd/file.html
-    /disk2/file.html -> d:\hdd\file.html
+```
+/disk1/file.html -> /path/to/project/App_Data/mount/hdd/file.html
+/disk2/file.html -> d:\hdd\file.html
+```
 
 ### Empty MemoryVirtualFiles registered in VirtualFileSources
 
@@ -211,7 +213,9 @@ SetConfig(new HostConfig {
 });
 ```
 
-> Where `~/` is resolved from your App's configured `ContentRootPath`
+::: info
+Where `~/` is resolved from your App's configured `ContentRootPath`
+:::
 
 ## Overriding Embedded Resources with Static Files
 
@@ -285,9 +289,11 @@ The HTML templates for the metadata pages are maintained as [embedded html templ
 
 The VFS lets you replace built-in ServiceStack templates with your own by simply copying the metadata or [HtmlFormat Template files](http://bit.ly/164YbrQ) you want to customize and placing them in your Website Directory at:
 
-    /Templates/HtmlFormat.html        // The auto HtmlFormat template
-    /Templates/IndexOperations.html   // The /metadata template
-    /Templates/OperationControl.html  // Individual operation template
+```
+/Templates/HtmlFormat.html        // The auto HtmlFormat template
+/Templates/IndexOperations.html   // The /metadata template
+/Templates/OperationControl.html  // Individual operation template
+```
 
 Which you can customize locally that ServiceStack will pick up and use instead.
 
@@ -326,7 +332,9 @@ void AppendFile(string path, ReadOnlyMemory<char> text);
 void AppendFile(string path, ReadOnlyMemory<byte> bytes);
 ```
 
-> Folders are implicitly created when writing a file to folders that don't exist
+::: info
+Folders are implicitly created when writing a file to folders that don't exist
+:::
 
 The new `IVirtualFiles` API is available in local FileSystem, In Memory, Gists and S3 Virtual path providers:
 
