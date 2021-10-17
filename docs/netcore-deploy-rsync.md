@@ -9,41 +9,53 @@ A common way for reliably hosting .NET Core Apps on Ubuntu is to use [supervisor
 
 We'll start by creating a dedicated user account for hosting and running your .NET Core Apps to mitigate potential abuse. SSH into your Ubuntu server and create the `deploy` user account with a `/home/deploy` home directory and add them to the `sudo` group:
 
-    $ sudo useradd -m deploy
-    $ sudo usermod -aG sudo deploy
+```bash
+$ sudo useradd -m deploy
+$ sudo usermod -aG sudo deploy
+```
 
 For seamless deployments use `visudo`:
 
-    $ visudo
+```bash
+$ visudo
+```
 
 To allow `deploy` to run `supervisorctl` without prompting for a password:
 
-    # Allow members of group sudo to execute any command
-    %sudo   ALL=(ALL:ALL) ALL
-    %deploy ALL=(ALL:ALL) NOPASSWD: /usr/bin/supervisorctl
+```ini
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+%deploy ALL=(ALL:ALL) NOPASSWD: /usr/bin/supervisorctl
+```
 
-> In vi type `i` to start editing a file and `ESC` to quit edit mode and `:wq` to save your changes before exiting.
+::: info Tip
+In vi type `i` to start editing a file and `ESC` to quit edit mode and `:wq` to save your changes before exiting
+:::
 
 ### Setup supervisor
 
 Install supervisor using apt-get:
 
-    $ sudo apt-get install supervisor
+```bash
+$ sudo apt-get install supervisor
+```
 
 You'll need to create a separate config file for each app in `/etc/supervisor/conf.d/`. We can use the same template below by replacing `myapp` with the name of your App:
 
 ### /etc/supervisor/conf.d/web.myapp.conf
 
-    [program:web-myapp]
-    command=/usr/bin/dotnet /home/deploy/apps/myapp/MyApp.dll
-    directory=/home/deploy/apps/myapp
-    autostart=true
-    autorestart=true
-    stderr_logfile=/var/log/web-myapp.err.log
-    stdout_logfile=/var/log/web-myapp.out.log
-    environment=ASPNETCORE_ENVIRONMENT=Production
-    user=deploy
-    stopsignal=INT
+```ini
+[program:web-myapp]
+command=/usr/bin/dotnet /home/deploy/apps/myapp/MyApp.dll
+directory=/home/deploy/apps/myapp
+autostart=true
+autorestart=true
+stderr_logfile=/var/log/web-myapp.err.log
+stdout_logfile=/var/log/web-myapp.out.log
+environment=ASPNETCORE_ENVIRONMENT=Production
+user=deploy
+stopsignal=INT
+```
 
 ### Setup nginx
 
@@ -51,36 +63,41 @@ You'll also need to create a separate config for each website on nginx in /etc/n
 
 ### /etc/nginx/sites-available/myapp.example.org
 
-    server {
-        listen       80;
-        server_name myapp.example.org;
+```nginx
+server {
+    listen       80;
+    server_name myapp.example.org;
 
-        location / {
-            proxy_pass http://localhost:5001;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection keep-alive;
-            proxy_cache_bypass $http_upgrade;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_buffering off;
-            proxy_ignore_client_abort off;
-            proxy_intercept_errors on;
+    location / {
+        proxy_pass http://localhost:5001;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection keep-alive;
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_buffering off;
+        proxy_ignore_client_abort off;
+        proxy_intercept_errors on;
 
-            client_max_body_size 500m;
-        }
+        client_max_body_size 500m;
     }
+}
+```
 
 You'll then need to create symlink for each website to tell nginx you want each website to be enabled:
 
-    $ ln -s /etc/nginx/sites-available/myapp.example.org /etc/nginx/sites-enabled/myapp.example.org
-
+```bash
+$ ln -s /etc/nginx/sites-available/myapp.example.org /etc/nginx/sites-enabled/myapp.example.org
+```
 
 After this we can tell nginx to reload its configuration, as there's nothing listening to `http://localhost:5001` yet nginx will return a 502 Bad Gateway response but will start working as soon as our deployed .NET Core Apps are up and running.
 
-    $ /etc/init.d/nginx reload
+```bash
+$ /etc/init.d/nginx reload
+```
 
 ### Setting up SSH keys
 
@@ -97,11 +114,17 @@ ssh ubuntu@myapp.example.org "sudo supervisorctl restart web-myapp"
 
 To automate the entire deployment down to a single command you can add an npm script to your project's `package.json` that creates a production client and server build of your App before running WSL's `bash` to run the deploy script. All [Webpack Single Page App Templates](/templates-single-page-apps) already have a **publish** npm script, so you would just need to add a **deploy** script to run publish before running the above `deploy.sh`
 
+```json
+{
     "publish": "nuxt build && dotnet publish -c Release",
-    "deploy": "npm run publish && bash deploy.sh",
+    "deploy": "npm run publish && bash deploy.sh"
+}
+```
 
 Now to deploy your App you can just run:
 
-    $ npm run deploy
+```bash
+$ npm run deploy
+```
 
 Which deploys your published App to your remote Ubuntu server instance using `rsync` to only copy the incremental parts of the App that's changed (typically completing in <1s) and `ssh` to run a remote command to restart the `suprvisord` process, starting the .NET Core App with the latest deployed version.

@@ -7,7 +7,9 @@ Documentation for ServiceStack.Redis can be found on [ServiceStack.Redis Project
 
 The [ServiceStack.Redis](https://www.nuget.org/packages/ServiceStack.Redis) NuGet package supports both .NET Framework and .NET Core Applications:
 
-    $ dotnet add package ServiceStack.Redis
+::: nuget
+`<PackageReference Include="ServiceStack.Redis" Version="5.*" />`
+:::
 
 Use [ServiceStack.Redis.Core](https://www.nuget.org/packages/ServiceStack.Redis.Core) instead if you're running 
 [ASP.NET Core Apps on the .NET Framework](https://docs.servicestack.net/templates-corefx)
@@ -52,12 +54,16 @@ visit [.NET Core site](https://www.microsoft.com/net/core). Run commands in the 
 
 #### Register Microsoft key and feed
 
-    wget https://packages.microsoft.com/config/ubuntu/19.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-    sudo dpkg -i packages-microsoft-prod.deb    
+```
+wget https://packages.microsoft.com/config/ubuntu/19.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb    
+```
 
 #### Install the .NET Core SDK
 
-    sudo apt-get update
-    sudo apt-get install apt-transport-https
-    sudo apt-get update
-    sudo apt-get install dotnet-sdk-3.1
+```
+sudo apt-get update
+sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install dotnet-sdk-3.1
+```

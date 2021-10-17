@@ -63,8 +63,10 @@ experience we're used to. By using MVC Views we also naturally get good tooling 
 which was tightly coupled to **Web.config** configuration and therefore poorly supported in Self-Hosting 
 Console Apps. 
 
-> Currently ReSharper's tooling has issues with Razor Views inheriting Custom base classes - 
-which can be resolved by installing the latest EAP or disabling its **ASP.NET Razor** support.
+::: info
+Currently ReSharper's tooling has issues with Razor Views inheriting Custom base classes - 
+which can be resolved by installing the latest EAP or disabling its **ASP.NET Razor** support
+:::
 
 Overall we're ecstatic with the end-result, we retain our Controller-free development model whilst Razor under 
 .NET Core executes noticeably quicker than ASP.NET and significantly faster on Linux vs using Mono.
@@ -96,7 +98,9 @@ var contact = Html.Exec(() => Gateway.Send(new GetContact { Id = id }).Result, o
 Which [/_id/edit.cshtml](https://github.com/NetCoreApps/Validation/blob/master/world/wwwroot/server-razor/contacts/_id/edit.cshtml) 
 uses to call the `GetContact` Service using the [Service Gateway](/service-gateway).
 
-> `Html.Exec()` is a UX-friendly alternative to using `try/catch` boilerplate in Razor
+::: info
+`Html.Exec()` is a UX-friendly alternative to using `try/catch` boilerplate in Razor
+:::
 
 ### Stand-alone Razor Views
 

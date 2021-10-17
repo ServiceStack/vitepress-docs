@@ -30,7 +30,9 @@ Or if you had a previous version installed, update with:
 $ dotnet tool update -g x
 ```
 
-> Both `x` and `app` have equivalent base functionality, whilst `app` has superset features for richer [Windows-only integration](/netcore-windows-desktop)
+::: info
+Both `x` and `app` have equivalent base functionality, whilst `app` has superset features for richer [Windows-only integration](/netcore-windows-desktop)
+:::
 
 #### Usage
 

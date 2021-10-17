@@ -92,7 +92,9 @@ There are **11 .NET 5.0 project templates** for each of ServiceStack's most popu
 
 All .NET 5.0 Templates can be developed using your preferred choice of either VS Code, VS.NET or JetBrains Project Rider on your preferred Desktop OS. Given the diverse ecosystem used to develop .NET Core Applications, the new Project Templates are being maintained on GitHub and made available via our new [x new](/web-new) command-line utility, installable from npm with:
  
-    $ dotnet tool install --global x 
+```bash
+$ dotnet tool install --global x 
+```
  
 This makes the `x` .NET Core tool globally available which can be run without arguments to view all templates available:
 
@@ -102,11 +104,15 @@ This makes the `x` .NET Core tool globally available which can be run without ar
 
 That can be used to create new projects with:
  
-x new `&lt;template-name&gt;` `&lt;project-name&gt;`
+```bash
+x new `<template-name>` `<project-name>`
+```
  
 Example of creating a new **Vue SPA** project called **Acme**:
  
-    $ x new vue-spa Acme
+```bash
+$ x new vue-spa Acme
+```
  
 The resulting `Acme.sln` can be opened in VS 2017 which will automatically restore and install both the .NET and npm packages upon first load and build. This can take a while to install all client and server dependencies, once finished the `wwwroot` folder will be populated with your generated Webpack App contained within a `/dist` folder alongside a generated `index.html` page. After these are generated you can run your App with **F5** to run your project as normal:
 
@@ -162,7 +168,9 @@ To illustrate the various features available we've developed a number of Web App
 
 You can quickly get started by creating a Web App from the project template:
 
-    $ dotnet-new bare-app ProjectName
+```bash
+$ dotnet-new bare-app ProjectName
+```
 
 ## Run ASP.NET Core Apps on the .NET Framework
 
@@ -196,7 +204,9 @@ Where the `net45` builds always get used when they're added to any **.NET Framew
  - ServiceStack.Stripe.Core
  - ServiceStack.Kestrel
 
-> Ultimately support for whether a **.NET Standard 2.0** library will run on the .NET Framework depends on whether external dependencies also support this scenario which as it's a more niche use-case, will be a less tested scenario. 
+::: warning
+Ultimately support for whether a **.NET Standard 2.0** library will run on the .NET Framework depends on whether external dependencies also support this scenario which as it's a more niche use-case, will be a less tested scenario
+:::
 
 Other issues from being a less popular scenario is not being able to reference the [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) meta package which only supports .NET Core 2.1 projects, instead ASP.NET .NET Standard packages will need to be referenced individually. 
 
@@ -209,11 +219,13 @@ To make it as easy as possible to get started you can use the [NetFrameworkCoreT
  - [razor-corefx](https://github.com/NetFrameworkCoreTemplates/razor-corefx) - .NET Framework ASP.NET Core Website with ServiceStack.Razor
  - [templates-corefx](https://github.com/NetFrameworkCoreTemplates/templates-corefx) - .NET Framework ASP.NET Core Templates Bootstrap Website
 
-This will let you create an ASP.NET Core App running on the .NET Framework v4.7 with:
+This will let you create an ASP.NET Core App running on the .NET Framework v4.7 with the [dotnet tool](/dotnet-tool):
 
-    $ npm install -g @servicestack/cli
+```bash
+$ dotnet tool install --global x 
 
-    $ dotnet-new web-corefx AcmeNetFx
+$ x new web-corefx AcmeNetFx
+```
 
 Which can then be opened in your preferred VS.NET or Project Rider C# IDE.
 
@@ -617,8 +629,6 @@ configure logging with ServiceStack directly with the logging providers below wh
 
  - ServiceStack.Logging.Serilog
  - ServiceStack.Logging.Slack
-
-> Support for `NLog` will be added once their stable NuGet release contains .NET Standard builds.
 
 ### WebRootPath and ContentRootPath
 

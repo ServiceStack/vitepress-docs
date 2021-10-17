@@ -12,7 +12,9 @@ all connections to be secure by default, it's become the defacto standard to bot
 In most cases it's sufficient to run .NET Core Apps on `https://localhost:5001` for normal browser development and if you receive an invalid certificate
 error you can run:
 
-    $ dotnet dev-certs https --trust
+```bash
+$ dotnet dev-certs https --trust
+```
 
 To trust the local development certificate and remove the SSL Certificate error in your browser.
 
@@ -21,7 +23,9 @@ To trust the local development certificate and remove the SSL Certificate error 
 However for Apps needing to support OAuth providers that don't allow `localhost` domains like **Sign In with Apple** you would need
 to use a different domain. A popular workaround is to use a DNS name that resolves to `127.0.0.1` in which case you can use:
 
-    local.servicestack.com
+```
+local.servicestack.com
+```
 
 Which you can use to view your local Web App typically on `https://localhost:5001` at `https://local.servicestack.com:5001` which
 will allow you to register as valid domains & callback URLs in OAuth Apps you want to support. As this is a real DNS A record
@@ -33,15 +37,21 @@ But to be able to access your local dev server from an Android Emulator you'd in
 IP, which you could support by [updating your Android Emulator /system/etc/hosts file](https://stackoverflow.com/a/53929946/85785)
 mapping to include:
 
-    10.0.2.2       local.servicestack.com
+```
+10.0.2.2       local.servicestack.com
+```
 
 Which can be quite cumbersome to change, alternatively an easier solution is to use a DNS record that resolves to `10.0.2.2`:
 
-    dev.servicestack.com
+```
+dev.servicestack.com
+```
 
 and instead update your OS hosts file (e.g. `%SystemRoot%\System32\drivers\etc\hosts` for Windows or `/etc/hosts` on macOS/Linux) to include:
 
-	127.0.0.1       dev.servicestack.com
+```
+127.0.0.1       dev.servicestack.com
+```
 
 Which will let you use the same `dev.servicestack.com` to access your local dev server in both Android Emulators and your Host OS 
 so you can have a single domain & callback URL you can use in your OAuth Apps configuration.
@@ -55,27 +65,39 @@ you easily add custom DNS rules whilst falling back to use its default DNS resol
 
 The easiest way to install Dnsmasq on macOS is to use [Homebrew](https://brew.sh):
 
-    $ brew install dnsmasq
+```bash
+$ brew install dnsmasq
+```
 
 Once installed copy over the default configuration files:
 
-    $ cp $(brew list dnsmasq | grep /dnsmasq.conf.example$) /usr/local/etc/dnsmasq.conf
-    $ sudo cp $(brew list dnsmasq | grep /homebrew.mxcl.dnsmasq.plist$) /Library/LaunchDaemons/
+```bash
+$ cp $(brew list dnsmasq | grep /dnsmasq.conf.example$) /usr/local/etc/dnsmasq.conf
+$ sudo cp $(brew list dnsmasq | grep /homebrew.mxcl.dnsmasq.plist$) /Library/LaunchDaemons/
+```
 
 Then configure Dnsmasq to start automatically by registering it with **launchd**:
 
-    $ sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+```bash
+$ sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+```
 
 The easiest to configure the IP Address for a single domain is to still add it to `/etc/hosts`, e.g. if your local ASP.NET
 dev server is on a different server to your macOS being used to develop/test iOS Apps, you would use that IP Address instead:
 
-	192.168.0.2     dev.servicestack.com
+```
+192.168.0.2     dev.servicestack.com
+```
 
 Alternatively you can maintain these rules in Dnsmasq's config which offers far greater flexibility:
 
-    $ sudo vi /usr/local/etc/dnsmasq.conf
+```bash
+$ sudo vi /usr/local/etc/dnsmasq.conf
+```
 
-    address=/dev.servicestack.com/192.168.0.2
+```
+address=/dev.servicestack.com/192.168.0.2
+```
 
 In which case you'll also want to update the OS's resolver config to 
 [query your local DNS Server when resolving these addresses](https://www.stevenrombauts.be/2018/01/use-dnsmasq-instead-of-etc-hosts/#2-only-send-test-and-box-queries-to-dnsmasq).
@@ -84,14 +106,18 @@ In which case you'll also want to update the OS's resolver config to
 
 After making changes to your DNS configuration, restart dnsmasq for it to take effect:
 
-    $ sudo launchctl stop homebrew.mxcl.dnsmasq
-    $ sudo launchctl start homebrew.mxcl.dnsmasq
+```bash
+$ sudo launchctl stop homebrew.mxcl.dnsmasq
+$ sudo launchctl start homebrew.mxcl.dnsmasq
+```
 
 #### Update iOS to use your custom DNS Server
 
 First find out the current IP Address of your macOS instance:
 
-    $ ipconfig getifaddr en0
+```bash
+$ ipconfig getifaddr en0
+```
 
 Which you can get your iOS development device to use by going into your **Wi-Fi** Network Info in iOS **Settings**:
 
@@ -113,8 +139,10 @@ a self-signed certificate to be able to view it in a browser without certificate
 To simplify creation of self-signed certificate for `*.servicestack.com` you can use the [dotnet mix tool](/mix-tool)
 to download the openssl script and running it:
 
-    $ x mix gen-dev-crt.sh
-    $ bash gen-dev-crt.sh
+```bash
+$ x mix gen-dev-crt.sh
+$ bash gen-dev-crt.sh
+```
 
 Which will write this script below to your projects HOST project:
 
@@ -150,13 +178,17 @@ Import-Certificate -FilePath dev.crt -CertStoreLocation Cert:\CurrentUser\Root
 Where it will import the Certificate into the [Current User Certificate Store](https://docs.microsoft.com/en-us/windows/win32/seccrypto/system-store-locations#cert_system_store_current_user)
 which you can view/remove in **regedit.msc** at:
 
-    Computer\HKEY_CURRENT_USER\SOFTWARE\Microsoft\SystemCertificates\Root\Certificates\
+```
+Computer\HKEY_CURRENT_USER\SOFTWARE\Microsoft\SystemCertificates\Root\Certificates\
+```
 
 #### macOS
 
 In macOS you can [add a trusted root certificate to your System.keychain](https://derflounder.wordpress.com/2011/03/13/adding-new-trusted-root-certificates-to-system-keychain/) with:
 
-    $ sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" dev.crt
+```bash
+$ sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" dev.crt
+```
 
 #### Linux
 
@@ -238,15 +270,21 @@ var response = await client.get(Hello()..name=='World');
 If you're only using Windows you'll typically only end up using the PKCS #12 `dev.pfx` certificate combining both certificate & private key 
 which can be safely removed to clear unnecessary generated artifacts & clear-text copy of the private key:
 
-    $ del dev.key
-    $ del dev.crt
+```bash
+$ del dev.key
+$ del dev.crt
+```
 
 Where as other OS's predominantly use Certificates & Private Keys, which if needed can be later extracted from the `dev.pfx`:
 
 #### Extract Certificate
 
-    $ openssl pkcs12 -in dev.pfx -clcerts -nokeys -out dev.crt
+```bash
+$ openssl pkcs12 -in dev.pfx -clcerts -nokeys -out dev.crt
+```
 
 #### Extract Private Key
 
-    $ openssl pkcs12 -in dev.pfx -nocerts -nodes | openssl rsa -out dev.key
+```bash
+$ openssl pkcs12 -in dev.pfx -nocerts -nodes | openssl rsa -out dev.key
+```
