@@ -1,9 +1,5 @@
 ---
-
+title: Artists
 ---
-## Artists
 
 Search for the artists.
-
-
-<HelloApi></HelloApi>

@@ -560,14 +560,6 @@
         "link": "/netcore"
       },
       {
-        "text": "Smart MVC Razor Pages",
-        "link": "/netcore-razor"
-      },
-      {
-        "text": "Razor UI Controls",
-        "link": "/razor-ui-controls"
-      },
-      {
         "text": ".NET Core Redis",
         "link": "/netcore-redis"
       },
@@ -700,8 +692,12 @@
     "text": "View Engines",
     "children": [
       {
-        "text": "Razor & Markdown Razor",
-        "link": "https://razor.netcore.io"
+        "text": "ServiceStack Razor",
+        "link": "/netcore-razor"
+      },
+      {
+        "text": "Razor UI Controls",
+        "link": "/razor-ui-controls"
       },
       {
         "text": "Razor Notes",
@@ -815,20 +811,16 @@
     "text": "Amazon Web Services",
     "children": [
       {
-        "text": "ServiceStack.Aws",
-        "link": "https://github.com/ServiceStack/ServiceStack.Aws"
+        "text": "Overview",
+        "link": "/aws"
       },
       {
         "text": "PocoDynamo",
-        "link": "https://github.com/ServiceStack/PocoDynamo"
-      },
-      {
-        "text": "AWS Live Demos",
-        "link": "https://github.com/ServiceStackApps/AwsApps"
+        "link": "/aws-pocodynamo"
       },
       {
         "text": "Getting Started with AWS",
-        "link": "https://github.com/ServiceStackApps/AwsGettingStarted"
+        "link": "/aws-getting-started"
       }
     ]
   },
@@ -842,48 +834,15 @@
     ]
   },
   {
-    "text": "Other Products",
-    "children": [
-      {
-        "text": "ServiceStack.Redis",
-        "link": "https://github.com/ServiceStack/ServiceStack.Redis"
-      },
-      {
-        "text": "ServiceStack.OrmLite",
-        "link": "https://github.com/ServiceStack/ServiceStack.OrmLite"
-      },
-      {
-        "text": "ServiceStack.Text",
-        "link": "https://github.com/ServiceStack/ServiceStack.Text"
-      },
-      {
-        "text": "ServiceStack.Aws",
-        "link": "https://github.com/ServiceStack/ServiceStack.Aws"
-      },
-      {
-        "text": "ServiceStack.Stripe",
-        "link": "https://github.com/ServiceStack/Stripe"
-      },
-      {
-        "text": "sharpscript.net",
-        "link": "https://sharpscript.net"
-      },
-      {
-        "text": "vuedesktop.com",
-        "link": "https://www.vuedesktop.com"
-      }
-    ]
-  },
-  {
     "text": "Install 3rd Party Products",
     "children": [
       {
         "text": "Redis on Windows",
-        "link": "https://github.com/ServiceStack/redis-windows"
+        "link": "/install-redis-windows"
       },
       {
         "text": "RabbitMQ on Windows",
-        "link": "https://github.com/ServiceStack/rabbitmq-windows"
+        "link": "/install-rabbitmq-windows"
       },
       {
         "text": "Redis SSL on Azure",

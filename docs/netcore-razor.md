@@ -71,7 +71,7 @@ which can be resolved by installing the latest EAP or disabling its **ASP.NET Ra
 Overall we're ecstatic with the end-result, we retain our Controller-free development model whilst Razor under 
 .NET Core executes noticeably quicker than ASP.NET and significantly faster on Linux vs using Mono.
 
-## Page Based Routing in Razor!
+## Page Based Routing
 
 Another value-added feature of ServiceStack.Razor is support for Page Based Routing in [ASP.NET Core Razor](/netcore-razor) 
 which lets you use a `_` prefix to declare a variable placeholder for dynamic routes defined solely by directory and file names.
@@ -102,7 +102,7 @@ uses to call the `GetContact` Service using the [Service Gateway](/service-gatew
 `Html.Exec()` is a UX-friendly alternative to using `try/catch` boilerplate in Razor
 :::
 
-### Stand-alone Razor Views
+## Stand-alone Razor Views
 
 Rendering stand-alone HTML Views from Razor Pages can use the `GetViewPage()` API for retrieving View Pages 
 (e.g. under `~/Views`) and the `GetContentPage()` API for retrieving Content Pages (e.g. under `/wwwroot`). 

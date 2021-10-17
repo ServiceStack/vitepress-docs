@@ -18,7 +18,9 @@ From any of the ServiceStack code repositories on GitHub, you can **Fork** the c
 
 To get the source on your local development machine, simply clone your local forked repo using Git:
 
-    git clone https://github.com/USERNAME/PROJECT.git
+```bash
+$ git clone https://github.com/USERNAME/PROJECT.git
+```
 
 Each repository has a README that should be helpful to learn more about the specifics of the language, project and its development environment.
 
@@ -32,8 +34,10 @@ Until you meet the legal requirements your pull requests / source contributions 
 
 Please configure your Git client with a name and email address to use for your commits. This will also help the team validate your CLA status:
 
-    git config user.name Your Name
-    git config user.email YourAlias@YourEmailDomain
+```bash
+git config user.name Your Name
+git config user.email YourAlias@YourEmailDomain
+```
 
 ## Step-by-step guide
 

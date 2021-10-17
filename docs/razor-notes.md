@@ -13,7 +13,9 @@ Unfortunately as VS.NET's Razor intelli-sense is coupled to ASP.NET MVC, it requ
 
 The `@model T` attribute isn't known to VS.NET intelli-sense when self-hosting which means you need to its more verbose alias:
 
-    @inherits ViewPage<T>
+```cs
+@inherits ViewPage<T>
+```
 
 ### Web Configuration for Razor
 
